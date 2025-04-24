@@ -81,8 +81,8 @@ class Payment extends \Duitku\Indodana\Model\Method\AbstractPayment
     {
     $obj = \Magento\Framework\App\ObjectManager::getInstance();
    	$orderId = $order->getIncrementId();
-   	$merchantcode = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_indodanaepay/merchantnumber',\Magento\Store\Model\ScopeInterface::SCOPE_STORE, $order->getStoreId());
-   	$apikey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_indodanaepay/api_key',\Magento\Store\Model\ScopeInterface::SCOPE_STORE, $order->getStoreId());
+   	$merchantcode = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_indodanaepay/merchantnumber');
+   	$apikey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_indodanaepay/api_key');
     $amount = round($order->getBaseTotalDue());
     $objectManager = \Magento\Framework\App\ObjectManager::getInstance(); 
     $FormKey = $objectManager->get('Magento\Framework\Data\Form\FormKey');

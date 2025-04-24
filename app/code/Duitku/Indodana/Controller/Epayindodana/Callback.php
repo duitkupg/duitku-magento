@@ -91,7 +91,7 @@ class Callback extends \Duitku\Indodana\Controller\AbstractActionController
 		$merchantOrderId = isset($posted['merchantOrderId']) ? $posted['merchantOrderId'] : null;
 		$signature = isset($posted['signature']) ? $posted['signature'] : null; 
 		$obj = \Magento\Framework\App\ObjectManager::getInstance();
-		$apiKey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_indodanaepay/api_key',\Magento\Store\Model\ScopeInterface::SCOPE_STORE, $order->getStoreId());
+		$apiKey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_indodanaepay/api_key');
 		$params = $merchantCode . $amount . $merchantOrderId . $apiKey;
 		$resultCode = isset($posted['resultCode']) ? $posted['resultCode']:null;
 
@@ -102,7 +102,7 @@ class Callback extends \Duitku\Indodana\Controller\AbstractActionController
 		   return false;			
 	    }
 
-	    if ($resultCode != '00' && $resultCode != '01') {
+	    if ($resultCode != '00') {
 		$message .= "failed transaction";
 		return false;
     	}
@@ -124,17 +124,7 @@ class Callback extends \Duitku\Indodana\Controller\AbstractActionController
 
         try {
             $pspReference = $payment->getAdditionalInformation(EpayPayment::METHOD_REFERENCE);
-            if ($posted['resultCode'] == '01') {
-                $order->setState(\Magento\Sales\Model\Order::STATE_CANCELED);
-                $order->setStatus(\Magento\Sales\Model\Order::STATE_CANCELED);
-                $payment->setAdditionalInformation(array(EpayPayment::METHOD_REFERENCE => ""));
-                $payment->save();
-                $order->save();
-
-                $message = "Callback Success - Order canceled";
-                $responseCode = Response::HTTP_OK;
-            }
-            else if (empty($pspReference)) {
+            if (empty($pspReference)) {
                 /** @var \Duitku\Indodana\Model\Method\Epay\Payment */
                 $paymentMethod = $this->_getPaymentMethodInstance($order->getPayment()->getMethod());
                  $this->_processCallbackData($order,

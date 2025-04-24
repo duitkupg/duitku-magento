@@ -27,10 +27,10 @@ class Checkout extends \Duitku\Creditcardmg\Controller\AbstractActionController
     	 if($paymentmode =='1')
     	 {
 		 	  $url = 'https://passport.duitku.com/webapi';
-  		 }else{
-  		 	$url = 'https://sandbox.duitku.com/webapi';
-  		 	
-  		 }
+		 }else{
+		 	$url = 'https://sandbox.duitku.com/webapi';
+		 	
+		 }
         $order = $this->_getOrder();
         $this->setOrderDetails($order);
         $result = $this->getEPayPaymentWindowRequest($order);

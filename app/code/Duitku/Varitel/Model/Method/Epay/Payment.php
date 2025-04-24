@@ -81,8 +81,8 @@ class Payment extends \Duitku\Varitel\Model\Method\AbstractPayment
     {
     $obj = \Magento\Framework\App\ObjectManager::getInstance();
    	$orderId = $order->getIncrementId();
-   	$merchantcode = $this->_scopeConfig->getValue('payment/duitku_variepay/merchantnumber', \Magento\Store\Model\ScopeInterface::SCOPE_STORE, $order->getStoreId());
-  	 $apikey = $this->_scopeConfig->getValue('payment/duitku_variepay/api_key', \Magento\Store\Model\ScopeInterface::SCOPE_STORE, $order->getStoreId());
+   	$merchantcode = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_variepay/merchantnumber');
+  	 $apikey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_variepay/api_key');
     $amount = round($order->getBaseTotalDue());
     
     $objectManager = \Magento\Framework\App\ObjectManager::getInstance(); 

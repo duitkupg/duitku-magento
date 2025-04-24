@@ -1,6 +1,6 @@
 <?php
 
-class Duitku_ShopeeApp_ApiRequestor {
+class Duitku_Shopee_ApiRequestor {
 
   public static function get($url, $data_hash)
   {

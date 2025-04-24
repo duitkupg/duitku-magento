@@ -1,0 +1,47 @@
+<?xml version="1.1"?>
+<config>
+    <modules>
+        <Duitku_Vamaybank>
+            <version>1.1.0</version>
+        </Duitku_Vamaybank>
+    </modules>
+    <global>
+        <blocks>
+            <vamaybank>
+                <class>Duitku_Vamaybank_Block</class>
+            </vamaybank>
+        </blocks>
+        <models>
+            <vamaybank>
+                <class>Duitku_Vamaybank_Model</class>
+            </vamaybank>
+        </models>
+        <helpers>
+            <vamaybank>
+                <class>Duitku_Vamaybank_Helper</class>
+            </vamaybank>
+        </helpers>
+    </global>
+    <default>
+        <payment>
+            <vamaybank>
+                <active>0</active>
+                <title>Duitku Virtual Account</title>
+                <model>vamaybank/vamaybank</model> 
+                <allowspecific>0</allowspecific>
+                <apiurl>http://182.23.85.10/rbsnewwebapi/api/merchant/inquiry</apiurl>
+            </vamaybank>
+        </payment>
+    </default>
+    <frontend>
+       <routers>
+          <vamaybank>
+              <use>standard</use>
+              <args>
+                 <module>Duitku_Vamaybank</module>
+                 <frontName>vamaybank</frontName>
+              </args>
+           </vamaybank>
+       </routers>
+    </frontend>
+</config>

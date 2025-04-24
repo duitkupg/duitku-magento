@@ -1,0 +1,47 @@
+<?xml version="1.1"?>
+<config>
+    <modules>
+        <Duitku_Mandiriclickpay>
+            <version>1.1.0</version>
+        </Duitku_Mandiriclickpay>
+    </modules>
+    <global>
+        <blocks>
+            <mandiriclickpay>
+                <class>Duitku_Mandiriclickpay_Block</class>
+            </mandiriclickpay>
+        </blocks>
+        <models>
+            <mandiriclickpay>
+                <class>Duitku_Mandiriclickpay_Model</class>
+            </mandiriclickpay>
+        </models>
+        <helpers>
+            <mandiriclickpay>
+                <class>Duitku_Mandiriclickpay_Helper</class>
+            </mandiriclickpay>
+        </helpers>
+    </global>
+    <default>
+        <payment>
+            <mandiriclickpay>
+                <active>0</active>
+                <title>Duitku Mandiri Clickpay</title>
+                <model>mandiriclickpay/mandiriclickpay</model> 
+                <allowspecific>0</allowspecific>
+                <apiurl>http://182.23.85.10/rbsnewwebapi/api/merchant/inquiry</apiurl>
+            </mandiriclickpay>
+        </payment>
+    </default>
+    <frontend>
+       <routers>
+          <mandiriclickpay>
+              <use>standard</use>
+              <args>
+                 <module>Duitku_Mandiriclickpay</module>
+                 <frontName>mandiriclickpay</frontName>
+              </args>
+           </mandiriclickpay>
+       </routers>
+    </frontend>
+</config>

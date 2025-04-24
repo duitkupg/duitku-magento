@@ -1,0 +1,47 @@
+<?xml version="1.1"?>
+<config>
+    <modules>
+        <Duitku_Vabni>
+            <version>1.1.0</version>
+        </Duitku_Vabni>
+    </modules>
+    <global>
+        <blocks>
+            <vabni>
+                <class>Duitku_Vabni_Block</class>
+            </vabni>
+        </blocks>
+        <models>
+            <vabni>
+                <class>Duitku_Vabni_Model</class>
+            </vabni>
+        </models>
+        <helpers>
+            <vabni>
+                <class>Duitku_Vabni_Helper</class>
+            </vabni>
+        </helpers>
+    </global>
+    <default>
+        <payment>
+            <vabni>
+                <active>0</active>
+                <title>Duitku Virtual Account</title>
+                <model>vabni/vabni</model> 
+                <allowspecific>0</allowspecific>
+                <apiurl>http://182.23.85.10/rbsnewwebapi/api/merchant/inquiry</apiurl>
+            </vabni>
+        </payment>
+    </default>
+    <frontend>
+       <routers>
+          <vabni>
+              <use>standard</use>
+              <args>
+                 <module>Duitku_Vabni</module>
+                 <frontName>vabni</frontName>
+              </args>
+           </vabni>
+       </routers>
+    </frontend>
+</config>

@@ -1,0 +1,11 @@
+<config>
+    <modules>
+        <Duitku_Vamaybank>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <Mage_Payment />
+            </depends>
+        </Duitku_Vamaybank>
+    </modules>
+</config>

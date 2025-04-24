@@ -1,0 +1,11 @@
+<config>
+    <modules>
+        <Duitku_Cimbclick>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <Mage_Payment />
+            </depends>
+        </Duitku_Cimbclick>
+    </modules>
+</config>

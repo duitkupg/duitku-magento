@@ -1,0 +1,47 @@
+<?xml version="1.1"?>
+<config>
+    <modules>
+        <Duitku_Vamandiri>
+            <version>1.1.0</version>
+        </Duitku_Vamandiri>
+    </modules>
+    <global>
+        <blocks>
+            <vamandiri>
+                <class>Duitku_Vamandiri_Block</class>
+            </vamandiri>
+        </blocks>
+        <models>
+            <vamandiri>
+                <class>Duitku_Vamandiri_Model</class>
+            </vamandiri>
+        </models>
+        <helpers>
+            <vamandiri>
+                <class>Duitku_Vamandiri_Helper</class>
+            </vamandiri>
+        </helpers>
+    </global>
+    <default>
+        <payment>
+            <vamandiri>
+                <active>0</active>
+                <title>Duitku Virtual Account</title>
+                <model>vamandiri/vamandiri</model> 
+                <allowspecific>0</allowspecific>
+                <apiurl>http://182.23.85.10/rbsnewwebapi/api/merchant/inquiry</apiurl>
+            </vamandiri>
+        </payment>
+    </default>
+    <frontend>
+       <routers>
+          <vamandiri>
+              <use>standard</use>
+              <args>
+                 <module>Duitku_Vamandiri</module>
+                 <frontName>vamandiri</frontName>
+              </args>
+           </vamandiri>
+       </routers>
+    </frontend>
+</config>

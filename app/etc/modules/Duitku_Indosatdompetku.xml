@@ -1,0 +1,11 @@
+<config>
+    <modules>
+        <Duitku_Indosatdompetku>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <Mage_Payment />
+            </depends>
+        </Duitku_Indosatdompetku>
+    </modules>
+</config>

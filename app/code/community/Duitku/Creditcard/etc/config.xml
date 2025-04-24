@@ -1,0 +1,47 @@
+<?xml version="1.1"?>
+<config>
+    <modules>
+        <Duitku_Creditcard>
+            <version>1.1.0</version>
+        </Duitku_Creditcard>
+    </modules>
+    <global>
+        <blocks>
+            <creditcard>
+                <class>Duitku_Creditcard_Block</class>
+            </creditcard>
+        </blocks>
+        <models>
+            <creditcard>
+                <class>Duitku_Creditcard_Model</class>
+            </creditcard>
+        </models>
+        <helpers>
+            <creditcard>
+                <class>Duitku_Creditcard_Helper</class>
+            </creditcard>
+        </helpers>
+    </global>
+    <default>
+        <payment>
+            <creditcard>
+                <active>0</active>
+                <title>Duitku Credit Card</title>
+                <model>creditcard/creditcard</model> 
+                <allowspecific>0</allowspecific>
+                <apiurl>http://182.23.85.10/rbsnewwebapi/api/merchant/inquiry</apiurl>
+            </creditcard>
+        </payment>
+    </default>
+    <frontend>
+       <routers>
+          <creditcard>
+              <use>standard</use>
+              <args>
+                 <module>Duitku_Creditcard</module>
+                 <frontName>creditcard</frontName>
+              </args>
+           </creditcard>
+       </routers>
+    </frontend>
+</config>

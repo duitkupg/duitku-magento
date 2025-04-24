@@ -1,0 +1,11 @@
+<config>
+    <modules>
+        <Duitku_Mandiriclickpay>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <Mage_Payment />
+            </depends>
+        </Duitku_Mandiriclickpay>
+    </modules>
+</config>

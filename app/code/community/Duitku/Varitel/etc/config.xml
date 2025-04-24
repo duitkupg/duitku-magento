@@ -1,0 +1,47 @@
+<?xml version="1.1"?>
+<config>
+    <modules>
+        <Duitku_Varitel>
+            <version>1.1.0</version>
+        </Duitku_Varitel>
+    </modules>
+    <global>
+        <blocks>
+            <varitel>
+                <class>Duitku_Varitel_Block</class>
+            </varitel>
+        </blocks>
+        <models>
+            <varitel>
+                <class>Duitku_Varitel_Model</class>
+            </varitel>
+        </models>
+        <helpers>
+            <varitel>
+                <class>Duitku_Varitel_Helper</class>
+            </varitel>
+        </helpers>
+    </global>
+    <default>
+        <payment>
+            <varitel>
+                <active>0</active>
+                <title>Duitku Virtual Account</title>
+                <model>varitel/varitel</model> 
+                <allowspecific>0</allowspecific>
+                <apiurl>http://182.23.85.10/rbsnewwebapi/api/merchant/inquiry</apiurl>
+            </varitel>
+        </payment>
+    </default>
+    <frontend>
+       <routers>
+          <varitel>
+              <use>standard</use>
+              <args>
+                 <module>Duitku_Varitel</module>
+                 <frontName>varitel</frontName>
+              </args>
+           </varitel>
+       </routers>
+    </frontend>
+</config>

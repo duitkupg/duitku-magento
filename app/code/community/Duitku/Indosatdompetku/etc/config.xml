@@ -1,0 +1,47 @@
+<?xml version="1.1"?>
+<config>
+    <modules>
+        <Duitku_Indosatdompetku>
+            <version>1.1.0</version>
+        </Duitku_Indosatdompetku>
+    </modules>
+    <global>
+        <blocks>
+            <indosatdompetku>
+                <class>Duitku_Indosatdompetku_Block</class>
+            </indosatdompetku>
+        </blocks>
+        <models>
+            <indosatdompetku>
+                <class>Duitku_Indosatdompetku_Model</class>
+            </indosatdompetku>
+        </models>
+        <helpers>
+            <indosatdompetku>
+                <class>Duitku_Indosatdompetku_Helper</class>
+            </indosatdompetku>
+        </helpers>
+    </global>
+    <default>
+        <payment>
+            <indosatdompetku>
+                <active>0</active>
+                <title>Duitku Indosat Dompetku</title>
+                <model>indosatdompetku/indosatdompetku</model> 
+                <allowspecific>0</allowspecific>
+                <apiurl>http://182.23.85.10/rbsnewwebapi/api/merchant/inquiry</apiurl>
+            </indosatdompetku>
+        </payment>
+    </default>
+    <frontend>
+       <routers>
+          <indosatdompetku>
+              <use>standard</use>
+              <args>
+                 <module>Duitku_Indosatdompetku</module>
+                 <frontName>indosatdompetku</frontName>
+              </args>
+           </indosatdompetku>
+       </routers>
+    </frontend>
+</config>

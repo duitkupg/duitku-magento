@@ -1,0 +1,47 @@
+<?xml version="1.1"?>
+<config>
+    <modules>
+        <Duitku_Cimbclick>
+            <version>1.1.0</version>
+        </Duitku_Cimbclick>
+    </modules>
+    <global>
+        <blocks>
+            <cimbclick>
+                <class>Duitku_Cimbclick_Block</class>
+            </cimbclick>
+        </blocks>
+        <models>
+            <cimbclick>
+                <class>Duitku_Cimbclick_Model</class>
+            </cimbclick>
+        </models>
+        <helpers>
+            <cimbclick>
+                <class>Duitku_Cimbclick_Helper</class>
+            </cimbclick>
+        </helpers>
+    </global>
+    <default>
+        <payment>
+            <cimbclick>
+                <active>0</active>
+                <title>Duitku CIMB Click</title>
+                <model>cimbclick/cimbclick</model> 
+                <allowspecific>0</allowspecific>
+                <apiurl>http://182.23.85.10/rbsnewwebapi/api/merchant/inquiry</apiurl>
+            </cimbclick>
+        </payment>
+    </default>
+    <frontend>
+       <routers>
+          <cimbclick>
+              <use>standard</use>
+              <args>
+                 <module>Duitku_Cimbclick</module>
+                 <frontName>cimbclick</frontName>
+              </args>
+           </cimbclick>
+       </routers>
+    </frontend>
+</config>

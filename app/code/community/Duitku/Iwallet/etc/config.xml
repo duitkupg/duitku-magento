@@ -1,0 +1,47 @@
+<?xml version="1.1"?>
+<config>
+    <modules>
+        <Duitku_Iwallet>
+            <version>1.1.0</version>
+        </Duitku_Iwallet>
+    </modules>
+    <global>
+        <blocks>
+            <iwallet>
+                <class>Duitku_Iwallet_Block</class>
+            </iwallet>
+        </blocks>
+        <models>
+            <iwallet>
+                <class>Duitku_Iwallet_Model</class>
+            </iwallet>
+        </models>
+        <helpers>
+            <iwallet>
+                <class>Duitku_Iwallet_Helper</class>
+            </iwallet>
+        </helpers>
+    </global>
+    <default>
+        <payment>
+            <iwallet>
+                <active>0</active>
+                <title>Duitku Wallet</title>
+                <model>iwallet/iwallet</model> 
+                <allowspecific>0</allowspecific>
+                <apiurl>http://192.168.0.10:8888/webapi/api/merchant/inquiry</apiurl>
+            </iwallet>
+        </payment>
+    </default>
+    <frontend>
+       <routers>
+          <iwallet>
+              <use>standard</use>
+              <args>
+                 <module>Duitku_Iwallet</module>
+                 <frontName>iwallet</frontName>
+              </args>
+           </iwallet>
+       </routers>
+    </frontend>
+</config>

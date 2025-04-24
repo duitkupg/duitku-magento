@@ -20,7 +20,7 @@
         <duitku_brivaepay>
         <active>0</active>
         <model>Duitku\BRIVA\Model\Method\Epay\Payment</model>
-        <title>Duitku BRI Virtual Account Payment solutions</title>
+        <title>Duitku BRIVA Payment solutions</title>
         <instantinvoice>0</instantinvoice>
         <instantinvoicemail>0</instantinvoicemail>
         <paymentgroup>0</paymentgroup>

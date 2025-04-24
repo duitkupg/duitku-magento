@@ -22,13 +22,13 @@ define(
 				},
 				redirectAfterPlaceOrder: false,
 				getDuitkuEpayTitle: function () {
-					return window.checkoutConfig.payment.duitku_shopeepayappepay.paymentTitle;
+					return window.checkoutConfig.payment.duitku_shopeepayapp.paymentTitle;
 				},
 				getDuitkuEpayLogo: function () {
-					return window.checkoutConfig.payment.duitku_shopeepayappepay.paymentLogoSrc;
+					return window.checkoutConfig.payment.duitku_shopeepayapp.paymentLogoSrc;
 				},
 				getDuitkuEpayPaymentLogoSrc: function () {
-					return window.checkoutConfig.payment.duitku_shopeepayappepay.paymentTypeLogoSrc;
+					return window.checkoutConfig.payment.duitku_shopeepayapp.paymentTypeLogoSrc;
 				},
 				afterPlaceOrder: function () {
 					fullScreenLoader.startLoader();
@@ -36,7 +36,7 @@ define(
 				},
 				getPaymentWindow: function () {
 					var self = this;
-					var url = window.checkoutConfig.payment.duitku_shopeepayappepay.checkoutUrl;
+					var url = window.checkoutConfig.payment.duitku_shopeepayapp.checkoutUrl;
 				           
 					$.get(url).done(function (response) {
 						
@@ -45,27 +45,27 @@ define(
 							$.mage.redirect(Url);
 							if(!response) {
 								self.showError($t("Error opening payment window"));
-								$.mage.redirect(window.checkoutConfig.payment.duitku_shopeepayappepay.cancelUrl);
+								$.mage.redirect(window.checkoutConfig.payment.duitku_shopeepayapp.cancelUrl);
 							}
 							self.openPaymentWindow(response);                             
 						}).fail(function(error) {
 							self.showError($t("Error opening payment window") + ': ' + error.statusText);
-							$.mage.redirect(window.checkoutConfig.payment.duitku_shopeepayappepay.cancelUrl);
+							$.mage.redirect(window.checkoutConfig.payment.duitku_shopeepayapp.cancelUrl);
 						});
 				},
 				openPaymentWindow: function(requestString) {
 					var onclose = function() {
-						var cancelUrl = window.checkoutConfig.payment.duitku_shopeepayappepay.cancelUrl;
+						var cancelUrl = window.checkoutConfig.payment.duitku_shopeepayapp.cancelUrl;
 						$.mage.redirect(cancelUrl);
 					}
 					var paymentwindow = new PaymentWindow(requestString);
-					if(window.checkoutConfig.payment.duitku_shopeepayappepay.windowState === "1") {
+					if(window.checkoutConfig.payment.duitku_shopeepayapp.windowState === "1") {
 						paymentwindow.on("close", onclose);
 					}
 					paymentwindow.open();
 				},
 				loadEPayPaymentWindowJs: function() {
-					$.getScript(window.checkoutConfig.payment.duitku_shopeepayappepay.paymentWindowJsUrl);
+					$.getScript(window.checkoutConfig.payment.duitku_shopeepayapp.paymentWindowJsUrl);
 				},
 				
 				showError: function (errorMessage) {

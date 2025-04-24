@@ -20,14 +20,14 @@
         <duitku_linkajafixedepay>
         <active>0</active>
         <model>Duitku\Linkajafixed\Model\Method\Epay\Payment</model>
-        <title>Duitku Linkajafixed Clickpay Payment solutions</title>
+        <title>Duitku LinkaAja Payment solutions</title>
         <instantinvoice>0</instantinvoice>
         <instantinvoicemail>0</instantinvoicemail>
         <paymentgroup>0</paymentgroup>
         <remoteinterface>1</remoteinterface>
         <enableinvoicedata>0</enableinvoicedata>
           <sendmailorderconfirmation>1</sendmailorderconfirmation>
-        <sort_order>2</sort_order>
+        <sort_order>7</sort_order>
         <windowstate>3</windowstate>
         <timeout>60</timeout>
         <order_status>processing</order_status>

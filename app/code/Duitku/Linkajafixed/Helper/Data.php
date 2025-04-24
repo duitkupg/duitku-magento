@@ -14,6 +14,7 @@
  */
 
 namespace Duitku\Linkajafixed\Helper;
+include_once('Duitku/ApiRequestor.php');
 include_once('Duitku/DuitkuCore.php');
 use Duitku\Linkajafixed\Helper\DuitkuConstants;
 use Duitku_Linkajafixed_Core;

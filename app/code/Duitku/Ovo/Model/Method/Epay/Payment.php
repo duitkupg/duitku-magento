@@ -85,7 +85,9 @@ class Payment extends \Duitku\Ovo\Model\Method\AbstractPayment
    	$apikey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_ovoepay/api_key');
     $amount = round($order->getBaseTotalDue());
     
-    $callbackUrl = $this->_urlBuilder->getUrl('duitku/epayovo/callback');
+    $objectManager = \Magento\Framework\App\ObjectManager::getInstance(); 
+    $FormKey = $objectManager->get('Magento\Framework\Data\Form\FormKey');
+    $callbackUrl = $this->_urlBuilder->getUrl('duitku/epayovo/callback?isAjax=true&form_key='.$FormKey->getFormKey());
     $returnUrl = $this->_urlBuilder->getUrl('duitku/epayovo/accept');
     $merchantUserInfo = $order->getCustomerFirstname() . " " . $order->getCustomerLastname();
     $email = $order->getCustomerEmail();

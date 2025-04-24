@@ -34,7 +34,7 @@ class Checkout extends \Duitku\Linkajaqris\Controller\AbstractActionController
         $order = $this->_getOrder();
         $this->setOrderDetails($order);
         $result = $this->getEPayPaymentWindowRequest($order);
-       	$helper = $obj->get('Duitku\Linkajaqris\Helper\Data');
+          $helper = $obj->get('Duitku\Linkajaqris\Helper\Data');
         $DuitkuCore = $helper->getDuitkuCore();
       	$redirUrl = $DuitkuCore->getRedirectionUrl($url,$result);
       	$resultarr = array();
@@ -53,7 +53,7 @@ class Checkout extends \Duitku\Linkajaqris\Controller\AbstractActionController
     public function getEPayPaymentWindowRequest($order)
     {
         try {
-            /** @var \Duitku\Linkajaqris\Model\Method\Epay\Payment */
+            /** @var \Duitku\Vabca\Model\Method\Epay\Payment */
             $epayMethod = $this->_getPaymentMethodInstance($order->getPayment()->getMethod());
             $response = $epayMethod->getPaymentWindow($order);
 			

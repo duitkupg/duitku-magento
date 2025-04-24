@@ -20,7 +20,7 @@
         <duitku_bncepay>
         <active>0</active>
         <model>Duitku\BNC\Model\Method\Epay\Payment</model>
-        <title>Duitku BNC/Bank Neo Commerce Payment solutions</title>
+        <title>Duitku BNC Payment solutions</title>
         <instantinvoice>0</instantinvoice>
         <instantinvoicemail>0</instantinvoicemail>
         <paymentgroup>0</paymentgroup>

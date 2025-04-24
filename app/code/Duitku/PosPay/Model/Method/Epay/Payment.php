@@ -81,11 +81,13 @@ class Payment extends \Duitku\PosPay\Model\Method\AbstractPayment
     {
     $obj = \Magento\Framework\App\ObjectManager::getInstance();
    	$orderId = $order->getIncrementId();
-   	$merchantcode = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_pospayepay/merchantnumber');
-   	$apikey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_pospayepay/api_key');
+   	$merchantcode = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_pospayepay/merchantnumber',\Magento\Store\Model\ScopeInterface::SCOPE_STORE, $order->getStoreId());
+   	$apikey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_pospayepay/api_key',\Magento\Store\Model\ScopeInterface::SCOPE_STORE, $order->getStoreId());
     $amount = round($order->getBaseTotalDue());
     
-    $callbackUrl = $this->_urlBuilder->getUrl('duitku/epaypospay/callback');
+    $objectManager = \Magento\Framework\App\ObjectManager::getInstance(); 
+    $FormKey = $objectManager->get('Magento\Framework\Data\Form\FormKey');
+    $callbackUrl = $this->_urlBuilder->getUrl('duitku/epaypospay/callback?isAjax=true&form_key='.$FormKey->getFormKey());
     $returnUrl = $this->_urlBuilder->getUrl('duitku/epaypospay/accept');
     $merchantUserInfo = $order->getCustomerFirstname() . " " . $order->getCustomerLastname();
     $email = $order->getCustomerEmail();

@@ -1,15 +1,15 @@
 <?php
 /**
-* Copyright (c) 2017. All rights reserved Duitku Shopeepayapp.
+* Copyright (c) 2017. All rights reserved Duitku Shopee.
 *
 * This program is free software. You are allowed to use the software but NOT allowed to modify the software.
 * It is also not legal to do any changes to the software and distribute it in your own name / brand.
 *
 * All use of the payment modules happens at your own risk. We offer a free test account that you can use to test the module.
 *
-* @author    Duitku Shopeepayapp
-* @copyright Duitku Shopeepayapp (http://duitku.com)
-* @license   Duitku Shopeepayapp
+* @author    Duitku Shopee
+* @copyright Duitku Shopee (http://duitku.com)
+* @license   Duitku Shopee
 *
 */
 namespace Duitku\Shopeepayapp\Controller;
@@ -18,8 +18,12 @@ use \Magento\Sales\Model\Order;
 use \Magento\Sales\Model\Order\Payment\Transaction;
 use \Duitku\Shopeepayapp\Helper\DuitkuConstants;
 use \Duitku\Shopeepayapp\Model\Method\Epay\Payment as EpayPayment;
+use \Magento\Framework\Controller\ResultFactory;
+use \Magento\Framework\App\RequestInterface;
+use \Magento\Framework\App\Request\InvalidRequestException;
 
-abstract class AbstractActionController extends \Magento\Framework\App\Action\Action{
+abstract class AbstractActionController extends \Magento\Framework\App\Action\Action implements \Magento\Framework\App\CsrfAwareActionInterface
+{
 	/**
 	* @var \Magento\Sales\Model\OrderFactory
 	*/
@@ -96,7 +100,14 @@ abstract class AbstractActionController extends \Magento\Framework\App\Action\Ac
 		$this->_orderSender = $orderSender;
 		$this->_invoiceSender = $invoiceSender;
 	}
-
+	/** * @inheritDoc */ 
+	public function createCsrfValidationException( RequestInterface $request ): ?       InvalidRequestException { 
+         return null; 
+	} 
+	/** * @inheritDoc */ 
+	public function validateForCsrf(RequestInterface $request): ?bool {     
+		return true; 
+	}
 	/**
 	* Get order object
 	*
@@ -139,9 +150,9 @@ abstract class AbstractActionController extends \Magento\Framework\App\Action\Ac
 	}
 
 	protected function acceptOrder(){
-		$posted = $this->getRequest()->getParams();
+		$posted = $this->getRequest()->getParams();		
 		$resultCode = $posted['resultCode'];
-		if(isset($posted['resultCode']) && isset($posted['merchantOrderId']) && isset($posted['reference']) && ($resultCode == '00' || $resultCode == '01')){
+		if(isset($posted['resultCode']) && isset($posted['merchantOrderId']) && isset($posted['reference']) && ($resultCode == '00' || $resultCode == '01')){					
 				$order = $this->_getOrderByIncrementId($posted['merchantOrderId']);
 				$this->_checkoutSession->setLastOrderId($order->getId());
 				$this->_checkoutSession->setLastRealOrderId($order->getIncrementId());
@@ -151,9 +162,7 @@ abstract class AbstractActionController extends \Magento\Framework\App\Action\Ac
 		}
 		else{
 			$this->cancelOrder();
-		}
-       
-		//$this->_redirect('checkout/onepage/success');
+		}       		
 	}
 
 	/**

@@ -18,7 +18,7 @@
          xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Payment:etc/payment.xsd">
   <groups>
     <group id="duitku">
-      <label>Duitku BRIVA Methods</label>
+      <label>Duitku BRI Virtual Account Payment Methods</label>
     </group>
   </groups>
   <methods>

@@ -15,7 +15,7 @@ define(
 		return Component.extend({
 				initialize: function() {
 					this._super().initChildren();
-					this.loadEPayPaymentWindowJs();
+					//this.loadEPayPaymentWindowJs();
 				},
 				defaults: {
 					template: 'Duitku_Linkajaqris/payment/epay-form'

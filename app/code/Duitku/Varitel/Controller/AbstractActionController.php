@@ -18,8 +18,12 @@ use \Magento\Sales\Model\Order;
 use \Magento\Sales\Model\Order\Payment\Transaction;
 use \Duitku\Varitel\Helper\DuitkuConstants;
 use \Duitku\Varitel\Model\Method\Epay\Payment as EpayPayment;
+use \Magento\Framework\Controller\ResultFactory;
+use \Magento\Framework\App\RequestInterface;
+use \Magento\Framework\App\Request\InvalidRequestException;
 
-abstract class AbstractActionController extends \Magento\Framework\App\Action\Action{
+abstract class AbstractActionController extends \Magento\Framework\App\Action\Action implements \Magento\Framework\App\CsrfAwareActionInterface
+{	
 	/**
 	* @var \Magento\Sales\Model\OrderFactory
 	*/
@@ -95,6 +99,15 @@ abstract class AbstractActionController extends \Magento\Framework\App\Action\Ac
 		$this->_paymentHelper = $paymentHelper;
 		$this->_orderSender = $orderSender;
 		$this->_invoiceSender = $invoiceSender;
+	}
+
+	/** * @inheritDoc */ 
+	public function createCsrfValidationException( RequestInterface $request ): ?       InvalidRequestException { 
+         return null; 
+	} 
+	/** * @inheritDoc */ 
+	public function validateForCsrf(RequestInterface $request): ?bool {     
+		return true; 
 	}
 
 	/**

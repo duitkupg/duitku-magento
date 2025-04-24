@@ -63,7 +63,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      */
     public function getDuitkuEpayConfigData($field, $storeId = null)
     {
-        return $this->getConfigData($field, 'duitku_nobuqrisepay', $storeId);
+        return $this->getConfigData($field, 'duitku_Nobuqrisepay', $storeId);
     }
 	
 	public function getDuitkuCore(){

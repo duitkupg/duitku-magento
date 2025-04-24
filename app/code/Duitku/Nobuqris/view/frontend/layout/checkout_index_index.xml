@@ -20,11 +20,11 @@
                             <item name="renders" xsi:type="array">
                               <!-- merge payment method renders here -->
                               <item name="children" xsi:type="array">
-                                <item name="duitku_nobuqrispayment" xsi:type="array">
+                                <item name="duitku_Nobuqrispayment" xsi:type="array">
                                   <item name="component" xsi:type="string">Duitku_Nobuqris/js/view/payment/duitku-methods</item>
                                   <item name="methods" xsi:type="array">
                                     
-                                    <item name="duitku_nobuqrisepay" xsi:type="array">
+                                    <item name="duitku_Nobuqrisepay" xsi:type="array">
                                       <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
                                     </item>
                                   </item>

@@ -14,6 +14,7 @@
  */
 
 namespace Duitku\Linkajapercent\Helper;
+include_once('Duitku/ApiRequestor.php');
 include_once('Duitku/DuitkuCore.php');
 use Duitku\Linkajapercent\Helper\DuitkuConstants;
 use Duitku_Linkajapercent_Core;

@@ -60,6 +60,7 @@ class Callback extends \Duitku\Linkajaqris\Controller\AbstractActionController
      */
     public function validateCallback($posted, &$order, &$message)
     {
+ 
         //Validate response
         if (!isset($posted)) {
             $message .= "Response is null";
@@ -67,7 +68,7 @@ class Callback extends \Duitku\Linkajaqris\Controller\AbstractActionController
         }
 
         //Validate parameteres
-        if (!$posted['merchantOrderId'] || !$posted['resultCode'] || !$posted['reference'] ) {
+        if (!$posted['merchantOrderId'] || !$posted['resultCode'] || !$posted['reference'] || !$posted['signature'] ) {
             $message .= "Parameteres are missing. Request: " . json_encode($posted);
             return false;
         }
@@ -84,16 +85,16 @@ class Callback extends \Duitku\Linkajaqris\Controller\AbstractActionController
         if (!isset($payment)) {
             $message .= "The Payment object is null";
             return false;
-        }
-        
-		$merchantCode = isset($posted['merchantCode']) ? $posted['merchantCode'] : null; 
-		$amount = isset($posted['amount']) ? $posted['amount'] : null; 
-		$merchantOrderId = isset($posted['merchantOrderId']) ? $posted['merchantOrderId'] : null;
-		$signature = isset($posted['signature']) ? $posted['signature'] : null; 
-		$obj = \Magento\Framework\App\ObjectManager::getInstance();
-		$apiKey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_linkajaqrisepay/api_key');
-		$params = $merchantCode . $amount . $merchantOrderId . $apiKey;
-		$resultCode = isset($posted['resultCode']) ? $posted['resultCode']:null;
+	     }
+         
+	     $merchantCode = isset($posted['merchantCode']) ? $posted['merchantCode'] : null; 
+	     $amount = isset($posted['amount']) ? $posted['amount'] : null; 
+	     $merchantOrderId = isset($posted['merchantOrderId']) ? $posted['merchantOrderId'] : null;
+         $signature = isset($posted['signature']) ? $posted['signature'] : null; 
+	     $obj = \Magento\Framework\App\ObjectManager::getInstance();
+  	     $apiKey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_linkajaqrisepay/api_key');
+	     $params = $merchantCode . $amount . $merchantOrderId . $apiKey;
+	     $resultCode = isset($posted['resultCode']) ? $posted['resultCode']:null;
 
 
 	    //check signature
@@ -106,7 +107,7 @@ class Callback extends \Duitku\Linkajaqris\Controller\AbstractActionController
 		$message .= "failed transaction";
 		return false;
     	}
-		
+
         return true;
     }
 

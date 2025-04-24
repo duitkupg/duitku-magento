@@ -82,11 +82,13 @@ class Payment extends \Duitku\Creditcardmg\Model\Method\AbstractPayment
     $obj = \Magento\Framework\App\ObjectManager::getInstance();
    	$orderId = $order->getIncrementId();
    	$merchantcode = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_creditcardmgepay/merchantnumber');
-  	 $apikey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_creditcardmgepay/api_key');
+    $apikey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_creditcardmgepay/api_key');
+   	$hashAlgorithm = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_creditcardmgepay/hash_algorithm',\Magento\Store\Model\ScopeInterface::SCOPE_STORE, $order->getStoreId());
     $credCode = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_creditcardmgepay/credcode');
     $amount = round($order->getBaseTotalDue());
-    
-    $callbackUrl = $this->_urlBuilder->getUrl('duitku/EpayCreditcardmg/callback');
+    $objectManager = \Magento\Framework\App\ObjectManager::getInstance(); 
+    $FormKey = $objectManager->get('Magento\Framework\Data\Form\FormKey');
+    $callbackUrl = $this->_urlBuilder->getUrl('duitku/EpayCreditcardmg/callback?isAjax=true&form_key='.$FormKey->getFormKey());
     $returnUrl = $this->_urlBuilder->getUrl('duitku/EpayCreditcardmg/accept');
     $merchantUserInfo = $order->getCustomerFirstname() . " " . $order->getCustomerLastname();
     $email = $order->getCustomerEmail();
@@ -193,6 +195,12 @@ class Payment extends \Duitku\Creditcardmg\Model\Method\AbstractPayment
 			 'itemDetails' => $itemDetailParams,
              'credCode' => $credCode
          );
+
+         if($hashAlgorithm == 1){
+          $signature = hash("sha256",$merchantcode.$orderId.$paymentAmount.$apikey);
+          $params['signature'] = $signature;
+          $params['hashAlgorithm'] = "sha256";
+         }
 		 
         return $params;
     }

@@ -12,7 +12,7 @@
  * @license   Duitku Nobuqris
  *
  */
-namespace Duitku\Nobuqris\Controller\EpayNobuqris;
+namespace Duitku\Nobuqris\Controller\Epaynobuqris;
 
 class Accept extends \Duitku\Nobuqris\Controller\AbstractActionController
 {

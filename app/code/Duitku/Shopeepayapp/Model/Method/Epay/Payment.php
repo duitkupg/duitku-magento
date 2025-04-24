@@ -1,15 +1,15 @@
 <?php
 /**
- * Copyright (c) 2017. All rights reserved Duitku Shopeepayapp.
+ * Copyright (c) 2017. All rights reserved Duitku Shopee.
  *
  * This program is free software. You are allowed to use the software but NOT allowed to modify the software.
  * It is also not legal to do any changes to the software and distribute it in your own name / brand.
  *
  * All use of the payment modules happens at your own risk. We offer a free test account that you can use to test the module.
  *
- * @author    Duitku Shopeepayapp
- * @copyright Duitku Shopeepayapp (http://duitku.com)
- * @license   Duitku Shopeepayapp
+ * @author    Duitku Shopee
+ * @copyright Duitku Shopee (http://duitku.com)
+ * @license   Duitku Shopee
  *
  */
 namespace Duitku\Shopeepayapp\Model\Method\Epay;
@@ -18,8 +18,8 @@ use \Duitku\Shopeepayapp\Helper\DuitkuConstants;
 
 class Payment extends \Duitku\Shopeepayapp\Model\Method\AbstractPayment
 {
-    const METHOD_CODE = 'duitku_shopeepayappepay';
-    const METHOD_REFERENCE = 'duitkushopeepayappReference';
+    const METHOD_CODE = 'duitku_shopeepayapp';
+    const METHOD_REFERENCE = 'duitkushopeeReference';
 
     protected $_code = self::METHOD_CODE;
 
@@ -81,15 +81,17 @@ class Payment extends \Duitku\Shopeepayapp\Model\Method\AbstractPayment
     {
     $obj = \Magento\Framework\App\ObjectManager::getInstance();
    	$orderId = $order->getIncrementId();
-   	$merchantcode = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_shopeepayappepay/merchantnumber');
-   	$apikey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_shopeepayappepay/api_key');
+   	$merchantcode = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_shopeepayapp/merchantnumber');
+   	$apikey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_shopeepayapp/api_key');
+	
     $amount = round($order->getBaseTotalDue());
-    
-    $callbackUrl = $this->_urlBuilder->getUrl('duitku/epayshopeepayapp/callback');
+    $objectManager = \Magento\Framework\App\ObjectManager::getInstance(); 
+    $FormKey = $objectManager->get('Magento\Framework\Data\Form\FormKey');
+    $callbackUrl = $this->_urlBuilder->getUrl('duitku/epayshopeepayapp/callback?isAjax=true&form_key='.$FormKey->getFormKey());
     $returnUrl = $this->_urlBuilder->getUrl('duitku/epayshopeepayapp/accept');
     $merchantUserInfo = $order->getCustomerFirstname() . " " . $order->getCustomerLastname();
     $email = $order->getCustomerEmail();
-		
+	
 	//ItemDetails
 	$itemsData = $order->getAllItems();
 	$shippingAmountData = $order->getShippingAmount();
@@ -170,12 +172,12 @@ class Payment extends \Duitku\Shopeepayapp\Model\Method\AbstractPayment
 			'billingAddress' => $billing_address,
 			'shippingAddress' => $billing_address
 		);
-				
+
 		$signature = md5($merchantcode.$orderId.$paymentAmount.$apikey);
 		
 		$params = array(
              'merchantCode' => $merchantcode,
-             'paymentAmount' => $amount,
+             'paymentAmount' => $paymentAmount,
              'paymentMethod' => 'SA',
 			 'merchantOrderId' =>$orderId,
              'productDetails' => 'Order : '.$orderId,
@@ -304,7 +306,7 @@ class Payment extends \Duitku\Shopeepayapp\Model\Method\AbstractPayment
     {
         return $this->_urlBuilder->getUrl('duitku/epayshopeepayapp/cancel', ['_secure' => $this->_request->isSecure()]);
     }
-
+	
 	private function repString($str) {
 		return preg_replace("/[^a-zA-Z0-9]+/", " ", $str);
 	}

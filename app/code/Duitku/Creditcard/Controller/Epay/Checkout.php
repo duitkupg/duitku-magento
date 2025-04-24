@@ -21,7 +21,7 @@ class Checkout extends \Duitku\Creditcard\Controller\AbstractActionController{
 	*/
 	public function execute(){
 		$obj = \Magento\Framework\App\ObjectManager::getInstance();
-		 $paymentmode = $this->_scopeConfig->getValue('payment/duitku_epay/payment_mode', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+		$paymentmode = $this->_scopeConfig->getValue('payment/duitku_epay/payment_mode', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
 		if($paymentmode =='1'){
 			$url = 'https://passport.duitku.com/webapi';
 		}else{

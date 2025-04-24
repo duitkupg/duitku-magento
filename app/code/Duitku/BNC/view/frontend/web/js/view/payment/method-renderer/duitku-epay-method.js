@@ -40,8 +40,7 @@ define(
 				           
 					$.get(url).done(function (response) {
 						
-							console.log(response);
-							response = JSON.parse(response); 
+							response = JSON.parse(response);
 							var Url = response.url;
 							$.mage.redirect(Url);
 							if(!response) {

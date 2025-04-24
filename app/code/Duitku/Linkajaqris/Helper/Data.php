@@ -14,6 +14,7 @@
  */
 
 namespace Duitku\Linkajaqris\Helper;
+include_once('Duitku/ApiRequestor.php');
 include_once('Duitku/DuitkuCore.php');
 use Duitku\Linkajaqris\Helper\DuitkuConstants;
 use Duitku_Linkajaqris_Core;

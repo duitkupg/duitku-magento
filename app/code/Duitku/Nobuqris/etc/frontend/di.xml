@@ -18,7 +18,7 @@
   <type name="Magento\Checkout\Model\CompositeConfigProvider">
     <arguments>
       <argument name="configProviders" xsi:type="array">
-        <item name="duitku_nobuqrisepay_config_provicer" xsi:type="object">Duitku\Nobuqris\Model\Method\Epay\ConfigProvider</item>
+        <item name="duitku_Nobuqrisepay_config_provicer" xsi:type="object">Duitku\Nobuqris\Model\Method\Epay\ConfigProvider</item>
       </argument>
     </arguments>
   </type>

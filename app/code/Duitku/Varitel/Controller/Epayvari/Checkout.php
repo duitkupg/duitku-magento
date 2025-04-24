@@ -24,7 +24,7 @@ class Checkout extends \Duitku\Varitel\Controller\AbstractActionController
     {
     	 $obj = \Magento\Framework\App\ObjectManager::getInstance();
     	 $paymentmode = $this->_scopeConfig->getValue('payment/duitku_variepay/payment_mode', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
-    	 if($paymentmode =='1')
+       if($paymentmode =='1')
     	 {
 		 	  $url = 'https://passport.duitku.com/webapi';
 		 }else{

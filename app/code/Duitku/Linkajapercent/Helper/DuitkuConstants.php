@@ -28,8 +28,9 @@ class DuitkuConstants
     const SEND_MAIL_ORDER_CONFIRMATION = 'sendmailorderconfirmation';
     const WINDOW_STATE = 'windowstate';
     const PAYMENT_GROUP = 'paymentgroup';
-	const ENABLE_INVOICE_DATA = 'enableinvoicedata';
+      const ENABLE_INVOICE_DATA = 'enableinvoicedata';
     const ROUNDING_MODE = 'roundingmode';
+    const APIKEY = 'api_key';
 
     //Actions
     const CAPTURE = 'capture';

@@ -23,7 +23,7 @@ class Checkout extends \Duitku\Linkajapercent\Controller\AbstractActionControlle
     public function execute()
     {
     	 $obj = \Magento\Framework\App\ObjectManager::getInstance();
-    	 $paymentmode = $this->_scopeConfig->getValue('payment/duitku_linkajapercentgepay/payment_mode', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+    	 $paymentmode = $this->_scopeConfig->getValue('payment/duitku_linkajapercentepay/payment_mode', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
     	 if($paymentmode =='1')
     	 {
 		 	  $url = 'https://passport.duitku.com/webapi';
@@ -34,7 +34,7 @@ class Checkout extends \Duitku\Linkajapercent\Controller\AbstractActionControlle
         $order = $this->_getOrder();
         $this->setOrderDetails($order);
         $result = $this->getEPayPaymentWindowRequest($order);
-       	$helper = $obj->get('Duitku\Linkajapercent\Helper\Data');
+          $helper = $obj->get('Duitku\Linkajapercent\Helper\Data');
         $DuitkuCore = $helper->getDuitkuCore();
       	$redirUrl = $DuitkuCore->getRedirectionUrl($url,$result);
       	$resultarr = array();
@@ -53,7 +53,7 @@ class Checkout extends \Duitku\Linkajapercent\Controller\AbstractActionControlle
     public function getEPayPaymentWindowRequest($order)
     {
         try {
-            /** @var \Duitku\Linkajapercent\Model\Method\Epay\Payment */
+            /** @var \Duitku\Vabca\Model\Method\Epay\Payment */
             $epayMethod = $this->_getPaymentMethodInstance($order->getPayment()->getMethod());
             $response = $epayMethod->getPaymentWindow($order);
 			

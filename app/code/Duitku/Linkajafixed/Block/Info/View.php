@@ -13,8 +13,7 @@
  *
  */
 namespace Duitku\Linkajafixed\Block\Info;
-use \Duitku\Linkajafi
-\Model\Method\Epay\Payment as EpayPayment;
+use \Duitku\Linkajafixed\Model\Method\Epay\Payment as EpayPayment;
 
 class View extends \Magento\Payment\Block\Info
 {

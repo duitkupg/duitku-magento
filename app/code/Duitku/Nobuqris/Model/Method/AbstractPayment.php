@@ -119,6 +119,7 @@ abstract class AbstractPayment extends \Magento\Payment\Model\Method\AbstractMet
         $this->_request = $request;
         $this->_cart = $cart;
         $this->_messageManager = $messageManager;
+        $this->_scopeConfig = $scopeConfig;
     }
 
     /**

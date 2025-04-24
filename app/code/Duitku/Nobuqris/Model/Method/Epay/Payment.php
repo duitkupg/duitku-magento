@@ -18,7 +18,7 @@ use \Duitku\Nobuqris\Helper\DuitkuConstants;
 
 class Payment extends \Duitku\Nobuqris\Model\Method\AbstractPayment
 {
-    const METHOD_CODE = 'duitku_nobuqrisepay';
+    const METHOD_CODE = 'duitku_Nobuqrisepay';
     const METHOD_REFERENCE = 'duitkuNobuqrisReference';
 
     protected $_code = self::METHOD_CODE;
@@ -81,11 +81,13 @@ class Payment extends \Duitku\Nobuqris\Model\Method\AbstractPayment
     {
     $obj = \Magento\Framework\App\ObjectManager::getInstance();
    	$orderId = $order->getIncrementId();
-   	$merchantcode = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_nobuqrisepay/merchantnumber');
-   	$apikey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_nobuqrisepay/api_key');
+   	$merchantcode = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_Nobuqrisepay/merchantnumber',\Magento\Store\Model\ScopeInterface::SCOPE_STORE, $order->getStoreId());
+   	$apikey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_Nobuqrisepay/api_key',\Magento\Store\Model\ScopeInterface::SCOPE_STORE, $order->getStoreId());
     $amount = round($order->getBaseTotalDue());
     
-    $callbackUrl = $this->_urlBuilder->getUrl('duitku/epayNobuqris/callback');
+    $objectManager = \Magento\Framework\App\ObjectManager::getInstance(); 
+    $FormKey = $objectManager->get('Magento\Framework\Data\Form\FormKey');
+    $callbackUrl = $this->_urlBuilder->getUrl('duitku/epayNobuqris/callback?isAjax=true&form_key='.$FormKey->getFormKey());
     $returnUrl = $this->_urlBuilder->getUrl('duitku/epayNobuqris/accept');
     $merchantUserInfo = $order->getCustomerFirstname() . " " . $order->getCustomerLastname();
     $email = $order->getCustomerEmail();
@@ -176,7 +178,7 @@ class Payment extends \Duitku\Nobuqris\Model\Method\AbstractPayment
 		$params = array(
              'merchantCode' => $merchantcode,
              'paymentAmount' => $amount,
-             'paymentMethod' => 'BR',
+             'paymentMethod' => 'NQ',
 			 'merchantOrderId' =>$orderId,
              'productDetails' => 'Order : '.$orderId,
              'additionalParam' => '',

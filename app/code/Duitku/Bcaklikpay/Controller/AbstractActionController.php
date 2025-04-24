@@ -18,8 +18,12 @@ use \Magento\Sales\Model\Order;
 use \Magento\Sales\Model\Order\Payment\Transaction;
 use \Duitku\Bcaklikpay\Helper\DuitkuConstants;
 use \Duitku\Bcaklikpay\Model\Method\Epay\Payment as EpayPayment;
+use \Magento\Framework\Controller\ResultFactory;
+use \Magento\Framework\App\RequestInterface;
+use \Magento\Framework\App\Request\InvalidRequestException;
 
-abstract class AbstractActionController extends \Magento\Framework\App\Action\Action{
+abstract class AbstractActionController extends \Magento\Framework\App\Action\Action implements \Magento\Framework\App\CsrfAwareActionInterface
+{
 	/**
 	* @var \Magento\Sales\Model\OrderFactory
 	*/
@@ -102,6 +106,14 @@ abstract class AbstractActionController extends \Magento\Framework\App\Action\Ac
 	*
 	* @return \Magento\Sales\Model\Order
 	*/
+	/** * @inheritDoc */ 
+	public function createCsrfValidationException( RequestInterface $request ): ?       InvalidRequestException { 
+         return null; 
+	} 
+	/** * @inheritDoc */ 
+	public function validateForCsrf(RequestInterface $request): ?bool {     
+		return true; 
+	}
 	protected function _getOrder(){
 		$incrementId = $this->_checkoutSession->getLastRealOrderId();
 		return $this->getOrder($incrementId);

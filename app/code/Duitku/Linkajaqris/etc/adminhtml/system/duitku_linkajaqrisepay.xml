@@ -16,7 +16,7 @@
 -->
 <include xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_include.xsd">
 	<group id="duitku_linkajaqrisepay" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
-		<label>Duitku Linkajaqris Payment Solutions</label>
+		<label>Duitku LinkAja QRIS Payment Solutions</label>
 		<frontend_model>Magento\Paypal\Block\Adminhtml\System\Config\Fieldset\Payment</frontend_model>
 		<fieldset_css>duitku-epay-method</fieldset_css>
 		<field id="active" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
@@ -71,7 +71,6 @@
 			<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
 			<config_path>payment/duitku_linkajaqrisepay/instantinvoicemail</config_path>
 		</field>
-		           
 	</group>
 	
 </include>

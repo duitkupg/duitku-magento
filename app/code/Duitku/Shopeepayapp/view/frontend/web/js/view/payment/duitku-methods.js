@@ -9,7 +9,7 @@ define(
         'use strict';
         rendererList.push(
               {
-                 type: 'duitku_shopeepayappepay',
+                 type: 'duitku_shopeepayapp',
                  component: 'Duitku_Shopeepayapp/js/view/payment/method-renderer/duitku-epay-method'
              }
         );

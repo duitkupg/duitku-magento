@@ -83,9 +83,12 @@ class Payment extends \Duitku\Creditcard\Model\Method\AbstractPayment
    	$orderId = $order->getIncrementId();
    	$merchantcode = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_epay/merchantnumber');
    	$apikey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_epay/api_key');
+   	$hashAlgorithm = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_epay/hash_algorithm',\Magento\Store\Model\ScopeInterface::SCOPE_STORE, $order->getStoreId());
     $amount = round($order->getBaseTotalDue());
     
-    $callbackUrl = $this->_urlBuilder->getUrl('duitku/epay/callback');
+    $objectManager = \Magento\Framework\App\ObjectManager::getInstance(); 
+    $FormKey = $objectManager->get('Magento\Framework\Data\Form\FormKey');
+    $callbackUrl = $this->_urlBuilder->getUrl('duitku/epay/callback?isAjax=true&form_key='.$FormKey->getFormKey());
     $returnUrl = $this->_urlBuilder->getUrl('duitku/epay/accept');
     $merchantUserInfo = $order->getCustomerFirstname() . " " . $order->getCustomerLastname();
     $email = $order->getCustomerEmail();
@@ -191,6 +194,12 @@ class Payment extends \Duitku\Creditcard\Model\Method\AbstractPayment
 			 'customerDetail' => $customerDetails,
 			 'itemDetails' => $itemDetailParams
          );
+
+         if($hashAlgorithm == 1){
+          $signature = hash("sha256",$merchantcode.$orderId.$paymentAmount.$apikey);
+          $params['signature'] = $signature;
+          $params['hashAlgorithm'] = "sha256";
+         }
 		 
         return $params;
     }

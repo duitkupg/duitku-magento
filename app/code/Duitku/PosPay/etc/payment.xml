@@ -18,7 +18,7 @@
          xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Payment:etc/payment.xsd">
   <groups>
     <group id="duitku">
-      <label>Duitku PosPay Methods</label>
+      <label>Duitku PosPay Payment Methods</label>
     </group>
   </groups>
   <methods>

@@ -12,7 +12,7 @@
  * @license   Duitku Dana
  *
  */
-namespace Duitku\Dana\Controller\Epayovo;
+namespace Duitku\Dana\Controller\Epaydana;
 
 class Accept extends \Duitku\Dana\Controller\AbstractActionController
 {

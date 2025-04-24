@@ -18,11 +18,11 @@
          xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Payment:etc/payment.xsd">
   <groups>
     <group id="duitku">
-      <label>Duitku Nobuqris Methods</label>
+      <label>Duitku Nobuqris Payment Methods</label>
     </group>
   </groups>
   <methods>
-     <method name="duitku_nobuqrisepay">
+     <method name="duitku_Nobuqrisepay">
       <allow_multiple_address>1</allow_multiple_address>
     </method>
   </methods>

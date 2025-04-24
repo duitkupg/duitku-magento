@@ -18,7 +18,8 @@
   <system>
     <section id="payment" translate="label" type="text" sortOrder="400" showInDefault="1" showInWebsite="1" showInStore="1">
       <group id="duitku_linkajapercent" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
-        <label>Duitku Linkajapercent</label>
+        <label>Duitku LinkAja</label>
+
         <fieldset_css>complex</fieldset_css>
         
 		<field id="active" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
@@ -54,8 +55,7 @@
 			<source_model>Magento\Sales\Model\Config\Source\Order\Status\Processing</source_model>
 			<config_path>payment/duitku_linkajapercentepay/order_status</config_path>
 			<comment><![CDATA[The order status after payment is compleated]]></comment>
-		</field>
-		
+		</field> 
 		<field id="sendmailorderconfirmation" type="select" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="1">
 			<label><![CDATA[<b>Send Email Order Confirmation:</b>]]></label>
 			<comment><![CDATA[Enabling this setting will result in an order confirmation is e-mailed to the customer as the payment is made.]]></comment>

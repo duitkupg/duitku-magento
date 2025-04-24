@@ -12,7 +12,7 @@
  * @license   Duitku Nobuqris
  *
  */
-namespace Duitku\Nobuqris\Controller\EpayNobuqris;
+namespace Duitku\Nobuqris\Controller\Epaynobuqris;
 use Magento\Framework\Controller\ResultFactory;
 
 class Checkout extends \Duitku\Nobuqris\Controller\AbstractActionController
@@ -23,7 +23,7 @@ class Checkout extends \Duitku\Nobuqris\Controller\AbstractActionController
     public function execute()
     {
     	 $obj = \Magento\Framework\App\ObjectManager::getInstance();
-    	 $paymentmode = $this->_scopeConfig->getValue('payment/duitku_nobuqrisepay/payment_mode', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+    	 $paymentmode = $this->_scopeConfig->getValue('payment/duitku_Nobuqrisepay/payment_mode', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
     	 if($paymentmode =='1')
     	 {
 		 	  $url = 'https://passport.duitku.com/webapi';

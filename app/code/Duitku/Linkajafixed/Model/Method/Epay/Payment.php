@@ -82,14 +82,16 @@ class Payment extends \Duitku\Linkajafixed\Model\Method\AbstractPayment
     $obj = \Magento\Framework\App\ObjectManager::getInstance();
    	$orderId = $order->getIncrementId();
    	$merchantcode = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_linkajafixedepay/merchantnumber');
-   	$apikey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_linkajafixedepay/api_key');
+  	 $apikey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_linkajafixedepay/api_key');
     $amount = round($order->getBaseTotalDue());
     
-    $callbackUrl = $this->_urlBuilder->getUrl('duitku/epaylinkajafixed/callback');
+    $objectManager = \Magento\Framework\App\ObjectManager::getInstance(); 
+    $FormKey = $objectManager->get('Magento\Framework\Data\Form\FormKey');
+    $callbackUrl = $this->_urlBuilder->getUrl('duitku/epaylinkajafixed/callback?isAjax=true&form_key='.$FormKey->getFormKey());
     $returnUrl = $this->_urlBuilder->getUrl('duitku/epaylinkajafixed/accept');
     $merchantUserInfo = $order->getCustomerFirstname() . " " . $order->getCustomerLastname();
     $email = $order->getCustomerEmail();
-		
+
 	//ItemDetails
 	$itemsData = $order->getAllItems();
 	$shippingAmountData = $order->getShippingAmount();

@@ -85,7 +85,9 @@ class Payment extends \Duitku\Bcaklikpay\Model\Method\AbstractPayment
 	$apikey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_bcaepay/api_key');
 	
     $amount = round($order->getBaseTotalDue());
-    $callbackUrl = $this->_urlBuilder->getUrl('duitku/epaybca/callback');
+    $objectManager = \Magento\Framework\App\ObjectManager::getInstance(); 
+    $FormKey = $objectManager->get('Magento\Framework\Data\Form\FormKey');
+    $callbackUrl = $this->_urlBuilder->getUrl('duitku/epaybca/callback?isAjax=true&form_key='.$FormKey->getFormKey());
     $returnUrl = $this->_urlBuilder->getUrl('duitku/epaybca/accept');
     $merchantUserInfo = $order->getCustomerFirstname() . " " . $order->getCustomerLastname();
     $email = $order->getCustomerEmail();

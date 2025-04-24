@@ -1,15 +1,15 @@
 <?php
 /**
- * Copyright (c) 2017. All rights reserved Duitku Shopeepayapp.
+ * Copyright (c) 2017. All rights reserved Duitku Shopee.
  *
  * This program is free software. You are allowed to use the software but NOT allowed to modify the software.
  * It is also not legal to do any changes to the software and distribute it in your own name / brand.
  *
  * All use of the payment modules happens at your own risk. We offer a free test account that you can use to test the module.
  *
- * @author    Duitku Shopeepayapp
- * @copyright Duitku Shopeepayapp (http://duitku.com)
- * @license   Duitku Shopeepayapp
+ * @author    Duitku Shopee
+ * @copyright Duitku Shopee (http://duitku.com)
+ * @license   Duitku Shopee
  *
  */
 namespace Duitku\Shopeepayapp\Controller\Epayshopeepayapp;
@@ -85,13 +85,13 @@ class Callback extends \Duitku\Shopeepayapp\Controller\AbstractActionController
             $message .= "The Payment object is null";
             return false;
         }
-        
+		
 		$merchantCode = isset($posted['merchantCode']) ? $posted['merchantCode'] : null; 
 		$amount = isset($posted['amount']) ? $posted['amount'] : null; 
 		$merchantOrderId = isset($posted['merchantOrderId']) ? $posted['merchantOrderId'] : null;
 		$signature = isset($posted['signature']) ? $posted['signature'] : null; 
 		$obj = \Magento\Framework\App\ObjectManager::getInstance();
-		$apiKey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_shopeepayappepay/api_key');
+		$apiKey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_shopeepayapp/api_key');
 		$params = $merchantCode . $amount . $merchantOrderId . $apiKey;
 		$resultCode = isset($posted['resultCode']) ? $posted['resultCode']:null;
 

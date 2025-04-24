@@ -9,7 +9,7 @@ define(
         'use strict';
         rendererList.push(
               {
-                 type: 'duitku_nobuqrisepay',
+                 type: 'duitku_Nobuqrisepay',
                  component: 'Duitku_Nobuqris/js/view/payment/method-renderer/duitku-epay-method'
              }
         );

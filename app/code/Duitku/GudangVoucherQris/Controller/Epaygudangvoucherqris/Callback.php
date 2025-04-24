@@ -1,25 +1,25 @@
 <?php
 /**
- * Copyright (c) 2017. All rights reserved Duitku Atome.
+ * Copyright (c) 2017. All rights reserved Duitku GudangVoucherQris.
  *
  * This program is free software. You are allowed to use the software but NOT allowed to modify the software.
  * It is also not legal to do any changes to the software and distribute it in your own name / brand.
  *
  * All use of the payment modules happens at your own risk. We offer a free test account that you can use to test the module.
  *
- * @author    Duitku Atome
- * @copyright Duitku Atome (http://duitku.com)
- * @license   Duitku Atome
+ * @author    Duitku GudangVoucherQris
+ * @copyright Duitku GudangVoucherQris (http://duitku.com)
+ * @license   Duitku GudangVoucherQris
  *
  */
-namespace Duitku\Atome\Controller\Epayatome;
+namespace Duitku\GudangVoucherQris\Controller\Epaygudangvoucherqris;
 
 use \Magento\Framework\Webapi\Exception;
 use \Magento\Framework\Webapi\Response;
-use \Duitku\Atome\Model\Method\Epay\Payment as EpayPayment;
-use \Duitku\Atome\Helper\DuitkuConstants;
+use \Duitku\GudangVoucherQris\Model\Method\Epay\Payment as EpayPayment;
+use \Duitku\GudangVoucherQris\Helper\DuitkuConstants;
 
-class Callback extends \Duitku\Atome\Controller\AbstractActionController
+class Callback extends \Duitku\GudangVoucherQris\Controller\AbstractActionController
 {
     /**
      * Callback Action
@@ -60,6 +60,7 @@ class Callback extends \Duitku\Atome\Controller\AbstractActionController
      */
     public function validateCallback($posted, &$order, &$message)
     {
+ 
         //Validate response
         if (!isset($posted)) {
             $message .= "Response is null";
@@ -67,7 +68,7 @@ class Callback extends \Duitku\Atome\Controller\AbstractActionController
         }
 
         //Validate parameteres
-        if (!$posted['merchantOrderId'] || !$posted['resultCode'] || !$posted['reference'] ) {
+        if (!$posted['merchantOrderId'] || !$posted['resultCode'] || !$posted['reference'] || !$posted['signature'] ) {
             $message .= "Parameteres are missing. Request: " . json_encode($posted);
             return false;
         }
@@ -84,16 +85,16 @@ class Callback extends \Duitku\Atome\Controller\AbstractActionController
         if (!isset($payment)) {
             $message .= "The Payment object is null";
             return false;
-        }
-        
-		$merchantCode = isset($posted['merchantCode']) ? $posted['merchantCode'] : null; 
-		$amount = isset($posted['amount']) ? $posted['amount'] : null; 
-		$merchantOrderId = isset($posted['merchantOrderId']) ? $posted['merchantOrderId'] : null;
-		$signature = isset($posted['signature']) ? $posted['signature'] : null; 
-		$obj = \Magento\Framework\App\ObjectManager::getInstance();
-		$apiKey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_atomeepay/api_key');
-		$params = $merchantCode . $amount . $merchantOrderId . $apiKey;
-		$resultCode = isset($posted['resultCode']) ? $posted['resultCode']:null;
+	     }
+         
+	     $merchantCode = isset($posted['merchantCode']) ? $posted['merchantCode'] : null; 
+	     $amount = isset($posted['amount']) ? $posted['amount'] : null; 
+	     $merchantOrderId = isset($posted['merchantOrderId']) ? $posted['merchantOrderId'] : null;
+         $signature = isset($posted['signature']) ? $posted['signature'] : null; 
+	     $obj = \Magento\Framework\App\ObjectManager::getInstance();
+  	     $apiKey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_gudangvoucherepay/api_key');
+	     $params = $merchantCode . $amount . $merchantOrderId . $apiKey;
+	     $resultCode = isset($posted['resultCode']) ? $posted['resultCode']:null;
 
 
 	    //check signature
@@ -106,7 +107,7 @@ class Callback extends \Duitku\Atome\Controller\AbstractActionController
 		$message .= "failed transaction";
 		return false;
     	}
-		
+
         return true;
     }
 
@@ -125,7 +126,7 @@ class Callback extends \Duitku\Atome\Controller\AbstractActionController
         try {
             $pspReference = $payment->getAdditionalInformation(EpayPayment::METHOD_REFERENCE);
             if (empty($pspReference)) {
-                /** @var \Duitku\Atome\Model\Method\Epay\Payment */
+                /** @var \Duitku\GudangVoucherQris\Model\Method\Epay\Payment */
                 $paymentMethod = $this->_getPaymentMethodInstance($order->getPayment()->getMethod());
                  $this->_processCallbackData($order,
                      $paymentMethod,

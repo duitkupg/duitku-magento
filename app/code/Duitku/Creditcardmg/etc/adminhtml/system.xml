@@ -74,11 +74,6 @@
 			<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
 			<config_path>payment/duitku_creditcardmgepay/instantinvoicemail</config_path>
 		</field>
-		<field id="credcode" translate="label" type="text" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
-			<label>Credential Code</label>
-			<config_path>payment/duitku_creditcardmgepay/credcode</config_path>
-			<comment>Credential Code from duitku</comment>
-		</field>
       </group>
     </section>
   </system>

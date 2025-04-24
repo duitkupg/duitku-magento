@@ -1,13 +1,13 @@
 <?php
 include_once('ApiRequestor.php');
-class Duitku_Creditcardmg_Core {
+class Duitku_GudangVoucherQris_Core {
 
   public static function getRedirectionUrl($baseUrl, $params)
   {
   	
     //$payloads = array();
     //$payloads = array_replace_recursive($payloads, $params);    
-    $ApiRequestor = new Duitku_Creditcardmg_ApiRequestor();
+    $ApiRequestor = new Duitku_GudangVoucherQris_ApiRequestor();
     $result =$ApiRequestor->post($baseUrl . '/api/merchant/v2/inquiry',$params);
 	
     //die();
@@ -31,7 +31,7 @@ class Duitku_Creditcardmg_Core {
         );
 
         //throw error if failed
-        $result = Duitku_Creditcardmg_ApiRequestor::post($url,$params);    
+        $result = Duitku_GudangVoucherQris_ApiRequestor::post($url,$params);    
 
 		if ($result->statusCode == "00")			
 			return true;

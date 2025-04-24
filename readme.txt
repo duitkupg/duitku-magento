@@ -19,8 +19,8 @@ Install & activate the plugin. Modify some options in the settings page to suits
 -
 == Changelog ==
 
-= 2.13 Aug 31, 2022 = 
-- Add Atome
+= 2.13 Sept 27, 2022 = 
+- Fixing MG create invoice
 
 = 2.12 Aug 29, 2022 = 
 - Change hash method from m5 to sha256 for security reasons

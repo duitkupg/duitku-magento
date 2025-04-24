@@ -1,29 +1,29 @@
 <?php
 /**
- * Copyright (c) 2017. All rights reserved Duitku Creditcard MIGS.
+ * Copyright (c) 2017. All rights reserved Duitku GudangVoucherQris.
  *
  * This program is free software. You are allowed to use the software but NOT allowed to modify the software.
  * It is also not legal to do any changes to the software and distribute it in your own name / brand.
  *
  * All use of the payment modules happens at your own risk. We offer a free test account that you can use to test the module.
  *
- * @author    Duitku Creditcardmg
- * @copyright Duitku Creditcardmg (http://duitku.com)
- * @license   Duitku Creditcardmg
+ * @author    Duitku GudangVoucherQris
+ * @copyright Duitku GudangVoucherQris (http://duitku.com)
+ * @license   Duitku GudangVoucherQris
  *
  */
-namespace Duitku\Creditcardmg\Model\Method\Epay;
+namespace Duitku\GudangVoucherQris\Model\Method\Epay;
 use \Magento\Sales\Model\Order\Payment\Transaction;
-use \Duitku\Creditcardmg\Helper\DuitkuConstants;
+use \Duitku\GudangVoucherQris\Helper\DuitkuConstants;
 
-class Payment extends \Duitku\Creditcardmg\Model\Method\AbstractPayment
+class Payment extends \Duitku\GudangVoucherQris\Model\Method\AbstractPayment
 {
-    const METHOD_CODE = 'duitku_creditcardmgepay';
-    const METHOD_REFERENCE = 'duitkuCreditcardmgReference';
+    const METHOD_CODE = 'duitku_gudangvoucherepay';
+    const METHOD_REFERENCE = 'duitkugudangvoucherReference';
 
     protected $_code = self::METHOD_CODE;
 
-    protected $_infoBlockType = 'Duitku\Creditcardmg\Block\Info\View';
+    protected $_infoBlockType = 'Duitku\GudangVoucherQris\Block\Info\View';
 
     /**
      * Payment Method feature
@@ -37,14 +37,14 @@ class Payment extends \Duitku\Creditcardmg\Model\Method\AbstractPayment
     protected $_canDelete                   = true;
 
     /**
-     * @var \Duitku\Creditcardmg\Model\Api\Epay\Request\Models\Auth
+     * @var \Duitku\GudangVoucherQris\Model\Api\Epay\Request\Models\Auth
      */
     protected $_auth;
 
     /**
      * Get ePay Auth object
      *
-     * @return \Duitku\Creditcardmg\Model\Api\Epay\Request\Models\Auth
+     * @return \Duitku\GudangVoucherQris\Model\Api\Epay\Request\Models\Auth
      */
     public function getAuth()
     {
@@ -60,7 +60,7 @@ class Payment extends \Duitku\Creditcardmg\Model\Method\AbstractPayment
      * Get Duitku Checkout payment window
      *
      * @param \Magento\Sales\Model\Order
-     * @return \Duitku\Creditcardmg\Model\Api\Epay\Request\Payment
+     * @return \Duitku\GudangVoucherQris\Model\Api\Epay\Request\Payment
      */
     public function getPaymentWindow($order)
     {
@@ -75,19 +75,20 @@ class Payment extends \Duitku\Creditcardmg\Model\Method\AbstractPayment
      * Create the ePay payment window Request url
      *
      * @param \Magento\Sales\Model\Order
-     * @return \Duitku\Creditcardmg\Model\Api\Epay\Request\Payment
+     * @return \Duitku\GudangVoucherQris\Model\Api\Epay\Request\Payment
      */
     public function createPaymentRequest($order)
     {
     $obj = \Magento\Framework\App\ObjectManager::getInstance();
    	$orderId = $order->getIncrementId();
-   	$merchantcode = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_creditcardmgepay/merchantnumber');
-  	 $apikey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_creditcardmgepay/api_key');
+   	$merchantcode = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_gudangvoucherepay/merchantnumber');
+  	 $apikey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_gudangvoucherepay/api_key');
     $amount = round($order->getBaseTotalDue());
+    
     $objectManager = \Magento\Framework\App\ObjectManager::getInstance(); 
     $FormKey = $objectManager->get('Magento\Framework\Data\Form\FormKey');
-    $callbackUrl = $this->_urlBuilder->getUrl('duitku/EpayCreditcardmg/callback?isAjax=true&form_key='.$FormKey->getFormKey());
-    $returnUrl = $this->_urlBuilder->getUrl('duitku/EpayCreditcardmg/accept');
+    $callbackUrl = $this->_urlBuilder->getUrl('duitku/epaygudangvoucher/callback?isAjax=true&form_key='.$FormKey->getFormKey());
+    $returnUrl = $this->_urlBuilder->getUrl('duitku/epaygudangvoucher/accept');
     $merchantUserInfo = $order->getCustomerFirstname() . " " . $order->getCustomerLastname();
     $email = $order->getCustomerEmail();
 
@@ -177,7 +178,7 @@ class Payment extends \Duitku\Creditcardmg\Model\Method\AbstractPayment
 		$params = array(
              'merchantCode' => $merchantcode,
              'paymentAmount' => $amount,
-             'paymentMethod' => 'MG',
+             'paymentMethod' => 'GQ',
 			 'merchantOrderId' =>$orderId,
              'productDetails' => 'Order : '.$orderId,
              'additionalParam' => '',
@@ -186,12 +187,12 @@ class Payment extends \Duitku\Creditcardmg\Model\Method\AbstractPayment
 			 'email' => $email,
 			 'phoneNumber' => $order->getBillingAddress()->getTelephone(),		 
              'callbackUrl' => $callbackUrl,
-			 'expiryPeriod' => 10,
+			 'expiryPeriod' => 1440,
              'returnUrl' => $returnUrl,
              'signature' => $signature,
 			 'customerDetail' => $customerDetails,
 			 'itemDetails' => $itemDetailParams,
-             'hashAlgorithm' => 'sha256'
+       'hashAlgorithm' => 'sha256'
          );
 		 
         return $params;
@@ -252,7 +253,7 @@ class Payment extends \Duitku\Creditcardmg\Model\Method\AbstractPayment
      *
      * @param mixed $transactionId
      * @param string &$message
-     * @return \Duitku\Creditcardmg\Model\Api\Epay\Response\Models\TransactionInformationType|null
+     * @return \Duitku\GudangVoucherQris\Model\Api\Epay\Response\Models\TransactionInformationType|null
      */
    
 
@@ -294,7 +295,7 @@ class Payment extends \Duitku\Creditcardmg\Model\Method\AbstractPayment
      */
     public function getCheckoutUrl()
     {
-        return $this->_urlBuilder->getUrl('duitku/EpayCreditcardmg/checkout', ['_secure' => $this->_request->isSecure()]);
+        return $this->_urlBuilder->getUrl('duitku/epaygudangvoucher/checkout', ['_secure' => $this->_request->isSecure()]);
     }
 
     /**
@@ -304,7 +305,7 @@ class Payment extends \Duitku\Creditcardmg\Model\Method\AbstractPayment
      */
     public function getCancelUrl()
     {
-        return $this->_urlBuilder->getUrl('duitku/EpayCreditcardmg/cancel', ['_secure' => $this->_request->isSecure()]);
+        return $this->_urlBuilder->getUrl('duitku/epaygudangvoucher/cancel', ['_secure' => $this->_request->isSecure()]);
     }
 
 	private function repString($str) {

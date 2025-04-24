@@ -1,21 +1,21 @@
 <?php
 /**
- * Copyright (c) 2017. All rights reserved Duitku Atome.
+ * Copyright (c) 2017. All rights reserved Duitku GudangVoucherQris.
  *
  * This program is free software. You are allowed to use the software but NOT allowed to modify the software.
  * It is also not legal to do any changes to the software and distribute it in your own name / brand.
  *
  * All use of the payment modules happens at your own risk. We offer a free test account that you can use to test the module.
  *
- * @author    Duitku Atome
- * @copyright Duitku Atome (http://duitku.com)
- * @license   Duitku Atome
+ * @author    Duitku GudangVoucherQris
+ * @copyright Duitku GudangVoucherQris (http://duitku.com)
+ * @license   Duitku GudangVoucherQris
  *
  */
-namespace Duitku\Atome\Controller\Epayatome;
+namespace Duitku\GudangVoucherQris\Controller\Epaygudangvoucher;
 use Magento\Framework\Controller\ResultFactory;
 
-class Checkout extends \Duitku\Atome\Controller\AbstractActionController
+class Checkout extends \Duitku\GudangVoucherQris\Controller\AbstractActionController
 {
     /**
      * Checkout Action
@@ -23,7 +23,7 @@ class Checkout extends \Duitku\Atome\Controller\AbstractActionController
     public function execute()
     {
     	 $obj = \Magento\Framework\App\ObjectManager::getInstance();
-    	 $paymentmode = $this->_scopeConfig->getValue('payment/duitku_atomeepay/payment_mode', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+    	 $paymentmode = $this->_scopeConfig->getValue('payment/duitku_gudangvoucherepay/payment_mode', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
     	 if($paymentmode =='1')
     	 {
 		 	  $url = 'https://passport.duitku.com/webapi';
@@ -34,7 +34,7 @@ class Checkout extends \Duitku\Atome\Controller\AbstractActionController
         $order = $this->_getOrder();
         $this->setOrderDetails($order);
         $result = $this->getEPayPaymentWindowRequest($order);
-       	$helper = $obj->get('Duitku\Atome\Helper\Data');
+          $helper = $obj->get('Duitku\GudangVoucherQris\Helper\Data');
         $DuitkuCore = $helper->getDuitkuCore();
       	$redirUrl = $DuitkuCore->getRedirectionUrl($url,$result);
       	$resultarr = array();
@@ -53,7 +53,7 @@ class Checkout extends \Duitku\Atome\Controller\AbstractActionController
     public function getEPayPaymentWindowRequest($order)
     {
         try {
-            /** @var \Duitku\Atome\Model\Method\Epay\Payment */
+            /** @var \Duitku\Vabca\Model\Method\Epay\Payment */
             $epayMethod = $this->_getPaymentMethodInstance($order->getPayment()->getMethod());
             $response = $epayMethod->getPaymentWindow($order);
 			

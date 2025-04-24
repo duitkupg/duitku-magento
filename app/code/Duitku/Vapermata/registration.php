@@ -1,2 +1,17 @@
-<?php use\Magento\Framework\Component\ComponentRegistrar;ComponentRegistrar::register(ComponentRegistrar::MODULE,"\x44\x75\x69\x74k\x75\x5fV\x61\x70\x65\x72\x6d\x61\x74a",__DIR__);
-?>
+<?php
+/**
+ * Copyright (c) 2017. All rights reserved Duitku Vapermata.
+ *
+ * This program is free software. You are allowed to use the software but NOT allowed to modify the software.
+ * It is also not legal to do any changes to the software and distribute it in your own name / brand.
+ *
+ * All use of the payment modules happens at your own risk. We offer a free test account that you can use to test the module.
+ *
+ * @author    Duitku Vapermata
+ * @copyright Duitku Vapermata (http://duitku.com)
+ * @license   Duitku Vapermata
+ *
+ */
+use \Magento\Framework\Component\ComponentRegistrar;
+
+ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Duitku_Vapermata', __DIR__);

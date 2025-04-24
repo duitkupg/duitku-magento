@@ -1,2 +1,0 @@
-<?php namespace Duitku\Online\Model\Method;class DuitkuAdvanced extends\Magento\Payment\Model\Method\AbstractMethod{const METHOD_CODE="du\x69t\x6b\x75\x5fa\x64v\x61n\x63\x65\x64";protected$_code=self::METHOD_CODE;protected$_isGateway=false;protected$_canAuthorize=false;protected$_isInitializeNeeded=false;}
-?>

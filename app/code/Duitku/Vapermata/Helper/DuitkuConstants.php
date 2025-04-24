@@ -1,2 +1,40 @@
-<?php namespace Duitku\Vapermata\Helper;class DuitkuConstants{const ORDER_STATUS="\x6f\x72\x64er_\x73\x74a\x74u\x73";const MASS_CAPTURE_INVOICE_MAIL="m\x61ss\x63\x61pt\x75\x72ein\x76\x6fi\x63e\x6d\x61il";const TITLE="t\x69tl\x65";const MERCHANT_NUMBER="m\x65\x72\x63\x68\x61\x6e\x74\x6e\x75mber";const INSTANT_INVOICE="in\x73\x74a\x6e\x74\x69n\x76o\x69\x63\x65";const INSTANT_INVOICE_MAIL="in\x73\x74a\x6e\x74i\x6e\x76\x6f\x69\x63\x65mail";const SEND_MAIL_ORDER_CONFIRMATION="s\x65nd\x6d\x61i\x6c\x6fr\x64\x65rconfi\x72\x6d\x61tion";const WINDOW_STATE="wi\x6e\x64owstate";const PAYMENT_GROUP="\x70ay\x6d\x65\x6et\x67\x72\x6f\x75\x70";const ENABLE_INVOICE_DATA="e\x6ea\x62\x6c\x65\x69\x6e\x76\x6f\x69\x63e\x64at\x61";const ROUNDING_MODE="roundi\x6e\x67mo\x64\x65";const APIKEY="a\x70\x69_k\x65\x79";const CAPTURE="\x63ap\x74ur\x65";const REFUND="r\x65\x66\x75nd";const VOID="\x76oi\x64";const GET_TRANSACTION="\x67\x65tt\x72\x61ns\x61ct\x69on";}
-?>
+<?php
+/**
+ * Copyright (c) 2017. All rights reserved Duitku Vapermata.
+ *
+ * This program is free software. You are allowed to use the software but NOT allowed to modify the software.
+ * It is also not legal to do any changes to the software and distribute it in your own name / brand.
+ *
+ * All use of the payment modules happens at your own risk. We offer a free test account that you can use to test the module.
+ *
+ * @author    Duitku Vapermata
+ * @copyright Duitku Vapermata (http://duitku.com)
+ * @license   Duitku Vapermata
+ *
+ */
+namespace Duitku\Vapermata\Helper;
+
+class DuitkuConstants
+{
+    
+   
+    //Config constants
+    const ORDER_STATUS = 'order_status';
+    const MASS_CAPTURE_INVOICE_MAIL = 'masscaptureinvoicemail';
+    const TITLE = 'title';
+    const MERCHANT_NUMBER = 'merchantnumber';
+    const INSTANT_INVOICE = 'instantinvoice';
+    const INSTANT_INVOICE_MAIL = 'instantinvoicemail';
+    const SEND_MAIL_ORDER_CONFIRMATION = 'sendmailorderconfirmation';
+    const WINDOW_STATE = 'windowstate';
+    const PAYMENT_GROUP = 'paymentgroup';
+      const ENABLE_INVOICE_DATA = 'enableinvoicedata';
+    const ROUNDING_MODE = 'roundingmode';
+    const APIKEY = 'api_key';
+
+    //Actions
+    const CAPTURE = 'capture';
+    const REFUND = 'refund';
+    const VOID = 'void';
+    const GET_TRANSACTION = 'gettransaction';
+}

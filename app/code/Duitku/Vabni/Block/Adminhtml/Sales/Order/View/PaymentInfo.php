@@ -1,2 +1,178 @@
-<?php namespace Duitku\Vabni\Block\Adminhtml\Sales\Order\View;${"\x47L\x4f\x42\x41\x4c\x53"}["y\x71\x6a\x72p\x67ls"]="\x72\x65\x73";${"\x47LO\x42\x41\x4cS"}["\x76\x61hb\x6d\x64nh\x72\x69\x76\x6f"]="histor\x79\x41\x72r\x61\x79";${"\x47L\x4fB\x41\x4c\x53"}["h\x6c\x70\x65\x63b\x78"]="f\x69\x72s\x74\x4cet\x74\x65\x72";${"GL\x4f\x42A\x4cS"}["\x67\x63\x67nfx\x65\x71\x7av\x70"]="\x66\x69\x72\x73\x74\x4ce\x74\x74\x65rToUp\x70\x65\x72";${"\x47\x4c\x4f\x42\x41\x4cS"}["h\x6e\x75\x64ui\x68ju"]="\x73ta\x74u\x73";${"\x47\x4cO\x42A\x4cS"}["xo\x64v\x70l\x65\x62"]="\x6f\x72\x64\x65\x72";${"G\x4c\x4f\x42\x41L\x53"}["w\x7ap\x6e\x76\x6cb"]="\x6d\x65s\x73\x61\x67e";${"\x47\x4cOBA\x4cS"}["biy\x71\x6f\x6d\x63"]="t\x72\x61ns\x61\x63\x74io\x6e";${"G\x4c\x4fBALS"}["wk\x70\x7agic"]="\x74\x72\x61\x6e\x73\x61c\x74\x69o\x6eI\x64";${"\x47\x4c\x4fB\x41\x4c\x53"}["ij\x75m\x77\x76\x6bo\x79\x64h"]="\x65\x50\x61y\x4d\x65\x74\x68od";${"G\x4cO\x42\x41L\x53"}["y\x68h\x69g\x79y\x6dw\x6e\x6e"]="pa\x79\x6de\x6e\x74Metho\x64";${"\x47LOBA\x4c\x53"}["\x61\x67\x77su\x6d\x68\x74\x74"]="p\x61\x79me\x6et";${"G\x4cOB\x41\x4cS"}["\x73\x69b\x71d\x79\x61bb\x79\x79"]="\x72\x65s\x75l\x74";${"\x47\x4c\x4f\x42\x41\x4c\x53"}["\x71\x6a\x68\x6ac\x71\x76\x77"]="\x64\x75\x69\x74\x6b\x75\x48\x65lp\x65\x72";use Duitku\Vabni\Model\Method\Epay\Payment as EpayPayment;use Duitku\Vabni\Helper\DuitkuConstants;class PaymentInfo extends\Magento\Backend\Block\Template{protected$_registry;protected$_priceHelper;protected$_duitkuHelper;public function __construct(\Magento\Backend\Block\Template\Context$context,\Magento\Framework\Registry$registry,\Magento\Framework\Pricing\Helper\Data$priceHelper,\Duitku\Vabni\Helper\Data$duitkuHelper,array$data=[]){$wdtbtlwep="\x63\x6fnt\x65\x78\x74";${"\x47\x4c\x4f\x42\x41L\x53"}["ap\x6f\x74\x66\x6a\x69"]="re\x67\x69\x73\x74\x72y";${"GLO\x42\x41\x4cS"}["\x74\x75\x6e\x71v\x61eu"]="\x64\x61\x74a";parent::__construct(${$wdtbtlwep},${${"GL\x4fB\x41LS"}["tu\x6eq\x76\x61\x65\x75"]});$irtkqsm="p\x72\x69\x63\x65\x48el\x70\x65\x72";$this->_registry=${${"\x47\x4c\x4f\x42\x41L\x53"}["\x61\x70\x6f\x74\x66j\x69"]};$this->_priceHelper=${$irtkqsm};$this->_duitkuHelper=${${"G\x4cO\x42\x41LS"}["qj\x68\x6ac\x71v\x77"]};}protected function _toHtml(){return($this->getOrder()->getPayment()->getMethod()===EpayPayment::METHOD_CODE)?parent::_toHtml():"";}public function getOrder(){return$this->_registry->registry("c\x75\x72r\x65\x6e\x74\x5forde\x72");}public function getTransactionData(){${"\x47L\x4f\x42\x41LS"}["\x75mc\x74net"]="\x6f\x72\x64\x65r";${${"GL\x4f\x42A\x4c\x53"}["\x73\x69bq\x64\x79ab\x62y\x79"]}="";$hgvgdtcs="\x70\x61\x79m\x65n\x74\x4d\x65\x74h\x6f\x64";${"G\x4c\x4fB\x41\x4c\x53"}["\x6df\x6cre\x6b\x70m\x6ee"]="st\x6fre\x49\x64";${${"\x47\x4cOBAL\x53"}["\x75\x6d\x63\x74\x6ee\x74"]}=$this->getOrder();${${"\x47\x4c\x4fBA\x4c\x53"}["\x6d\x66\x6cr\x65\x6b\x70m\x6e\x65"]}=$order->getStoreId();${${"\x47\x4cO\x42\x41\x4cS"}["a\x67w\x73u\x6d\x68\x74\x74"]}=$order->getPayment();${${"\x47\x4c\x4fBA\x4c\x53"}["\x79\x68\x68\x69\x67\x79y\x6d\x77\x6e\x6e"]}=$payment->getMethod();if(${$hgvgdtcs}===EpayPayment::METHOD_CODE){${${"G\x4c\x4f\x42\x41\x4c\x53"}["\x69ju\x6d\x77\x76\x6bo\x79d\x68"]}=$payment->getMethodInstance();if(isset(${${"GL\x4fBA\x4cS"}["\x69\x6a\x75\x6d\x77vko\x79\x64\x68"]})){$odrqtfqvplmu="t\x72\x61\x6e\x73ac\x74i\x6f\x6e\x49\x64";$witujtiszoz="eP\x61\x79\x4det\x68\x6fd";${${"\x47\x4cO\x42\x41\x4cS"}["\x77\x6b\x70\x7a\x67ic"]}=$payment->getAdditionalInformation(${$witujtiszoz}::METHOD_REFERENCE);if(!empty(${$odrqtfqvplmu})){$jvopmqlu="\x6de\x73\x73\x61\x67\x65";${$jvopmqlu}="";$penybydx="\x74r\x61\x6esa\x63\x74\x69o\x6e";${"\x47\x4cO\x42\x41\x4c\x53"}["\x6f\x65wo\x74eo\x6f"]="\x73\x74\x6f\x72\x65\x49\x64";${"G\x4c\x4f\x42AL\x53"}["\x66\x6ak\x77pv"]="\x74\x72\x61\x6e\x73\x61\x63\x74\x69\x6fnI\x64";${${"\x47L\x4fBAL\x53"}["b\x69y\x71\x6fm\x63"]}=$ePayMethod->getTransaction(${${"G\x4cOB\x41\x4c\x53"}["fj\x6b\x77\x70v"]},${${"\x47\x4cOB\x41\x4c\x53"}["\x77\x7ap\x6evlb"]});if(isset(${$penybydx})){$dhrswrb="\x72\x65s\x75\x6ct";${$dhrswrb}=$this->createEpayTransactionHtml(${${"G\x4c\x4f\x42\x41\x4c\x53"}["\x62\x69y\x71\x6f\x6dc"]},${${"\x47\x4c\x4fB\x41\x4c\x53"}["\x78\x6fdv\x70\x6ceb"]});}elseif($ePayMethod->getConfigData(DuitkuConstants::REMOTE_INTERFACE,${${"G\x4c\x4f\x42\x41LS"}["\x6f\x65\x77ot\x65\x6f\x6f"]})==0){${${"G\x4cO\x42ALS"}["s\x69b\x71\x64y\x61\x62b\x79\x79"]}="";}else{$ujbdcxojhgax="r\x65\x73\x75\x6c\x74";${$ujbdcxojhgax}="";}}}}return${${"\x47\x4c\x4f\x42\x41\x4c\x53"}["\x73i\x62\x71\x64\x79a\x62b\x79\x79"]};}public function checkoutStatus($status){$zlrnmippbr="\x66\x69\x72\x73\x74L\x65tt\x65\x72";${"G\x4cO\x42A\x4c\x53"}["\x77\x68\x61\x76k\x74\x67ke"]="\x73\x74\x61\x74u\x73";${"\x47\x4cO\x42\x41\x4cS"}["\x6c\x77f\x79\x6d\x71dl"]="r\x65\x73\x75\x6c\x74";$hxfyothrdb="\x73tatu\x73";if(!isset(${${"GL\x4f\x42A\x4c\x53"}["\x68\x6eu\x64u\x69\x68\x6a\x75"]})){return"";}${$zlrnmippbr}=substr(${${"\x47L\x4f\x42\x41\x4cS"}["\x77hav\x6b\x74gk\x65"]},0,1);${"\x47LO\x42\x41\x4cS"}["\x6a\x6f\x6d\x73m\x73"]="\x66i\x72s\x74\x4cet\x74\x65\x72T\x6f\x55p\x70\x65\x72";${${"\x47L\x4f\x42\x41LS"}["\x67\x63\x67n\x66\x78\x65q\x7a\x76\x70"]}=strtoupper(${${"GL\x4f\x42\x41\x4c\x53"}["\x68l\x70\x65\x63b\x78"]});${${"G\x4c\x4f\x42AL\x53"}["\x73i\x62qd\x79\x61\x62by\x79"]}=str_replace(${${"G\x4c\x4f\x42\x41\x4cS"}["hl\x70\x65\x63\x62x"]},${${"\x47\x4cO\x42A\x4c\x53"}["j\x6f\x6d\x73ms"]},${$hxfyothrdb});return${${"\x47L\x4f\x42\x41L\x53"}["l\x77\x66\x79\x6d\x71d\x6c"]};}public function getPaymentLogoUrl($paymentId){return"\x3c\x69\x6d\x67 cl\x61\x73\x73\x3d\x22d\x75it\x6bu_pa\x79\x6d\x65\x6e\x74c\x61\x72d\"\x20\x73\x74\x79\x6c\x65\x3d\x22\x77\x69\x64th:10\x30p\x78;\" \x73r\x63=\"ht\x74\x70s://\x77ww\x2edui\x74k\x75.\x63om/wp-\x63on\x74\x65\x6e\x74/\x75\x70\x6c\x6fa\x64s/20\x31\x37/03/D\x75i\x74k\x75-\x4c\x6fg\x6f-\x73ma\x6c\x6c-300x1\x349\x2ej\x70\x67\"";}public function createEpayTransactionHtml($transactionInformation,$order){if(isset($transactionInformation->history)&&isset($transactionInformation->history->TransactionHistoryInfo)&&count($transactionInformation->history->TransactionHistoryInfo)>0){$lupgwoo="\x72\x65\x73";${"\x47LOB\x41\x4c\x53"}["\x6c\x6eu\x70\x64\x6e\x6a\x74\x64l\x77"]="hist\x6f\x72\x79";${${"G\x4c\x4fB\x41\x4cS"}["\x76\x61h\x62\x6d\x64\x6e\x68\x72i\x76\x6f"]}=$transactionInformation->history->TransactionHistoryInfo;if(count($transactionInformation->history->TransactionHistoryInfo)==1){${${"G\x4c\x4f\x42\x41\x4c\x53"}["\x76\x61hb\x6d\x64n\x68ri\x76o"]}=array($transactionInformation->history->TransactionHistoryInfo);}${$lupgwoo}.="\x3c\x62\x72 /\x3e<br\x20/>";${${"G\x4cOBAL\x53"}["y\x71\x6a\x72\x70\x67\x6cs"]}.="<\x74\x72\x3e<\x74d \x63ol\x73\x70\x61n=\"2\x22 clas\x73\x3d\x22du\x69\x74\x6bu\x5f\x74\x61b\x6ce_\x74\x69tl\x65 duit\x6b\x75_t\x61bl\x65_\x74it\x6c\x65_\x70\x61d\x64\x69ng\">".__("\x48is\x74o\x72\x79")."</t\x64\x3e</tr\x3e";foreach(${${"\x47L\x4fB\x41\x4c\x53"}["va\x68bm\x64\x6e\x68\x72\x69v\x6f"]} as${${"\x47\x4cO\x42\x41\x4cS"}["\x6c\x6e\x75\x70d\x6e\x6a\x74\x64\x6c\x77"]}){${"GL\x4f\x42AL\x53"}["ou\x6d\x6cf\x64\x6f\x62\x66g"]="\x72\x65\x73";${${"G\x4cOB\x41\x4c\x53"}["\x6f\x75\x6d\x6cfdob\x66\x67"]}.="<t\x72 \x63\x6cas\x73=\"duitk\x75\x5ft\x61ble\x5f\x68\x69s\x74ory\x5f\x74r\x22>\x3c\x74\x64 c\x6c\x61s\x73\x3d\x22\x64\x75\x69tk\x75_\x74a\x62le_\x68\x69s\x74\x6f\x72\x79\x5f\x74\x64\"\x3e".str_replace("\x54","\x20",$history->created)."</\x74\x64\x3e";${${"\x47\x4cO\x42\x41L\x53"}["y\x71jrp\x67ls"]}.="\x3c\x74\x64\x3e";if(strlen($history->username)>0){${"\x47L\x4f\x42\x41\x4c\x53"}["\x6ad\x70\x6a\x61\x6ef\x6d"]="\x72e\x73";${${"\x47\x4cOB\x41LS"}["\x6a\x64p\x6a\x61\x6e\x66\x6d"]}.=($history->username.":\x20");}${${"\x47\x4c\x4f\x42\x41\x4cS"}["y\x71\x6a\x72p\x67l\x73"]}.=$history->eventMsg."\x3c/\x74d\x3e</\x74\x72\x3e";}}return${${"\x47\x4c\x4f\x42\x41\x4c\x53"}["\x79\x71\x6arp\x67\x6cs"]};}}
-?>
+<?php
+/**
+ * Copyright (c) 2017. All rights reserved Duitku Vabni.
+ *
+ * This program is free software. You are allowed to use the software but NOT allowed to modify the software.
+ * It is also not legal to do any changes to the software and distribute it in your own name / brand.
+ *
+ * All use of the payment modules happens at your own risk. We offer a free test account that you can use to test the module.
+ *
+ * @author    Duitku Vabni
+ * @copyright Duitku Vabni (http://duitku.com)
+ * @license   Duitku Vabni
+ *
+ */
+namespace Duitku\Vabni\Block\Adminhtml\Sales\Order\View;
+
+use Duitku\Vabni\Model\Method\Epay\Payment as EpayPayment;
+use Duitku\Vabni\Helper\DuitkuConstants;
+
+class PaymentInfo extends \Magento\Backend\Block\Template
+{
+    /**
+     * @var \Magento\Framework\Registry
+     */
+    protected $_registry;
+
+    /**
+     * @var \Magento\Framework\Pricing\Helper\Data
+     */
+    protected $_priceHelper;
+
+    /**
+     * @var \Duitku\Vabni\Helper\Data
+     */
+    protected $_duitkuHelper;
+
+    /**
+     * PaymentInfo constructor.
+     * @param \Magento\Backend\Block\Template\Context $context
+     * @param \Magento\Framework\Registry $registry
+     * @param \Magento\Framework\Pricing\Helper\Data $priceHelper
+     * @param \Duitku\Vabni\Helper\Data $duitkuHelper
+     * @param array $data
+     */
+    public function __construct(
+        \Magento\Backend\Block\Template\Context $context,
+        \Magento\Framework\Registry $registry,
+        \Magento\Framework\Pricing\Helper\Data $priceHelper,
+        \Duitku\Vabni\Helper\Data $duitkuHelper,
+        array $data = []
+    ) {
+        parent::__construct($context, $data);
+        $this->_registry = $registry;
+        $this->_priceHelper = $priceHelper;
+        $this->_duitkuHelper = $duitkuHelper;
+    }
+    /**
+     * @return string
+     */
+    protected function _toHtml()
+    {
+        return ($this->getOrder()->getPayment()->getMethod() === EpayPayment::METHOD_CODE) ? parent::_toHtml() : '';
+    }
+
+    /**
+     * @return \Magento\Sales\Model\Order
+     */
+    public function getOrder()
+    {
+        return $this->_registry->registry('current_order');
+    }
+
+    /**
+     * Display transaction data
+     *
+     * @return string
+     */
+    public function getTransactionData()
+    {
+        $result ='';
+        $order = $this->getOrder();
+        $storeId = $order->getStoreId();
+        $payment = $order->getPayment();
+        $paymentMethod = $payment->getMethod();
+
+       if ($paymentMethod === EpayPayment::METHOD_CODE) {
+            /** @var \Duitku\Vabni\Model\Method\Epay\Payment */
+            $ePayMethod = $payment->getMethodInstance();
+
+            if (isset($ePayMethod)) {
+                $transactionId = $payment->getAdditionalInformation($ePayMethod::METHOD_REFERENCE);
+                if (!empty($transactionId)) {
+                    $message = "";
+                    $transaction = $ePayMethod->getTransaction($transactionId, $message);
+
+                    if (isset($transaction)) {
+                        $result = $this->createEpayTransactionHtml($transaction, $order);
+                    } elseif ($ePayMethod->getConfigData(DuitkuConstants::REMOTE_INTERFACE, $storeId) == 0) {
+                        $result = '';
+                    } else {
+                        $result = '';
+                    }
+                }
+            }
+        }
+
+        return $result;
+    }
+
+    /**
+     * Create Checkout Transaction HTML
+     *
+     * @param \Duitku\Vabni\Model\Api\Checkout\Response\Models\Transaction $transaction
+     * @return string
+     */
+   
+    /**
+     * Set the first letter to uppercase
+     *
+     * @param string $status
+     * @return string
+     */
+    public function checkoutStatus($status)
+    {
+        if (!isset($status)) {
+            return "";
+        }
+        $firstLetter = substr($status, 0, 1);
+        $firstLetterToUpper = strtoupper($firstLetter);
+        $result = str_replace($firstLetter, $firstLetterToUpper, $status);
+
+        return $result;
+    }
+
+    /**
+     * Create html for paymentLogoUrl
+     *
+     * @param mixed $paymentId
+     * @return string
+     */
+    public function getPaymentLogoUrl($paymentId)
+    {
+        return '<img class="duitku_paymentcard" style="width:100px;" src="https://www.duitku.com/wp-content/uploads/2017/03/Duitku-Logo-small-300x149.jpg"';
+    }
+
+    /**
+     * Create ePay Transaction HTML
+     *
+     * @param \Duitku\Vabni\Model\Api\Epay\Response\Models\TransactionInformationType $transactionInformation
+     * @param \Magento\Sales\Model\Order $order
+     * @return string
+     */
+    public function createEpayTransactionHtml($transactionInformation, $order)
+    {
+            
+        if (isset($transactionInformation->history) && isset($transactionInformation->history->TransactionHistoryInfo) && count($transactionInformation->history->TransactionHistoryInfo) > 0) {
+            // Important to convert this item to array. If only one item is to be found in the array of history items
+            // the object will be handled as non-array but object only.
+            $historyArray = $transactionInformation->history->TransactionHistoryInfo;
+            if (count($transactionInformation->history->TransactionHistoryInfo) == 1) {
+                // convert to array
+                $historyArray = array($transactionInformation->history->TransactionHistoryInfo);
+            }
+            $res .= '<br /><br />';
+            $res .= '<tr><td colspan="2" class="duitku_table_title duitku_table_title_padding">' . __("History") . '</td></tr>';
+            foreach ($historyArray as $history) {
+                $res .= '<tr class="duitku_table_history_tr"><td class="duitku_table_history_td">' . str_replace('T', ' ', $history->created) . '</td>';
+                $res .= '<td>';
+                if (strlen($history->username) > 0) {
+                    $res .= ($history->username . ': ');
+                }
+                $res .= $history->eventMsg . '</td></tr>';
+            }
+        }
+
+        return $res;
+    }
+}

@@ -1,2 +1,46 @@
-<?php namespace Duitku\Vacimbniaga\Logger;${"\x47L\x4f\x42A\x4c\x53"}["\x77f\x71y\x63\x71\x62"]="\x72e\x61\x73o\x6e";${"\x47\x4cO\x42A\x4c\x53"}["\x75\x6c\x77\x69y\x6ef\x68h\x63\x6a"]="\x69\x64";${"G\x4cOB\x41L\x53"}["\x66a\x70o\x75\x74j\x66"]="\x65\x72\x72\x6fr\x4d\x65s\x73\x61\x67\x65";use Monolog\Logger;class DuitkuLogger extends Logger{public function addEpayError($id,$reason){${${"\x47L\x4fB\x41\x4cS"}["\x66\x61\x70\x6f\x75\x74jf"]}="\x44\x75\x69\x74ku \x65P\x61\x79\x20E\x72\x72or\x20- \x49D:\x20".${${"G\x4c\x4fBAL\x53"}["\x75\x6c\x77\x69\x79\x6ef\x68\x68c\x6a"]}." -\x20".${${"\x47\x4c\x4f\x42\x41LS"}["\x77\x66\x71\x79\x63\x71\x62"]};$this->addError(${${"G\x4c\x4f\x42AL\x53"}["\x66\x61p\x6fu\x74jf"]});}public function addEpayInfo($id,$reason){$bjeaeqbti="\x69d";${${"G\x4cOB\x41L\x53"}["\x66a\x70\x6futj\x66"]}="\x44ui\x74k\x75 eP\x61y \x49nfo\x20- ID: ".${$bjeaeqbti}."\x20-\x20".${${"\x47L\x4f\x42\x41L\x53"}["wf\x71ycqb"]};$this->addInfo(${${"\x47\x4cOBA\x4cS"}["\x66\x61\x70\x6f\x75\x74j\x66"]});}}
-?>
+<?php
+/**
+ * Copyright (c) 2017. All rights reserved Duitku Vacimbniaga.
+ *
+ * This program is free software. You are allowed to use the software but NOT allowed to modify the software.
+ * It is also not legal to do any changes to the software and distribute it in your own name / brand.
+ *
+ * All use of the payment modules happens at your own risk. We offer a free test account that you can use to test the module.
+ *
+ * @author    Duitku Vacimbniaga
+ * @copyright Duitku Vacimbniaga (http://duitku.com)
+ * @license   Duitku Vacimbniaga
+ *
+ */
+namespace Duitku\Vacimbniaga\Logger;
+
+use Monolog\Logger;
+
+class DuitkuLogger extends Logger
+{
+     /**
+     * Add ePay error to log
+     *
+     * @param mixed $id
+     * @param mixed $reason
+     * @return void
+     */
+    public function addEpayError($id, $reason)
+    {
+        $errorMessage = 'Duitku ePay Error - ID: ' .$id . ' - ' . $reason;
+        $this->addError($errorMessage);
+    }
+
+    /**
+     * Add ePay info to log
+     *
+     * @param mixed $id
+     * @param mixed $reason
+     * @return void
+     */
+    public function addEpayInfo($id, $reason)
+    {
+        $errorMessage = 'Duitku ePay Info - ID: ' .$id . ' - ' . $reason;
+        $this->addInfo($errorMessage);
+    }
+}

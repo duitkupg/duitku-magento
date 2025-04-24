@@ -1,2 +1,0 @@
-<?php class Duitku_Config{public static$serverKey;public static$apiVersion=2;public static$isProduction=false;public static$isSanitized=true;const SANDBOX_BASE_URL="\x68\x74t\x70://sa\x6e\x64box.\x64\x75itk\x75\x2e\x63om/\x77\x65ba\x70i";const PRODUCTION_BASE_URL="\x68t\x74ps://p\x61s\x73\x70o\x72t\x2e\x64\x75\x69\x74\x6b\x75.\x63\x6f\x6d/\x77ebapi";public static function getBaseUrl(){$oqfuesn="\x69sP\x72o\x64\x75\x63\x74\x69o\x6e";return Duitku_Config::${$oqfuesn}?Duitku_Config::PRODUCTION_BASE_URL:Duitku_Config::SANDBOX_BASE_URL;}}
-?>

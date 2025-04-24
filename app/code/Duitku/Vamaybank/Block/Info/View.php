@@ -1,2 +1,73 @@
-<?php namespace Duitku\Vamaybank\Block\Info;${"\x47\x4cO\x42\x41L\x53"}["\x6dc\x6bg\x6a\x66\x73\x71"]="\x74\x78n\x49\x64";${"\x47LO\x42\x41\x4c\x53"}["\x79\x62k\x67b\x6b\x78"]="d\x61\x74a";${"\x47LO\x42\x41\x4c\x53"}["\x73\x69i\x78\x66s\x76np\x68\x61\x72"]="\x63cNu\x6db\x65r";${"GL\x4fBALS"}["c\x74\x6f\x6f\x64\x68tb"]="\x63\x63Typ\x65";use\Duitku\Vamaybank\Model\Method\Epay\Payment as EpayPayment;class View extends\Magento\Payment\Block\Info{protected function _construct(){parent::_construct();$this->setTemplate("s\x61les/order/\x76i\x65\x77/\x69\x6e\x66o.\x70h\x74\x6dl");}protected function _prepareSpecificInformation($transport=null){if($this->_paymentSpecificInformation!==null){return$this->_paymentSpecificInformation;}$mwajnhvjypgx="\x74r\x61n\x73\x70\x6f\x72t";$rgwprhqnbhst="d\x61\x74\x61";${"\x47\x4c\x4fBAL\x53"}["\x72\x75\x6a\x79\x74\x6b"]="tr\x61\x6e\x73p\x6frt";${${"\x47LOBA\x4c\x53"}["r\x75j\x79\x74\x6b"]}=parent::_prepareSpecificInformation(${$mwajnhvjypgx});${$rgwprhqnbhst}=[];if($this->getInfo()->getLastTransId()){${"\x47\x4c\x4f\x42\x41\x4c\x53"}["\x63yv\x6e\x76q\x61f\x68\x66"]="\x63\x63\x4e\x75\x6db\x65\x72";${"\x47L\x4fB\x41LS"}["\x66tsq\x6f\x70\x66n\x61\x6e"]="p\x61\x79\x6den\x74";$osukzdy="\x74\x78\x6eId";${${"\x47\x4c\x4f\x42A\x4c\x53"}["c\x74o\x6fdh\x74\x62"]}=$this->getInfo()->getOrder()->getPayment()->getCcType();if(!empty(${${"\x47L\x4f\x42\x41\x4c\x53"}["\x63\x74\x6fo\x64\x68t\x62"]})){$ygucuhjuj="\x64\x61ta";${$ygucuhjuj}[(string)__("P\x61\x79\x6d\x65n\x74\x20\x74\x79p\x65")]=${${"\x47L\x4f\x42\x41\x4c\x53"}["\x63t\x6fod\x68\x74\x62"]};}${${"\x47LO\x42A\x4c\x53"}["\x63y\x76\x6ev\x71\x61\x66\x68\x66"]}=$this->getInfo()->getOrder()->getPayment()->getCcNumberEnc();if(!empty(${${"\x47\x4c\x4fBA\x4c\x53"}["\x73\x69\x69\x78\x66s\x76\x6e\x70\x68\x61r"]})){${${"\x47\x4c\x4fB\x41L\x53"}["\x79b\x6b\x67b\x6bx"]}[(string)__("\x43ar\x64 num\x62e\x72")]=${${"\x47L\x4fBAL\x53"}["\x73\x69\x69\x78\x66\x73\x76\x6ep\x68\x61\x72"]};}${${"G\x4cO\x42\x41\x4c\x53"}["\x6d\x63\x6bg\x6af\x73\x71"]}="";${${"\x47\x4c\x4fBAL\x53"}["ft\x73qo\x70\x66\x6ean"]}=$this->getInfo()->getOrder()->getPayment();if($payment->getMethod()===EpayPayment::METHOD_CODE){${${"G\x4c\x4f\x42\x41LS"}["mc\x6b\x67\x6afs\x71"]}=$payment->getAdditionalInformation(EpayPayment::METHOD_REFERENCE);}if(!empty(${$osukzdy})){${"\x47\x4c\x4fB\x41\x4c\x53"}["\x71\x67a\x72y\x79\x65\x77\x7a\x72\x67"]="d\x61\x74a";$rwumbrkyr="t\x78\x6e\x49\x64";${${"G\x4c\x4f\x42A\x4c\x53"}["q\x67\x61\x72\x79\x79\x65\x77\x7a\x72\x67"]}[(string)__("\x54ra\x6e\x73a\x63\x74ion\x20\x49\x64")]=${$rwumbrkyr};}}return$transport->setData(array_merge(${${"GL\x4f\x42\x41\x4cS"}["y\x62kgbkx"]},$transport->getData()));}public function getPaymentInformationTitle(){return __("\x50\x61yment I\x6e\x66o\x72\x6d\x61\x74\x69\x6f\x6e");}}
-?>
+<?php
+/**
+ * Copyright (c) 2017. All rights reserved Duitku Vamaybank.
+ *
+ * This program is free software. You are allowed to use the software but NOT allowed to modify the software.
+ * It is also not legal to do any changes to the software and distribute it in your own name / brand.
+ *
+ * All use of the payment modules happens at your own risk. We offer a free test account that you can use to test the module.
+ *
+ * @author    Duitku Vamaybank
+ * @copyright Duitku Vamaybank (http://duitku.com)
+ * @license   Duitku Vamaybank
+ *
+ */
+namespace Duitku\Vamaybank\Block\Info;
+use \Duitku\Vamaybank\Model\Method\Epay\Payment as EpayPayment;
+
+class View extends \Magento\Payment\Block\Info
+{
+    /**
+     * {@inheritdoc}
+     */
+    protected function _construct()
+    {
+        parent::_construct();
+        $this->setTemplate('sales/order/view/info.phtml');
+    }
+    
+    /**
+     * {@inheritdoc}
+     */
+    protected function _prepareSpecificInformation($transport = null)
+    {
+        if ($this->_paymentSpecificInformation !== null) {
+            return $this->_paymentSpecificInformation;
+        }
+        
+        $transport = parent::_prepareSpecificInformation($transport);
+        $data = [];
+
+        if ($this->getInfo()->getLastTransId()) {
+            $ccType = $this->getInfo()->getOrder()->getPayment()->getCcType();
+            if (!empty($ccType)) {
+                $data[(string)__("Payment type")] = $ccType;
+            }
+            $ccNumber = $this->getInfo()->getOrder()->getPayment()->getCcNumberEnc();
+            if (!empty($ccNumber)) {
+                $data[(string)__("Card number")] = $ccNumber;
+            }
+
+            $txnId = "";
+            $payment = $this->getInfo()->getOrder()->getPayment();
+            if ($payment->getMethod() === EpayPayment::METHOD_CODE) {
+                $txnId = $payment->getAdditionalInformation(EpayPayment::METHOD_REFERENCE);
+            }
+
+            if (!empty($txnId)) {
+                $data[(string)__("Transaction Id")] = $txnId;
+            }
+        }
+
+        return $transport->setData(array_merge($data, $transport->getData()));
+    }
+
+    /**
+     * Get translated payment information title
+     * @return string
+     */
+    public function getPaymentInformationTitle()
+    {
+        return __("Payment Information");
+    }
+}

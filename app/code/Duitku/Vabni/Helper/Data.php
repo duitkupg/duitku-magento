@@ -1,2 +1,409 @@
-<?php namespace Duitku\Vabni\Helper;${"\x47LO\x42\x41\x4c\x53"}["\x74\x70\x62\x63\x77d\x64\x63"]="f\x65\x65I\x74\x65m";${"\x47\x4c\x4f\x42\x41L\x53"}["\x67\x78\x72n\x74f"]="\x66e\x65A\x6d\x6f\x75\x6et";${"\x47L\x4f\x42\x41\x4cS"}["\x6f\x6c\x6c\x79\x68\x61\x70\x75"]="\x62\x61\x73\x65\x46\x65\x65\x41m\x6funt";${"\x47LOB\x41\x4cS"}["\x73r\x6dn\x61\x75ht\x79"]="\x63o\x64\x65";${"GL\x4fB\x41\x4cS"}["\x71\x6dks\x69\x6boc"]="i\x73\x6fC\x6f\x64eA\x72\x72\x61y";${"\x47\x4c\x4f\x42\x41\x4cS"}["\x76b\x71\x6b\x73\x6ew"]="\x63\x61\x72d\x49\x64\x41rra\x79";${"\x47\x4cO\x42\x41\x4cS"}["h\x67rvmck\x78\x69\x71"]="\x63\x61\x72\x64\x69\x64";${"G\x4c\x4f\x42\x41\x4c\x53"}["\x73\x6e\x70\x77\x73dk"]="\x6c\x61n\x67\x75ag\x65A\x72\x72\x61\x79";${"\x47\x4c\x4f\x42\x41L\x53"}["gr\x67\x75p\x64\x61x\x6a\x66\x78"]="\x6can";${"G\x4c\x4f\x42A\x4cS"}["\x73\x6b\x6a\x6acl\x6a"]="\x73\x74a\x74us";${"\x47\x4cO\x42\x41\x4c\x53"}["\x70r\x69\x69\x69\x6f\x62\x74\x73x\x63q"]="r\x65\x73u\x6c\x74";${"\x47\x4c\x4fBA\x4c\x53"}["yfz\x6f\x6aa\x64"]="\x6da\x67\x65\x6e\x74\x6f\x56e\x72s\x69on";${"\x47\x4cOBA\x4c\x53"}["\x73\x76\x6d\x72\x7a\x67c\x73\x70\x6ap"]="\x70r\x6f\x64\x75\x63t\x4d\x65tad\x61t\x61";${"G\x4c\x4f\x42AL\x53"}["jjx\x6f\x6b\x76\x6cy"]="\x6f\x62\x6aec\x74\x4d\x61\x6eag\x65\x72";${"\x47LO\x42A\x4c\x53"}["z\x65h\x6bbdu\x70\x6e"]="p\x72i\x63e\x48\x65\x6c\x70e\x72";${"G\x4cO\x42\x41L\x53"}["\x74\x6dih\x66f"]="\x63\x75\x72\x72en\x63\x79\x43o\x64\x65";${"\x47\x4cO\x42\x41LS"}["\x72v\x65\x79j\x78\x75\x69k"]="c\x75\x72\x72\x65n\x63\x79A\x72\x72a\x79";${"G\x4c\x4f\x42\x41\x4c\x53"}["qwdh\x79yvt\x66"]="\x61\x6d\x6f\x75\x6e\x74";${"G\x4cO\x42\x41\x4cS"}["\x62\x6b\x65\x67\x63e\x64\x6a\x6c"]="p\x61\x74\x68";${"\x47\x4c\x4f\x42\x41LS"}["\x70\x74o\x79kf"]="f\x6c\x61g";${"G\x4c\x4f\x42\x41\x4cS"}["\x61s\x63q\x6f\x7a\x68hjz\x6b"]="f\x69eld";${"GL\x4f\x42\x41L\x53"}["q\x65\x63\x6e\x73\x66xd\x62"]="sto\x72\x65\x49d";${"\x47\x4c\x4f\x42\x41\x4cS"}["e\x6f\x6fscd\x6b\x63s"]="m\x6fdu\x6c\x65\x4cis\x74";${"\x47L\x4fB\x41L\x53"}["ofk\x64\x72\x66r\x65\x72\x72\x78"]="\x64u\x69\x74\x6bu\x4co\x67\x67\x65r";use Duitku\Vabni\Helper\DuitkuConstants;class Data extends\Magento\Framework\App\Helper\AbstractHelper{protected$_duitkuLogger;protected$_encryptor;protected$_moduleList;public function __construct(\Magento\Framework\App\Helper\Context$context,\Duitku\Vabni\Logger\DuitkuLogger$duitkuLogger,\Magento\Framework\Encryption\EncryptorInterface$encryptor,\Magento\Framework\Module\ModuleListInterface$moduleList){${"G\x4cOBA\x4cS"}["\x6c\x62cgm\x6e\x73mk\x6bq"]="e\x6ec\x72y\x70\x74or";$kdwbygpd="\x63ont\x65x\x74";parent::__construct(${$kdwbygpd});$this->_duitkuLogger=${${"\x47L\x4f\x42ALS"}["o\x66\x6bd\x72\x66re\x72r\x78"]};$this->_encryptor=${${"G\x4cO\x42\x41L\x53"}["\x6cb\x63\x67mnsmk\x6b\x71"]};$this->_moduleList=${${"\x47\x4cO\x42\x41\x4c\x53"}["\x65o\x6f\x73c\x64\x6bcs"]};}public function getDuitkuEpayConfigData($field,$storeId=null){$qnwrir="f\x69e\x6c\x64";return$this->getConfigData(${$qnwrir},"d\x75\x69tk\x75\x5fva\x62\x65\x70a\x79",${${"\x47\x4c\x4f\x42\x41\x4cS"}["\x71\x65\x63\x6e\x73\x66\x78\x64b"]});}public function getDuitkuCheckoutConfigData($field,$storeId=null){$rkclcih="\x66i\x65ld";$bvhjjvxcftn="\x73\x74\x6f\x72\x65\x49\x64";return$this->getConfigData(${$rkclcih},"d\x75i\x74ku_c\x68\x65\x63ko\x75\x74",${$bvhjjvxcftn});}public function getDuitkuAdvancedConfigData($field,$storeId=null){return$this->getConfigData(${${"\x47LOB\x41\x4c\x53"}["as\x63\x71o\x7a\x68\x68\x6azk"]},"\x64\x75i\x74\x6bu\x5fa\x64\x76an\x63ed",${${"\x47L\x4f\x42\x41\x4c\x53"}["\x71e\x63n\x73\x66x\x64\x62"]});}public function getConfigData($field,$paymentMethodCode,$storeId,$flag=false){$rlwdkmlhf="pa\x79me\x6et\x4de\x74\x68o\x64\x43\x6fde";${"\x47\x4c\x4f\x42\x41LS"}["as\x72\x69\x6c\x6c\x72\x6a\x72m"]="\x66\x69e\x6c\x64";${"G\x4c\x4f\x42\x41L\x53"}["y\x68\x6do\x74w"]="\x70\x61\x74h";${${"GL\x4f\x42\x41L\x53"}["\x79\x68\x6d\x6f\x74\x77"]}="pa\x79\x6den\x74/".${$rlwdkmlhf}."/".${${"\x47\x4c\x4f\x42\x41\x4cS"}["a\x73r\x69l\x6cr\x6a\x72\x6d"]};if(!${${"G\x4c\x4f\x42\x41\x4c\x53"}["p\x74o\x79\x6b\x66"]}){$uluciyzlgt="s\x74\x6f\x72eI\x64";return$this->scopeConfig->getValue(${${"\x47LO\x42\x41L\x53"}["\x62\x6begce\x64\x6al"]},\Magento\Store\Model\ScopeInterface::SCOPE_STORE,${$uluciyzlgt});}else{${"\x47\x4cOBA\x4c\x53"}["\x6fbx\x77\x61e\x75x"]="\x73\x74o\x72e\x49d";${"G\x4c\x4f\x42A\x4c\x53"}["\x70u\x6dfs\x64c\x6e\x75\x68k\x6a"]="p\x61\x74h";return$this->scopeConfig->isSetFlag(${${"\x47\x4c\x4f\x42AL\x53"}["\x70\x75\x6d\x66\x73\x64\x63nu\x68k\x6a"]},\Magento\Store\Model\ScopeInterface::SCOPE_STORE,${${"\x47\x4c\x4f\x42\x41L\x53"}["\x6f\x62x\x77\x61\x65u\x78"]});}}public function decryptData($data){${"\x47\x4cO\x42\x41\x4c\x53"}["y\x73\x6c\x6a\x74\x66jb"]="\x64\x61\x74\x61";return$this->_encryptor->decrypt(trim(${${"\x47\x4cOBA\x4cS"}["\x79s\x6c\x6a\x74\x66\x6ab"]}));}public function getShopLocalCode(){$pcxtngbsqfv="\x72\x65\x73\x6fl\x76\x65\x72";${"\x47LO\x42\x41\x4cS"}["v\x77\x69\x79\x67\x6a\x77u\x69\x78\x74"]="\x6f\x62\x6ae\x63t\x4dan\x61\x67e\x72";${${"GL\x4f\x42A\x4c\x53"}["\x76\x77iy\x67\x6a\x77u\x69\x78\x74"]}=\Magento\Framework\App\ObjectManager::getInstance();${$pcxtngbsqfv}=$objectManager->get("Ma\x67\x65\x6eto\x5c\x46\x72\x61\x6d\x65w\x6frk\\Lo\x63al\x65\x5c\x52\x65\x73\x6f\x6cver");return$resolver->getLocale();}public function convertPriceFromMinorunits($amount,$minorunits){$cgbnfw="\x6dino\x72\x75\x6e\x69\x74s";if(${${"G\x4cOB\x41\x4c\x53"}["\x71\x77\x64\x68\x79\x79\x76\x74f"]}==""||${${"\x47L\x4f\x42\x41\x4c\x53"}["\x71\x77\x64\x68\x79\x79\x76\x74\x66"]}==null){return 0;}return(${${"G\x4cO\x42\x41\x4cS"}["\x71w\x64h\x79\x79vtf"]}/pow(10,${$cgbnfw}));}public function getCurrencyMinorunits($currencyCode){$vxmzqcxpz="c\x75rren\x63yCo\x64\x65";${${"\x47L\x4f\x42\x41L\x53"}["\x72\x76\x65\x79jx\x75i\x6b"]}=array("\x54T\x44"=>0,"K\x4dF"=>0,"\x41D\x50"=>0,"\x54\x50E"=>0,"\x42I\x46"=>0,"\x44J\x46"=>0,"\x4dGF"=>0,"\x58PF"=>0,"\x47N\x46"=>0,"BY\x52"=>0,"P\x59G"=>0,"J\x50Y"=>0,"CL\x50"=>0,"X\x41\x46"=>0,"\x54\x52L"=>0,"\x56UV"=>0,"\x43L\x46"=>0,"\x4bR\x57"=>0,"XOF"=>0,"\x52\x57F"=>0,"\x49Q\x44"=>3,"\x54\x4eD"=>3,"B\x48D"=>3,"JOD"=>3,"\x4fMR"=>3,"\x4bWD"=>3,"L\x59\x44"=>3);return array_key_exists(${$vxmzqcxpz},${${"\x47\x4c\x4f\x42A\x4c\x53"}["\x72\x76e\x79\x6a\x78\x75\x69\x6b"]})?${${"GLOB\x41\x4cS"}["\x72\x76e\x79\x6a\x78\x75\x69\x6b"]}[${${"G\x4c\x4f\x42\x41\x4cS"}["\x74\x6dihf\x66"]}]:2;}public function formatCurrency($amount){$wgpnoamclvi="\x6f\x62\x6aec\x74\x4dan\x61\x67\x65r";${$wgpnoamclvi}=\Magento\Framework\App\ObjectManager::getInstance();${${"\x47\x4cO\x42\x41\x4cS"}["ze\x68\x6bb\x64\x75\x70n"]}=$objectManager->create("M\x61gento\x5cF\x72\x61\x6d\x65\x77ork\\P\x72\x69\x63ing\x5c\x48\x65l\x70\x65\x72\\\x44\x61\x74\x61");return$priceHelper->currency(${${"\x47L\x4f\x42\x41L\x53"}["\x71w\x64\x68\x79\x79v\x74\x66"]},true,false);}public function getModuleVersion(){return$this->_moduleList->getOne("\x44\x75\x69t\x6b\x75_V\x61\x62\x6e\x69")["se\x74\x75p_\x76\x65r\x73ion"];}public function getModuleHeaderInfo(){$udvuwispf="\x64\x75\x69\x74\x6b\x75Ver\x73ion";${"G\x4cO\x42\x41L\x53"}["\x63\x6d\x68\x79\x72s"]="\x72e\x73u\x6ct";${"\x47\x4cO\x42AL\x53"}["\x66\x6a\x6ce\x72\x6b\x6es\x6f\x76"]="\x64\x75\x69t\x6b\x75V\x65r\x73i\x6f\x6e";$juoihslia="m\x61\x67en\x74oV\x65\x72\x73\x69o\x6e";${$udvuwispf}=$this->getModuleVersion();${${"\x47\x4c\x4f\x42\x41\x4cS"}["j\x6a\x78\x6f\x6b\x76\x6cy"]}=\Magento\Framework\App\ObjectManager::getInstance();${${"\x47\x4c\x4f\x42\x41\x4c\x53"}["\x73vm\x72\x7a\x67c\x73\x70j\x70"]}=$objectManager->get("\x4d\x61g\x65n\x74o\\Fr\x61\x6dework\x5cAp\x70\\\x50\x72\x6fd\x75\x63\x74Me\x74\x61data\x49\x6eterfa\x63\x65");${$juoihslia}=$productMetadata->getVersion();${${"\x47L\x4f\x42\x41\x4c\x53"}["\x63\x6d\x68y\x72s"]}="M\x61g\x65\x6e\x74o/".${${"\x47\x4c\x4f\x42A\x4cS"}["y\x66\x7ao\x6aad"]}."\x20M\x6f\x64\x75\x6c\x65/".${${"\x47\x4c\x4f\x42\x41\x4cS"}["f\x6a\x6ce\x72\x6bn\x73\x6fv"]}." \x50\x48\x50/".phpversion();return${${"G\x4c\x4fB\x41L\x53"}["\x70\x72\x69\x69\x69\x6fbt\x73xc\x71"]};}public function translatePaymentStatus($status){${"\x47LO\x42\x41\x4c\x53"}["\x75\x72\x73\x79on\x63\x72yj"]="\x73\x74\x61\x74\x75\x73";if(strcmp(${${"G\x4c\x4f\x42A\x4c\x53"}["\x73\x6bjjc\x6c\x6a"]},"\x50AY\x4d\x45N\x54_\x4eE\x57")==0){return __("Ne\x77");}elseif(strcmp(${${"\x47L\x4fB\x41\x4cS"}["\x73\x6bj\x6a\x63l\x6a"]},"P\x41\x59ME\x4e\x54_C\x41\x50T\x55RE\x44")==0||strcmp(${${"\x47\x4cO\x42ALS"}["\x75\x72s\x79\x6f\x6e\x63\x72\x79\x6a"]},"P\x41YM\x45NT\x5fEU\x52\x4fLIN\x45\x5fWA\x49T_\x43\x41PTU\x52E")==0||strcmp(${${"\x47L\x4fBALS"}["\x73\x6b\x6a\x6ac\x6cj"]},"\x50\x41\x59\x4dE\x4e\x54_E\x55R\x4fL\x49\x4eE_\x57\x41I\x54\x5f\x43RE\x44I\x54")==0){return __("\x43\x61pt\x75re\x64");}elseif(strcmp(${${"\x47LO\x42\x41\x4cS"}["sk\x6ajc\x6c\x6a"]},"P\x41Y\x4dE\x4e\x54\x5fDE\x4cET\x45D")==0){return __("\x44\x65\x6ceted");}else{return __("U\x6ek\x6f\x77n");}}public function calcLanguage($lan=null){if(!isset(${${"\x47L\x4f\x42\x41\x4c\x53"}["\x67\x72gu\x70d\x61xjfx"]})){${${"G\x4cO\x42A\x4c\x53"}["\x67\x72\x67u\x70\x64\x61\x78\x6afx"]}=$this->getShopLocalCode();}${${"\x47\x4c\x4fBA\x4c\x53"}["\x73\x6e\x70w\x73dk"]}=array("d\x61\x5f\x44\x4b"=>"\x31","\x64\x65\x5f\x43\x48"=>"7","\x64e\x5fD\x45"=>"7","e\x6e_\x41\x55"=>"\x32","en_G\x42"=>"2","\x65n_N\x5a"=>"2","e\x6e\x5f\x55\x53"=>"\x32","\x73v_\x53E"=>"\x33","nn_\x4e\x4f"=>"\x34",);return array_key_exists(${${"GL\x4f\x42\x41LS"}["g\x72\x67\x75\x70\x64\x61\x78\x6af\x78"]},${${"G\x4c\x4fB\x41\x4c\x53"}["s\x6e\x70w\x73\x64\x6b"]})?${${"G\x4c\x4f\x42\x41\x4c\x53"}["\x73n\x70\x77s\x64\x6b"]}[${${"\x47LO\x42\x41LS"}["\x67\x72\x67upd\x61\x78jf\x78"]}]:"\x30";}public function calcCardtype($cardid){$dgbbmnrwhv="car\x64\x49\x64A\x72ra\x79";$nknfckusqg="\x63\x61\x72\x64\x69d";${$dgbbmnrwhv}=array("1"=>"\x44an\x6b\x6frt / VI\x53\x41/D\x61\x6e\x6b\x6f\x72t","2"=>"\x65\x44a\x6ek\x6frt","3"=>"\x56ISA /\x20\x56\x49\x53\x41 Ele\x63\x74\x72o\x6e","4"=>"M\x61\x73\x74\x65\x72Car\x64","6"=>"J\x43\x42","7"=>"\x4da\x65s\x74\x72\x6f","\x38"=>"Diner\x73\x20\x43\x6cu\x62","9"=>"\x41\x6d\x65\x72\x69\x63a\x6e \x45xp\x72e\x73\x73","\x310"=>"ew\x69re","12"=>"\x4e\x6f\x72\x64\x65\x61 e-\x62\x65\x74\x61lin\x67","\x313"=>"\x44a\x6es\x6b\x65\x20\x4e\x65tb\x65\x74\x61\x6c\x69ng\x65r","1\x34"=>"\x50a\x79Pal","16"=>"\x4d\x6fb\x69\x6c\x50\x65\x6e\x67\x65","\x317"=>"Klarn\x61","18"=>"\x53v\x65\x61","\x319"=>"S\x45B\x20\x44ir\x65\x6b\x74bet\x61lni\x6e\x67","2\x30"=>"\x4e\x6frdea \x45-\x70a\x79\x6dent","\x32\x31"=>"\x48\x61n\x64el\x73\x62a\x6ek\x65n \x44\x69re\x6bt\x62\x65ta\x6cn\x69n\x67a\x72","2\x32"=>"\x53we\x64bank\x20D\x69rek\x74be\x74aln\x69n\x67ar","23"=>"\x56i\x61B\x69ll","\x324"=>"N\x65m\x50\x61\x79","\x325"=>"iDe\x61\x6c");$bjtrlbxu="c\x61\x72\x64\x49\x64\x41r\x72\x61\x79";return array_key_exists(${${"\x47\x4cO\x42\x41\x4cS"}["\x68\x67\x72\x76\x6d\x63\x6b\x78\x69q"]},${$bjtrlbxu})?${${"\x47\x4c\x4f\x42\x41L\x53"}["\x76\x62qk\x73nw"]}[${$nknfckusqg}]:"";}public function convertIsoCode($code,$isKey=true){${"GL\x4f\x42\x41\x4cS"}["wo\x67\x71\x68h\x75p\x73h\x79"]="i\x73\x4be\x79";${${"\x47L\x4f\x42\x41\x4c\x53"}["\x71m\x6b\x73\x69ko\x63"]}=array("A\x44P"=>"020","AE\x44"=>"\x37\x38\x34","A\x46A"=>"\x3004","\x41\x4c\x4c"=>"0\x308","AMD"=>"051","\x41\x4eG"=>"5\x33\x32","AOA"=>"\x3973","\x41R\x53"=>"0\x33\x32","A\x55\x44"=>"\x30\x336","\x41W\x47"=>"\x353\x33","AZM"=>"031","\x42\x41M"=>"\x305\x32","B\x42\x44"=>"004","\x42D\x54"=>"05\x30","B\x47\x4c"=>"1\x30\x30","BG\x4e"=>"9\x37\x35","\x42\x48D"=>"04\x38","BIF"=>"\x3108","B\x4dD"=>"\x3060","\x42N\x44"=>"0\x39\x36","\x42OB"=>"0\x36\x38","B\x4fV"=>"9\x384","\x42R\x4c"=>"9\x386","BS\x44"=>"0\x344","BTN"=>"0\x364","BWP"=>"\x30\x372","B\x59\x52"=>"\x39\x37\x34","BZ\x44"=>"08\x34","\x43\x41D"=>"1\x324","\x43\x44F"=>"9\x376","\x43HF"=>"\x375\x36","C\x4c\x46"=>"9\x390","CL\x50"=>"1\x352","CN\x59"=>"\x31\x35\x36","COP"=>"1\x37\x30","C\x52C"=>"1\x388","CU\x50"=>"1\x39\x32","\x43\x56E"=>"13\x32","\x43\x59\x50"=>"\x31\x396","CZ\x4b"=>"\x320\x33","\x44\x4aF"=>"2\x362","DK\x4b"=>"20\x38","\x44\x4f\x50"=>"2\x314","D\x5a\x44"=>"\x30\x312","ECS"=>"2\x31\x38","E\x43\x56"=>"\x3983","\x45\x45\x4b"=>"23\x33","E\x47\x50"=>"8\x31\x38","\x45RN"=>"\x323\x32","E\x54\x42"=>"2\x33\x30","E\x55\x52"=>"\x39\x378","F\x4aD"=>"24\x32","\x46KP"=>"\x32\x33\x38","GB\x50"=>"\x38\x326","\x47\x45\x4c"=>"9\x381","\x47\x48\x43"=>"\x328\x38","GI\x50"=>"2\x39\x32","G\x4dD"=>"\x3270","G\x4e\x46"=>"3\x324","G\x54\x51"=>"3\x32\x30","\x47WP"=>"\x3624","\x47\x59D"=>"\x332\x38","\x48K\x44"=>"3\x34\x34","HN\x4c"=>"\x33\x34\x30","H\x52\x4b"=>"\x31\x391","HTG"=>"\x33\x332","\x48\x55F"=>"\x334\x38","\x49D\x52"=>"3\x36\x30","ILS"=>"37\x36","IN\x52"=>"356","\x49Q\x44"=>"\x33\x36\x38","\x49RR"=>"36\x34","IS\x4b"=>"3\x352","\x4aMD"=>"\x33\x38\x38","\x4aOD"=>"\x34\x300","JP\x59"=>"\x33\x392","KES"=>"\x34\x304","\x4bGS"=>"4\x317","KHR"=>"11\x36","K\x4dF"=>"174","\x4b\x50\x57"=>"\x34\x30\x38","\x4b\x52\x57"=>"\x34\x31\x30","K\x57D"=>"4\x31\x34","K\x59\x44"=>"\x313\x36","\x4b\x5a\x54"=>"\x3398","\x4cA\x4b"=>"4\x318","LB\x50"=>"\x34\x322","\x4c\x4b\x52"=>"\x31\x34\x34","\x4c\x52D"=>"4\x330","L\x53L"=>"\x342\x36","LTL"=>"\x3440","L\x56\x4c"=>"428","\x4cY\x44"=>"\x34\x334","MA\x44"=>"\x35\x30\x34","\x4dDL"=>"\x34\x398","MGF"=>"4\x350","M\x4bD"=>"807","\x4d\x4d\x4b"=>"1\x304","\x4dNT"=>"\x34\x396","\x4dOP"=>"\x3446","\x4dRO"=>"4\x378","M\x54L"=>"4\x37\x30","M\x55\x52"=>"\x34\x380","\x4d\x56\x52"=>"4\x36\x32","MWK"=>"454","MX\x4e"=>"48\x34","M\x58V"=>"\x397\x39","\x4d\x59R"=>"\x345\x38","MZ\x4d"=>"\x35\x308","NAD"=>"5\x31\x36","N\x47\x4e"=>"56\x36","\x4e\x49O"=>"55\x38","N\x4f\x4b"=>"\x35\x37\x38","\x4e\x50\x52"=>"\x35\x324","\x4e\x5aD"=>"55\x34","\x4f\x4dR"=>"512","\x50\x41B"=>"59\x30","PE\x4e"=>"6\x30\x34","\x50GK"=>"\x35\x398","\x50\x48\x50"=>"\x3608","PK\x52"=>"\x35\x38\x36","P\x4c\x4e"=>"\x39\x38\x35","P\x59\x47"=>"\x36\x30\x30","QAR"=>"634","ROL"=>"\x36\x34\x32","R\x55B"=>"\x36\x34\x33","RUR"=>"\x3810","RW\x46"=>"\x364\x36","SA\x52"=>"6\x382","S\x42\x44"=>"0\x39\x30","\x53CR"=>"69\x30","S\x44\x44"=>"\x37\x33\x36","\x53\x45\x4b"=>"\x3752","\x53G\x44"=>"7\x30\x32","SHP"=>"6\x35\x34","SIT"=>"\x37\x30\x35","SKK"=>"\x370\x33","\x53\x4c\x4c"=>"6\x394","S\x4f\x53"=>"7\x306","S\x52G"=>"740","\x53\x54\x44"=>"\x367\x38","SV\x43"=>"\x32\x322","SYP"=>"760","\x53ZL"=>"7\x34\x38","\x54HB"=>"\x3764","T\x4aS"=>"972","\x54M\x4d"=>"7\x395","TND"=>"788","\x54\x4f\x50"=>"7\x376","T\x50E"=>"6\x32\x36","\x54\x52L"=>"\x379\x32","T\x52\x59"=>"\x39\x34\x39","\x54T\x44"=>"7\x38\x30","TWD"=>"9\x30\x31","T\x5a\x53"=>"834","U\x41H"=>"980","UG\x58"=>"\x3800","\x55\x53\x44"=>"8\x34\x30","U\x59U"=>"8\x35\x38","UZ\x53"=>"\x38\x360","\x56\x45\x42"=>"86\x32","VND"=>"\x37\x304","V\x55V"=>"\x35\x34\x38","\x58\x41F"=>"9\x350","\x58\x43\x44"=>"\x39\x351","XOF"=>"952","XP\x46"=>"\x395\x33","Y\x45\x52"=>"\x3886","\x59\x55M"=>"\x38\x39\x31","\x5aA\x52"=>"\x371\x30","\x5aM\x4b"=>"\x38\x394","Z\x57\x44"=>"7\x316");if(${${"G\x4cO\x42ALS"}["wo\x67q\x68h\x75\x70\x73\x68\x79"]}){$dhqucmrsfp="\x69\x73\x6f\x43\x6fd\x65\x41r\x72a\x79";return${$dhqucmrsfp}[${${"G\x4c\x4f\x42A\x4cS"}["\x73\x72\x6d\x6e\x61u\x68t\x79"]}];}return array_search(${${"G\x4c\x4f\x42\x41\x4cS"}["\x73r\x6d\x6ea\x75\x68t\x79"]},${${"\x47\x4c\x4f\x42\x41\x4c\x53"}["q\x6d\x6b\x73ik\x6fc"]});}public function createSurchargeItem($baseFeeAmount,$feeAmount,$storeId,$orderId,$text){${"\x47L\x4f\x42A\x4cS"}["e\x67b\x62\x79\x6a\x62z\x63bi"]="\x74e\x78\x74";$noamgewyxz="\x66\x65\x65I\x74e\x6d";${${"\x47L\x4fB\x41\x4cS"}["j\x6a\x78\x6f\x6bv\x6c\x79"]}=\Magento\Framework\App\ObjectManager::getInstance();${$noamgewyxz}=$objectManager->create("\x5cMag\x65nt\x6f\x5cSales\\\x4d\x6f\x64\x65\x6c\\Or\x64er\x5c\x49\x74em");$feeItem->setSku(DuitkuConstants::DUITKU_SURCHARGE);$feeItem->setName(${${"G\x4c\x4f\x42ALS"}["\x65\x67bb\x79\x6ab\x7a\x63b\x69"]});${"\x47\x4cOBA\x4c\x53"}["j\x6bl\x6dc\x76p\x61\x79meu"]="\x62\x61\x73eFe\x65\x41\x6d\x6fu\x6e\x74";$feeItem->setBaseCost(${${"\x47LO\x42\x41L\x53"}["\x6f\x6c\x6c\x79\x68\x61\x70u"]});$feeItem->setBasePrice(${${"\x47L\x4fB\x41\x4c\x53"}["o\x6c\x6cy\x68\x61\x70\x75"]});${"\x47\x4c\x4f\x42\x41\x4cS"}["\x68\x62\x70\x73\x62\x78\x6e\x65\x77p"]="or\x64\x65rI\x64";$feeItem->setBasePriceInclTax(${${"\x47\x4c\x4f\x42A\x4c\x53"}["o\x6c\x6c\x79h\x61\x70u"]});${"\x47\x4c\x4fBA\x4cS"}["\x6d\x7a\x64\x64\x73o\x6b"]="\x62\x61\x73e\x46\x65e\x41\x6d\x6f\x75n\x74";$feeItem->setBaseOriginalPrice(${${"\x47\x4c\x4fB\x41L\x53"}["m\x7add\x73o\x6b"]});$pjamkdignrm="fe\x65\x41\x6d\x6fu\x6e\x74";${"GL\x4fB\x41\x4cS"}["\x63nx\x78yng\x69\x75"]="\x66\x65e\x41m\x6funt";${"\x47\x4c\x4fB\x41L\x53"}["\x68xs\x68lz\x6d\x6ctd\x6f"]="\x66\x65\x65\x41\x6do\x75n\x74";$feeItem->setBaseRowTotal(${${"\x47L\x4f\x42AL\x53"}["j\x6b\x6c\x6dcv\x70\x61\x79\x6de\x75"]});$feeItem->setBaseRowTotalInclTax(${${"GL\x4f\x42A\x4cS"}["ol\x6c\x79h\x61\x70u"]});$feeItem->setCost(${${"G\x4c\x4fBAL\x53"}["\x67\x78rntf"]});$feeItem->setPrice(${$pjamkdignrm});$feeItem->setPriceInclTax(${${"\x47\x4c\x4f\x42A\x4cS"}["\x68xs\x68\x6czml\x74do"]});$feeItem->setOriginalPrice(${${"\x47\x4cO\x42A\x4cS"}["\x67xr\x6e\x74f"]});$feeItem->setRowTotal(${${"G\x4c\x4f\x42\x41L\x53"}["\x67\x78\x72n\x74f"]});$feeItem->setRowTotalInclTax(${${"\x47\x4c\x4fBALS"}["c\x6e\x78\x78y\x6e\x67i\x75"]});$feeItem->setProductType(\Magento\Catalog\Model\Product\Type::TYPE_VIRTUAL);$feeItem->setIsVirtual(1);$feeItem->setQtyOrdered(1);$feeItem->setStoreId(${${"GL\x4fBA\x4c\x53"}["\x71\x65\x63\x6e\x73fx\x64\x62"]});$feeItem->setOrderId(${${"\x47L\x4fB\x41L\x53"}["h\x62\x70sb\x78\x6ee\x77p"]});return${${"\x47\x4c\x4f\x42\x41\x4c\x53"}["\x74p\x62\x63\x77\x64\x64c"]};}}
-?>
+<?php
+/**
+ * Copyright (c) 2017. All rights reserved Duitku Vabni.
+ *
+ * This program is free software. You are allowed to use the software but NOT allowed to modify the software.
+ * It is also not legal to do any changes to the software and distribute it in your own name / brand.
+ *
+ * All use of the payment modules happens at your own risk. We offer a free test account that you can use to test the module.
+ *
+ * @author    Duitku Vabni
+ * @copyright Duitku Vabni (http://duitku.com)
+ * @license   Duitku Vabni
+ *
+ */
+
+namespace Duitku\Vabni\Helper;
+include_once('Duitku/ApiRequestor.php');
+include_once('Duitku/DuitkuCore.php');
+use Duitku\Vabni\Helper\DuitkuConstants;
+use Duitku_Vabni_Core;
+class Data extends \Magento\Framework\App\Helper\AbstractHelper
+{
+    /**
+     * @var \Duitku\Vabni\Logger\DuitkuLogger
+     */
+    protected $_duitkuLogger;
+
+    /**
+     * @var \Magento\Framework\Encryption\EncryptorInterface
+     */
+    protected $_encryptor;
+
+    /**
+     * @var \Magento\Framework\Module\ModuleListInterface
+     */
+    protected $_moduleList;
+
+    /**
+     * Duitku Helper
+     *
+     * @param \Magento\Framework\App\Helper\Context $context
+     * @param \Duitku\Vabni\Logger\DuitkuLogger $duitkuLogger
+     * @param \Magento\Framework\Encryption\EncryptorInterface $encryptor
+     * @param \Magento\Framework\Module\ModuleListInterface $moduleList
+     */
+    public function __construct(
+        \Magento\Framework\App\Helper\Context $context,
+        \Duitku\Vabni\Logger\DuitkuLogger $duitkuLogger,
+        \Magento\Framework\Encryption\EncryptorInterface $encryptor,
+        \Magento\Framework\Module\ModuleListInterface $moduleList
+    ) {
+        parent::__construct($context);
+        $this->_duitkuLogger = $duitkuLogger;
+        $this->_encryptor = $encryptor;
+        $this->_moduleList = $moduleList;
+    }
+
+    /**
+     * Gives back duitku_checkout configuration values
+     *
+     * @param $field
+     * @param null|int $storeId
+     * @return mixed
+     */
+    public function getDuitkuEpayConfigData($field, $storeId = null)
+    {
+        return $this->getConfigData($field, 'duitku_vabepay', $storeId);
+    }
+	
+	public function getDuitkuCore(){
+   		$DuitkuCore = new Duitku_Vabni_Core();
+		return $DuitkuCore;
+	}
+		
+	
+    /**
+     * Gives back duitku_checkout configuration values
+     *
+     * @param $field
+     * @param null|int $storeId
+     * @return mixed
+     */
+    public function getDuitkuCheckoutConfigData($field, $storeId = null)
+    {
+        return $this->getConfigData($field, 'duitku_checkout', $storeId);
+    }
+
+    /**
+     * Gives back duitku_checkout configuration values
+     *
+     * @param $field
+     * @param null|int $storeId
+     * @return mixed
+     */
+    public function getDuitkuAdvancedConfigData($field, $storeId = null)
+    {
+        return $this->getConfigData($field, 'duitku_advanced', $storeId);
+    }
+
+    /**
+     * Retrieve information from payment configuration
+     *
+     * @param $field
+     * @param $paymentMethodCode
+     * @param $storeId
+     * @param bool|false $flag
+     * @return bool|mixed
+     */
+    public function getConfigData($field, $paymentMethodCode, $storeId, $flag = false)
+    {
+        $path = 'payment/' . $paymentMethodCode . '/' . $field;
+
+        if (!$flag) {
+            return $this->scopeConfig->getValue($path, \Magento\Store\Model\ScopeInterface::SCOPE_STORE, $storeId);
+        } else {
+            return $this->scopeConfig->isSetFlag($path, \Magento\Store\Model\ScopeInterface::SCOPE_STORE, $storeId);
+        }
+    }
+
+ 
+ 
+    
+    /**
+     * Decrypt data
+     *
+     * @param mixed $data
+     * @return string
+     */
+    public function decryptData($data)
+    {
+        return $this->_encryptor->decrypt(trim($data));
+    }
+
+    /**
+     * Retrieve the shops local code
+     *
+     * @return string
+     */
+    public function getShopLocalCode()
+    {
+        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+        $resolver = $objectManager->get('Magento\Framework\Locale\Resolver');
+
+        return $resolver->getLocale();
+    }
+
+    /**
+     * Convert an amount from minorunits
+     *
+     * @param $amount
+     * @param $minorunits
+     * @return float
+     */
+    public function convertPriceFromMinorunits($amount, $minorunits)
+    {
+        if ($amount == "" || $amount == null) {
+            return 0;
+        }
+
+        return ($amount / pow(10, $minorunits));
+    }
+
+
+    /**
+     * Return minorunits based on Currency Code
+     *
+     * @param $currencyCode
+     * @return int
+     */
+    public function getCurrencyMinorunits($currencyCode)
+    {
+        $currencyArray = array(
+        'TTD' => 0, 'KMF' => 0, 'ADP' => 0, 'TPE' => 0, 'BIF' => 0,
+        'DJF' => 0, 'MGF' => 0, 'XPF' => 0, 'GNF' => 0, 'BYR' => 0,
+        'PYG' => 0, 'JPY' => 0, 'CLP' => 0, 'XAF' => 0, 'TRL' => 0,
+        'VUV' => 0, 'CLF' => 0, 'KRW' => 0, 'XOF' => 0, 'RWF' => 0,
+        'IQD' => 3, 'TND' => 3, 'BHD' => 3, 'JOD' => 3, 'OMR' => 3,
+        'KWD' => 3, 'LYD' => 3);
+
+        return array_key_exists($currencyCode, $currencyArray) ? $currencyArray[$currencyCode] : 2;
+    }
+
+    /**
+     * Format currency
+     *
+     * @param float $amount
+     * @return string
+     */
+    public function formatCurrency($amount)
+    {
+        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+        $priceHelper = $objectManager->create('Magento\Framework\Pricing\Helper\Data');
+
+        return $priceHelper->currency($amount, true, false);
+    }
+
+    /**
+     * Generate Checkout Api key
+     *
+     * @param $storeId
+     * @return string
+     */
+  
+    /**
+     * Returns the version of the module
+     *
+     * @return string
+     */
+    public function getModuleVersion()
+    {
+        return $this->_moduleList->getOne("Duitku_Vabni")['setup_version'];
+    }
+
+    /**
+     * Returns the module name and version
+     *
+     * @return string
+     */
+    public function getModuleHeaderInfo()
+    {
+        $duitkuVersion = $this->getModuleVersion();
+        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+        $productMetadata = $objectManager->get('Magento\Framework\App\ProductMetadataInterface');
+        $magentoVersion = $productMetadata->getVersion();
+        $result = 'Magento/' . $magentoVersion. ' Module/' . $duitkuVersion . ' PHP/' . phpversion();
+        return $result;
+    }
+
+   
+
+    /**
+     * Translate Payment status
+     *
+     * @param string $status
+     * @return \Magento\Framework\Phrase
+     */
+    public function translatePaymentStatus($status)
+    {
+        if (strcmp($status, "PAYMENT_NEW") == 0) {
+            return __("New");
+        } elseif (strcmp($status, "PAYMENT_CAPTURED") == 0 || strcmp($status, "PAYMENT_EUROLINE_WAIT_CAPTURE") == 0 || strcmp($status, "PAYMENT_EUROLINE_WAIT_CREDIT") == 0) {
+            return __("Captured");
+        } elseif (strcmp($status, "PAYMENT_DELETED") == 0) {
+            return __("Deleted");
+        } else {
+            return __("Unkown");
+        }
+    }
+
+    /**
+     * Return if Checkout Api Result is valid
+     *
+     * @param \Duitku\Vabni\Model\Api\Checkout\Response\Base $request
+     * @param mixed $id
+     * @param bool $isBackoffice
+     * @param string &$message
+     * @return bool
+     */
+  
+
+
+    /**
+     * Convert country code to a number
+     *
+     * @param mixed $lan
+     * @return string
+     */
+    public function calcLanguage($lan = null)
+    {
+        if (!isset($lan)) {
+            $lan = $this->getShopLocalCode();
+        }
+
+        $languageArray = array(
+            'da_DK' => '1',
+            'de_CH' => '7',
+            'de_DE' => '7',
+            'en_AU' => '2',
+            'en_GB' => '2',
+            'en_NZ' => '2',
+            'en_US' => '2',
+            'sv_SE' => '3',
+            'nn_NO' => '4',
+            );
+
+        return array_key_exists($lan, $languageArray) ? $languageArray[$lan] : '0';
+    }
+
+    /**
+     * Convert card id to name
+     *
+     * @param mixed $cardid
+     * @return string
+     */
+    public function calcCardtype($cardid)
+    {
+        $cardIdArray = array(
+            '1' => 'Dankort / VISA/Dankort',
+            '2' => 'eDankort',
+            '3' => 'VISA / VISA Electron',
+            '4' => 'MasterCard',
+            '6' => 'JCB',
+            '7' => 'Maestro',
+            '8' => 'Diners Club',
+            '9' => 'American Express',
+            '10' => 'ewire',
+            '12' => 'Nordea e-betaling',
+            '13' => 'Danske Netbetalinger',
+            '14' => 'PayPal',
+            '16' => 'MobilPenge',
+            '17' => 'Klarna',
+            '18' => 'Svea',
+            '19' => 'SEB Direktbetalning',
+            '20' => 'Nordea E-payment',
+            '21' => 'Handelsbanken Direktbetalningar',
+            '22' => 'Swedbank Direktbetalningar',
+            '23' => 'ViaBill',
+            '24' => 'NemPay',
+            '25' => 'iDeal');
+
+        return array_key_exists($cardid, $cardIdArray) ? $cardIdArray[$cardid] : '';
+    }
+
+    /**
+     * Convert Iso code
+     *
+     * @param string $code
+     * @param bool $isKey
+     * @return string
+     */
+    public function convertIsoCode($code, $isKey = true)
+    {
+        $isoCodeArray = array(
+           'ADP' => '020', 'AED' => '784', 'AFA' => '004', 'ALL' => '008', 'AMD' => '051', 'ANG' => '532',
+           'AOA' => '973', 'ARS' => '032', 'AUD' => '036', 'AWG' => '533', 'AZM' => '031', 'BAM' => '052',
+           'BBD' => '004', 'BDT' => '050', 'BGL' => '100', 'BGN' => '975', 'BHD' => '048', 'BIF' => '108',
+           'BMD' => '060', 'BND' => '096', 'BOB' => '068', 'BOV' => '984', 'BRL' => '986', 'BSD' => '044',
+           'BTN' => '064', 'BWP' => '072', 'BYR' => '974', 'BZD' => '084', 'CAD' => '124', 'CDF' => '976',
+           'CHF' => '756', 'CLF' => '990', 'CLP' => '152', 'CNY' => '156', 'COP' => '170', 'CRC' => '188',
+           'CUP' => '192', 'CVE' => '132', 'CYP' => '196', 'CZK' => '203', 'DJF' => '262', 'DKK' => '208',
+           'DOP' => '214', 'DZD' => '012', 'ECS' => '218', 'ECV' => '983', 'EEK' => '233', 'EGP' => '818',
+           'ERN' => '232', 'ETB' => '230', 'EUR' => '978', 'FJD' => '242', 'FKP' => '238', 'GBP' => '826',
+           'GEL' => '981', 'GHC' => '288', 'GIP' => '292', 'GMD' => '270', 'GNF' => '324', 'GTQ' => '320',
+           'GWP' => '624', 'GYD' => '328', 'HKD' => '344', 'HNL' => '340', 'HRK' => '191', 'HTG' => '332',
+           'HUF' => '348', 'IDR' => '360', 'ILS' => '376', 'INR' => '356', 'IQD' => '368', 'IRR' => '364',
+           'ISK' => '352', 'JMD' => '388', 'JOD' => '400', 'JPY' => '392', 'KES' => '404', 'KGS' => '417',
+           'KHR' => '116', 'KMF' => '174', 'KPW' => '408', 'KRW' => '410', 'KWD' => '414', 'KYD' => '136',
+           'KZT' => '398', 'LAK' => '418', 'LBP' => '422', 'LKR' => '144', 'LRD' => '430', 'LSL' => '426',
+           'LTL' => '440', 'LVL' => '428', 'LYD' => '434', 'MAD' => '504', 'MDL' => '498', 'MGF' => '450',
+           'MKD' => '807', 'MMK' => '104', 'MNT' => '496', 'MOP' => '446', 'MRO' => '478', 'MTL' => '470',
+           'MUR' => '480', 'MVR' => '462', 'MWK' => '454', 'MXN' => '484', 'MXV' => '979', 'MYR' => '458',
+           'MZM' => '508', 'NAD' => '516', 'NGN' => '566', 'NIO' => '558', 'NOK' => '578', 'NPR' => '524',
+           'NZD' => '554', 'OMR' => '512', 'PAB' => '590', 'PEN' => '604', 'PGK' => '598', 'PHP' => '608',
+           'PKR' => '586', 'PLN' => '985', 'PYG' => '600', 'QAR' => '634', 'ROL' => '642', 'RUB' => '643',
+           'RUR' => '810', 'RWF' => '646', 'SAR' => '682', 'SBD' => '090', 'SCR' => '690', 'SDD' => '736',
+           'SEK' => '752', 'SGD' => '702', 'SHP' => '654', 'SIT' => '705', 'SKK' => '703', 'SLL' => '694',
+           'SOS' => '706', 'SRG' => '740', 'STD' => '678', 'SVC' => '222', 'SYP' => '760', 'SZL' => '748',
+           'THB' => '764', 'TJS' => '972', 'TMM' => '795', 'TND' => '788', 'TOP' => '776', 'TPE' => '626',
+           'TRL' => '792', 'TRY' => '949', 'TTD' => '780', 'TWD' => '901', 'TZS' => '834', 'UAH' => '980',
+           'UGX' => '800', 'USD' => '840', 'UYU' => '858', 'UZS' => '860', 'VEB' => '862', 'VND' => '704',
+           'VUV' => '548', 'XAF' => '950', 'XCD' => '951', 'XOF' => '952', 'XPF' => '953', 'YER' => '886',
+           'YUM' => '891', 'ZAR' => '710', 'ZMK' => '894', 'ZWD' => '716');
+
+        if ($isKey) {
+            return $isoCodeArray[$code];
+        }
+
+        return array_search($code, $isoCodeArray);
+    }
+
+    /**
+     * Create an Surcharge fee item
+     *
+     * @param mixed $baseFeeAmount
+     * @param mixed $feeAmount
+     * @param mixed $storeId
+     * @param mixed $orderId
+     * @param mixed $text
+     * @return \Magento\Sales\Model\Order\Item
+     */
+    public function createSurchargeItem($baseFeeAmount, $feeAmount, $storeId, $orderId, $text)
+    {
+        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+        /** @var \Magento\Sales\Model\Order\Item */
+        $feeItem = $objectManager->create('\Magento\Sales\Model\Order\Item');
+        $feeItem->setSku(DuitkuConstants::DUITKU_SURCHARGE);
+
+        $feeItem->setName($text);
+        $feeItem->setBaseCost($baseFeeAmount);
+        $feeItem->setBasePrice($baseFeeAmount);
+        $feeItem->setBasePriceInclTax($baseFeeAmount);
+        $feeItem->setBaseOriginalPrice($baseFeeAmount);
+        $feeItem->setBaseRowTotal($baseFeeAmount);
+        $feeItem->setBaseRowTotalInclTax($baseFeeAmount);
+        $feeItem->setCost($feeAmount);
+        $feeItem->setPrice($feeAmount);
+        $feeItem->setPriceInclTax($feeAmount);
+        $feeItem->setOriginalPrice($feeAmount);
+        $feeItem->setRowTotal($feeAmount);
+        $feeItem->setRowTotalInclTax($feeAmount);
+        $feeItem->setProductType(\Magento\Catalog\Model\Product\Type::TYPE_VIRTUAL);
+        $feeItem->setIsVirtual(1);
+        $feeItem->setQtyOrdered(1);
+        $feeItem->setStoreId($storeId);
+        $feeItem->setOrderId($orderId);
+
+        return $feeItem;
+    }
+}

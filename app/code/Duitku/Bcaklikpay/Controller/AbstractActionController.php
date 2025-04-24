@@ -1,2 +1,366 @@
-<?php namespace Duitku\Bcaklikpay\Controller;${"\x47L\x4f\x42\x41\x4c\x53"}["w\x64\x63\x64\x6f\x65ps\x67"]="i\x64";${"\x47\x4c\x4f\x42\x41\x4cS"}["\x6f\x7ak\x61sd\x78k\x6b\x77"]="\x73\x74a\x74\x75\x73C\x6f\x64e";${"\x47\x4c\x4fB\x41LS"}["\x6b\x72\x71\x72\x70\x69vr"]="\x65\x72ro\x72\x4des\x73\x61ge";${"GLO\x42A\x4c\x53"}["\x70\x6eo\x6b\x69\x77\x71"]="\x70\x61ym\x65n\x74M\x65\x74h\x6f\x64";${"GL\x4f\x42ALS"}["\x70\x62\x70\x76\x74wmk"]="\x65\x78";${"G\x4c\x4f\x42\x41\x4c\x53"}["\x62m\x6e\x6a\x6c\x6e\x6a\x63\x77"]="t\x72\x61\x6e\x73ac\x74\x69o\x6e";${"\x47L\x4f\x42\x41\x4cS"}["\x76\x77j\x6c\x76\x66\x77\x71\x76i\x6f\x64"]="\x73\x74at\x75\x73";${"\x47L\x4f\x42A\x4cS"}["\x70o\x73x\x76\x6eid\x69y\x6b"]="\x74\x72\x61\x6e\x73\x61\x63\x74i\x6fn\x43\x6f\x6dm\x65\x6et";${"\x47\x4cO\x42\x41\x4c\x53"}["wg\x72\x79s\x68\x66\x63\x70\x62\x64\x79"]="\x74\x78nId";${"\x47\x4c\x4f\x42\x41\x4cS"}["c\x77\x78\x77\x73\x6b\x79\x75\x71a\x6d"]="\x70aym\x65\x6e\x74M\x65\x74\x68\x6fd\x49nst\x61n\x63\x65";${"\x47L\x4f\x42A\x4c\x53"}["\x71md\x78\x62\x65q"]="\x6d\x65\x74\x68\x6fd\x52\x65\x66e\x72e\x6e\x63\x65";${"G\x4cO\x42\x41\x4c\x53"}["s\x6b\x6dp\x66\x6e\x6b"]="\x73\x74\x6fr\x65Id";${"\x47\x4c\x4f\x42A\x4c\x53"}["\x63\x78\x63\x6aqe"]="pa\x79\x6d\x65\x6e\x74";${"G\x4c\x4f\x42\x41L\x53"}["gr\x78\x69j\x70"]="\x70o\x73\x74\x65d";${"\x47\x4c\x4fB\x41\x4c\x53"}["w\x78\x72g\x73\x64js\x71\x6d"]="r\x65su\x6ctC\x6f\x64e";${"\x47\x4cO\x42\x41\x4c\x53"}["\x62fs\x6a\x68\x77\x69lc\x77l\x75"]="\x6d\x65\x73\x73\x61ge";${"\x47L\x4fBA\x4cS"}["\x70\x66\x67\x73\x6ax\x71fc\x6d\x67\x66"]="incr\x65\x6d\x65n\x74\x49d";${"\x47\x4c\x4f\x42\x41L\x53"}["\x6a\x67uh\x69\x79y\x6c\x74\x61\x66\x6d"]="\x69\x6e\x76\x6fic\x65\x53\x65\x6ede\x72";${"\x47\x4c\x4fB\x41\x4cS"}["\x71\x6e\x6a\x6e\x7a\x68\x76h\x7am\x75"]="o\x72\x64\x65r\x53\x65\x6ed\x65\x72";${"\x47\x4c\x4fB\x41\x4cS"}["lf\x68\x65\x63\x72z"]="\x70\x61y\x6d\x65nt\x48\x65lp\x65r";${"G\x4c\x4f\x42\x41\x4cS"}["z\x72\x6ej\x70\x6bq\x74"]="c\x68\x65c\x6b\x6fu\x74S\x65s\x73i\x6f\x6e";use\Magento\Sales\Model\Order;use\Magento\Sales\Model\Order\Payment\Transaction;use\Duitku\Bcaklikpay\Helper\DuitkuConstants;use\Duitku\Bcaklikpay\Model\Method\Epay\Payment as EpayPayment;abstract class AbstractActionController extends\Magento\Framework\App\Action\Action{protected$_orderFactory;protected$_checkoutSession;protected$_duitkuHelper;protected$_resultJsonFactory;protected$_duitkuLogger;protected$_paymentHelper;protected$_orderSender;protected$_invoiceSender;public function __construct(\Magento\Framework\App\Action\Context$context,\Magento\Sales\Model\OrderFactory$orderFactory,\Magento\Checkout\Model\Session$checkoutSession,\Duitku\Bcaklikpay\Helper\Data$duitkuHelper,\Magento\Framework\Controller\Result\JsonFactory$resultJsonFactory,\Duitku\Bcaklikpay\Logger\DuitkuLogger$duitkuLogger,\Magento\Payment\Helper\Data$paymentHelper,\Magento\Sales\Model\Order\Email\Sender\OrderSender$orderSender,\Magento\Sales\Model\Order\Email\Sender\InvoiceSender$invoiceSender){${"\x47LO\x42\x41\x4c\x53"}["\x67s\x69\x6a\x66\x73\x63rr\x6a\x71w"]="\x6f\x72\x64\x65r\x46\x61c\x74\x6f\x72\x79";${"GLO\x42A\x4cS"}["\x6a\x71k\x68\x67\x6andnaj"]="\x63\x6f\x6e\x74\x65\x78\x74";parent::__construct(${${"\x47\x4cO\x42\x41\x4cS"}["\x6aqkh\x67j\x6e\x64\x6e\x61j"]});$ypfjmnehxugj="r\x65s\x75\x6c\x74\x4a\x73on\x46a\x63\x74\x6f\x72\x79";${"\x47\x4c\x4f\x42\x41\x4cS"}["vb\x6dx\x6b\x77\x6c\x78\x6b\x6b"]="du\x69t\x6b\x75\x48elpe\x72";$this->_orderFactory=${${"\x47L\x4f\x42\x41\x4cS"}["\x67\x73\x69\x6a\x66scr\x72\x6a\x71\x77"]};$this->_checkoutSession=${${"G\x4cO\x42A\x4c\x53"}["z\x72\x6e\x6a\x70\x6b\x71\x74"]};$ywgeyboidj="d\x75\x69\x74\x6b\x75\x4c\x6f\x67\x67\x65\x72";$this->_duitkuHelper=${${"\x47\x4cOB\x41\x4c\x53"}["vb\x6dx\x6b\x77\x6c\x78\x6b\x6b"]};$this->_resultJsonFactory=${$ypfjmnehxugj};$this->_duitkuLogger=${$ywgeyboidj};$this->_paymentHelper=${${"\x47LO\x42A\x4cS"}["\x6cf\x68\x65c\x72z"]};$this->_orderSender=${${"\x47\x4c\x4fB\x41\x4c\x53"}["q\x6ej\x6ez\x68v\x68zmu"]};$this->_invoiceSender=${${"\x47\x4c\x4f\x42\x41\x4cS"}["\x6a\x67\x75h\x69\x79y\x6c\x74\x61f\x6d"]};}protected function _getOrder(){${${"\x47\x4c\x4f\x42\x41\x4cS"}["\x70\x66\x67s\x6a\x78q\x66\x63\x6d\x67\x66"]}=$this->_checkoutSession->getLastRealOrderId();return$this->getOrder(${${"GLOBA\x4c\x53"}["\x70\x66g\x73\x6ax\x71\x66\x63m\x67\x66"]});}protected function _getOrderByIncrementId($incrementId){return$this->getOrder(${${"G\x4cOB\x41L\x53"}["\x70fgs\x6a\x78\x71fc\x6d\x67f"]});}public function getOrder($incrementId){return$this->_orderFactory->create()->loadByIncrementId(${${"G\x4cOB\x41L\x53"}["pf\x67s\x6a\x78\x71\x66c\x6dg\x66"]});}protected function setOrderDetails($order){${${"\x47\x4cO\x42ALS"}["\x62\x66\x73\x6ah\x77i\x6c\x63w\x6c\x75"]}=__("\x4f\x72\x64er\x20pl\x61c\x65\x64\x20an\x64 \x69\x73\x20n\x6fw aw\x61iting p\x61\x79\x6den\x74 \x61\x75\x74\x68o\x72i\x7a\x61\x74io\x6e");$order->addStatusHistoryComment(${${"\x47\x4cO\x42AL\x53"}["bf\x73j\x68\x77il\x63\x77\x6c\x75"]});$order->setIsNotified(false);$order->save();}protected function acceptOrder(){${"\x47\x4cO\x42\x41\x4c\x53"}["\x73cz\x61\x79e\x63\x6d\x69l"]="\x70\x6f\x73\x74\x65\x64";$sdtupduq="\x70\x6f\x73\x74e\x64";${"\x47\x4c\x4f\x42A\x4cS"}["\x69q\x62d\x6d\x75e\x72"]="pos\x74\x65\x64";${${"\x47LO\x42AL\x53"}["\x73\x63\x7aa\x79\x65\x63m\x69\x6c"]}=$this->getRequest()->getParams();$bmprsikrye="\x72\x65\x73\x75\x6c\x74\x43\x6fd\x65";${${"\x47\x4c\x4fB\x41\x4c\x53"}["\x77\x78\x72gs\x64\x6a\x73\x71\x6d"]}=${$sdtupduq}["resultC\x6fd\x65"];if(isset(${${"\x47LO\x42\x41\x4c\x53"}["i\x71b\x64\x6d\x75\x65\x72"]}["\x72e\x73ultCo\x64e"])&&isset(${${"\x47L\x4fBA\x4c\x53"}["g\x72x\x69\x6a\x70"]}["m\x65\x72ch\x61n\x74Orde\x72\x49d"])&&isset(${${"\x47\x4c\x4f\x42\x41\x4c\x53"}["\x67r\x78i\x6a\x70"]}["ref\x65\x72e\x6ece"])&&(${$bmprsikrye}=="0\x30"||${${"\x47\x4cOB\x41LS"}["\x77xr\x67\x73\x64\x6a\x73q\x6d"]}=="\x301")){${"GL\x4fB\x41\x4cS"}["\x6a\x65\x78\x6a\x79p\x61\x6a\x64j"]="\x70\x6f\x73t\x65\x64";${"G\x4cO\x42\x41\x4cS"}["\x63\x75\x7a\x68\x78\x6f\x6dip"]="\x6fr\x64\x65\x72";${${"GL\x4fBA\x4c\x53"}["cuz\x68x\x6f\x6d\x69\x70"]}=$this->_getOrderByIncrementId(${${"\x47\x4cO\x42\x41L\x53"}["je\x78j\x79\x70\x61\x6a\x64j"]}["m\x65\x72\x63hantOr\x64erId"]);$this->_checkoutSession->setLastOrderId($order->getId());$this->_checkoutSession->setLastRealOrderId($order->getIncrementId());$this->_checkoutSession->setLastQuoteId($order->getQuoteId());$this->_checkoutSession->setLastSuccessQuoteId($order->getQuoteId());$this->_redirect("checko\x75\x74/o\x6e\x65\x70\x61ge/s\x75\x63\x63\x65ss");}else{$this->cancelOrder();}}protected function cancelOrder(){$this->cancelCurrentOrder();$this->restoreQuote();$this->_redirect("c\x68eck\x6f\x75\x74/\x63\x61rt");}protected function cancelCurrentOrder(){${"\x47L\x4fBAL\x53"}["m\x6c\x6f\x69\x64hjc\x64s\x63"]="\x6fr\x64\x65\x72";${${"\x47L\x4f\x42\x41\x4c\x53"}["m\x6c\x6f\x69dh\x6ac\x64\x73\x63"]}=$this->_getOrder();if($order->getId()&&$order->getState()!=Order::STATE_CANCELED){${"\x47L\x4f\x42\x41\x4cS"}["\x75\x79\x76\x69\x6ce\x73\x6a"]="\x63\x6f\x6d\x6de\x6e\x74";$xbtdtwkqun="\x63o\x6d\x6d\x65n\x74";${${"\x47LOBAL\x53"}["\x75\x79vi\x6ces\x6a"]}=__("T\x68\x65\x20\x6f\x72d\x65r\x20w\x61\x73\x20canc\x65le\x64");$order->registerCancellation(${$xbtdtwkqun})->save();return true;}return false;}protected function restoreQuote(){return$this->_checkoutSession->restoreQuote();}protected function _getPaymentMethodInstance($method){${"\x47L\x4f\x42\x41L\x53"}["rqhprk"]="m\x65\x74h\x6f\x64";return$this->_paymentHelper->getMethodInstance(${${"G\x4c\x4f\x42\x41L\x53"}["\x72\x71\x68\x70\x72\x6b"]});}protected function _processCallbackData($order,$paymentMethodInstance,$txnId,$methodReference,$status,$payment=null){try{$ogtbryohprvq="\x70a\x79\x6d\x65n\x74";${"\x47\x4cOB\x41L\x53"}["\x76hq\x75\x6en\x70\x6f\x64\x7al"]="\x6f\x72\x64e\x72";${"G\x4cO\x42\x41\x4c\x53"}["l\x6b\x62\x73\x72\x66\x70\x79\x65pc"]="\x74\x78\x6e\x49\x64";if(!isset(${$ogtbryohprvq})){${${"\x47LOB\x41\x4c\x53"}["\x63\x78\x63\x6aq\x65"]}=$order->getPayment();}${${"GLO\x42\x41\x4cS"}["s\x6bm\x70\x66n\x6b"]}=$order->getStoreId();$ubzhhklzgqt="\x73\x74a\x74\x75s";$this->updatePaymentData(${${"G\x4c\x4fB\x41\x4cS"}["\x76\x68\x71\x75\x6en\x70\x6f\x64z\x6c"]},${${"\x47\x4cOB\x41\x4c\x53"}["l\x6bb\x73\x72\x66p\x79e\x70c"]},${${"G\x4c\x4f\x42\x41\x4cS"}["\x71\x6d\x64\x78\x62eq"]},${${"\x47\x4c\x4f\x42\x41L\x53"}["\x63\x77\x78w\x73\x6by\x75q\x61m"]},${$ubzhhklzgqt});if(!$order->getEmailSent()&&$paymentMethodInstance->getConfigData(DuitkuConstants::SEND_MAIL_ORDER_CONFIRMATION,${${"\x47L\x4f\x42A\x4cS"}["s\x6bm\x70f\x6ek"]})==1){$hjpddi="\x6f\x72\x64\x65\x72";$this->sendOrderEmail(${$hjpddi});}if($paymentMethodInstance->getConfigData(DuitkuConstants::INSTANT_INVOICE,${${"\x47\x4c\x4f\x42\x41\x4c\x53"}["\x73\x6b\x6d\x70\x66n\x6b"]})==1){$dvmnlckle="pa\x79\x6den\x74\x4d\x65t\x68\x6fdI\x6e\x73\x74a\x6e\x63\x65";$irtqhltgp="or\x64e\x72";$this->createInvoice(${$irtqhltgp},${$dvmnlckle});}}catch(\Exception$ex){$bkasjxi="ex";throw${$bkasjxi};}}public function updatePaymentData($order,$txnId,$methodReference,$paymentMethodInstance,$status){try{${"G\x4cOB\x41LS"}["\x6b\x78\x66\x67\x68rm\x6c\x67\x72\x68"]="\x70\x61y\x6de\x6e\x74";${${"\x47\x4c\x4f\x42\x41L\x53"}["\x6b\x78\x66\x67h\x72m\x6c\x67\x72\x68"]}=$order->getPayment();$payment->setTransactionId(${${"G\x4c\x4f\x42\x41\x4cS"}["\x77gr\x79\x73\x68\x66\x63\x70\x62\x64\x79"]});$payment->setIsTransactionClosed(false);$payment->setAdditionalInformation(array(${${"\x47L\x4f\x42\x41\x4c\x53"}["\x71m\x64\x78beq"]}=>${${"\x47\x4cOBA\x4c\x53"}["w\x67\x72\x79\x73\x68\x66\x63\x70\x62\x64\x79"]}));$fxitfx="\x74\x72\x61ns\x61ct\x69\x6f\x6e";${${"\x47\x4cO\x42ALS"}["\x70\x6fsx\x76n\x69\x64\x69\x79k"]}=__("\x50\x61\x79m\x65\x6e\x74 \x61ut\x68\x6f\x72\x69\x7aa\x74i\x6fn\x20w\x61\x73\x20a s\x75\x63\x63e\x73\x73.");$order->setStatus(${${"\x47LO\x42AL\x53"}["\x76w\x6a\x6c\x76\x66\x77\x71viod"]});$msogyzswnwrr="\x74ra\x6e\x73\x61\x63\x74\x69\x6f\x6e\x43om\x6d\x65\x6et";$order->setState(Order::STATE_PROCESSING);${$fxitfx}=$payment->addTransaction(Transaction::TYPE_AUTH);$payment->addTransactionCommentsToOrder(${${"G\x4cOB\x41\x4cS"}["\x62\x6d\x6ej\x6c\x6e\x6a\x63\x77"]},${$msogyzswnwrr});$order->save();}catch(\Exception$ex){${"G\x4cOB\x41\x4c\x53"}["jq\x6a\x69sf\x74\x72\x74\x6d\x6c\x69"]="\x65x";throw${${"\x47\x4c\x4fB\x41\x4c\x53"}["jq\x6a\x69\x73\x66\x74\x72\x74ml\x69"]};}}public function sendOrderEmail($order){try{${"GL\x4f\x42\x41L\x53"}["\x65oo\x61u\x6c\x77m\x74\x72\x6f"]="o\x72\x64\x65\x72";$this->_orderSender->send(${${"GL\x4f\x42AL\x53"}["eo\x6f\x61\x75lwm\x74r\x6f"]});$order->addStatusHistoryComment(__("\x4e\x6f\x74\x69f\x69\x65\x64 custo\x6de\x72 \x61\x62\x6fut \x6f\x72\x64e\x72\x20#\x251",$order->getId()))->setIsCustomerNotified(1)->save();}catch(\Exception$ex){$order->addStatusHistoryComment(__("C\x6f\x75\x6cd\x20\x6eo\x74\x20s\x65\x6e\x64\x20\x6f\x72\x64\x65r\x20c\x6f\x6e\x66\x69\x72\x6d\x61ti\x6fn\x20for\x20or\x64\x65r\x20#%\x31",$order->getId()))->setIsCustomerNotified(0)->save();}}public function createInvoice($order,$paymentMethodInstance){try{if($order->canInvoice()){${"GL\x4f\x42\x41L\x53"}["\x79\x64\x69\x61\x69\x72\x75\x67\x78\x70\x66"]="\x74\x72ans\x61\x63\x74i\x6f\x6e\x53a\x76\x65";${"\x47L\x4f\x42\x41L\x53"}["\x69\x75\x78\x79\x6d\x7a\x66n\x71t"]="\x69\x6e\x76\x6fic\x65";${"GL\x4f\x42\x41\x4c\x53"}["\x70\x73w\x6a\x61z\x6fcl\x67"]="\x73to\x72\x65\x49\x64";${"\x47L\x4f\x42A\x4c\x53"}["\x62u\x79\x62k\x71\x71ee\x66t"]="\x69\x6evoic\x65";${${"\x47\x4c\x4f\x42\x41L\x53"}["\x69\x75\x78y\x6d\x7a\x66\x6eqt"]}=$order->prepareInvoice();${${"G\x4cOB\x41L\x53"}["\x70\x73\x77\x6a\x61\x7ao\x63\x6cg"]}=$order->getStoreId();$invoice->register();$invoice->save();${${"\x47\x4c\x4f\x42\x41\x4cS"}["yd\x69\x61\x69\x72\x75\x67\x78\x70\x66"]}=$this->_objectManager->create("M\x61\x67e\x6et\x6f\x5c\x46r\x61m\x65\x77o\x72k\\\x44B\x5c\x54r\x61nsac\x74i\x6fn")->addObject(${${"\x47\x4c\x4fB\x41\x4cS"}["\x62\x75\x79\x62k\x71\x71e\x65f\x74"]})->addObject($invoice->getOrder());$transactionSave->save();if($paymentMethodInstance->getConfigData(DuitkuConstants::INSTANT_INVOICE_MAIL,$order->getStoreId())==1){${"G\x4cOB\x41L\x53"}["\x73q\x72gt\x66\x74\x62\x78"]="i\x6e\x76oi\x63\x65";$invoice->setEmailSent(1);$this->_invoiceSender->send(${${"\x47\x4c\x4f\x42\x41\x4c\x53"}["\x73\x71\x72\x67t\x66\x74b\x78"]});$order->addStatusHistoryComment(__("Notifi\x65d\x20\x63us\x74om\x65r \x61b\x6f\x75t invo\x69\x63\x65\x20#%\x31",$invoice->getId()))->setIsCustomerNotified(1)->save();}}}catch(\Exception$ex){throw${${"\x47\x4c\x4f\x42\x41\x4c\x53"}["\x70\x62p\x76\x74wm\x6b"]};}}protected function _logError($paymentMethod,$id,$errorMessage){if(${${"\x47\x4cO\x42\x41L\x53"}["\x70\x6e\x6f\x6b\x69\x77q"]}===EpayPayment::METHOD_CODE){$tfchsexb="i\x64";$gwzntfgik="\x65\x72r\x6fr\x4de\x73\x73\x61\x67e";$this->_duitkuLogger->addEpayError(${$tfchsexb},${$gwzntfgik});}else{$this->_duitkuLogger->addError(${${"\x47\x4cO\x42\x41LS"}["\x6b\x72\x71\x72\x70\x69\x76\x72"]});}}protected function _createCallbackResult($statusCode,$message,$id){$jqexfyuvpu="\x72\x65\x73\x75\x6ct";${"\x47\x4c\x4fB\x41\x4c\x53"}["wl\x6dgj\x75f\x71\x78"]="\x72\x65s\x75\x6ct";$ujpihqe="\x6d\x65\x73\x73\x61\x67e";${"G\x4c\x4fB\x41\x4c\x53"}["\x77tv\x65\x74qd\x62\x69\x6f\x73"]="\x73\x74\x61\x74u\x73C\x6f\x64\x65";${${"\x47\x4cO\x42\x41\x4cS"}["\x77\x6cm\x67\x6aufqx"]}=$this->_resultJsonFactory->create();$result->setHttpResponseCode(${${"\x47\x4cO\x42A\x4c\x53"}["\x6f\x7a\x6b\x61s\x64\x78\x6b\x6b\x77"]});$result->setData(["\x69\x64"=>${${"G\x4c\x4f\x42A\x4c\x53"}["\x77\x64\x63do\x65ps\x67"]},"s\x74\x61\x74usC\x6fd\x65"=>${${"\x47\x4cO\x42\x41LS"}["wtv\x65\x74\x71\x64bi\x6f\x73"]},"mess\x61\x67e"=>${$ujpihqe}]);return${$jqexfyuvpu};}}
-?>
+<?php
+/**
+* Copyright (c) 2017. All rights reserved Duitku Bcaklikpay.
+*
+* This program is free software. You are allowed to use the software but NOT allowed to modify the software.
+* It is also not legal to do any changes to the software and distribute it in your own name / brand.
+*
+* All use of the payment modules happens at your own risk. We offer a free test account that you can use to test the module.
+*
+* @author    Duitku Bcaklikpay
+* @copyright Duitku Bcaklikpay (http://duitku.com)
+* @license   Duitku Bcaklikpay
+*
+*/
+namespace Duitku\Bcaklikpay\Controller;
+
+use \Magento\Sales\Model\Order;
+use \Magento\Sales\Model\Order\Payment\Transaction;
+use \Duitku\Bcaklikpay\Helper\DuitkuConstants;
+use \Duitku\Bcaklikpay\Model\Method\Epay\Payment as EpayPayment;
+
+abstract class AbstractActionController extends \Magento\Framework\App\Action\Action{
+	/**
+	* @var \Magento\Sales\Model\OrderFactory
+	*/
+	protected $_orderFactory;
+
+	/**
+	* @var \Magento\Checkout\Model\Session
+	*/
+	protected $_checkoutSession;
+
+	/**
+	* @var \Duitku\Bcaklikpay\Helper\Data
+	*/
+	protected $_duitkuHelper;
+
+	/**
+	* @var \Magento\Framework\Controller\Result\JsonFactory
+	*/
+	protected $_resultJsonFactory;
+
+	/**
+	* @var \Duitku\Bcaklikpay\Logger\DuitkuLogger
+	*/
+	protected $_duitkuLogger;
+
+	/**
+	* @var \Magento\Payment\Helper\Data
+	*/
+	protected $_paymentHelper;
+
+	/**
+	* @var \Magento\Sales\Model\Order\Email\Sender\OrderSender
+	*/
+	protected $_orderSender;
+
+	/**
+	* @var \Magento\Sales\Model\Order\Email\Sender\InvoiceSender
+	*/
+	protected $_invoiceSender;
+
+	/**
+	* AbstractActionController constructor.
+	*
+	* @param \Magento\Framework\App\Action\Context $context
+	* @param \Magento\Sales\Model\OrderFactory $orderFactory
+	* @param \Magento\Checkout\Model\Session $checkoutSession
+	* @param \Duitku\Bcaklikpay\Helper\Data $duitkuHelper
+	* @param \Magento\Framework\Controller\Result\JsonFactory $resultJsonFactory
+	* @param \Duitku\Bcaklikpay\Logger\DuitkuLogger $duitkuLogger
+	* @param \Magento\Payment\Helper\Data $paymentHelper
+	* @param \Magento\Sales\Model\Order\Email\Sender\OrderSender $orderSender
+	* @param \Magento\Sales\Model\Order\Email\Sender\InvoiceSender $invoiceSender
+	*/
+	public function __construct(
+		\Magento\Framework\App\Action\Context $context,
+		\Magento\Sales\Model\OrderFactory $orderFactory,
+		\Magento\Checkout\Model\Session $checkoutSession,
+		\Duitku\Bcaklikpay\Helper\Data $duitkuHelper,
+		\Magento\Framework\Controller\Result\JsonFactory $resultJsonFactory,
+		\Duitku\Bcaklikpay\Logger\DuitkuLogger $duitkuLogger,
+		\Magento\Payment\Helper\Data $paymentHelper,
+		\Magento\Sales\Model\Order\Email\Sender\OrderSender $orderSender,
+		\Magento\Sales\Model\Order\Email\Sender\InvoiceSender $invoiceSender
+	){
+		parent::__construct($context);
+		$this->_orderFactory = $orderFactory;
+		$this->_checkoutSession = $checkoutSession;
+		$this->_duitkuHelper = $duitkuHelper;
+		$this->_resultJsonFactory = $resultJsonFactory;
+		$this->_duitkuLogger = $duitkuLogger;
+		$this->_paymentHelper = $paymentHelper;
+		$this->_orderSender = $orderSender;
+		$this->_invoiceSender = $invoiceSender;
+	}
+
+	/**
+	* Get order object
+	*
+	* @return \Magento\Sales\Model\Order
+	*/
+	protected function _getOrder(){
+		$incrementId = $this->_checkoutSession->getLastRealOrderId();
+		return $this->getOrder($incrementId);
+	}
+
+	/**
+	* Get order by IncrementId
+	*
+	* @param $incrementId
+	* @return \Magento\Sales\Model\Order
+	*/
+	protected function _getOrderByIncrementId($incrementId){
+		return $this->getOrder($incrementId);
+	}
+
+	/**
+	* Get order object
+	* @param mixed $incrementId
+	* @return \Magento\Sales\Model\Order
+	*/
+	public function getOrder($incrementId){
+		return $this->_orderFactory->create()->loadByIncrementId($incrementId);
+	}
+
+	/**
+	* Set the order details
+	*
+	* @param \Magento\Sales\Model\Order $order
+	*/
+	protected function setOrderDetails($order){
+		$message = __("Order placed and is now awaiting payment authorization");
+		$order->addStatusHistoryComment($message);
+		$order->setIsNotified(false);
+		$order->save();
+	}
+
+	protected function acceptOrder(){
+		$posted = $this->getRequest()->getParams();		
+		$resultCode = $posted['resultCode'];
+		if(isset($posted['resultCode']) && isset($posted['merchantOrderId']) && isset($posted['reference']) && ($resultCode == '00' || $resultCode == '01')){				
+				$order = $this->_getOrderByIncrementId($posted['merchantOrderId']);
+				$this->_checkoutSession->setLastOrderId($order->getId());
+				$this->_checkoutSession->setLastRealOrderId($order->getIncrementId());
+				$this->_checkoutSession->setLastQuoteId($order->getQuoteId());
+				$this->_checkoutSession->setLastSuccessQuoteId($order->getQuoteId());
+				$this->_redirect('checkout/onepage/success');
+		}
+		else{
+			$this->cancelOrder();
+		}       		
+	}
+
+	
+	
+
+	/**
+	* Cancel the order
+	*/
+	protected function cancelOrder(){
+		
+		$this->cancelCurrentOrder();
+		$this->restoreQuote();
+		$this->_redirect('checkout/cart');
+	}
+
+	/**
+	* Cancel last placed order with specified comment message
+	*
+	* @return bool
+	*/
+	protected function cancelCurrentOrder(){
+		$order = $this->_getOrder();
+		if($order->getId() && $order->getState() != Order::STATE_CANCELED){
+			$comment =  __("The order was canceled");
+			$order->registerCancellation($comment)->save();
+			return true;
+		}
+
+		return false;
+	}
+
+	/**
+	* Restores quote
+	*
+	* @return bool
+	*/
+	protected function restoreQuote(){
+		return $this->_checkoutSession->restoreQuote();
+	}
+
+	/**
+	* Get Payment method instance object
+	*
+	* @param string $method
+	* @return {MethodInstance}
+	*/
+	protected function _getPaymentMethodInstance($method){
+		return $this->_paymentHelper->getMethodInstance($method);
+	}
+
+	/**
+	* Process the callback data
+	*
+	* @param \Magento\Sales\Model\Order $order $order
+	* @param \Duitku\Bcaklikpay\Model\Method\AbstractPayment $paymentMethodInstance
+	* @param string $txnId
+	* @param string $methodReference
+	* @param string $ccType
+	* @param string $ccNumber
+	* @param mixed $feeAmountInMinorUnits
+	* @param mixed $minorUnits
+	* @param mixed $status
+	* @param \Magento\Sales\Model\Order\Payment $payment
+	* @return void
+	*/
+	protected function _processCallbackData($order, $paymentMethodInstance, $txnId, $methodReference,$status, $payment = null){
+		try{
+			if(!isset($payment)){
+				$payment = $order->getPayment();
+			}
+			$storeId = $order->getStoreId();
+			$this->updatePaymentData($order, $txnId, $methodReference, $paymentMethodInstance, $status);
+
+           
+			if(!$order->getEmailSent() && $paymentMethodInstance->getConfigData(DuitkuConstants::SEND_MAIL_ORDER_CONFIRMATION, $storeId) == 1){
+				$this->sendOrderEmail($order);
+			}
+
+			if($paymentMethodInstance->getConfigData(DuitkuConstants::INSTANT_INVOICE, $storeId) == 1){
+				$this->createInvoice($order, $paymentMethodInstance);
+			}
+		} catch(\Exception $ex){
+			throw $ex;
+		}
+	}
+
+	/**
+	* Update the order and payment informations
+	*
+	* @param \Magento\Sales\Model\Order $order
+	* @param string $txnId
+	* @param string $methodReference
+	* @param string $ccType
+	* @param string $ccNumber
+	* @param \Duitku\Bcaklikpay\Model\Method\AbstractPayment $paymentMethodInstance
+	* @param mixed $status
+	* @param mixed $fraudStatus
+	* @return void
+	*/
+	public function updatePaymentData($order, $txnId, $methodReference, $paymentMethodInstance, $status){
+		try{
+			/** @var \Magento\Sales\Model\Order\Payment */
+			$payment = $order->getPayment();
+			$payment->setTransactionId($txnId);
+			$payment->setIsTransactionClosed(false);
+			$payment->setAdditionalInformation(array($methodReference => $txnId));
+			$transactionComment = __("Payment authorization was a success.");
+			$order->setStatus($status);
+			$order->setState(Order::STATE_PROCESSING);
+			$transaction = $payment->addTransaction(Transaction::TYPE_AUTH);
+			$payment->addTransactionCommentsToOrder($transaction, $transactionComment);
+			$order->save();
+		} catch(\Exception $ex){
+			throw $ex;
+		}
+	}
+
+	/**
+	* Add Surcharge to the order
+	*
+	* @param \Magento\Sales\Model\Order $order
+	* @param mixed $feeAmountInMinorunits
+	* @param mixed $minorunits
+	* @param mixed $ccType
+	* @param \Duitku\Bcaklikpay\Model\Method\AbstractPayment $paymentMethodInstance
+	* @return void
+	*/
+   
+	/**
+	* Send the orderconfirmation mail to the customer
+	*
+	* @param \Magento\Sales\Model\Order $order
+	* @return void
+	*/
+	public function sendOrderEmail($order){
+		try{
+			$this->_orderSender->send($order);
+			$order->addStatusHistoryComment(__("Notified customer about order #%1", $order->getId()))
+			->setIsCustomerNotified(1)
+			->save();
+		} catch(\Exception $ex){
+			$order->addStatusHistoryComment(__("Could not send order confirmation for order #%1", $order->getId()))
+			->setIsCustomerNotified(0)
+			->save();
+		}
+	}
+
+	/**
+	* Create an invoice
+	*
+	* @param \Magento\Sales\Model\Order $order
+	* @param \Duitku\Bcaklikpay\Model\Method\AbstractPayment $paymentMethodInstance
+	*/
+	public function createInvoice($order, $paymentMethodInstance){
+		try{
+			if($order->canInvoice()){
+				/** @var \Magento\Sales\Model\Order\Invoice */
+				$invoice = $order->prepareInvoice();
+				$storeId = $order->getStoreId();
+				$invoice->register();
+				$invoice->save();
+				$transactionSave = $this->_objectManager->create('Magento\Framework\DB\Transaction')
+				->addObject($invoice)
+				->addObject($invoice->getOrder());
+				$transactionSave->save();
+
+				if($paymentMethodInstance->getConfigData(DuitkuConstants::INSTANT_INVOICE_MAIL, $order->getStoreId()) == 1){
+					$invoice->setEmailSent(1);
+					$this->_invoiceSender->send($invoice);
+					$order->addStatusHistoryComment(__("Notified customer about invoice #%1", $invoice->getId()))
+					->setIsCustomerNotified(1)
+					->save();
+				}
+			}
+		} catch(\Exception $ex){
+			throw $ex;
+		}
+	}
+
+	/**
+	* Log Error
+	*
+	* @param string $paymentMethod
+	* @param mixed $id
+	* @param mixed $errorMessage
+	*/
+	protected function _logError($paymentMethod, $id, $errorMessage){
+		if($paymentMethod === EpayPayment::METHOD_CODE){
+			$this->_duitkuLogger->addEpayError($id, $errorMessage);
+		} else{
+			$this->_duitkuLogger->addError($errorMessage);
+		}
+	}
+
+	/**
+	* Get Callback Response
+	*
+	* @param mixed $statusCode
+	* @param mixed $message
+	* @param mixed $id
+	* @return mixed
+	*/
+	protected function _createCallbackResult($statusCode, $message, $id){
+		$result = $this->_resultJsonFactory->create();
+		$result->setHttpResponseCode($statusCode);
+
+		$result->setData(
+			['id'=>$id,
+				'statusCode'=>$statusCode,
+				'message'=>$message]);
+		
+		return $result;
+	}
+}

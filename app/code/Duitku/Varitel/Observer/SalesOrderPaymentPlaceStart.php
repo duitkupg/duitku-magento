@@ -1,2 +1,35 @@
-<?php namespace Duitku\Varitel\Observer;${"\x47\x4c\x4f\x42A\x4c\x53"}["\x6b\x62\x6dv\x71\x73\x6f\x79\x77"]="\x70a\x79\x6d\x65n\x74";use\Duitku\Varitel\Model\Method\Epay\Payment as EpayPayment;class SalesOrderPaymentPlaceStart implements\Magento\Framework\Event\ObserverInterface{public function execute(\Magento\Framework\Event\Observer$observer){$txmgkpjdmk="\x6f\x62\x73\x65\x72v\x65\x72";${${"\x47\x4cO\x42\x41L\x53"}["\x6bbm\x76\x71\x73\x6fy\x77"]}=${$txmgkpjdmk}["\x70\x61\x79me\x6e\x74"];if($payment->getMethod()==EpayPayment::METHOD_CODE){${"\x47\x4cO\x42\x41L\x53"}["\x76\x6b\x74s\x67c\x6ds\x6b\x66\x6e"]="o\x72d\x65r";${${"GLO\x42\x41\x4cS"}["v\x6b\x74\x73\x67cm\x73\x6b\x66n"]}=$payment->getOrder();$order->setCanSendNewEmailFlag(false);$order->setIsCustomerNotified(false);$order->save();}}}
-?>
+<?php
+/**
+ * Copyright (c) 2017. All rights reserved Duitku Varitel.
+ *
+ * This program is free software. You are allowed to use the software but NOT allowed to modify the software.
+ * It is also not legal to do any changes to the software and distribute it in your own name / brand.
+ *
+ * All use of the payment modules happens at your own risk. We offer a free test account that you can use to test the module.
+ *
+ * @author    Duitku Varitel
+ * @copyright Duitku Varitel (http://duitku.com)
+ * @license   Duitku Varitel
+ *
+ */
+namespace Duitku\Varitel\Observer;
+use \Duitku\Varitel\Model\Method\Epay\Payment as EpayPayment;
+
+class SalesOrderPaymentPlaceStart implements \Magento\Framework\Event\ObserverInterface
+{
+    /**
+     * Sales Order Payment Place Start Observer
+     *
+     * @param \Magento\Framework\Event\Observer $observer
+     */
+    public function execute(\Magento\Framework\Event\Observer $observer)
+    {
+        $payment = $observer['payment'];
+        if ($payment->getMethod() == EpayPayment::METHOD_CODE) {
+            $order = $payment->getOrder();
+            $order->setCanSendNewEmailFlag(false);
+            $order->setIsCustomerNotified(false);
+            $order->save();
+        }
+    }
+}

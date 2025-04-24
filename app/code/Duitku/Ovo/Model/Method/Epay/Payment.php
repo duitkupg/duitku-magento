@@ -81,14 +81,97 @@ class Payment extends \Duitku\Ovo\Model\Method\AbstractPayment
     {
     $obj = \Magento\Framework\App\ObjectManager::getInstance();
    	$orderId = $order->getIncrementId();
-   	$merchantcode = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_epay/merchantnumber');
-  	 $apikey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_epay/api_key');
+   	$merchantcode = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_ovoepay/merchantnumber');
+   	$apikey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_ovoepay/api_key');
     $amount = round($order->getBaseTotalDue());
-    $signature = md5($merchantcode.$orderId.$amount.$apikey);
+    
     $callbackUrl = $this->_urlBuilder->getUrl('duitku/epayovo/callback');
     $returnUrl = $this->_urlBuilder->getUrl('duitku/epayovo/accept');
     $merchantUserInfo = $order->getCustomerFirstname() . " " . $order->getCustomerLastname();
     $email = $order->getCustomerEmail();
+		
+	//ItemDetails
+	$itemsData = $order->getAllItems();
+	$shippingAmountData = $order->getShippingAmount();
+	$shippingTaxAmountData = $order->getShippingTaxAmount();
+	$taxAmountData = $order->getTaxAmount();
+	$DiscountAmount = $order->getDiscountAmount();
+	
+		$itemDetailParams = array();
+		foreach ($itemsData as $value) {
+			
+		  $ItemPrice = (int)$value->getPrice() * (int)$value->getQtyOrdered();
+		  
+		  $item = array(
+			'name' => $this->repString($this->getName($value->getName())),
+			'price' => (int)$ItemPrice,
+			'quantity' => (int)$value->getQtyOrdered(),
+		  );
+		  $itemDetailParams[] = $item;
+		}
+
+		if ($shippingAmountData > 0) {
+		  $shippingItem = array(
+			'name' => 'Shipping Amount',
+			'price' => (int)$shippingAmountData,
+			'quantity' => 1
+		  );
+		  $itemDetailParams[] = $shippingItem;
+		}
+
+		if ($shippingTaxAmountData > 0) {
+		  $shippingTaxItem = array(
+			'name' => 'Shipping Tax',
+			'price' => (int)$shippingTaxAmountData,
+			'quantity' => 1
+		  );
+		  $itemDetailParams[] = $shippingTaxItem;
+		}
+
+		if ($taxAmountData > 0) {
+		  $taxItem = array(
+			'name' => 'Tax',
+			'price' => (int)$taxAmountData,
+			'quantity' => 1
+		  );
+		  $itemDetailParams[] = $taxItem;
+		}
+
+		if ($DiscountAmount != 0) {
+		  $couponItem = array(
+			  'id' => 'DISCOUNT',
+			  'price' => (int)$DiscountAmount,
+			  'quantity' => 1,
+			  'name' => 'DISCOUNT'
+			);
+		  $itemDetailParams[] = $couponItem;
+		}
+		
+		$paymentAmount = 0;
+		foreach ($itemDetailParams as $item) {
+		  $paymentAmount += $item['price'];
+		}
+	
+		$billing_address = array(
+		  'firstName' => $order->getCustomerFirstname(),
+		  'lastName' => $order->getCustomerLastname(),
+		  'address' => $order->getBillingAddress()->getStreet()[0],
+		  'city' => $order->getBillingAddress()->getCity(),
+		  'postalCode' => $order->getBillingAddress()->getPostcode(),
+		  'phone' => $order->getBillingAddress()->getTelephone(),
+		  'countryCode' => $order->getBillingAddress()->getCountryId(),
+		);
+		
+		$customerDetails = array(
+			'firstName' => $order->getCustomerFirstname(),
+			'lastName' => $order->getCustomerLastname(),
+			'email' => $email,
+			'phoneNumber' => $order->getBillingAddress()->getTelephone(),
+			'billingAddress' => $billing_address,
+			'shippingAddress' => $billing_address
+		);
+				
+		$signature = md5($merchantcode.$orderId.$paymentAmount.$apikey);
 		
 		$params = array(
              'merchantCode' => $merchantcode,
@@ -98,13 +181,18 @@ class Payment extends \Duitku\Ovo\Model\Method\AbstractPayment
              'productDetails' => 'Order : '.$orderId,
              'additionalParam' => '',
              'merchantUserInfo' => $merchantUserInfo,
-			 'email' => $email,		 
-             'callbackUrl' => $callbackUrl ,
+			 'customerVaName' => $merchantUserInfo,
+			 'email' => $email,
+			 'phoneNumber' => $order->getBillingAddress()->getTelephone(),		 
+             'callbackUrl' => $callbackUrl,
+			 'expiryPeriod' => 1440,
              'returnUrl' => $returnUrl,
              'signature' => $signature,
+			 'customerDetail' => $customerDetails,
+			 'itemDetails' => $itemDetailParams
          );
-         
-           return $params;
+		 
+        return $params;
     }
 
 
@@ -216,5 +304,18 @@ class Payment extends \Duitku\Ovo\Model\Method\AbstractPayment
     {
         return $this->_urlBuilder->getUrl('duitku/epayovo/cancel', ['_secure' => $this->_request->isSecure()]);
     }
+
+	private function repString($str) {
+		return preg_replace("/[^a-zA-Z0-9]+/", " ", $str);
+	}
+
+	private function getName($s) {
+		$max_length = 20;
+		if (strlen($s) > $max_length) {
+		  $offset = ($max_length - 3) - strlen($s);
+		  $s = substr($s, 0, strrpos($s, ' ', $offset));
+		}
+		return $s;
+	}
 
 }

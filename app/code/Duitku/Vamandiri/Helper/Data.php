@@ -14,8 +14,10 @@
  */
 
 namespace Duitku\Vamandiri\Helper;
+include_once('Duitku/ApiRequestor.php');
+include_once('Duitku/DuitkuCore.php');
 use Duitku\Vamandiri\Helper\DuitkuConstants;
-
+use Duitku_Vamandiri_Core;
 class Data extends \Magento\Framework\App\Helper\AbstractHelper
 {
     /**
@@ -64,6 +66,11 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     {
         return $this->getConfigData($field, 'duitku_vamandiriepay', $storeId);
     }
+	
+	public function getDuitkuCore(){
+   		$DuitkuCore = new Duitku_Vamandiri_Core();
+		return $DuitkuCore;
+	}
 		
 	
     /**

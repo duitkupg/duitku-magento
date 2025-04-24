@@ -1,2 +1,46 @@
-<?php namespace Duitku\Vapermata\Logger;${"\x47\x4c\x4fB\x41LS"}["\x78\x6f\x79\x67\x79\x78\x70g"]="\x72e\x61\x73o\x6e";${"\x47\x4cO\x42\x41LS"}["\x67\x66\x79\x73\x76\x68\x63\x6c"]="\x65\x72\x72o\x72M\x65\x73\x73\x61g\x65";${"\x47L\x4f\x42A\x4cS"}["\x6e\x66\x70\x6cb\x6es\x62\x67\x67b"]="\x69\x64";use Monolog\Logger;class DuitkuLogger extends Logger{public function addEpayError($id,$reason){$ohswbay="re\x61\x73o\x6e";$acoujgk="\x65\x72\x72o\x72M\x65\x73s\x61\x67\x65";${$acoujgk}="\x44uit\x6b\x75\x20\x65P\x61y \x45\x72ro\x72\x20- ID:\x20".${${"GLO\x42\x41\x4c\x53"}["\x6e\x66\x70lbn\x73\x62g\x67\x62"]}."\x20- ".${$ohswbay};$this->addError(${${"\x47\x4c\x4fB\x41\x4c\x53"}["\x67\x66\x79s\x76h\x63\x6c"]});}public function addEpayInfo($id,$reason){${${"\x47\x4c\x4f\x42\x41\x4cS"}["\x67fy\x73\x76\x68\x63\x6c"]}="\x44\x75i\x74\x6b\x75 eP\x61\x79 \x49nf\x6f\x20- ID:\x20".${${"G\x4c\x4f\x42\x41L\x53"}["n\x66p\x6cbn\x73\x62\x67\x67\x62"]}."\x20-\x20".${${"\x47\x4c\x4f\x42A\x4cS"}["xo\x79\x67\x79x\x70\x67"]};${"\x47\x4c\x4f\x42A\x4c\x53"}["v\x71\x77\x67\x77w\x6f\x74\x6a"]="e\x72r\x6frMe\x73\x73a\x67\x65";$this->addInfo(${${"G\x4c\x4fBA\x4cS"}["\x76\x71\x77\x67\x77wo\x74\x6a"]});}}
-?>
+<?php
+/**
+ * Copyright (c) 2017. All rights reserved Duitku Vapermata.
+ *
+ * This program is free software. You are allowed to use the software but NOT allowed to modify the software.
+ * It is also not legal to do any changes to the software and distribute it in your own name / brand.
+ *
+ * All use of the payment modules happens at your own risk. We offer a free test account that you can use to test the module.
+ *
+ * @author    Duitku Vapermata
+ * @copyright Duitku Vapermata (http://duitku.com)
+ * @license   Duitku Vapermata
+ *
+ */
+namespace Duitku\Vapermata\Logger;
+
+use Monolog\Logger;
+
+class DuitkuLogger extends Logger
+{
+     /**
+     * Add ePay error to log
+     *
+     * @param mixed $id
+     * @param mixed $reason
+     * @return void
+     */
+    public function addEpayError($id, $reason)
+    {
+        $errorMessage = 'Duitku ePay Error - ID: ' .$id . ' - ' . $reason;
+        $this->addError($errorMessage);
+    }
+
+    /**
+     * Add ePay info to log
+     *
+     * @param mixed $id
+     * @param mixed $reason
+     * @return void
+     */
+    public function addEpayInfo($id, $reason)
+    {
+        $errorMessage = 'Duitku ePay Info - ID: ' .$id . ' - ' . $reason;
+        $this->addInfo($errorMessage);
+    }
+}

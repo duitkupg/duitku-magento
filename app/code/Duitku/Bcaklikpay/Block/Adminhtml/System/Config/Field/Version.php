@@ -1,2 +1,48 @@
-<?php namespace Duitku\Bcaklikpay\Block\Adminhtml\System\Config\Field;${"\x47LO\x42A\x4c\x53"}["\x6au\x67r\x6et\x77\x73ojq"]="\x64\x75\x69\x74k\x75He\x6c\x70\x65\x72";${"\x47\x4c\x4f\x42\x41L\x53"}["\x64o\x72\x63\x79\x6f\x71z"]="\x64\x61t\x61";class Version extends\Magento\Config\Block\System\Config\Form\Field{protected$_duitkuHelper;public function __construct(\Duitku\Bcaklikpay\Helper\Data$duitkuHelper,\Magento\Backend\Block\Template\Context$context,array$data=[]){${"\x47L\x4f\x42\x41\x4cS"}["\x77\x78\x6e\x78\x77\x71m\x75"]="\x63\x6f\x6e\x74e\x78\x74";parent::__construct(${${"\x47\x4c\x4fB\x41L\x53"}["\x77\x78n\x78\x77\x71m\x75"]},${${"\x47\x4c\x4f\x42\x41LS"}["d\x6f\x72\x63y\x6f\x71\x7a"]});$this->_duitkuHelper=${${"\x47\x4c\x4fB\x41L\x53"}["j\x75\x67\x72nt\x77\x73\x6f\x6aq"]};}protected function _getElementHtml(\Magento\Framework\Data\Form\Element\AbstractElement$element){return$this->_duitkuHelper->getModuleVersion();}}
-?>
+<?php
+/**
+ * Copyright (c) 2017. All rights reserved Duitku Bcaklikpay.
+ *
+ * This program is free software. You are allowed to use the software but NOT allowed to modify the software.
+ * It is also not legal to do any changes to the software and distribute it in your own name / brand.
+ *
+ * All use of the payment modules happens at your own risk. We offer a free test account that you can use to test the module.
+ *
+ * @author    Duitku Bcaklikpay
+ * @copyright Duitku Bcaklikpay (http://duitku.com)
+ * @license   Duitku Bcaklikpay
+ *
+ */
+namespace Duitku\Bcaklikpay\Block\Adminhtml\System\Config\Field;
+
+class Version extends \Magento\Config\Block\System\Config\Form\Field
+{
+    /**
+     * @var \Duitku\Bcaklikpay\Helper\Data
+     */
+    protected $_duitkuHelper;
+
+    /**
+     * Version constructor.
+     * @param \Duitku\Bcaklikpay\Helper\Data $duitkuHelper
+     * @param \Magento\Backend\Block\Template\Context $context
+     * @param array $data
+     */
+    public function __construct(
+        \Duitku\Bcaklikpay\Helper\Data $duitkuHelper,
+        \Magento\Backend\Block\Template\Context $context,
+        array $data = []
+    ) {
+        parent::__construct($context, $data);
+        $this->_duitkuHelper = $duitkuHelper;
+    }
+
+    /**
+     * Retrieve the setup version of the extension
+     * @param \Magento\Framework\Data\Form\Element\AbstractElement $element
+     * @return string
+     */
+    protected function _getElementHtml(\Magento\Framework\Data\Form\Element\AbstractElement $element)
+    {
+        return $this->_duitkuHelper->getModuleVersion();
+    }
+}

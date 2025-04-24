@@ -1,2 +1,40 @@
-<?php namespace Duitku\Vabni\Helper;class DuitkuConstants{const ORDER_STATUS="\x6f\x72\x64e\x72\x5fs\x74\x61tu\x73";const MASS_CAPTURE_INVOICE_MAIL="\x6d\x61ss\x63aptu\x72ei\x6e\x76\x6f\x69\x63em\x61\x69l";const TITLE="t\x69\x74l\x65";const MERCHANT_NUMBER="m\x65\x72\x63hantn\x75m\x62\x65\x72";const INSTANT_INVOICE="\x69n\x73t\x61\x6e\x74i\x6ev\x6fi\x63\x65";const INSTANT_INVOICE_MAIL="\x69nst\x61n\x74i\x6ev\x6fic\x65m\x61i\x6c";const SEND_MAIL_ORDER_CONFIRMATION="\x73e\x6e\x64ma\x69\x6co\x72d\x65\x72\x63\x6f\x6ef\x69\x72m\x61ti\x6fn";const WINDOW_STATE="w\x69\x6ed\x6fws\x74at\x65";const PAYMENT_GROUP="\x70\x61\x79\x6d\x65\x6et\x67ro\x75\x70";const ENABLE_INVOICE_DATA="\x65\x6e\x61\x62l\x65\x69nvoice\x64\x61ta";const ROUNDING_MODE="r\x6fu\x6e\x64\x69ngmode";const APIKEY="ap\x69\x5fke\x79";const CAPTURE="\x63a\x70t\x75\x72e";const REFUND="r\x65f\x75\x6e\x64";const VOID="\x76\x6f\x69\x64";const GET_TRANSACTION="ge\x74\x74\x72a\x6esac\x74i\x6f\x6e";}
-?>
+<?php
+/**
+ * Copyright (c) 2017. All rights reserved Duitku Vabni.
+ *
+ * This program is free software. You are allowed to use the software but NOT allowed to modify the software.
+ * It is also not legal to do any changes to the software and distribute it in your own name / brand.
+ *
+ * All use of the payment modules happens at your own risk. We offer a free test account that you can use to test the module.
+ *
+ * @author    Duitku Vabni
+ * @copyright Duitku Vabni (http://duitku.com)
+ * @license   Duitku Vabni
+ *
+ */
+namespace Duitku\Vabni\Helper;
+
+class DuitkuConstants
+{
+    
+   
+    //Config constants
+    const ORDER_STATUS = 'order_status';
+    const MASS_CAPTURE_INVOICE_MAIL = 'masscaptureinvoicemail';
+    const TITLE = 'title';
+    const MERCHANT_NUMBER = 'merchantnumber';
+    const INSTANT_INVOICE = 'instantinvoice';
+    const INSTANT_INVOICE_MAIL = 'instantinvoicemail';
+    const SEND_MAIL_ORDER_CONFIRMATION = 'sendmailorderconfirmation';
+    const WINDOW_STATE = 'windowstate';
+    const PAYMENT_GROUP = 'paymentgroup';
+      const ENABLE_INVOICE_DATA = 'enableinvoicedata';
+    const ROUNDING_MODE = 'roundingmode';
+    const APIKEY = 'api_key';
+
+    //Actions
+    const CAPTURE = 'capture';
+    const REFUND = 'refund';
+    const VOID = 'void';
+    const GET_TRANSACTION = 'gettransaction';
+}

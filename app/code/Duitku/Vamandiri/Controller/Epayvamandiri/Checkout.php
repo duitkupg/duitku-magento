@@ -24,20 +24,20 @@ class Checkout extends \Duitku\Vamandiri\Controller\AbstractActionController
     {
     	 $obj = \Magento\Framework\App\ObjectManager::getInstance();
     	
-    	  $paymentmode = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_epay/payment_mode');
+    	  $paymentmode = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_vamandiriepay/payment_mode');
     	 if($paymentmode =='1')
     	 {
 		 	  $url = 'https://passport.duitku.com/webapi';
 		 }else{
-		 	$url = 'http://sandbox.duitku.com/webapi';
+		 	$url = 'https://sandbox.duitku.com/webapi';
 		 	
 		 }
         $order = $this->_getOrder();
         $this->setOrderDetails($order);
         $result = $this->getEPayPaymentWindowRequest($order);
-        $helper = $obj->get('Duitku\Online\Helper\Data');
-        $Duitkuvtweb = $helper->getDuitkuvtweb();
-      	$redirUrl = $Duitkuvtweb->getRedirectionUrl($url,$result);
+        $helper = $obj->get('Duitku\Vamandiri\Helper\Data');
+        $DuitkuCore = $helper->getDuitkuCore();
+      	$redirUrl = $DuitkuCore->getRedirectionUrl($url,$result);
       	$resultarr = array();
       	$resultarr['url']=$redirUrl;
         $resultJson = json_encode($resultarr);
@@ -57,6 +57,8 @@ class Checkout extends \Duitku\Vamandiri\Controller\AbstractActionController
             /** @var \Duitku\Vamandiri\Model\Method\Epay\Payment */
             $epayMethod = $this->_getPaymentMethodInstance($order->getPayment()->getMethod());
             $response = $epayMethod->getPaymentWindow($order);
+			
+			$this->_duitkuLogger->addEpayInfo($order->getId(), json_encode($response));
             return $response;
         } catch (\Exception $ex) {
             $this->_duitkuLogger->addEpayError($order->getId(), $ex->getMessage());

@@ -1,2 +1,67 @@
-<?php namespace Duitku\Vamaybank\Model\Method\Epay;${"\x47\x4cO\x42\x41\x4c\x53"}["\x7ao\x67\x76\x62o\x70b\x6b"]="c\x6f\x6ef\x69\x67";use\Duitku\Vamaybank\Model\Method\Epay\Payment as EpayPayment;use\Duitku\Vamaybank\Helper\DuitkuConstants;class ConfigProvider implements\Magento\Checkout\Model\ConfigProviderInterface{protected$methodCode=EpayPayment::METHOD_CODE;protected$_ePayMethod;protected$_paymentHelper;public function __construct(\Magento\Payment\Helper\Data$paymentHelper){$lwvviedpqu="\x70\x61\x79\x6de\x6etH\x65\x6c\x70\x65\x72";$this->_paymentHelper=${$lwvviedpqu};$this->_ePayMethod=$this->_paymentHelper->getMethodInstance($this->methodCode);}public function getConfig(){${"\x47\x4c\x4f\x42\x41L\x53"}["\x6d\x69\x66\x72\x66l\x6ct\x77"]="c\x6f\x6e\x66\x69\x67";${${"\x47\x4c\x4f\x42\x41LS"}["\x6d\x69fr\x66l\x6c\x74\x77"]}=["\x70ayme\x6e\x74"=>[$this->methodCode=>["pay\x6de\x6e\x74T\x69\x74l\x65"=>$this->_ePayMethod->getConfigData(DuitkuConstants::TITLE),"\x63\x68\x65ck\x6fu\x74Ur\x6c"=>$this->_ePayMethod->getCheckoutUrl(),"\x63\x61\x6ecel\x55\x72\x6c"=>$this->_ePayMethod->getCancelUrl()]]];return${${"\x47\x4cOBA\x4c\x53"}["\x7a\x6fgv\x62o\x70b\x6b"]};}}
-?>
+<?php
+/**
+ * Copyright (c) 2017. All rights reserved Duitku Vamaybank.
+ *
+ * This program is free software. You are allowed to use the software but NOT allowed to modify the software.
+ * It is also not legal to do any changes to the software and distribute it in your own name / brand.
+ *
+ * All use of the payment modules happens at your own risk. We offer a free test account that you can use to test the module.
+ *
+ * @author    Duitku Vamaybank
+ * @copyright Duitku Vamaybank (http://duitku.com)
+ * @license   Duitku Vamaybank
+ *
+ */
+namespace Duitku\Vamaybank\Model\Method\Epay;
+
+use \Duitku\Vamaybank\Model\Method\Epay\Payment as EpayPayment;
+use \Duitku\Vamaybank\Helper\DuitkuConstants;
+
+class ConfigProvider implements \Magento\Checkout\Model\ConfigProviderInterface
+{
+    /**
+     * @var string
+     */
+    protected $methodCode = EpayPayment::METHOD_CODE;
+
+    /**
+     * @var Object
+     */
+    protected $_ePayMethod;
+
+    /**
+     * @var \Magento\Payment\Helper\Data
+     */
+    protected $_paymentHelper;
+
+    /**
+     * Config Provider
+     *
+     * @param \Magento\Payment\Helper\Data $paymentHelper
+     */
+    public function __construct(
+        \Magento\Payment\Helper\Data $paymentHelper
+    ) {
+        $this->_paymentHelper = $paymentHelper;
+        $this->_ePayMethod = $this->_paymentHelper->getMethodInstance($this->methodCode);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getConfig()
+    {
+        $config = [
+            'payment' => [
+                 $this->methodCode => [
+                    'paymentTitle' => $this->_ePayMethod->getConfigData(DuitkuConstants::TITLE),
+                    'checkoutUrl'=> $this->_ePayMethod->getCheckoutUrl(),
+                    'cancelUrl'=> $this->_ePayMethod->getCancelUrl()
+                ]
+            ]
+        ];
+
+        return $config;
+    }
+    
+}

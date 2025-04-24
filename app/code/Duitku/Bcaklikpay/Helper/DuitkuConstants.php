@@ -1,2 +1,40 @@
-<?php namespace Duitku\Bcaklikpay\Helper;class DuitkuConstants{const ORDER_STATUS="\x6fr\x64\x65r_\x73ta\x74us";const MASS_CAPTURE_INVOICE_MAIL="massc\x61\x70\x74\x75re\x69\x6evo\x69\x63\x65\x6d\x61\x69l";const TITLE="t\x69\x74le";const MERCHANT_NUMBER="m\x65rchan\x74\x6eu\x6d\x62\x65\x72";const INSTANT_INVOICE="in\x73ta\x6etinv\x6f\x69ce";const INSTANT_INVOICE_MAIL="in\x73\x74\x61\x6eti\x6e\x76\x6fic\x65\x6d\x61\x69l";const SEND_MAIL_ORDER_CONFIRMATION="\x73en\x64\x6da\x69l\x6frde\x72\x63onf\x69rm\x61\x74\x69\x6f\x6e";const WINDOW_STATE="\x77\x69n\x64ow\x73t\x61t\x65";const PAYMENT_GROUP="\x70ayme\x6e\x74\x67\x72\x6f\x75\x70";const ENABLE_INVOICE_DATA="en\x61\x62le\x69\x6ev\x6f\x69c\x65\x64ata";const ROUNDING_MODE="\x72\x6fu\x6edi\x6e\x67\x6do\x64e";const APIKEY="\x61pi_k\x65\x79";const CAPTURE="cap\x74u\x72\x65";const REFUND="\x72\x65\x66\x75\x6e\x64";const VOID="\x76\x6f\x69d";const GET_TRANSACTION="g\x65\x74transa\x63\x74i\x6fn";}
-?>
+<?php
+/**
+ * Copyright (c) 2017. All rights reserved Duitku Bcaklikpay.
+ *
+ * This program is free software. You are allowed to use the software but NOT allowed to modify the software.
+ * It is also not legal to do any changes to the software and distribute it in your own name / brand.
+ *
+ * All use of the payment modules happens at your own risk. We offer a free test account that you can use to test the module.
+ *
+ * @author    Duitku Bcaklikpay
+ * @copyright Duitku Bcaklikpay (http://duitku.com)
+ * @license   Duitku Bcaklikpay
+ *
+ */
+namespace Duitku\Bcaklikpay\Helper;
+
+class DuitkuConstants
+{
+    
+   
+    //Config constants
+    const ORDER_STATUS = 'order_status';
+    const MASS_CAPTURE_INVOICE_MAIL = 'masscaptureinvoicemail';
+    const TITLE = 'title';
+    const MERCHANT_NUMBER = 'merchantnumber';
+    const INSTANT_INVOICE = 'instantinvoice';
+    const INSTANT_INVOICE_MAIL = 'instantinvoicemail';
+    const SEND_MAIL_ORDER_CONFIRMATION = 'sendmailorderconfirmation';
+    const WINDOW_STATE = 'windowstate';
+    const PAYMENT_GROUP = 'paymentgroup';
+      const ENABLE_INVOICE_DATA = 'enableinvoicedata';
+    const ROUNDING_MODE = 'roundingmode';
+    const APIKEY = 'api_key';
+
+    //Actions
+    const CAPTURE = 'capture';
+    const REFUND = 'refund';
+    const VOID = 'void';
+    const GET_TRANSACTION = 'gettransaction';
+}

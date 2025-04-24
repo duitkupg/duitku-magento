@@ -1,2 +1,35 @@
-<?php namespace Duitku\Bcaklikpay\Observer;${"\x47\x4c\x4f\x42\x41L\x53"}["\x6cts\x67\x67u\x73"]="\x6f\x72\x64\x65r";use\Duitku\Bcaklikpay\Model\Method\Epay\Payment as EpayPayment;class SalesOrderPaymentPlaceStart implements\Magento\Framework\Event\ObserverInterface{public function execute(\Magento\Framework\Event\Observer$observer){${"\x47\x4c\x4f\x42\x41\x4cS"}["\x77\x76\x63n\x6e\x72\x6e\x75x\x6e\x73"]="obs\x65\x72\x76\x65\x72";${"G\x4c\x4f\x42A\x4c\x53"}["\x70\x72\x75g\x6b\x68t\x78lk\x76\x6e"]="\x70\x61yme\x6e\x74";${${"\x47L\x4fB\x41\x4c\x53"}["p\x72\x75gk\x68\x74\x78\x6c\x6b\x76n"]}=${${"\x47L\x4f\x42AL\x53"}["\x77\x76\x63\x6e\x6e\x72n\x75\x78\x6e\x73"]}["pay\x6d\x65nt"];if($payment->getMethod()==EpayPayment::METHOD_CODE){${${"G\x4c\x4f\x42AL\x53"}["\x6c\x74\x73\x67g\x75\x73"]}=$payment->getOrder();$order->setCanSendNewEmailFlag(false);$order->setIsCustomerNotified(false);$order->save();}}}
-?>
+<?php
+/**
+ * Copyright (c) 2017. All rights reserved Duitku Bcaklikpay.
+ *
+ * This program is free software. You are allowed to use the software but NOT allowed to modify the software.
+ * It is also not legal to do any changes to the software and distribute it in your own name / brand.
+ *
+ * All use of the payment modules happens at your own risk. We offer a free test account that you can use to test the module.
+ *
+ * @author    Duitku Bcaklikpay
+ * @copyright Duitku Bcaklikpay (http://duitku.com)
+ * @license   Duitku Bcaklikpay
+ *
+ */
+namespace Duitku\Bcaklikpay\Observer;
+use \Duitku\Bcaklikpay\Model\Method\Epay\Payment as EpayPayment;
+
+class SalesOrderPaymentPlaceStart implements \Magento\Framework\Event\ObserverInterface
+{
+    /**
+     * Sales Order Payment Place Start Observer
+     *
+     * @param \Magento\Framework\Event\Observer $observer
+     */
+    public function execute(\Magento\Framework\Event\Observer $observer)
+    {
+        $payment = $observer['payment'];
+        if ($payment->getMethod() == EpayPayment::METHOD_CODE) {
+            $order = $payment->getOrder();
+            $order->setCanSendNewEmailFlag(false);
+            $order->setIsCustomerNotified(false);
+            $order->save();
+        }
+    }
+}

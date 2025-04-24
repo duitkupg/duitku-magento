@@ -1,2 +1,157 @@
-<?php namespace Duitku\Vacimbniaga\Controller\Epayvacimb;${"GL\x4f\x42\x41\x4cS"}["v\x61r\x6bs\x64\x64ho"]="p\x61\x79me\x6e\x74Met\x68\x6f\x64";${"\x47\x4c\x4fBA\x4c\x53"}["\x71i\x70\x71\x70\x71"]="\x65\x50\x61\x79\x54r\x61\x6e\x73\x61\x63ti\x6fn\x49\x64";${"G\x4cOBAL\x53"}["\x64\x7a\x66en\x6f\x65\x64\x69\x72\x6e"]="\x73\x69\x67\x6e\x61\x74\x75\x72\x65";${"\x47\x4c\x4f\x42AL\x53"}["k\x73j\x6b\x74r\x6c"]="\x72\x65\x73u\x6ctCo\x64e";${"G\x4c\x4fBALS"}["g\x66\x77\x64\x6ep\x65"]="\x6d\x65\x72c\x68a\x6e\x74\x43\x6fd\x65";${"\x47\x4c\x4f\x42\x41\x4cS"}["\x69n\x71\x63\x79\x78\x76utbd\x6b"]="\x6d\x65r\x63\x68\x61\x6e\x74O\x72\x64\x65\x72Id";${"\x47\x4c\x4f\x42\x41\x4c\x53"}["\x6dpv\x66\x67\x79\x77vw"]="\x61\x6dount";${"G\x4c\x4fBA\x4cS"}["\x6d\x6a\x6fw\x6csjv"]="\x63a\x6cl\x42\x61\x63\x6bR\x65\x73\x75l\x74";${"\x47L\x4f\x42\x41L\x53"}["\x71h\x77\x6e\x6a\x6c\x64\x61\x65c\x71"]="r\x65\x73\x70\x6f\x6e\x73eCo\x64e";${"\x47L\x4fB\x41L\x53"}["\x69\x64\x65\x73d\x74\x79e\x69ro"]="\x69\x64";${"\x47\x4cO\x42A\x4cS"}["\x67\x6beg\x62\x74\x77v\x6eb"]="\x6f\x72d\x65r";${"\x47L\x4f\x42A\x4cS"}["\x76\x74jt\x73\x66\x6aj\x6b"]="m\x65\x73s\x61ge";${"\x47L\x4f\x42\x41L\x53"}["\x64pct\x6e\x6f\x72o\x71d"]="\x70\x6f\x73\x74ed";use\Magento\Framework\Webapi\Exception;use\Magento\Framework\Webapi\Response;use\Duitku\Vacimbniaga\Model\Method\Epay\Payment as EpayPayment;use\Duitku\Vacimbniaga\Helper\DuitkuConstants;class Callback extends\Duitku\Vacimbniaga\Controller\AbstractActionController{public function execute(){${${"G\x4c\x4f\x42\x41\x4cS"}["\x64\x70\x63t\x6e\x6froq\x64"]}=$this->getRequest()->getParams();$nnuixdhvyp="r\x65\x73p\x6f\x6e\x73\x65\x43\x6fd\x65";${"\x47LO\x42\x41L\x53"}["\x64b\x73\x72\x61msn"]="\x6f\x72de\x72";$iakoltyvj="\x6fr\x64\x65r";${"G\x4c\x4fB\x41\x4cS"}["\x67\x63\x68e\x76\x6f\x79\x70\x6c"]="\x72\x65\x73\x70\x6f\x6e\x73\x65\x43\x6f\x64\x65";${${"\x47\x4cO\x42\x41\x4c\x53"}["\x64\x62\x73r\x61\x6d\x73\x6e"]}=null;$degawla="\x6de\x73\x73\x61\x67\x65";$frjcfjtyyqd="i\x64";${${"\x47LO\x42\x41\x4c\x53"}["vt\x6a\x74\x73f\x6a\x6a\x6b"]}="Call\x62\x61ck\x20\x46\x61iled:\x20";${${"GL\x4fBA\x4c\x53"}["\x67ch\x65vo\x79\x70\x6c"]}=Exception::HTTP_BAD_REQUEST;$uqpavqg="c\x61\x6c\x6c\x42\x61ck\x52e\x73u\x6c\x74";$oonlwruqxb="\x6de\x73\x73a\x67\x65";if($this->validateCallback(${${"\x47\x4cOBA\x4c\x53"}["\x64\x70\x63t\x6eor\x6f\x71\x64"]},${$iakoltyvj},${$degawla})){${"G\x4c\x4f\x42\x41\x4cS"}["y\x69\x68\x74c\x75\x77r\x6f"]="\x70\x6fste\x64";${"\x47L\x4f\x42\x41\x4cS"}["\x72\x79\x74\x70xi\x71bd\x75l"]="me\x73sa\x67\x65";$gkrwej="\x72e\x73\x70\x6fns\x65C\x6fd\x65";${${"\x47\x4c\x4f\x42\x41\x4cS"}["\x72\x79t\x70\x78\x69\x71\x62\x64\x75\x6c"]}=$this->processCallback(${${"\x47\x4cO\x42A\x4c\x53"}["y\x69\x68\x74\x63\x75w\x72\x6f"]},${${"GL\x4f\x42\x41L\x53"}["\x67\x6b\x65g\x62\x74\x77\x76nb"]},${$gkrwej});}${${"\x47L\x4fB\x41L\x53"}["i\x64\x65\x73\x64\x74\x79\x65\x69\x72\x6f"]}=isset(${${"\x47L\x4f\x42\x41\x4cS"}["\x67k\x65\x67\x62t\x77\x76\x6eb"]})?$order->getIncrementId():0;if(${${"\x47\x4c\x4f\x42\x41L\x53"}["q\x68\x77\x6e\x6a\x6cd\x61\x65\x63q"]}!==Response::HTTP_OK){${"G\x4c\x4f\x42AL\x53"}["\x72x\x6a\x6eb\x6ac\x67e\x63f"]="\x6des\x73a\x67e";$this->_logError(EpayPayment::METHOD_CODE,${${"\x47\x4c\x4f\x42AL\x53"}["\x69\x64\x65\x73\x64t\x79e\x69\x72\x6f"]},${${"GL\x4fBA\x4c\x53"}["\x72x\x6a\x6ebj\x63\x67ecf"]});${"\x47\x4cO\x42A\x4cS"}["pi\x79\x6bivn\x64\x72"]="o\x72\x64e\x72";if(isset(${${"\x47\x4cO\x42ALS"}["\x70\x69\x79\x6bivnd\x72"]})){$order->addStatusHistoryComment(${${"\x47L\x4f\x42\x41\x4c\x53"}["v\x74\x6a\x74s\x66\x6a\x6ak"]});$order->save();}}${$uqpavqg}=$this->_createCallbackResult(${$nnuixdhvyp},${$oonlwruqxb},${$frjcfjtyyqd});return${${"G\x4cO\x42A\x4c\x53"}["m\x6a\x6f\x77l\x73j\x76"]};}public function validateCallback($posted,&$order,&$message){${"GLO\x42\x41\x4c\x53"}["\x61u\x6ac\x6fy\x70\x6cwb\x64"]="or\x64\x65r";$tygfxodqz="\x70os\x74e\x64";${"\x47\x4c\x4f\x42\x41LS"}["\x79g\x79\x78\x70iesx\x6c"]="\x6d\x65\x72c\x68\x61\x6e\x74Or\x64e\x72\x49\x64";$mhmjllnqor="\x72\x65su\x6ctCode";${"\x47\x4cO\x42AL\x53"}["fz\x62itc\x63m\x76"]="\x61\x70i\x4b\x65y";${"\x47\x4cOB\x41\x4c\x53"}["\x71\x65\x72\x70\x68p\x61\x6e\x6ej\x69"]="\x70a\x79m\x65nt";$npnykkhfeksn="\x70\x61\x72\x61\x6ds";$ilprivfmb="\x70\x61\x72\x61\x6d\x73";${"G\x4cO\x42A\x4cS"}["\x6a\x7a\x72\x6ens\x6e\x74y"]="p\x6f\x73\x74\x65\x64";${"\x47\x4c\x4fB\x41L\x53"}["c\x66koj\x62\x79\x69\x61\x6d"]="\x70\x6f\x73t\x65\x64";${"\x47L\x4f\x42\x41\x4c\x53"}["oe\x7a\x74\x71\x67\x62\x72wiv"]="\x73i\x67n\x61t\x75\x72\x65";${"\x47\x4c\x4fBA\x4cS"}["rx\x62\x6av\x6d\x71"]="\x70\x6f\x73te\x64";${"\x47\x4cO\x42\x41L\x53"}["\x6f\x6f\x74im\x6d\x70\x6f\x72\x65\x67"]="p\x6fst\x65\x64";${"\x47\x4c\x4fB\x41\x4c\x53"}["\x67\x74l\x66\x77\x77a"]="mer\x63ha\x6e\x74Cod\x65";$fmvqgy="p\x6f\x73\x74\x65\x64";${"GL\x4f\x42\x41L\x53"}["\x69\x79\x79\x66j\x77\x69\x66"]="p\x61\x79\x6d\x65\x6e\x74";${"\x47\x4c\x4fB\x41LS"}["\x6f\x62\x76c\x65\x76v\x6d\x6b"]="\x70o\x73t\x65\x64";$uppiobsoltxk="p\x6f\x73ted";${"\x47\x4c\x4f\x42\x41\x4cS"}["\x76y\x75\x7a\x74\x77\x75\x63\x71\x6a"]="\x70\x6fs\x74\x65\x64";if(!isset(${${"GLOB\x41\x4c\x53"}["o\x62\x76\x63\x65\x76\x76m\x6b"]})){${${"\x47\x4c\x4fBAL\x53"}["\x76\x74\x6ats\x66jj\x6b"]}.="\x52\x65sp\x6fn\x73\x65 is\x20n\x75l\x6c";return false;}if(!${${"\x47L\x4fB\x41\x4c\x53"}["dp\x63\x74\x6eor\x6f\x71d"]}["m\x65rc\x68a\x6et\x4fr\x64er\x49\x64"]||!${$uppiobsoltxk}["re\x73u\x6c\x74Code"]||!${${"G\x4c\x4fBA\x4c\x53"}["\x76\x79\x75\x7a\x74\x77u\x63q\x6a"]}["r\x65f\x65\x72e\x6e\x63\x65"]||!${${"GLO\x42AL\x53"}["\x6az\x72n\x6e\x73n\x74\x79"]}["si\x67\x6e\x61\x74\x75re"]){$qjjpngoyoyx="\x6de\x73\x73a\x67\x65";${$qjjpngoyoyx}.="Para\x6d\x65te\x72\x65\x73 ar\x65\x20m\x69s\x73\x69ng\x2e\x20Re\x71\x75e\x73\x74: ".json_encode(${${"\x47\x4c\x4f\x42\x41\x4c\x53"}["dp\x63t\x6eo\x72o\x71\x64"]});return false;}${${"\x47\x4c\x4fB\x41L\x53"}["gk\x65\x67\x62\x74\x77\x76\x6e\x62"]}=$this->_getOrderByIncrementId(${${"\x47\x4cOB\x41LS"}["\x64\x70ct\x6e\x6fr\x6f\x71\x64"]}["m\x65rcha\x6et\x4frd\x65\x72\x49\x64"]);if(!isset(${${"\x47\x4cO\x42\x41\x4c\x53"}["\x61u\x6a\x63\x6fy\x70\x6c\x77\x62\x64"]})){$wjmgmmtl="\x6d\x65\x73s\x61\x67\x65";${$wjmgmmtl}.="Th\x65 O\x72\x64er\x20\x63ou\x6c\x64\x20b\x65\x20\x66\x6f\x75\x6ed\x20o\x72\x20cre\x61\x74e\x64";return false;}${${"\x47\x4c\x4fBA\x4cS"}["\x71\x65\x72\x70\x68\x70a\x6e\x6e\x6a\x69"]}=$order->getPayment();${"\x47\x4c\x4fB\x41L\x53"}["\x73g\x64\x74\x6b\x6dw\x6d\x6e"]="poste\x64";if(!isset(${${"G\x4cO\x42A\x4c\x53"}["\x69\x79\x79\x66j\x77\x69\x66"]})){${"\x47\x4c\x4f\x42A\x4cS"}["\x6d\x68\x6d\x74\x6dt\x69\x6fm"]="\x6d\x65\x73\x73a\x67e";${${"\x47L\x4f\x42\x41L\x53"}["\x6d\x68m\x74\x6dt\x69\x6fm"]}.="T\x68\x65 \x50\x61\x79\x6d\x65\x6et \x6fb\x6a\x65c\x74\x20\x69s\x20n\x75\x6cl";return false;}${${"GL\x4f\x42\x41\x4cS"}["\x67t\x6cf\x77\x77\x61"]}=isset(${${"GLO\x42ALS"}["r\x78\x62\x6av\x6d\x71"]}["\x6d\x65\x72c\x68\x61\x6et\x43ode"])?${${"\x47L\x4f\x42A\x4cS"}["d\x70c\x74\x6e\x6f\x72\x6fq\x64"]}["\x6d\x65rc\x68\x61n\x74\x43ode"]:null;${${"\x47\x4c\x4fBA\x4c\x53"}["\x6dp\x76\x66g\x79\x77vw"]}=isset(${${"\x47\x4c\x4f\x42\x41\x4c\x53"}["\x64\x70\x63t\x6e\x6f\x72\x6f\x71\x64"]}["amount"])?${${"\x47\x4c\x4f\x42A\x4c\x53"}["\x64p\x63t\x6e\x6f\x72\x6f\x71d"]}["\x61\x6d\x6fu\x6et"]:null;${"G\x4c\x4f\x42A\x4c\x53"}["\x61n\x6c\x79\x71\x63\x68"]="\x6f\x62j";${"GL\x4f\x42\x41\x4c\x53"}["\x6c\x62l\x67fmmct\x75\x6e"]="\x61\x70\x69K\x65\x79";${${"G\x4c\x4fBA\x4cS"}["i\x6e\x71\x63\x79\x78\x76u\x74\x62\x64\x6b"]}=isset(${$fmvqgy}["\x6de\x72\x63\x68an\x74\x4fr\x64\x65rId"])?${$tygfxodqz}["\x6d\x65\x72cha\x6e\x74\x4f\x72\x64e\x72\x49d"]:null;${${"\x47\x4c\x4fBA\x4c\x53"}["\x6f\x65ztq\x67\x62\x72\x77\x69v"]}=isset(${${"GL\x4f\x42\x41\x4c\x53"}["\x63fko\x6ab\x79i\x61\x6d"]}["s\x69g\x6ea\x74\x75\x72e"])?${${"\x47\x4c\x4f\x42\x41LS"}["\x6f\x6f\x74\x69m\x6dp\x6fr\x65g"]}["\x73ignat\x75\x72\x65"]:null;${${"GLOB\x41L\x53"}["\x61n\x6cy\x71ch"]}=\Magento\Framework\App\ObjectManager::getInstance();${${"G\x4c\x4f\x42\x41\x4cS"}["\x66z\x62\x69tc\x63mv"]}=$obj->get("\x4dage\x6et\x6f\\Frame\x77\x6fr\x6b\\App\\Co\x6e\x66i\x67\x5c\x53\x63\x6fpeC\x6fn\x66i\x67\x49\x6e\x74e\x72\x66\x61ce")->getValue("p\x61y\x6den\x74/\x64uit\x6b\x75_\x65\x70a\x79/ap\x69\x5fke\x79");${$npnykkhfeksn}=${${"G\x4c\x4f\x42\x41L\x53"}["\x67\x66wd\x6e\x70e"]}.${${"\x47\x4c\x4f\x42ALS"}["\x6d\x70\x76\x66gy\x77v\x77"]}.${${"GL\x4f\x42\x41\x4cS"}["\x79gy\x78p\x69\x65\x73\x78l"]}.${${"\x47\x4c\x4f\x42\x41\x4c\x53"}["\x6c\x62l\x67\x66\x6d\x6d\x63\x74\x75\x6e"]};${${"G\x4c\x4fB\x41\x4cS"}["k\x73j\x6b\x74rl"]}=isset(${${"\x47L\x4f\x42A\x4cS"}["\x73\x67d\x74\x6b\x6dw\x6d\x6e"]}["\x72\x65s\x75\x6ctC\x6fd\x65"])?${${"\x47LOB\x41\x4cS"}["d\x70c\x74\x6eor\x6fq\x64"]}["resu\x6c\x74\x43o\x64\x65"]:null;if(${${"\x47\x4cO\x42A\x4c\x53"}["d\x7a\x66e\x6e\x6f\x65\x64i\x72n"]}!=md5(${$ilprivfmb})){$wjrxbhposduc="\x6d\x65ss\x61g\x65";${$wjrxbhposduc}.="\x53igna\x74ur\x65\x20\x69s\x20i\x6eval\x69d";return false;}if(${$mhmjllnqor}!="\x30\x30"){${${"G\x4c\x4f\x42\x41L\x53"}["v\x74j\x74s\x66\x6aj\x6b"]}.="fail\x65d \x74ra\x6e\x73\x61\x63tion";return false;}return true;}public function processCallback($posted,$order,&$responseCode){$lwijxcka="\x70\x6f\x73\x74\x65\x64";$iesjjyyxse="p\x61\x79\x6d\x65\x6e\x74";$rsbbixq="\x6d\x65s\x73a\x67\x65";${${"\x47\x4c\x4f\x42AL\x53"}["q\x69\x70\x71\x70\x71"]}=${$lwijxcka}["re\x66\x65ren\x63\x65"];${$iesjjyyxse}=$order->getPayment();try{${"\x47L\x4fB\x41\x4cS"}["\x73k\x62o\x6d\x6ev\x68"]="p\x73\x70\x52\x65\x66\x65r\x65n\x63\x65";${"\x47\x4c\x4f\x42\x41\x4c\x53"}["\x78\x66\x70\x63\x6a\x6c"]="\x70s\x70\x52e\x66\x65re\x6ec\x65";${${"G\x4c\x4f\x42\x41\x4cS"}["s\x6b\x62\x6f\x6d\x6e\x76h"]}=$payment->getAdditionalInformation(EpayPayment::METHOD_REFERENCE);if(empty(${${"\x47\x4c\x4f\x42A\x4c\x53"}["\x78fp\x63j\x6c"]})){$vtekvvm="\x70ay\x6d\x65nt";$buwqivghcg="\x70\x61\x79me\x6etM\x65t\x68od";${$buwqivghcg}=$this->_getPaymentMethodInstance($order->getPayment()->getMethod());$this->_processCallbackData(${${"\x47\x4cOB\x41L\x53"}["g\x6b\x65\x67b\x74w\x76nb"]},${${"\x47\x4c\x4fB\x41\x4cS"}["\x76\x61\x72\x6b\x73d\x64\x68\x6f"]},${${"G\x4c\x4f\x42AL\x53"}["\x71i\x70\x71\x70\x71"]},EpayPayment::METHOD_REFERENCE,$this->_duitkuHelper->getDuitkuEpayConfigData(DuitkuConstants::ORDER_STATUS),${$vtekvvm});$xekzugi="\x6de\x73\x73a\x67e";${$xekzugi}="C\x61\x6c\x6cb\x61ck Su\x63\x63\x65s\x73 - O\x72de\x72\x20cre\x61te\x64";}else{$eixgfvswvf="me\x73\x73\x61\x67e";${$eixgfvswvf}="Callba\x63k\x20\x53\x75c\x63\x65\x73s - \x4f\x72\x64\x65r \x61lr\x65\x61\x64\x79\x20c\x72e\x61\x74\x65d";}${${"GL\x4f\x42\x41\x4c\x53"}["\x71hw\x6e\x6alda\x65\x63\x71"]}=Response::HTTP_OK;}catch(\Exception$ex){$order->setState(\Magento\Sales\Model\Order::STATE_PENDING_PAYMENT);${"\x47\x4c\x4f\x42\x41\x4cS"}["o\x67p\x7a\x61\x6cw\x6d\x63"]="\x6d\x65ss\x61g\x65";$order->setStatus(\Magento\Sales\Model\Order::STATE_PENDING_PAYMENT);$payment->setAdditionalInformation(array(EpayPayment::METHOD_REFERENCE=>""));$payment->save();$order->save();${${"\x47\x4cOB\x41\x4c\x53"}["\x6fg\x70\x7a\x61\x6c\x77mc"]}="\x43al\x6c\x62ack\x20Fa\x69l\x65d\x20-\x20".$ex->getMessage();${${"\x47\x4c\x4fBA\x4c\x53"}["\x71\x68\x77\x6e\x6ald\x61e\x63\x71"]}=Exception::HTTP_INTERNAL_ERROR;}return${$rsbbixq};}}
-?>
+<?php
+/**
+ * Copyright (c) 2017. All rights reserved Duitku Vacimbniaga.
+ *
+ * This program is free software. You are allowed to use the software but NOT allowed to modify the software.
+ * It is also not legal to do any changes to the software and distribute it in your own name / brand.
+ *
+ * All use of the payment modules happens at your own risk. We offer a free test account that you can use to test the module.
+ *
+ * @author    Duitku Vacimbniaga
+ * @copyright Duitku Vacimbniaga (http://duitku.com)
+ * @license   Duitku Vacimbniaga
+ *
+ */
+namespace Duitku\Vacimbniaga\Controller\Epayvacimb;
+
+use \Magento\Framework\Webapi\Exception;
+use \Magento\Framework\Webapi\Response;
+use \Duitku\Vacimbniaga\Model\Method\Epay\Payment as EpayPayment;
+use \Duitku\Vacimbniaga\Helper\DuitkuConstants;
+
+class Callback extends \Duitku\Vacimbniaga\Controller\AbstractActionController
+{
+    /**
+     * Callback Action
+     */
+    public function execute()
+    {
+    	
+        $posted = $this->getRequest()->getParams();
+		        /** @var \Magento\Sales\Model\Order */
+        $order = null;
+        $message = "Callback Failed: ";
+        $responseCode = Exception::HTTP_BAD_REQUEST;
+        if ($this->validateCallback($posted, $order, $message)) {
+        	
+            $message = $this->processCallback($posted, $order, $responseCode);
+        }
+
+        $id = isset($order) ? $order->getIncrementId() : 0;
+         if ($responseCode !== Response::HTTP_OK) {
+            $this->_logError(EpayPayment::METHOD_CODE, $id, $message);
+            if (isset($order)) {
+                $order->addStatusHistoryComment($message);
+                $order->save();
+            }
+        }
+        $callBackResult = $this->_createCallbackResult($responseCode, $message, $id);
+       
+        return $callBackResult;
+    }
+
+    /**
+     * Validate the callback
+     *
+     * @param mixed $posted
+     * @param \Magento\Sales\Model\Order $order
+     * @param string $message
+     * @return bool
+     */
+    public function validateCallback($posted, &$order, &$message)
+    {
+ 
+        //Validate response
+        if (!isset($posted)) {
+            $message .= "Response is null";
+            return false;
+        }
+
+        //Validate parameteres
+        if (!$posted['merchantOrderId'] || !$posted['resultCode'] || !$posted['reference'] || !$posted['signature'] ) {
+            $message .= "Parameteres are missing. Request: " . json_encode($posted);
+            return false;
+        }
+
+        //Validate Order
+        $order = $this->_getOrderByIncrementId($posted['merchantOrderId']);
+        if (!isset($order)) {
+            $message .= "The Order could be found or created";
+            return false;
+        }
+
+        //Validate Payment
+        $payment = $order->getPayment();
+        if (!isset($payment)) {
+            $message .= "The Payment object is null";
+            return false;
+	     }
+         
+	     $merchantCode = isset($posted['merchantCode']) ? $posted['merchantCode'] : null; 
+	     $amount = isset($posted['amount']) ? $posted['amount'] : null; 
+	     $merchantOrderId = isset($posted['merchantOrderId']) ? $posted['merchantOrderId'] : null;
+         $signature = isset($posted['signature']) ? $posted['signature'] : null; 
+	     $obj = \Magento\Framework\App\ObjectManager::getInstance();
+  	     $apiKey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_vacimbepay/api_key');
+	     $params = $merchantCode . $amount . $merchantOrderId . $apiKey;
+	     $resultCode = isset($posted['resultCode']) ? $posted['resultCode']:null;
+
+
+	    //check signature
+	    if ($signature != md5($params)) {
+		   $message .= "Signature is invalid";
+		   return false;			
+	    }
+
+	    if ($resultCode != '00') {
+			$message .= "failed transaction";
+			return false;
+    	}
+
+        return true;
+    }
+
+    /**
+     * Process the callback from Duitku
+     * @param mixed $posted
+     * @param \Magento\Sales\Model\Order $order
+     * @param int $responseCode
+     * @return void
+     */
+    public function processCallback($posted, $order, &$responseCode)
+    {
+        $ePayTransactionId = $posted['reference'];
+        $payment = $order->getPayment();
+
+        try {
+            $pspReference = $payment->getAdditionalInformation(EpayPayment::METHOD_REFERENCE);
+            if (empty($pspReference)) {
+                /** @var \Duitku\Vacimbniaga\Model\Method\Epay\Payment */
+                $paymentMethod = $this->_getPaymentMethodInstance($order->getPayment()->getMethod());
+                 $this->_processCallbackData($order,
+                     $paymentMethod,
+                     $ePayTransactionId,
+                     EpayPayment::METHOD_REFERENCE,
+                     $this->_duitkuHelper->getDuitkuEpayConfigData(DuitkuConstants::ORDER_STATUS),
+                     $payment
+                 );
+
+                $message = "Callback Success - Order created";
+            } else {
+                $message = "Callback Success - Order already created";
+            }
+            $responseCode = Response::HTTP_OK;
+        } catch (\Exception $ex) {
+            $order->setState(\Magento\Sales\Model\Order::STATE_PENDING_PAYMENT);
+            $order->setStatus(\Magento\Sales\Model\Order::STATE_PENDING_PAYMENT);
+            $payment->setAdditionalInformation(array(EpayPayment::METHOD_REFERENCE => ""));
+            $payment->save();
+            $order->save();
+
+            $message = "Callback Failed - " .$ex->getMessage();
+            $responseCode = Exception::HTTP_INTERNAL_ERROR;
+        }
+
+        return $message;
+    }
+}

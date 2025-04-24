@@ -85,6 +85,28 @@ class Callback extends \Duitku\Ovo\Controller\AbstractActionController
             $message .= "The Payment object is null";
             return false;
         }
+        
+		$merchantCode = isset($posted['merchantCode']) ? $posted['merchantCode'] : null; 
+		$amount = isset($posted['amount']) ? $posted['amount'] : null; 
+		$merchantOrderId = isset($posted['merchantOrderId']) ? $posted['merchantOrderId'] : null;
+		$signature = isset($posted['signature']) ? $posted['signature'] : null; 
+		$obj = \Magento\Framework\App\ObjectManager::getInstance();
+		$apiKey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_ovoepay/api_key');
+		$params = $merchantCode . $amount . $merchantOrderId . $apiKey;
+		$resultCode = isset($posted['resultCode']) ? $posted['resultCode']:null;
+
+
+	    //check signature
+	    if ($signature != md5($params)) {
+		   $message .= "Signature is invalid";
+		   return false;			
+	    }
+
+	    if ($resultCode != '00') {
+		$message .= "failed transaction";
+		return false;
+    	}
+		
         return true;
     }
 

@@ -1,2 +1,67 @@
-<?php namespace Duitku\Vacimbniaga\Controller\Epayvacimb;${"\x47\x4cO\x42AL\x53"}["\x78kg\x75\x72\x77\x73\x6d"]="r\x65\x73\x70\x6f\x6e\x73e";${"\x47\x4cOB\x41\x4c\x53"}["\x77\x6a\x71e\x6c\x6cv\x70\x76"]="\x72\x65\x73\x75\x6c\x74\x4as\x6fn";${"\x47\x4c\x4f\x42ALS"}["\x70\x68\x67\x6c\x6b\x74"]="\x72\x65di\x72\x55\x72\x6c";${"G\x4c\x4fB\x41\x4cS"}["\x6a\x69\x6d\x71\x6fjnk\x76"]="r\x65\x73ul\x74a\x72\x72";${"\x47L\x4f\x42A\x4c\x53"}["\x6c\x68n\x70wl"]="\x72\x65su\x6ct";${"\x47\x4cO\x42\x41LS"}["\x64i\x63\x6d\x61\x6b"]="o\x72\x64e\x72";${"GLO\x42A\x4c\x53"}["w\x75\x71qru\x72"]="\x75\x72l";${"\x47LO\x42\x41\x4c\x53"}["\x73\x73\x6av\x74\x6c\x6cp"]="p\x61\x79\x6d\x65nt\x6d\x6f\x64\x65";${"G\x4cOB\x41\x4c\x53"}["t\x62z\x71\x7aq\x63\x72\x70"]="\x6fb\x6a";use Magento\Framework\Controller\ResultFactory;class Checkout extends\Duitku\Vacimbniaga\Controller\AbstractActionController{public function execute(){${"\x47\x4c\x4f\x42\x41\x4cS"}["\x75\x73f\x6ek\x78o"]="pa\x79\x6d\x65n\x74m\x6fd\x65";${${"\x47L\x4f\x42\x41\x4c\x53"}["\x74bz\x71\x7a\x71\x63r\x70"]}=\Magento\Framework\App\ObjectManager::getInstance();${${"\x47\x4cO\x42\x41L\x53"}["\x75sf\x6e\x6b\x78o"]}=$obj->get("Ma\x67e\x6e\x74\x6f\x5cF\x72am\x65\x77\x6f\x72\x6b\\\x41p\x70\\Co\x6efig\x5c\x53copeC\x6fn\x66ig\x49\x6ete\x72\x66a\x63\x65")->getValue("\x70\x61\x79m\x65\x6e\x74/d\x75\x69\x74\x6b\x75\x5f\x65pa\x79/\x70a\x79\x6d\x65nt\x5fm\x6fd\x65");$hcihkcgjh="D\x75\x69t\x6buv\x74\x77\x65b";${"\x47\x4cOB\x41\x4c\x53"}["\x64d\x6b\x74\x74\x63o"]="\x68\x65\x6cp\x65r";${"\x47LO\x42\x41L\x53"}["\x76\x74\x6cus\x65\x65"]="\x6f\x72de\x72";$hpdydnoe="\x6f\x72\x64\x65\x72";if(${${"\x47\x4c\x4fBA\x4cS"}["\x73\x73j\x76t\x6c\x6cp"]}=="1"){${${"\x47L\x4fBA\x4c\x53"}["\x77\x75q\x71\x72u\x72"]}="\x68\x74\x74\x70\x73://\x70\x61s\x73\x70o\x72t.\x64\x75it\x6bu\x2e\x63o\x6d/web\x61pi";}else{${${"\x47\x4c\x4fB\x41\x4c\x53"}["\x77\x75q\x71\x72\x75r"]}="\x68ttp://\x73\x61\x6ed\x62\x6fx\x2e\x64uit\x6bu\x2e\x63\x6fm/\x77\x65bapi";}${"G\x4cOB\x41\x4c\x53"}["d\x67\x6b\x78\x6c\x63y"]="\x72e\x73u\x6c\x74J\x73o\x6e";$reimtudp="\x72\x65\x64irUr\x6c";${${"G\x4c\x4f\x42A\x4c\x53"}["di\x63m\x61k"]}=$this->_getOrder();$this->setOrderDetails(${$hpdydnoe});${${"G\x4c\x4fB\x41LS"}["l\x68n\x70\x77\x6c"]}=$this->getEPayPaymentWindowRequest(${${"\x47L\x4f\x42ALS"}["\x76\x74l\x75\x73e\x65"]});${${"\x47\x4cO\x42A\x4c\x53"}["\x64dk\x74tc\x6f"]}=$obj->get("Duit\x6b\x75\\\x4f\x6elin\x65\x5c\x48\x65\x6c\x70e\x72\x5c\x44\x61\x74\x61");${$hcihkcgjh}=$helper->getDuitkuvtweb();${$reimtudp}=$Duitkuvtweb->getRedirectionUrl(${${"\x47L\x4f\x42AL\x53"}["w\x75\x71q\x72\x75\x72"]},${${"\x47\x4c\x4fB\x41L\x53"}["\x6c\x68\x6e\x70\x77\x6c"]});${${"G\x4cO\x42A\x4c\x53"}["\x6a\x69\x6d\x71o\x6a\x6e\x6b\x76"]}=array();${${"\x47\x4c\x4f\x42\x41LS"}["j\x69\x6d\x71\x6fj\x6ek\x76"]}["ur\x6c"]=${${"\x47\x4c\x4f\x42\x41L\x53"}["\x70\x68\x67l\x6b\x74"]};${${"\x47\x4cOBALS"}["\x64\x67k\x78l\x63\x79"]}=json_encode(${${"GL\x4f\x42\x41\x4cS"}["jimqo\x6ank\x76"]});return$this->_resultJsonFactory->create()->setData(${${"\x47\x4cO\x42\x41L\x53"}["w\x6aq\x65\x6cl\x76\x70v"]});}public function getEPayPaymentWindowRequest($order){try{${"\x47LOB\x41L\x53"}["\x67yi\x79\x63\x6fq\x79s"]="\x65\x70ayMe\x74\x68\x6f\x64";${"\x47LO\x42\x41LS"}["a\x6e\x77g\x76\x70\x6a\x64\x69g\x7a"]="o\x72\x64\x65\x72";${${"\x47\x4c\x4fBALS"}["\x67\x79\x69y\x63\x6f\x71y\x73"]}=$this->_getPaymentMethodInstance($order->getPayment()->getMethod());${${"GL\x4fBA\x4c\x53"}["\x78kg\x75r\x77\x73\x6d"]}=$epayMethod->getPaymentWindow(${${"G\x4cO\x42AL\x53"}["a\x6e\x77\x67vpj\x64\x69\x67z"]});return${${"\x47\x4c\x4f\x42\x41\x4cS"}["\x78\x6bg\x75\x72\x77\x73\x6d"]};}catch(\Exception$ex){$this->_duitkuLogger->addEpayError($order->getId(),$ex->getMessage());return null;}}}
-?>
+<?php
+/**
+ * Copyright (c) 2017. All rights reserved Duitku Vacimbniaga.
+ *
+ * This program is free software. You are allowed to use the software but NOT allowed to modify the software.
+ * It is also not legal to do any changes to the software and distribute it in your own name / brand.
+ *
+ * All use of the payment modules happens at your own risk. We offer a free test account that you can use to test the module.
+ *
+ * @author    Duitku Vacimbniaga
+ * @copyright Duitku Vacimbniaga (http://duitku.com)
+ * @license   Duitku Vacimbniaga
+ *
+ */
+namespace Duitku\Vacimbniaga\Controller\Epayvacimb;
+use Magento\Framework\Controller\ResultFactory;
+
+class Checkout extends \Duitku\Vacimbniaga\Controller\AbstractActionController
+{
+    /**
+     * Checkout Action
+     */
+    public function execute()
+    {
+    	 $obj = \Magento\Framework\App\ObjectManager::getInstance();
+    	 $paymentmode = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_vacimbepay/payment_mode');
+    	 if($paymentmode =='1')
+    	 {
+		 	  $url = 'https://passport.duitku.com/webapi';
+		 }else{
+		 	$url = 'https://sandbox.duitku.com/webapi';
+		 	
+		 }
+        $order = $this->_getOrder();
+        $this->setOrderDetails($order);
+        $result = $this->getEPayPaymentWindowRequest($order);
+        $helper = $obj->get('Duitku\Vacimbniaga\Helper\Data');
+        $DuitkuCore = $helper->getDuitkuCore();
+      	$redirUrl = $DuitkuCore->getRedirectionUrl($url,$result);
+      	$resultarr = array();
+      	$resultarr['url']=$redirUrl;
+        $resultJson = json_encode($resultarr);
+        return $this->_resultJsonFactory->create()->setData($resultJson);
+	  
+    }
+
+    /**
+     * Get the Epay Payment window url
+     *
+     * @param \Magento\Sales\Model\Order
+     * @return string|null
+     */
+    public function getEPayPaymentWindowRequest($order)
+    {
+        try {
+            /** @var \Duitku\Vacimbniaga\Model\Method\Epay\Payment */
+            $epayMethod = $this->_getPaymentMethodInstance($order->getPayment()->getMethod());
+            $response = $epayMethod->getPaymentWindow($order);
+			
+			$this->_duitkuLogger->addEpayInfo($order->getId(), json_encode($response));
+            return $response;
+        } catch (\Exception $ex) {
+            $this->_duitkuLogger->addEpayError($order->getId(), $ex->getMessage());
+            return null;
+        }
+    }
+}

@@ -14,8 +14,9 @@
  */
 
 namespace Duitku\Ovo\Helper;
+include_once('Duitku/DuitkuCore.php');
 use Duitku\Ovo\Helper\DuitkuConstants;
-
+use Duitku_Ovo_Core;
 class Data extends \Magento\Framework\App\Helper\AbstractHelper
 {
     /**
@@ -64,6 +65,11 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     {
         return $this->getConfigData($field, 'duitku_ovoepay', $storeId);
     }
+	
+	public function getDuitkuCore(){
+   		$DuitkuCore = new Duitku_Ovo_Core();
+		return $DuitkuCore;
+	}
 		
 	
     /**

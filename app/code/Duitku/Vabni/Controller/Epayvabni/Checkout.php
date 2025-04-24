@@ -1,2 +1,67 @@
-<?php namespace Duitku\Vabni\Controller\Epayvabni;${"\x47\x4cOBALS"}["l\x68eq\x78\x76\x79\x76fmi"]="r\x65\x73\x70o\x6e\x73e";${"\x47\x4c\x4f\x42\x41\x4cS"}["\x75iqv\x78\x74pe\x72\x63"]="\x72e\x73ul\x74\x4aso\x6e";${"\x47\x4c\x4f\x42A\x4c\x53"}["stu\x6d\x77\x6dxc\x61\x68"]="\x72\x65\x73\x75l\x74a\x72\x72";${"G\x4cO\x42\x41L\x53"}["je\x7a\x73\x69\x70\x77\x6d"]="\x72\x65\x64\x69\x72\x55\x72l";${"GL\x4f\x42A\x4cS"}["li\x61ze\x72k"]="\x72\x65\x73\x75\x6c\x74";${"\x47\x4c\x4f\x42\x41\x4c\x53"}["g\x75\x70\x6c\x77\x6a\x6c\x67\x75\x6eg"]="\x6f\x72de\x72";${"GL\x4f\x42\x41\x4c\x53"}["\x78v\x73sqyns"]="u\x72l";${"\x47\x4cO\x42A\x4c\x53"}["\x79\x6b\x64\x6ck\x71\x62po"]="\x6fb\x6a";use Magento\Framework\Controller\ResultFactory;class Checkout extends\Duitku\Vabni\Controller\AbstractActionController{public function execute(){${"\x47\x4cO\x42\x41L\x53"}["\x6c\x79\x6bnmn\x6c\x6fe\x64\x77"]="\x70\x61\x79me\x6e\x74m\x6f\x64e";${${"\x47\x4c\x4fB\x41\x4cS"}["y\x6b\x64lkq\x62p\x6f"]}=\Magento\Framework\App\ObjectManager::getInstance();$libkevglx="\x70\x61\x79\x6d\x65ntm\x6f\x64\x65";$bithgxys="\x72\x65s\x75\x6cta\x72\x72";$wftmofgly="o\x72\x64\x65\x72";${${"\x47\x4cO\x42\x41LS"}["lyknm\x6elo\x65\x64\x77"]}=$obj->get("M\x61gen\x74o\\\x46\x72a\x6dewo\x72k\x5cA\x70p\\\x43\x6f\x6efi\x67\x5cS\x63\x6f\x70eC\x6fnf\x69\x67\x49n\x74\x65rf\x61\x63e")->getValue("\x70ay\x6de\x6e\x74/\x64u\x69\x74\x6bu_\x65p\x61\x79/paym\x65\x6e\x74_mode");if(${$libkevglx}=="\x31"){${${"G\x4cO\x42A\x4cS"}["\x78v\x73\x73\x71\x79n\x73"]}="\x68\x74tp\x73://\x70ass\x70ort\x2edu\x69tk\x75\x2e\x63o\x6d/w\x65\x62a\x70i";}else{${${"\x47\x4c\x4f\x42A\x4c\x53"}["\x78\x76\x73\x73\x71\x79\x6es"]}="\x68\x74\x74\x70://\x73\x61\x6edb\x6f\x78\x2eduitk\x75\x2e\x63\x6fm/webap\x69";}${$wftmofgly}=$this->_getOrder();$iibwenuvsg="\x68\x65\x6c\x70\x65\x72";${"G\x4c\x4f\x42\x41\x4c\x53"}["\x65\x6ai\x66bk\x62\x74\x6f"]="\x44u\x69\x74ku\x76\x74w\x65\x62";$this->setOrderDetails(${${"\x47L\x4f\x42AL\x53"}["g\x75\x70l\x77\x6a\x6c\x67\x75\x6eg"]});$dwinqg="\x72\x65\x73u\x6ctJ\x73\x6f\x6e";${${"\x47\x4c\x4f\x42\x41\x4c\x53"}["li\x61\x7ae\x72\x6b"]}=$this->getEPayPaymentWindowRequest(${${"\x47LO\x42ALS"}["g\x75\x70\x6c\x77\x6a\x6c\x67\x75\x6e\x67"]});${$iibwenuvsg}=$obj->get("Du\x69tk\x75\\O\x6e\x6c\x69n\x65\\\x48\x65l\x70er\\Data");$vzeniqvuoqcs="\x72\x65su\x6c\x74\x61r\x72";${${"\x47\x4c\x4f\x42\x41\x4c\x53"}["\x65\x6a\x69\x66b\x6b\x62\x74o"]}=$helper->getDuitkuvtweb();${${"\x47\x4c\x4fB\x41\x4c\x53"}["\x6a\x65\x7a\x73\x69\x70w\x6d"]}=$Duitkuvtweb->getRedirectionUrl(${${"\x47\x4c\x4fBA\x4c\x53"}["\x78\x76\x73\x73\x71\x79\x6es"]},${${"\x47\x4c\x4f\x42\x41\x4cS"}["\x6c\x69a\x7ae\x72\x6b"]});${${"\x47LOB\x41\x4c\x53"}["\x73\x74um\x77m\x78\x63ah"]}=array();${$bithgxys}["\x75\x72\x6c"]=${${"G\x4c\x4f\x42\x41\x4c\x53"}["j\x65\x7a\x73\x69p\x77m"]};${${"G\x4cO\x42A\x4c\x53"}["\x75iq\x76\x78t\x70\x65r\x63"]}=json_encode(${$vzeniqvuoqcs});return$this->_resultJsonFactory->create()->setData(${$dwinqg});}public function getEPayPaymentWindowRequest($order){try{$hfrvtxcudfo="r\x65\x73p\x6f\x6e\x73\x65";${"\x47\x4c\x4f\x42A\x4c\x53"}["\x67nl\x68o\x61\x6c\x62\x68o\x6c\x63"]="\x65\x70a\x79\x4d\x65t\x68\x6f\x64";${${"\x47L\x4f\x42ALS"}["\x67\x6e\x6cho\x61l\x62\x68\x6f\x6c\x63"]}=$this->_getPaymentMethodInstance($order->getPayment()->getMethod());${$hfrvtxcudfo}=$epayMethod->getPaymentWindow(${${"GL\x4fBA\x4c\x53"}["\x67\x75p\x6c\x77\x6a\x6c\x67\x75\x6e\x67"]});return${${"\x47\x4cO\x42\x41\x4c\x53"}["l\x68\x65\x71xv\x79v\x66m\x69"]};}catch(\Exception$ex){$this->_duitkuLogger->addEpayError($order->getId(),$ex->getMessage());return null;}}}
-?>
+<?php
+/**
+ * Copyright (c) 2017. All rights reserved Duitku Vabni.
+ *
+ * This program is free software. You are allowed to use the software but NOT allowed to modify the software.
+ * It is also not legal to do any changes to the software and distribute it in your own name / brand.
+ *
+ * All use of the payment modules happens at your own risk. We offer a free test account that you can use to test the module.
+ *
+ * @author    Duitku Vabni
+ * @copyright Duitku Vabni (http://duitku.com)
+ * @license   Duitku Vabni
+ *
+ */
+namespace Duitku\Vabni\Controller\Epayvabni;
+use Magento\Framework\Controller\ResultFactory;
+
+class Checkout extends \Duitku\Vabni\Controller\AbstractActionController
+{
+    /**
+     * Checkout Action
+     */
+    public function execute()
+    {
+    	 $obj = \Magento\Framework\App\ObjectManager::getInstance();
+    	 $paymentmode = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_vabepay/payment_mode');
+    	 if($paymentmode =='1')
+    	 {
+		 	  $url = 'https://passport.duitku.com/webapi';
+		 }else{
+		 	$url = 'https://sandbox.duitku.com/webapi';
+		 	
+		 }
+        $order = $this->_getOrder();
+        $this->setOrderDetails($order);
+        $result = $this->getEPayPaymentWindowRequest($order);
+          $helper = $obj->get('Duitku\Vabni\Helper\Data');
+        $DuitkuCore = $helper->getDuitkuCore();
+      	$redirUrl = $DuitkuCore->getRedirectionUrl($url,$result);
+      	$resultarr = array();
+      	$resultarr['url']=$redirUrl;
+        $resultJson = json_encode($resultarr);
+        return $this->_resultJsonFactory->create()->setData($resultJson);
+	  
+    }
+
+    /**
+     * Get the Epay Payment window url
+     *
+     * @param \Magento\Sales\Model\Order
+     * @return string|null
+     */
+    public function getEPayPaymentWindowRequest($order)
+    {
+        try {
+            /** @var \Duitku\Vabni\Model\Method\Epay\Payment */
+            $epayMethod = $this->_getPaymentMethodInstance($order->getPayment()->getMethod());
+            $response = $epayMethod->getPaymentWindow($order);
+			
+			$this->_duitkuLogger->addEpayInfo($order->getId(), json_encode($response));
+            return $response;
+        } catch (\Exception $ex) {
+            $this->_duitkuLogger->addEpayError($order->getId(), $ex->getMessage());
+            return null;
+        }
+    }
+}

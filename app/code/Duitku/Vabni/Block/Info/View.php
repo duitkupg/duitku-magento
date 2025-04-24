@@ -1,2 +1,73 @@
-<?php namespace Duitku\Vabni\Block\Info;${"GL\x4fB\x41LS"}["x\x6f\x68vg\x79\x67"]="\x74\x78\x6eId";${"\x47\x4c\x4fB\x41L\x53"}["\x6e\x76\x62\x73\x64vqt\x78\x72\x6e"]="\x64\x61ta";${"G\x4cO\x42\x41\x4cS"}["\x69\x68\x68to\x71\x6f\x67\x66m"]="\x63\x63\x54ype";use\Duitku\Vabni\Model\Method\Epay\Payment as EpayPayment;class View extends\Magento\Payment\Block\Info{protected function _construct(){parent::_construct();$this->setTemplate("\x73ales/\x6fr\x64er/v\x69\x65w/i\x6ef\x6f\x2e\x70h\x74\x6dl");}protected function _prepareSpecificInformation($transport=null){$xfkesnt="t\x72\x61n\x73\x70o\x72\x74";$sivghmfn="da\x74a";$klsbqunoqpry="\x74\x72\x61\x6es\x70or\x74";if($this->_paymentSpecificInformation!==null){return$this->_paymentSpecificInformation;}${$xfkesnt}=parent::_prepareSpecificInformation(${$klsbqunoqpry});${$sivghmfn}=[];${"\x47\x4c\x4fB\x41LS"}["\x73njfo\x6d"]="\x64\x61\x74\x61";if($this->getInfo()->getLastTransId()){${"\x47L\x4f\x42\x41L\x53"}["\x65\x6b\x6d\x6c\x72\x75eg\x62\x62"]="p\x61\x79\x6de\x6et";$wbljrdkosq="\x74x\x6e\x49\x64";${"\x47\x4c\x4f\x42\x41\x4c\x53"}["d\x70\x67xd\x6et\x79c\x6b"]="c\x63Nu\x6dber";$xrewephg="\x63\x63\x4e\x75mb\x65\x72";${${"\x47\x4cO\x42\x41\x4cS"}["\x69\x68h\x74\x6f\x71\x6fgfm"]}=$this->getInfo()->getOrder()->getPayment()->getCcType();$yilcysnw="\x63\x63T\x79\x70e";$vphtdbz="\x74\x78\x6eI\x64";if(!empty(${$yilcysnw})){$pxifultkgrq="\x64\x61\x74a";${"\x47\x4c\x4f\x42\x41L\x53"}["w\x74\x72\x6ec\x6d\x69"]="\x63cTy\x70\x65";${$pxifultkgrq}[(string)__("\x50a\x79\x6dent t\x79\x70e")]=${${"\x47L\x4f\x42AL\x53"}["\x77\x74\x72n\x63\x6d\x69"]};}${$xrewephg}=$this->getInfo()->getOrder()->getPayment()->getCcNumberEnc();if(!empty(${${"\x47\x4c\x4f\x42A\x4cS"}["\x64\x70\x67x\x64\x6et\x79\x63\x6b"]})){${"\x47L\x4f\x42\x41LS"}["\x70\x68\x69\x6dd\x78\x6f"]="c\x63N\x75\x6d\x62e\x72";${${"\x47\x4c\x4f\x42\x41\x4c\x53"}["\x6e\x76b\x73\x64vqtx\x72\x6e"]}[(string)__("C\x61rd \x6e\x75\x6db\x65r")]=${${"\x47L\x4f\x42\x41\x4c\x53"}["\x70\x68imdx\x6f"]};}${$vphtdbz}="";${${"G\x4cO\x42\x41L\x53"}["ek\x6dl\x72\x75eg\x62\x62"]}=$this->getInfo()->getOrder()->getPayment();if($payment->getMethod()===EpayPayment::METHOD_CODE){$fqjiexnk="\x74\x78\x6eId";${$fqjiexnk}=$payment->getAdditionalInformation(EpayPayment::METHOD_REFERENCE);}if(!empty(${$wbljrdkosq})){$wvkvenijbue="\x64\x61\x74a";${$wvkvenijbue}[(string)__("Tran\x73\x61\x63t\x69\x6f\x6e\x20\x49d")]=${${"\x47L\x4f\x42\x41\x4cS"}["x\x6f\x68\x76\x67y\x67"]};}}return$transport->setData(array_merge(${${"\x47L\x4f\x42\x41\x4cS"}["\x73n\x6a\x66o\x6d"]},$transport->getData()));}public function getPaymentInformationTitle(){return __("\x50ayme\x6e\x74 \x49nf\x6frmat\x69o\x6e");}}
-?>
+<?php
+/**
+ * Copyright (c) 2017. All rights reserved Duitku Vabni.
+ *
+ * This program is free software. You are allowed to use the software but NOT allowed to modify the software.
+ * It is also not legal to do any changes to the software and distribute it in your own name / brand.
+ *
+ * All use of the payment modules happens at your own risk. We offer a free test account that you can use to test the module.
+ *
+ * @author    Duitku Vabni
+ * @copyright Duitku Vabni (http://duitku.com)
+ * @license   Duitku Vabni
+ *
+ */
+namespace Duitku\Vabni\Block\Info;
+use \Duitku\Vabni\Model\Method\Epay\Payment as EpayPayment;
+
+class View extends \Magento\Payment\Block\Info
+{
+    /**
+     * {@inheritdoc}
+     */
+    protected function _construct()
+    {
+        parent::_construct();
+        $this->setTemplate('sales/order/view/info.phtml');
+    }
+    
+    /**
+     * {@inheritdoc}
+     */
+    protected function _prepareSpecificInformation($transport = null)
+    {
+        if ($this->_paymentSpecificInformation !== null) {
+            return $this->_paymentSpecificInformation;
+        }
+        
+        $transport = parent::_prepareSpecificInformation($transport);
+        $data = [];
+
+        if ($this->getInfo()->getLastTransId()) {
+            $ccType = $this->getInfo()->getOrder()->getPayment()->getCcType();
+            if (!empty($ccType)) {
+                $data[(string)__("Payment type")] = $ccType;
+            }
+            $ccNumber = $this->getInfo()->getOrder()->getPayment()->getCcNumberEnc();
+            if (!empty($ccNumber)) {
+                $data[(string)__("Card number")] = $ccNumber;
+            }
+
+            $txnId = "";
+            $payment = $this->getInfo()->getOrder()->getPayment();
+            if ($payment->getMethod() === EpayPayment::METHOD_CODE) {
+                $txnId = $payment->getAdditionalInformation(EpayPayment::METHOD_REFERENCE);
+            }
+
+            if (!empty($txnId)) {
+                $data[(string)__("Transaction Id")] = $txnId;
+            }
+        }
+
+        return $transport->setData(array_merge($data, $transport->getData()));
+    }
+
+    /**
+     * Get translated payment information title
+     * @return string
+     */
+    public function getPaymentInformationTitle()
+    {
+        return __("Payment Information");
+    }
+}

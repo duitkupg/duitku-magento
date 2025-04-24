@@ -1,2 +1,178 @@
-<?php namespace Duitku\Vacimbniaga\Block\Adminhtml\Sales\Order\View;${"\x47\x4c\x4f\x42\x41\x4c\x53"}["qf\x63\x67t\x62k\x6b\x63\x76"]="\x72\x65s";${"\x47\x4c\x4f\x42A\x4c\x53"}["x\x6crf\x74f"]="\x68\x69\x73\x74\x6f\x72\x79A\x72ra\x79";${"G\x4cO\x42\x41\x4c\x53"}["\x71\x6bhd\x63\x66\x67\x61\x62t\x6e"]="\x66\x69\x72\x73\x74\x4c\x65\x74\x74\x65\x72";${"\x47\x4c\x4f\x42A\x4c\x53"}["\x6b\x69\x6a\x78\x77\x67\x6d\x63"]="\x73t\x61\x74\x75s";${"G\x4c\x4fB\x41\x4cS"}["\x73\x65\x75\x65\x63y\x63"]="t\x72an\x73a\x63\x74i\x6f\x6e";${"\x47\x4c\x4f\x42\x41LS"}["\x63\x7ai\x66r\x70\x6f\x63"]="\x6de\x73sag\x65";${"GLO\x42\x41\x4c\x53"}["\x69\x6aet\x6d\x7a\x77e"]="\x74r\x61\x6e\x73a\x63\x74i\x6fnI\x64";${"G\x4cO\x42\x41\x4c\x53"}["\x70\x6e\x71z\x63jy\x6b"]="\x65Pa\x79\x4d\x65\x74\x68o\x64";${"G\x4c\x4f\x42AL\x53"}["\x62\x6b\x73\x68t\x70\x73"]="\x70\x61y\x6de\x6et\x4d\x65t\x68od";${"G\x4c\x4f\x42\x41\x4c\x53"}["\x72\x67\x72\x6bd\x62\x6f"]="\x70\x61\x79me\x6et";${"\x47\x4c\x4f\x42\x41\x4cS"}["\x79\x79\x63\x72\x73\x67\x6ckuq"]="\x6f\x72d\x65\x72";${"GLO\x42ALS"}["\x6ar\x68\x73o\x6c\x66"]="\x72\x65s\x75l\x74";${"\x47\x4cO\x42\x41\x4cS"}["p\x75\x75obgqr\x69\x6a"]="\x70\x72\x69\x63\x65\x48\x65\x6cpe\x72";${"\x47L\x4f\x42A\x4c\x53"}["\x63\x71\x79\x68\x61usv"]="\x63\x6f\x6e\x74\x65x\x74";use Duitku\Vacimbniaga\Model\Method\Epay\Payment as EpayPayment;use Duitku\Vacimbniaga\Helper\DuitkuConstants;class PaymentInfo extends\Magento\Backend\Block\Template{protected$_registry;protected$_priceHelper;protected$_duitkuHelper;public function __construct(\Magento\Backend\Block\Template\Context$context,\Magento\Framework\Registry$registry,\Magento\Framework\Pricing\Helper\Data$priceHelper,\Duitku\Vacimbniaga\Helper\Data$duitkuHelper,array$data=[]){$orvyjbqcdvoj="d\x61ta";${"\x47L\x4f\x42\x41LS"}["\x6a\x71kg\x6e\x61ex\x79\x65"]="\x72e\x67\x69\x73t\x72y";parent::__construct(${${"\x47L\x4f\x42A\x4c\x53"}["\x63\x71\x79h\x61\x75\x73\x76"]},${$orvyjbqcdvoj});$this->_registry=${${"\x47\x4c\x4f\x42A\x4cS"}["\x6a\x71\x6b\x67\x6eaex\x79\x65"]};$livioyclcpy="\x64u\x69\x74ku\x48\x65\x6c\x70\x65\x72";$this->_priceHelper=${${"\x47L\x4f\x42\x41LS"}["\x70\x75u\x6fb\x67\x71\x72\x69\x6a"]};$this->_duitkuHelper=${$livioyclcpy};}protected function _toHtml(){return($this->getOrder()->getPayment()->getMethod()===EpayPayment::METHOD_CODE)?parent::_toHtml():"";}public function getOrder(){return$this->_registry->registry("curre\x6e\x74_orde\x72");}public function getTransactionData(){${${"G\x4c\x4f\x42\x41\x4cS"}["jr\x68s\x6f\x6cf"]}="";${"\x47\x4cOB\x41\x4c\x53"}["wjd\x68\x6eo\x6d\x77q\x68\x7a"]="\x73\x74\x6fre\x49\x64";$hcoksmiz="\x70\x61ym\x65\x6e\x74\x4d\x65thod";${${"\x47\x4cO\x42\x41L\x53"}["\x79\x79\x63\x72\x73gl\x6b\x75\x71"]}=$this->getOrder();${${"\x47L\x4f\x42AL\x53"}["\x77\x6a\x64h\x6e\x6f\x6dw\x71\x68\x7a"]}=$order->getStoreId();${${"\x47LO\x42\x41\x4cS"}["\x72g\x72kdb\x6f"]}=$order->getPayment();${$hcoksmiz}=$payment->getMethod();if(${${"G\x4cO\x42\x41LS"}["\x62\x6b\x73h\x74\x70s"]}===EpayPayment::METHOD_CODE){${"\x47\x4c\x4f\x42\x41L\x53"}["m\x68\x71\x78\x70s\x6a"]="eP\x61y\x4d\x65\x74\x68\x6f\x64";${${"\x47\x4c\x4fBA\x4c\x53"}["\x6d\x68\x71\x78\x70\x73\x6a"]}=$payment->getMethodInstance();if(isset(${${"G\x4c\x4fB\x41\x4c\x53"}["pnqz\x63\x6a\x79k"]})){$hbepftovp="\x74\x72an\x73\x61\x63\x74\x69onId";$magrajg="\x65\x50a\x79\x4de\x74\x68od";${${"G\x4cOB\x41\x4c\x53"}["i\x6a\x65tmz\x77\x65"]}=$payment->getAdditionalInformation(${$magrajg}::METHOD_REFERENCE);if(!empty(${$hbepftovp})){$ptojkdztzary="\x73t\x6f\x72\x65\x49d";$eijwmqqbd="t\x72\x61nsa\x63\x74i\x6f\x6e";${${"\x47LOB\x41\x4c\x53"}["\x63\x7ai\x66\x72\x70oc"]}="";$piqwsnldgyt="tr\x61\x6e\x73\x61\x63\x74\x69\x6f\x6e";$gpghuhxll="\x74\x72\x61\x6esa\x63\x74\x69on\x49\x64";${$piqwsnldgyt}=$ePayMethod->getTransaction(${$gpghuhxll},${${"GLO\x42\x41L\x53"}["\x63\x7a\x69\x66\x72p\x6f\x63"]});if(isset(${$eijwmqqbd})){${${"\x47LO\x42\x41\x4c\x53"}["\x6a\x72h\x73o\x6c\x66"]}=$this->createEpayTransactionHtml(${${"\x47\x4c\x4fB\x41L\x53"}["\x73\x65\x75\x65\x63y\x63"]},${${"\x47L\x4f\x42\x41\x4cS"}["\x79\x79c\x72\x73\x67l\x6buq"]});}elseif($ePayMethod->getConfigData(DuitkuConstants::REMOTE_INTERFACE,${$ptojkdztzary})==0){${"G\x4cO\x42\x41\x4cS"}["\x7a\x61\x78\x63\x67\x61\x6d\x67wh\x7a"]="r\x65su\x6ct";${${"\x47\x4cO\x42\x41L\x53"}["z\x61\x78\x63\x67\x61m\x67\x77\x68\x7a"]}="";}else{${"\x47\x4c\x4f\x42\x41L\x53"}["mp\x75wxl"]="\x72\x65s\x75\x6c\x74";${${"\x47\x4cO\x42AL\x53"}["m\x70\x75\x77\x78\x6c"]}="";}}}}return${${"\x47LO\x42\x41\x4c\x53"}["\x6a\x72hs\x6f\x6cf"]};}public function checkoutStatus($status){$erqblkl="\x73\x74\x61\x74\x75s";$rcstxews="\x72\x65\x73\x75\x6ct";$cjkkdjbehb="\x66i\x72\x73\x74\x4c\x65\x74t\x65\x72";if(!isset(${$erqblkl})){return"";}$ajlnbked="\x73\x74a\x74\x75\x73";$tcjkltv="fi\x72\x73tLette\x72";${"G\x4cO\x42\x41\x4c\x53"}["hln\x62c\x77\x6c"]="f\x69\x72st\x4ce\x74terT\x6fU\x70per";${"\x47\x4c\x4f\x42\x41LS"}["m\x64\x76rj\x6dc"]="\x66ir\x73\x74Le\x74te\x72\x54o\x55\x70p\x65\x72";${$cjkkdjbehb}=substr(${${"G\x4cO\x42A\x4c\x53"}["\x6bij\x78\x77\x67mc"]},0,1);${${"\x47\x4c\x4fB\x41\x4cS"}["\x68\x6cn\x62c\x77\x6c"]}=strtoupper(${$tcjkltv});${${"\x47\x4c\x4f\x42\x41LS"}["\x6a\x72h\x73\x6fl\x66"]}=str_replace(${${"\x47LOB\x41\x4cS"}["\x71\x6b\x68\x64c\x66g\x61\x62tn"]},${${"G\x4cO\x42A\x4c\x53"}["\x6d\x64\x76\x72\x6a\x6dc"]},${$ajlnbked});return${$rcstxews};}public function getPaymentLogoUrl($paymentId){return"<img\x20class\x3d\x22\x64ui\x74\x6bu\x5fp\x61ym\x65\x6etcard\"\x20st\x79l\x65=\"\x77\x69dth:\x310\x30px\x3b\x22\x20\x73\x72\x63=\"\x68t\x74p\x73://\x77\x77w.\x64\x75i\x74\x6b\x75.c\x6fm/w\x70-\x63on\x74\x65n\x74/u\x70l\x6fa\x64\x73/2017/\x303/D\x75i\x74\x6bu-\x4c\x6fg\x6f-s\x6da\x6cl-\x330\x30\x78\x3149\x2e\x6apg\"";}public function createEpayTransactionHtml($transactionInformation,$order){${"G\x4c\x4fB\x41L\x53"}["\x62\x71ol\x72\x70\x69"]="\x72\x65s";if(isset($transactionInformation->history)&&isset($transactionInformation->history->TransactionHistoryInfo)&&count($transactionInformation->history->TransactionHistoryInfo)>0){${${"G\x4c\x4fBA\x4c\x53"}["\x78\x6c\x72\x66\x74\x66"]}=$transactionInformation->history->TransactionHistoryInfo;$rmgclnrw="\x72\x65\x73";if(count($transactionInformation->history->TransactionHistoryInfo)==1){${${"\x47\x4cO\x42A\x4cS"}["\x78\x6c\x72\x66\x74\x66"]}=array($transactionInformation->history->TransactionHistoryInfo);}${${"G\x4c\x4fBAL\x53"}["\x71\x66\x63g\x74\x62\x6bk\x63\x76"]}.="\x3c\x62r\x20/>\x3cb\x72 />";$kcnpuxmp="\x68\x69\x73\x74o\x72y";${$rmgclnrw}.="<\x74\x72\x3e\x3ctd c\x6fl\x73\x70a\x6e=\"\x32\" c\x6cass\x3d\x22dui\x74k\x75_\x74ab\x6c\x65\x5ft\x69tl\x65 \x64\x75\x69t\x6b\x75_\x74able\x5ft\x69\x74l\x65\x5f\x70\x61d\x64\x69ng\x22\x3e".__("\x48\x69s\x74ory")."</td\x3e</\x74\x72>";foreach(${${"GL\x4f\x42A\x4cS"}["\x78l\x72\x66\x74\x66"]} as${$kcnpuxmp}){${"G\x4cO\x42\x41\x4c\x53"}["e\x79n\x6b\x62\x7ai\x74\x6fq\x69"]="re\x73";${"\x47\x4c\x4fB\x41\x4c\x53"}["\x68pk\x6f\x6c\x6a\x72hzpy"]="\x72es";${${"\x47L\x4f\x42AL\x53"}["\x65\x79\x6e\x6b\x62\x7a\x69\x74o\x71\x69"]}.="<t\x72 cla\x73\x73\x3d\x22\x64u\x69\x74k\x75_tab\x6c\x65\x5f\x68\x69\x73tor\x79\x5f\x74\x72\x22><td\x20c\x6c\x61s\x73\x3d\"\x64ui\x74ku\x5f\x74able_\x68is\x74\x6f\x72y\x5ftd\x22>".str_replace("T","\x20",$history->created)."\x3c/t\x64\x3e";${${"GL\x4fB\x41\x4c\x53"}["\x68p\x6bol\x6a\x72h\x7a\x70\x79"]}.="<td\x3e";$tzwywppgd="r\x65\x73";if(strlen($history->username)>0){${"\x47\x4c\x4f\x42\x41\x4c\x53"}["u\x73h\x62\x66\x68c"]="\x72es";${${"\x47\x4c\x4f\x42ALS"}["ush\x62\x66hc"]}.=($history->username.": ");}${$tzwywppgd}.=$history->eventMsg."\x3c/\x74\x64></tr\x3e";}}return${${"GLO\x42A\x4c\x53"}["b\x71o\x6c\x72\x70\x69"]};}}
-?>
+<?php
+/**
+ * Copyright (c) 2017. All rights reserved Duitku Vacimbniaga.
+ *
+ * This program is free software. You are allowed to use the software but NOT allowed to modify the software.
+ * It is also not legal to do any changes to the software and distribute it in your own name / brand.
+ *
+ * All use of the payment modules happens at your own risk. We offer a free test account that you can use to test the module.
+ *
+ * @author    Duitku Vacimbniaga
+ * @copyright Duitku Vacimbniaga (http://duitku.com)
+ * @license   Duitku Vacimbniaga
+ *
+ */
+namespace Duitku\Vacimbniaga\Block\Adminhtml\Sales\Order\View;
+
+use Duitku\Vacimbniaga\Model\Method\Epay\Payment as EpayPayment;
+use Duitku\Vacimbniaga\Helper\DuitkuConstants;
+
+class PaymentInfo extends \Magento\Backend\Block\Template
+{
+    /**
+     * @var \Magento\Framework\Registry
+     */
+    protected $_registry;
+
+    /**
+     * @var \Magento\Framework\Pricing\Helper\Data
+     */
+    protected $_priceHelper;
+
+    /**
+     * @var \Duitku\Vacimbniaga\Helper\Data
+     */
+    protected $_duitkuHelper;
+
+    /**
+     * PaymentInfo constructor.
+     * @param \Magento\Backend\Block\Template\Context $context
+     * @param \Magento\Framework\Registry $registry
+     * @param \Magento\Framework\Pricing\Helper\Data $priceHelper
+     * @param \Duitku\Vacimbniaga\Helper\Data $duitkuHelper
+     * @param array $data
+     */
+    public function __construct(
+        \Magento\Backend\Block\Template\Context $context,
+        \Magento\Framework\Registry $registry,
+        \Magento\Framework\Pricing\Helper\Data $priceHelper,
+        \Duitku\Vacimbniaga\Helper\Data $duitkuHelper,
+        array $data = []
+    ) {
+        parent::__construct($context, $data);
+        $this->_registry = $registry;
+        $this->_priceHelper = $priceHelper;
+        $this->_duitkuHelper = $duitkuHelper;
+    }
+    /**
+     * @return string
+     */
+    protected function _toHtml()
+    {
+        return ($this->getOrder()->getPayment()->getMethod() === EpayPayment::METHOD_CODE) ? parent::_toHtml() : '';
+    }
+
+    /**
+     * @return \Magento\Sales\Model\Order
+     */
+    public function getOrder()
+    {
+        return $this->_registry->registry('current_order');
+    }
+
+    /**
+     * Display transaction data
+     *
+     * @return string
+     */
+    public function getTransactionData()
+    {
+        $result ='';
+        $order = $this->getOrder();
+        $storeId = $order->getStoreId();
+        $payment = $order->getPayment();
+        $paymentMethod = $payment->getMethod();
+
+       if ($paymentMethod === EpayPayment::METHOD_CODE) {
+            /** @var \Duitku\Vacimbniaga\Model\Method\Epay\Payment */
+            $ePayMethod = $payment->getMethodInstance();
+
+            if (isset($ePayMethod)) {
+                $transactionId = $payment->getAdditionalInformation($ePayMethod::METHOD_REFERENCE);
+                if (!empty($transactionId)) {
+                    $message = "";
+                    $transaction = $ePayMethod->getTransaction($transactionId, $message);
+
+                    if (isset($transaction)) {
+                        $result = $this->createEpayTransactionHtml($transaction, $order);
+                    } elseif ($ePayMethod->getConfigData(DuitkuConstants::REMOTE_INTERFACE, $storeId) == 0) {
+                        $result = '';
+                    } else {
+                        $result = '';
+                    }
+                }
+            }
+        }
+
+        return $result;
+    }
+
+    /**
+     * Create Checkout Transaction HTML
+     *
+     * @param \Duitku\Vacimbniaga\Model\Api\Checkout\Response\Models\Transaction $transaction
+     * @return string
+     */
+   
+    /**
+     * Set the first letter to uppercase
+     *
+     * @param string $status
+     * @return string
+     */
+    public function checkoutStatus($status)
+    {
+        if (!isset($status)) {
+            return "";
+        }
+        $firstLetter = substr($status, 0, 1);
+        $firstLetterToUpper = strtoupper($firstLetter);
+        $result = str_replace($firstLetter, $firstLetterToUpper, $status);
+
+        return $result;
+    }
+
+    /**
+     * Create html for paymentLogoUrl
+     *
+     * @param mixed $paymentId
+     * @return string
+     */
+    public function getPaymentLogoUrl($paymentId)
+    {
+        return '<img class="duitku_paymentcard" style="width:100px;" src="https://www.duitku.com/wp-content/uploads/2017/03/Duitku-Logo-small-300x149.jpg"';
+    }
+
+    /**
+     * Create ePay Transaction HTML
+     *
+     * @param \Duitku\Vacimbniaga\Model\Api\Epay\Response\Models\TransactionInformationType $transactionInformation
+     * @param \Magento\Sales\Model\Order $order
+     * @return string
+     */
+    public function createEpayTransactionHtml($transactionInformation, $order)
+    {
+            
+        if (isset($transactionInformation->history) && isset($transactionInformation->history->TransactionHistoryInfo) && count($transactionInformation->history->TransactionHistoryInfo) > 0) {
+            // Important to convert this item to array. If only one item is to be found in the array of history items
+            // the object will be handled as non-array but object only.
+            $historyArray = $transactionInformation->history->TransactionHistoryInfo;
+            if (count($transactionInformation->history->TransactionHistoryInfo) == 1) {
+                // convert to array
+                $historyArray = array($transactionInformation->history->TransactionHistoryInfo);
+            }
+            $res .= '<br /><br />';
+            $res .= '<tr><td colspan="2" class="duitku_table_title duitku_table_title_padding">' . __("History") . '</td></tr>';
+            foreach ($historyArray as $history) {
+                $res .= '<tr class="duitku_table_history_tr"><td class="duitku_table_history_td">' . str_replace('T', ' ', $history->created) . '</td>';
+                $res .= '<td>';
+                if (strlen($history->username) > 0) {
+                    $res .= ($history->username . ': ');
+                }
+                $res .= $history->eventMsg . '</td></tr>';
+            }
+        }
+
+        return $res;
+    }
+}

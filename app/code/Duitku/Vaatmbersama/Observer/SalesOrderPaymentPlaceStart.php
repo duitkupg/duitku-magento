@@ -1,2 +1,35 @@
-<?php namespace Duitku\Vaatmbersama\Observer;${"\x47L\x4fB\x41L\x53"}["\x66\x74\x66\x72im\x6d"]="\x6f\x62\x73\x65r\x76\x65\x72";use\Duitku\Vaatmbersama\Model\Method\Epay\Payment as EpayPayment;class SalesOrderPaymentPlaceStart implements\Magento\Framework\Event\ObserverInterface{public function execute(\Magento\Framework\Event\Observer$observer){$bflucmp="\x70\x61y\x6d\x65n\x74";${$bflucmp}=${${"\x47\x4c\x4f\x42A\x4c\x53"}["\x66tf\x72\x69\x6d\x6d"]}["\x70a\x79\x6d\x65n\x74"];if($payment->getMethod()==EpayPayment::METHOD_CODE){$hfglpu="\x6fr\x64e\x72";${$hfglpu}=$payment->getOrder();$order->setCanSendNewEmailFlag(false);$order->setIsCustomerNotified(false);$order->save();}}}
-?>
+<?php
+/**
+ * Copyright (c) 2017. All rights reserved Duitku Vaatmbersama.
+ *
+ * This program is free software. You are allowed to use the software but NOT allowed to modify the software.
+ * It is also not legal to do any changes to the software and distribute it in your own name / brand.
+ *
+ * All use of the payment modules happens at your own risk. We offer a free test account that you can use to test the module.
+ *
+ * @author    Duitku Vaatmbersama
+ * @copyright Duitku Vaatmbersama (http://duitku.com)
+ * @license   Duitku Vaatmbersama
+ *
+ */
+namespace Duitku\Vaatmbersama\Observer;
+use \Duitku\Vaatmbersama\Model\Method\Epay\Payment as EpayPayment;
+
+class SalesOrderPaymentPlaceStart implements \Magento\Framework\Event\ObserverInterface
+{
+    /**
+     * Sales Order Payment Place Start Observer
+     *
+     * @param \Magento\Framework\Event\Observer $observer
+     */
+    public function execute(\Magento\Framework\Event\Observer $observer)
+    {
+        $payment = $observer['payment'];
+        if ($payment->getMethod() == EpayPayment::METHOD_CODE) {
+            $order = $payment->getOrder();
+            $order->setCanSendNewEmailFlag(false);
+            $order->setIsCustomerNotified(false);
+            $order->save();
+        }
+    }
+}

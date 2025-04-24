@@ -139,18 +139,16 @@ abstract class AbstractActionController extends \Magento\Framework\App\Action\Ac
 	protected function acceptOrder(){
 		$posted = $this->getRequest()->getParams();
 		$resultCode = $posted['resultCode'];
-		if($resultCode == '02' || $resultCode ==''){
-			$this->cancelOrder();
-			}
-		else{
-			if(array_key_exists('merchantOrderId', $posted)){
+		if(isset($posted['resultCode']) && isset($posted['merchantOrderId']) && isset($posted['reference']) && ($resultCode == '00' || $resultCode == '01')){
 				$order = $this->_getOrderByIncrementId($posted['merchantOrderId']);
 				$this->_checkoutSession->setLastOrderId($order->getId());
 				$this->_checkoutSession->setLastRealOrderId($order->getIncrementId());
 				$this->_checkoutSession->setLastQuoteId($order->getQuoteId());
 				$this->_checkoutSession->setLastSuccessQuoteId($order->getQuoteId());
 				$this->_redirect('checkout/onepage/success');
-			}
+		}
+		else{
+			$this->cancelOrder();
 		}
        
 		//$this->_redirect('checkout/onepage/success');

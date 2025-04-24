@@ -1,2 +1,321 @@
-<?php namespace Duitku\Vabni\Model\Method\Epay;${"G\x4c\x4fB\x41\x4cS"}["f\x77l\x65\x76g\x79k\x69\x6f"]="pa\x79\x6d\x65n\x74";${"G\x4cOBALS"}["\x6dv\x70\x64\x62\x6bi\x75"]="\x70a\x72am\x73";${"GL\x4f\x42A\x4c\x53"}["\x68\x68\x6b\x71\x66hw\x75\x65i"]="\x6f\x72\x64\x65\x72\x49\x64";${"\x47\x4c\x4fBALS"}["w\x63\x76\x65\x70g\x74\x6a\x68\x72"]="e\x6d\x61\x69\x6c";${"\x47\x4c\x4f\x42\x41L\x53"}["\x72\x74e\x70\x7a\x71"]="\x73\x69\x67\x6e\x61t\x75\x72e";${"\x47\x4c\x4f\x42\x41\x4cS"}["\x67\x6f\x66otf\x78t\x66"]="\x61\x6d\x6f\x75\x6e\x74";${"G\x4cO\x42\x41LS"}["\x66\x69\x72\x65\x70\x79\x6ei"]="ap\x69k\x65\x79";${"G\x4c\x4f\x42AL\x53"}["\x67hh\x6fn\x75a\x6c"]="\x6d\x65\x72\x63\x68\x61nt\x63\x6f\x64e";${"\x47\x4cO\x42\x41\x4cS"}["\x78\x77oo\x68\x63\x62\x72"]="\x6f\x62j";${"\x47\x4c\x4f\x42AL\x53"}["l\x63\x71sl\x79\x6awh\x6a\x6f"]="o\x72\x64\x65r";use\Magento\Sales\Model\Order\Payment\Transaction;use\Duitku\Vabni\Helper\DuitkuConstants;class Payment extends\Duitku\Vabni\Model\Method\AbstractPayment{const METHOD_CODE="\x64u\x69tku_\x76a\x62\x65pa\x79";const METHOD_REFERENCE="\x64u\x69tku\x76\x61\x62niRe\x66\x65\x72en\x63e";protected$_code=self::METHOD_CODE;protected$_infoBlockType='Duitku\Vabni\Block\Info\View';protected$_isGateway=true;protected$_canCapture=true;protected$_canCapturePartial=true;protected$_canRefund=true;protected$_canRefundInvoicePartial=true;protected$_canVoid=true;protected$_canDelete=true;protected$_auth;public function getAuth(){if(!$this->_auth){$hkxghcgn="s\x74o\x72\x65\x49\x64";${"GLO\x42AL\x53"}["\x69\x70a\x78b\x62\x73\x66\x77\x6b"]="st\x6fr\x65\x49\x64";${${"\x47\x4c\x4f\x42\x41\x4cS"}["\x69\x70a\x78\x62\x62s\x66\x77\x6b"]}=$this->getStoreManager()->getStore()->getId();$this->_auth=$this->_duitkuHelper->generateEpayAuth(${$hkxghcgn});}return$this->_auth;}public function getPaymentWindow($order){if(!isset(${${"G\x4cO\x42\x41\x4c\x53"}["\x6c\x63\x71\x73\x6c\x79\x6a\x77h\x6a\x6f"]})){return null;}return$this->createPaymentRequest(${${"GL\x4f\x42\x41\x4c\x53"}["\x6ccq\x73l\x79\x6aw\x68\x6a\x6f"]});}public function createPaymentRequest($order){${"G\x4c\x4f\x42\x41\x4cS"}["\x76fv\x79x\x6f\x78"]="\x6fr\x64e\x72\x49d";$nxjojuhtygi="\x61\x6dou\x6et";${"\x47L\x4f\x42\x41\x4c\x53"}["\x70wm\x61\x6a\x76\x66\x77\x69\x62"]="\x70\x61ram\x73";${"\x47\x4c\x4f\x42\x41L\x53"}["\x63\x75\x6e\x71\x64\x64\x72\x6a\x6b\x74b\x79"]="cal\x6c\x62\x61c\x6b\x55r\x6c";$bxfxcjoqejkz="\x6de\x72c\x68\x61n\x74co\x64\x65";$eybvbuvliuq="\x65\x6dai\x6c";${"\x47L\x4f\x42A\x4cS"}["\x74\x78s\x63\x78ym"]="\x72et\x75r\x6eUrl";${"GLO\x42A\x4c\x53"}["cn\x72\x65\x79\x77l\x62"]="r\x65\x74\x75rn\x55\x72l";${${"GL\x4fB\x41\x4c\x53"}["\x78w\x6fo\x68c\x62\x72"]}=\Magento\Framework\App\ObjectManager::getInstance();$qceukerijcd="c\x61\x6c\x6c\x62\x61\x63\x6b\x55\x72l";${${"\x47\x4cO\x42A\x4c\x53"}["vf\x76yxo\x78"]}=$order->getIncrementId();${${"G\x4c\x4fB\x41\x4c\x53"}["g\x68\x68\x6f\x6e\x75\x61l"]}=$obj->get("Mag\x65nto\\\x46r\x61me\x77o\x72k\x5c\x41p\x70\x5c\x43\x6f\x6ef\x69g\\\x53c\x6fpe\x43onfigInterfac\x65")->getValue("\x70aym\x65\x6e\x74/\x64u\x69\x74\x6b\x75\x5f\x65\x70\x61\x79/\x6de\x72cha\x6etnu\x6db\x65r");$zdaviqy="a\x6d\x6fu\x6e\x74";${${"\x47L\x4fB\x41LS"}["\x66i\x72ep\x79n\x69"]}=$obj->get("\x4da\x67\x65\x6e\x74o\\\x46\x72\x61m\x65\x77ork\\Ap\x70\\\x43o\x6e\x66ig\\\x53c\x6fpeC\x6f\x6ef\x69\x67\x49\x6e\x74\x65\x72\x66\x61c\x65")->getValue("p\x61ym\x65\x6e\x74/d\x75itku\x5fepay/\x61\x70i\x5fk\x65\x79");${${"\x47\x4c\x4f\x42\x41\x4c\x53"}["g\x6f\x66\x6ftf\x78\x74\x66"]}=round($order->getBaseTotalDue());${"\x47\x4cO\x42\x41\x4cS"}["p\x73\x6e\x72u\x6d\x78\x72t\x65"]="\x6d\x65\x72\x63\x68\x61\x6e\x74Us\x65\x72I\x6e\x66\x6f";${"\x47L\x4f\x42\x41\x4c\x53"}["\x63gfb\x70\x75\x66\x73\x6b\x64\x6a\x6e"]="\x6f\x72d\x65r\x49d";${${"G\x4c\x4f\x42\x41\x4c\x53"}["\x72te\x70\x7aq"]}=md5(${$bxfxcjoqejkz}.${${"G\x4c\x4fBA\x4cS"}["c\x67\x66\x62\x70\x75\x66sk\x64\x6a\x6e"]}.${$zdaviqy}.${${"\x47LOBAL\x53"}["\x66\x69\x72e\x70yn\x69"]});${"G\x4c\x4f\x42\x41\x4cS"}["xb\x74r\x78i\x66g"]="m\x65\x72\x63han\x74U\x73er\x49n\x66\x6f";${$qceukerijcd}=$this->_urlBuilder->getUrl("\x64ui\x74k\x75/ep\x61yv\x61b\x6e\x69/\x63all\x62\x61\x63k");${${"GL\x4f\x42AL\x53"}["\x63nr\x65y\x77\x6c\x62"]}=$this->_urlBuilder->getUrl("du\x69\x74ku/e\x70a\x79\x76\x61\x62\x6ei/\x61c\x63e\x70t");${${"\x47\x4cOB\x41L\x53"}["\x70\x73\x6e\x72\x75\x6d\x78\x72\x74\x65"]}=$order->getCustomerFirstname()." ".$order->getCustomerLastname();${${"\x47L\x4fB\x41\x4c\x53"}["\x77c\x76\x65p\x67\x74j\x68\x72"]}=$order->getCustomerEmail();${${"\x47\x4c\x4f\x42\x41LS"}["\x70wm\x61\x6a\x76\x66\x77\x69\x62"]}=array("\x6derc\x68a\x6e\x74Co\x64e"=>${${"GL\x4f\x42\x41L\x53"}["\x67\x68\x68on\x75\x61\x6c"]},"p\x61\x79men\x74Amo\x75nt"=>${$nxjojuhtygi},"p\x61y\x6d\x65n\x74M\x65t\x68o\x64"=>"I1","\x6derc\x68\x61ntOrde\x72I\x64"=>${${"G\x4cO\x42\x41\x4c\x53"}["h\x68k\x71f\x68\x77\x75\x65i"]},"pro\x64uc\x74De\x74a\x69l\x73"=>"\x4f\x72\x64er\x20: ".${${"\x47\x4c\x4f\x42\x41\x4cS"}["\x68\x68k\x71\x66h\x77\x75\x65\x69"]},"\x61\x64d\x69tiona\x6c\x50a\x72a\x6d"=>"","m\x65\x72\x63h\x61ntU\x73\x65rInf\x6f"=>${${"\x47\x4c\x4f\x42\x41\x4c\x53"}["\x78\x62\x74\x72\x78ifg"]},"em\x61i\x6c"=>${$eybvbuvliuq},"c\x61l\x6c\x62a\x63\x6bUrl"=>${${"GLOBA\x4c\x53"}["c\x75\x6e\x71\x64\x64\x72\x6a\x6b\x74\x62\x79"]},"\x72\x65\x74u\x72\x6e\x55r\x6c"=>${${"\x47L\x4fB\x41\x4cS"}["\x74\x78\x73cxym"]},"s\x69gna\x74ur\x65"=>${${"\x47\x4c\x4fBA\x4c\x53"}["rtepz\x71"]},);return${${"G\x4c\x4f\x42\x41L\x53"}["\x6d\x76\x70\x64\x62ki\x75"]};}public function calculateShippingVat($order){${"\x47L\x4f\x42A\x4c\x53"}["\x73\x71x\x71rl\x6cj\x72\x68"]="\x73\x68\x69\x70\x70in\x67V\x61\x74";if($order->getBaseShippingTaxAmount()<=0||$order->getBaseShippingAmount()<=0){return 0;}$wvcwdxvk="s\x68i\x70\x70\x69n\x67\x56\x61\x74";${$wvcwdxvk}=round(($order->getBaseShippingTaxAmount()/$order->getBaseShippingAmount())*100);return${${"GL\x4f\x42\x41\x4c\x53"}["s\x71\x78\x71\x72ll\x6ar\x68"]};}public function removeSpecialCharacters($value){$pewhlpy="\x76a\x6c\x75e";return preg_replace("/[^\\\x70{\x4catin}\x5cd\x20]/\x75","",${$pewhlpy});}public function cancel(\Magento\Payment\Model\InfoInterface$payment){try{$this->void(${${"\x47L\x4f\x42\x41\x4c\x53"}["\x66w\x6c\x65\x76g\x79ki\x6f"]});$this->_messageManager->addSuccess(__("\x54he p\x61\x79men\x74\x20h\x61ve b\x65e\x6e\x20voi\x64e\x64")." (".$payment->getOrder()->getIncrementId().")");}catch(\Exception$ex){$this->_messageManager->addError($ex->getMessage());}return$this;}public function canCapture(){if($this->_canCapture&&$this->canAction($this::METHOD_REFERENCE)){return true;}return false;}public function canRefund(){if($this->_canRefund&&$this->canAction($this::METHOD_REFERENCE)){return true;}return false;}public function canVoid(){if($this->_canVoid&&$this->canAction($this::METHOD_REFERENCE)){return true;}return false;}public function getCheckoutUrl(){return$this->_urlBuilder->getUrl("d\x75itku/\x65p\x61yvabn\x69/che\x63\x6b\x6f\x75t",["_\x73ecur\x65"=>$this->_request->isSecure()]);}public function getCancelUrl(){return$this->_urlBuilder->getUrl("\x64ui\x74ku/e\x70\x61y\x76\x61\x62ni/c\x61\x6ece\x6c",["_se\x63\x75\x72e"=>$this->_request->isSecure()]);}}
-?>
+<?php
+/**
+ * Copyright (c) 2017. All rights reserved Duitku Vabni.
+ *
+ * This program is free software. You are allowed to use the software but NOT allowed to modify the software.
+ * It is also not legal to do any changes to the software and distribute it in your own name / brand.
+ *
+ * All use of the payment modules happens at your own risk. We offer a free test account that you can use to test the module.
+ *
+ * @author    Duitku Vabni
+ * @copyright Duitku Vabni (http://duitku.com)
+ * @license   Duitku Vabni
+ *
+ */
+namespace Duitku\Vabni\Model\Method\Epay;
+use \Magento\Sales\Model\Order\Payment\Transaction;
+use \Duitku\Vabni\Helper\DuitkuConstants;
+
+class Payment extends \Duitku\Vabni\Model\Method\AbstractPayment
+{
+    const METHOD_CODE = 'duitku_vabepay';
+    const METHOD_REFERENCE = 'duitkuvabniReference';
+
+    protected $_code = self::METHOD_CODE;
+
+    protected $_infoBlockType = 'Duitku\Vabni\Block\Info\View';
+
+    /**
+     * Payment Method feature
+     */
+    protected $_isGateway                   = true;
+    protected $_canCapture                  = true;
+    protected $_canCapturePartial           = true;
+    protected $_canRefund                   = true;
+    protected $_canRefundInvoicePartial     = true;
+    protected $_canVoid                     = true;
+    protected $_canDelete                   = true;
+
+    /**
+     * @var \Duitku\Vabni\Model\Api\Epay\Request\Models\Auth
+     */
+    protected $_auth;
+
+    /**
+     * Get ePay Auth object
+     *
+     * @return \Duitku\Vabni\Model\Api\Epay\Request\Models\Auth
+     */
+    public function getAuth()
+    {
+        if (!$this->_auth) {
+            $storeId = $this->getStoreManager()->getStore()->getId();
+            $this->_auth = $this->_duitkuHelper->generateEpayAuth($storeId);
+        }
+
+        return $this->_auth;
+    }
+
+    /**
+     * Get Duitku Checkout payment window
+     *
+     * @param \Magento\Sales\Model\Order
+     * @return \Duitku\Vabni\Model\Api\Epay\Request\Payment
+     */
+    public function getPaymentWindow($order)
+    {
+    	
+        if (!isset($order)) {
+            return null;
+        }
+        return $this->createPaymentRequest($order);
+    }
+
+    /**
+     * Create the ePay payment window Request url
+     *
+     * @param \Magento\Sales\Model\Order
+     * @return \Duitku\Vabni\Model\Api\Epay\Request\Payment
+     */
+    public function createPaymentRequest($order)
+    {
+    $obj = \Magento\Framework\App\ObjectManager::getInstance();
+   	$orderId = $order->getIncrementId();
+   	$merchantcode = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_vabepay/merchantnumber');
+  	 $apikey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_vabepay/api_key');
+    $amount = round($order->getBaseTotalDue());
+    
+    $callbackUrl = $this->_urlBuilder->getUrl('duitku/epayvabni/callback');
+    $returnUrl = $this->_urlBuilder->getUrl('duitku/epayvabni/accept');
+    $merchantUserInfo = $order->getCustomerFirstname() . " " . $order->getCustomerLastname();
+    $email = $order->getCustomerEmail();
+
+	//ItemDetails
+	$itemsData = $order->getAllItems();
+	$shippingAmountData = $order->getShippingAmount();
+	$shippingTaxAmountData = $order->getShippingTaxAmount();
+	$taxAmountData = $order->getTaxAmount();
+	$DiscountAmount = $order->getDiscountAmount();
+	
+		$itemDetailParams = array();
+		foreach ($itemsData as $value) {
+			
+		  $ItemPrice = (int)$value->getPrice() * (int)$value->getQtyOrdered();
+		  
+		  $item = array(
+			'name' => $this->repString($this->getName($value->getName())),
+			'price' => (int)$ItemPrice,
+			'quantity' => (int)$value->getQtyOrdered(),
+		  );
+		  $itemDetailParams[] = $item;
+		}
+
+		if ($shippingAmountData > 0) {
+		  $shippingItem = array(
+			'name' => 'Shipping Amount',
+			'price' => (int)$shippingAmountData,
+			'quantity' => 1
+		  );
+		  $itemDetailParams[] = $shippingItem;
+		}
+
+		if ($shippingTaxAmountData > 0) {
+		  $shippingTaxItem = array(
+			'name' => 'Shipping Tax',
+			'price' => (int)$shippingTaxAmountData,
+			'quantity' => 1
+		  );
+		  $itemDetailParams[] = $shippingTaxItem;
+		}
+
+		if ($taxAmountData > 0) {
+		  $taxItem = array(
+			'name' => 'Tax',
+			'price' => (int)$taxAmountData,
+			'quantity' => 1
+		  );
+		  $itemDetailParams[] = $taxItem;
+		}
+
+		if ($DiscountAmount != 0) {
+		  $couponItem = array(
+			  'id' => 'DISCOUNT',
+			  'price' => (int)$DiscountAmount,
+			  'quantity' => 1,
+			  'name' => 'DISCOUNT'
+			);
+		  $itemDetailParams[] = $couponItem;
+		}
+		
+		$paymentAmount = 0;
+		foreach ($itemDetailParams as $item) {
+		  $paymentAmount += $item['price'];
+		}
+	
+		$billing_address = array(
+		  'firstName' => $order->getCustomerFirstname(),
+		  'lastName' => $order->getCustomerLastname(),
+		  'address' => $order->getBillingAddress()->getStreet()[0],
+		  'city' => $order->getBillingAddress()->getCity(),
+		  'postalCode' => $order->getBillingAddress()->getPostcode(),
+		  'phone' => $order->getBillingAddress()->getTelephone(),
+		  'countryCode' => $order->getBillingAddress()->getCountryId(),
+		);
+		
+		$customerDetails = array(
+			'firstName' => $order->getCustomerFirstname(),
+			'lastName' => $order->getCustomerLastname(),
+			'email' => $email,
+			'phoneNumber' => $order->getBillingAddress()->getTelephone(),
+			'billingAddress' => $billing_address,
+			'shippingAddress' => $billing_address
+		);
+				
+		$signature = md5($merchantcode.$orderId.$paymentAmount.$apikey);
+		
+		$params = array(
+             'merchantCode' => $merchantcode,
+             'paymentAmount' => $amount,
+             'paymentMethod' => 'I1',
+			 'merchantOrderId' =>$orderId,
+             'productDetails' => 'Order : '.$orderId,
+             'additionalParam' => '',
+             'merchantUserInfo' => $merchantUserInfo,
+			 'customerVaName' => $merchantUserInfo,
+			 'email' => $email,
+			 'phoneNumber' => $order->getBillingAddress()->getTelephone(),		 
+             'callbackUrl' => $callbackUrl,
+			 'expiryPeriod' => 1440,
+             'returnUrl' => $returnUrl,
+             'signature' => $signature,
+			 'customerDetail' => $customerDetails,
+			 'itemDetails' => $itemDetailParams
+         );
+		 
+        return $params;
+    }
+
+
+    /**
+     * Calculate the shipment Vat based on shipment tax and base shipment price
+     *
+     * @param \Magento\Sales\Model\Order $order
+     * @return int
+     */
+    public function calculateShippingVat($order)
+    {
+        if ($order->getBaseShippingTaxAmount() <= 0 || $order->getBaseShippingAmount() <= 0) {
+            return 0;
+        }
+        $shippingVat = round(($order->getBaseShippingTaxAmount() / $order->getBaseShippingAmount()) * 100);
+        return $shippingVat;
+    }
+
+    /**
+     * Remove special characters
+     *
+     * @param string $value
+     * @return string
+     */
+    public function removeSpecialCharacters($value)
+    {
+        return preg_replace('/[^\p{Latin}\d ]/u', '', $value);
+    }
+
+   
+   
+
+    /**
+     * Cancel payment
+     *
+     * @param \Magento\Payment\Model\InfoInterface $payment
+     * @return $this
+     */
+    public function cancel(\Magento\Payment\Model\InfoInterface $payment)
+    {
+        try {
+            $this->void($payment);
+            $this->_messageManager->addSuccess(__("The payment have been voided").' ('.$payment->getOrder()->getIncrementId().')');
+        } catch (\Exception $ex) {
+            $this->_messageManager->addError($ex->getMessage());
+        }
+
+        return $this;
+    }
+
+   
+
+    /**
+     * Get Duitku Checkout Transaction
+     *
+     * @param mixed $transactionId
+     * @param string &$message
+     * @return \Duitku\Vabni\Model\Api\Epay\Response\Models\TransactionInformationType|null
+     */
+   
+
+    /**{@inheritDoc}*/
+    public function canCapture()
+    {
+        if ($this->_canCapture && $this->canAction($this::METHOD_REFERENCE)) {
+            return true;
+        }
+
+        return false;
+    }
+
+    /**{@inheritDoc}*/
+    public function canRefund()
+    {
+        if ($this->_canRefund && $this->canAction($this::METHOD_REFERENCE)) {
+            return true;
+        }
+
+        return false;
+    }
+
+    /**{@inheritDoc}*/
+    public function canVoid()
+    {
+        if ($this->_canVoid && $this->canAction($this::METHOD_REFERENCE)) {
+            return true;
+        }
+
+        return false;
+    }
+
+   
+    /**
+     * Retrieve an url for the ePay Checkout action
+     *
+     * @return string
+     */
+    public function getCheckoutUrl()
+    {
+        return $this->_urlBuilder->getUrl('duitku/epayvabni/checkout', ['_secure' => $this->_request->isSecure()]);
+    }
+
+    /**
+     * Retrieve an url for the ePay Decline action
+     *
+     * @return string
+     */
+    public function getCancelUrl()
+    {
+        return $this->_urlBuilder->getUrl('duitku/epayvabni/cancel', ['_secure' => $this->_request->isSecure()]);
+    }
+
+	private function repString($str) {
+		return preg_replace("/[^a-zA-Z0-9]+/", " ", $str);
+	}
+
+	private function getName($s) {
+		$max_length = 20;
+		if (strlen($s) > $max_length) {
+		  $offset = ($max_length - 3) - strlen($s);
+		  $s = substr($s, 0, strrpos($s, ' ', $offset));
+		}
+		return $s;
+	}
+
+}

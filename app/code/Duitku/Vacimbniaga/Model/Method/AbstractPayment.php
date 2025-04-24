@@ -1,2 +1,218 @@
-<?php namespace Duitku\Vacimbniaga\Model\Method;${"\x47\x4c\x4fB\x41\x4c\x53"}["\x71\x6f\x72x\x6a\x72\x75"]="\x69\x74em";${"G\x4c\x4f\x42\x41\x4c\x53"}["g\x66\x7a\x62h\x6f\x6b"]="\x70\x61\x79\x6d\x65\x6et";${"\x47\x4c\x4f\x42\x41\x4cS"}["\x68\x76os\x78u\x73\x64va\x6a"]="in\x66o\x49\x6e\x73\x74\x61\x6ec\x65";${"G\x4cO\x42\x41\x4c\x53"}["n\x65\x75x\x74cd\x6eb\x79"]="st\x6f\x72e\x49\x64";${"\x47L\x4f\x42\x41\x4c\x53"}["\x79v\x78\x74\x72w\x66\x78"]="\x70a\x79\x6d\x65\x6e\x74\x49n\x66o";${"\x47\x4cO\x42\x41\x4cS"}["\x6f\x67\x62w\x75\x6c"]="m\x65s\x73a\x67\x65\x4d\x61\x6e\x61g\x65r";${"GL\x4fB\x41\x4c\x53"}["u\x6d\x63p\x73m\x62\x6f\x72\x75\x77"]="\x63a\x72\x74";${"GL\x4f\x42\x41\x4c\x53"}["r\x76\x6e\x66\x6c\x70v"]="t\x61x\x48\x65l\x70er";${"G\x4cO\x42\x41\x4cS"}["\x62s\x6f\x74yc\x75"]="\x64u\x69\x74\x6b\x75H\x65\x6c\x70\x65r";${"GLO\x42A\x4cS"}["\x78\x73\x79ttu\x6d\x69n"]="url\x42\x75\x69\x6c\x64er";${"G\x4cO\x42\x41L\x53"}["p\x75z\x6f\x70\x6c\x74\x62"]="\x64\x61\x74\x61";${"\x47L\x4f\x42\x41\x4cS"}["bwn\x6fb\x6e\x74w\x72\x6b"]="r\x65\x73o\x75\x72\x63\x65";${"G\x4cOB\x41\x4c\x53"}["p\x6dys\x72\x6d\x6b\x75"]="\x6c\x6f\x67\x67\x65\x72";${"G\x4c\x4fBA\x4cS"}["\x6b\x6d\x7ageb\x69x\x64\x6a\x72"]="s\x63\x6fp\x65\x43on\x66\x69\x67";${"G\x4c\x4f\x42\x41\x4c\x53"}["rv\x73\x77\x76\x63d\x71\x63"]="\x63\x75s\x74\x6f\x6d\x41\x74\x74r\x69bu\x74e\x46\x61ct\x6f\x72\x79";use Duitku\Vacimbniaga\Helper\DuitkuConstants;abstract class AbstractPayment extends\Magento\Payment\Model\Method\AbstractMethod{protected$_duitkuHelper;protected$_taxHelper;protected$_storeManager;protected$_cart;protected$_urlBuilder;protected$_request;protected$_messageManager;protected$_order;public function __construct(\Magento\Framework\UrlInterface$urlBuilder,\Duitku\Vacimbniaga\Helper\Data$duitkuHelper,\Magento\Tax\Helper\Data$taxHelper,\Magento\Store\Model\StoreManagerInterface$storeManager,\Magento\Framework\Model\Context$context,\Magento\Framework\Registry$registry,\Magento\Framework\Api\ExtensionAttributesFactory$extensionFactory,\Magento\Framework\Api\AttributeValueFactory$customAttributeFactory,\Magento\Payment\Helper\Data$paymentData,\Magento\Framework\App\Config\ScopeConfigInterface$scopeConfig,\Magento\Payment\Model\Method\Logger$logger,\Magento\Framework\App\RequestInterface$request,\Magento\Checkout\Model\Cart$cart,\Magento\Framework\Message\ManagerInterface$messageManager,\Magento\Framework\Model\ResourceModel\AbstractResource$resource=null,\Magento\Framework\Data\Collection\AbstractDb$resourceCollection=null,array$data=[]){$gdguzrlpobnb="\x73\x74\x6f\x72\x65M\x61n\x61\x67\x65r";$cpvcvhlckxs="r\x65\x73\x6fu\x72\x63\x65\x43\x6f\x6c\x6c\x65\x63\x74\x69\x6f\x6e";$hrdqacuq="e\x78\x74e\x6es\x69\x6f\x6e\x46\x61\x63\x74o\x72y";$stquxufmh="\x70\x61\x79\x6d\x65\x6e\x74\x44at\x61";$khkcvlg="\x72\x65\x67\x69\x73\x74\x72\x79";${"G\x4cO\x42\x41L\x53"}["\x78wkrlh\x69"]="\x63\x6f\x6e\x74\x65\x78t";parent::__construct(${${"G\x4cO\x42\x41\x4c\x53"}["x\x77\x6b\x72lh\x69"]},${$khkcvlg},${$hrdqacuq},${${"G\x4cO\x42\x41\x4c\x53"}["rvs\x77v\x63d\x71c"]},${$stquxufmh},${${"\x47\x4cO\x42\x41L\x53"}["\x6b\x6d\x7a\x67\x65b\x69\x78\x64\x6a\x72"]},${${"G\x4c\x4fB\x41L\x53"}["\x70\x6d\x79srm\x6b\x75"]},${${"\x47\x4c\x4f\x42\x41L\x53"}["bwn\x6fb\x6e\x74\x77\x72\x6b"]},${$cpvcvhlckxs},${${"GLOB\x41\x4cS"}["p\x75zo\x70\x6c\x74\x62"]});$ltnhbdjbhx="\x72\x65\x71\x75\x65\x73\x74";$this->_urlBuilder=${${"G\x4c\x4f\x42\x41\x4c\x53"}["xs\x79t\x74u\x6d\x69\x6e"]};$this->_duitkuHelper=${${"\x47\x4c\x4f\x42A\x4cS"}["\x62\x73ot\x79\x63\x75"]};$this->_taxHelper=${${"\x47\x4c\x4fBA\x4c\x53"}["r\x76\x6e\x66\x6c\x70\x76"]};$this->_storeManager=${$gdguzrlpobnb};$this->_request=${$ltnhbdjbhx};$this->_cart=${${"\x47\x4c\x4f\x42\x41\x4c\x53"}["\x75m\x63ps\x6dbo\x72uw"]};$this->_messageManager=${${"G\x4c\x4fB\x41L\x53"}["o\x67\x62wu\x6c"]};}public function getStoreManager(){return$this->_storeManager;}public function getQuote(){return$this->_cart->getQuote();}public function getOrder(){if(!$this->_order){${${"\x47L\x4fB\x41\x4c\x53"}["\x79\x76\x78\x74\x72\x77fx"]}=$this->getInfoInstance();$this->_order=$paymentInfo->getOrder();}return$this->_order;}public function canEdit(){return false;}protected function canOnlineAction($payment){${${"G\x4c\x4f\x42ALS"}["\x6ee\x75\x78tc\x64n\x62\x79"]}=$payment->getOrder()->getStoreId();if(intval($this->getConfigData(DuitkuConstants::REMOTE_INTERFACE,${${"\x47\x4c\x4f\x42\x41\x4c\x53"}["\x6e\x65\x75xtc\x64\x6eby"]}))===1){return true;}return false;}protected function canAction($reference){${${"G\x4c\x4f\x42\x41LS"}["\x68v\x6fsxusdvaj"]}=$this->getInfoInstance();$gdhrfik="\x74\x72\x61\x6e\x73\x61c\x74i\x6fn\x49d";${"G\x4c\x4f\x42A\x4c\x53"}["\x64\x71nsi\x72ck\x75bh"]="\x74r\x61\x6e\x73\x61\x63t\x69\x6fn\x49\x64";$qnbiyukj="ref\x65r\x65\x6e\x63e";${${"\x47\x4cOB\x41\x4cS"}["\x67\x66z\x62\x68ok"]}=$infoInstance->getOrder()->getPayment();${${"G\x4c\x4f\x42\x41LS"}["\x64\x71ns\x69\x72\x63\x6bub\x68"]}=$payment->getAdditionalInformation(${$qnbiyukj});if(!empty(${$gdhrfik})){return true;}return false;}protected function cancelSurchargeFeeItem($payment){${"\x47\x4c\x4f\x42\x41L\x53"}["\x7a\x6e\x6b\x6c\x76u\x76\x68"]="\x6f\x72\x64\x65r";${${"G\x4c\x4fBA\x4c\x53"}["\x7a\x6ek\x6cvu\x76\x68"]}=$payment->getOrder();foreach($order->getItems()as${${"\x47\x4cO\x42\x41L\x53"}["q\x6f\x72\x78\x6a\x72\x75"]}){if($item->getSku()===DuitkuConstants::DUITKU_SURCHARGE){$item->setQtyCanceled(1);}}}}
-?>
+<?php
+/**
+ * Copyright (c) 2017. All rights reserved Duitku Vacimbniaga.
+ *
+ * This program is free software. You are allowed to use the software but NOT allowed to modify the software.
+ * It is also not legal to do any changes to the software and distribute it in your own name / brand.
+ *
+ * All use of the payment modules happens at your own risk. We offer a free test account that you can use to test the module.
+ *
+ * @author    Duitku Vacimbniaga
+ * @copyright Duitku Vacimbniaga (http://duitku.com)
+ * @license   Duitku Vacimbniaga
+ *
+ */
+namespace Duitku\Vacimbniaga\Model\Method;
+
+use Duitku\Vacimbniaga\Helper\DuitkuConstants;
+
+abstract class AbstractPayment extends \Magento\Payment\Model\Method\AbstractMethod
+{
+    /**
+     * @var \Duitku\Vacimbniaga\Helper\Data
+     */
+    protected $_duitkuHelper;
+
+    /**
+     * @var \Magento\Tax\Helper\Data
+     */
+    protected $_taxHelper;
+
+    /**
+     * @var \Magento\Store\Model\StoreManagerInterface
+     */
+    protected $_storeManager;
+
+    /**
+     * @var \Magento\Checkout\Model\Cart
+     */
+    protected $_cart;
+
+    /**
+     * @var \Magento\Framework\UrlInterface
+     */
+    protected $_urlBuilder;
+
+    /**
+     * @var \Magento\Framework\App\RequestInterface
+     */
+    protected $_request;
+
+    /**
+     * @var \Magento\Framework\Message\ManagerInterface
+     */
+    protected $_messageManager;
+
+    /**
+     * @var \Magento\Sales\Model\Order
+     */
+    protected $_order;
+
+    /**
+     * Duitku Checkout constructor.
+     *
+     * @param \Magento\Framework\UrlInterface $urlBuilder
+     * @param \Duitku\Vacimbniaga\Helper\Data $duitkuHelper
+     * @param \Magento\Tax\Helper\Data $taxHelper
+     * @param \Magento\Store\Model\StoreManagerInterface $storeManager
+     * @param \Magento\Framework\Model\Context $context
+     * @param \Magento\Framework\Registry $registry
+     * @param \Magento\Framework\Api\ExtensionAttributesFactory $extensionFactory
+     * @param \Magento\Framework\Api\AttributeValueFactory $customAttributeFactory
+     * @param \Magento\Payment\Helper\Data $paymentData
+     * @param \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig
+     * @param \Magento\Payment\Model\Method\Logger $logger
+     * @param \Magento\Framework\App\RequestInterface $request
+     * @param \Magento\Framework\App\Response\Http $response
+     * @param \Magento\Checkout\Model\Cart $cart
+     * @param \Magento\Framework\Message\ManagerInterface $messageManager
+     * @param \Magento\Framework\Model\ResourceModel\AbstractResource|null $resource
+     * @param \Magento\Framework\Data\Collection\AbstractDb|null $resourceCollection
+     * @param array $data
+     */
+    public function __construct(
+        \Magento\Framework\UrlInterface $urlBuilder,
+        \Duitku\Vacimbniaga\Helper\Data $duitkuHelper,
+        \Magento\Tax\Helper\Data $taxHelper,
+        \Magento\Store\Model\StoreManagerInterface $storeManager,
+        \Magento\Framework\Model\Context $context,
+        \Magento\Framework\Registry $registry,
+        \Magento\Framework\Api\ExtensionAttributesFactory $extensionFactory,
+        \Magento\Framework\Api\AttributeValueFactory $customAttributeFactory,
+        \Magento\Payment\Helper\Data $paymentData,
+        \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
+        \Magento\Payment\Model\Method\Logger $logger,
+        \Magento\Framework\App\RequestInterface $request,
+        \Magento\Checkout\Model\Cart $cart,
+        \Magento\Framework\Message\ManagerInterface $messageManager,
+        \Magento\Framework\Model\ResourceModel\AbstractResource $resource = null,
+        \Magento\Framework\Data\Collection\AbstractDb $resourceCollection = null,
+        array $data = []
+    ) {
+        parent::__construct(
+            $context,
+            $registry,
+            $extensionFactory,
+            $customAttributeFactory,
+            $paymentData,
+            $scopeConfig,
+            $logger,
+            $resource,
+            $resourceCollection,
+            $data
+        );
+
+        $this->_urlBuilder = $urlBuilder;
+        $this->_duitkuHelper = $duitkuHelper;
+        $this->_taxHelper = $taxHelper;
+        $this->_storeManager = $storeManager;
+        $this->_request = $request;
+        $this->_cart = $cart;
+        $this->_messageManager = $messageManager;
+    }
+
+    /**
+     * Retrieve the storemanager instance
+     *
+     * @return \Magento\Store\Model\StoreManagerInterface
+     */
+    public function getStoreManager()
+    {
+        return $this->_storeManager;
+    }
+
+    /**
+     * Retrieve the Quote object
+     *
+     * @return \Magento\Quote\Model\Quote
+     */
+    public function getQuote()
+    {
+        return $this->_cart->getQuote();
+    }
+
+    /**
+     * Retrieve order object
+     *
+     * @return false|\Magento\Sales\Model\Order
+     */
+    public function getOrder()
+    {
+        if (!$this->_order) {
+            $paymentInfo = $this->getInfoInstance();
+            $this->_order = $paymentInfo->getOrder();
+        }
+
+        return $this->_order;
+    }
+
+    /**
+     * Can be edit order (renew order)
+     *
+     * @return bool
+     * @api
+     */
+    public function canEdit()
+    {
+        return false;
+    }
+
+    /**
+     * Can do online action
+     *
+     * @param \Magento\Payment\Model\InfoInterface $payment
+     * @return boolean
+     */
+    protected function canOnlineAction($payment)
+    {
+        $storeId = $payment->getOrder()->getStoreId();
+        if (intval($this->getConfigData(DuitkuConstants::REMOTE_INTERFACE, $storeId)) === 1) {
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Can do action
+     *
+     * @return boolean
+     */
+    protected function canAction($reference)
+    {
+        $infoInstance = $this->getInfoInstance();
+        $payment = $infoInstance->getOrder()->getPayment();
+        $transactionId = $payment->getAdditionalInformation($reference);
+        if (!empty($transactionId)) {
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Cancel the surcharge fee item
+     *
+     * @param \Magento\Payment\Model\InfoInterface $payment
+     */
+    protected function cancelSurchargeFeeItem($payment)
+    {
+        /** @var \Magento\Sales\Model\Order */
+        $order = $payment->getOrder();
+        foreach ($order->getItems() as $item) {
+            if ($item->getSku() === DuitkuConstants::DUITKU_SURCHARGE) {
+                $item->setQtyCanceled(1);
+            }
+        }
+    }
+}

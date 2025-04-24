@@ -1,2 +1,67 @@
-<?php namespace Duitku\Bcaklikpay\Model\Method\Epay;${"\x47\x4cO\x42ALS"}["\x6a\x61\x63lq\x77\x79\x79"]="\x63\x6f\x6e\x66\x69g";${"\x47\x4c\x4fB\x41L\x53"}["\x72\x6e\x65\x6ei\x6b\x67\x64"]="p\x61\x79m\x65ntH\x65l\x70e\x72";use\Duitku\Bcaklikpay\Model\Method\Epay\Payment as EpayPayment;use\Duitku\Bcaklikpay\Helper\DuitkuConstants;class ConfigProvider implements\Magento\Checkout\Model\ConfigProviderInterface{protected$methodCode=EpayPayment::METHOD_CODE;protected$_ePayMethod;protected$_paymentHelper;public function __construct(\Magento\Payment\Helper\Data$paymentHelper){$this->_paymentHelper=${${"\x47\x4c\x4f\x42\x41\x4c\x53"}["\x72n\x65nikg\x64"]};$this->_ePayMethod=$this->_paymentHelper->getMethodInstance($this->methodCode);}public function getConfig(){${${"\x47\x4cO\x42A\x4c\x53"}["\x6aac\x6c\x71\x77yy"]}=["pa\x79\x6de\x6e\x74"=>[$this->methodCode=>["\x70\x61yme\x6et\x54\x69t\x6ce"=>$this->_ePayMethod->getConfigData(DuitkuConstants::TITLE),"che\x63ko\x75t\x55\x72\x6c"=>$this->_ePayMethod->getCheckoutUrl(),"ca\x6e\x63e\x6c\x55\x72l"=>$this->_ePayMethod->getCancelUrl()]]];return${${"\x47\x4cO\x42\x41\x4c\x53"}["\x6aacl\x71\x77\x79\x79"]};}}
-?>
+<?php
+/**
+ * Copyright (c) 2017. All rights reserved Duitku Bcaklikpay.
+ *
+ * This program is free software. You are allowed to use the software but NOT allowed to modify the software.
+ * It is also not legal to do any changes to the software and distribute it in your own name / brand.
+ *
+ * All use of the payment modules happens at your own risk. We offer a free test account that you can use to test the module.
+ *
+ * @author    Duitku Bcaklikpay
+ * @copyright Duitku Bcaklikpay (http://duitku.com)
+ * @license   Duitku Bcaklikpay
+ *
+ */
+namespace Duitku\Bcaklikpay\Model\Method\Epay;
+
+use \Duitku\Bcaklikpay\Model\Method\Epay\Payment as EpayPayment;
+use \Duitku\Bcaklikpay\Helper\DuitkuConstants;
+
+class ConfigProvider implements \Magento\Checkout\Model\ConfigProviderInterface
+{
+    /**
+     * @var string
+     */
+    protected $methodCode = EpayPayment::METHOD_CODE;
+
+    /**
+     * @var Object
+     */
+    protected $_ePayMethod;
+
+    /**
+     * @var \Magento\Payment\Helper\Data
+     */
+    protected $_paymentHelper;
+
+    /**
+     * Config Provider
+     *
+     * @param \Magento\Payment\Helper\Data $paymentHelper
+     */
+    public function __construct(
+        \Magento\Payment\Helper\Data $paymentHelper
+    ) {
+        $this->_paymentHelper = $paymentHelper;
+        $this->_ePayMethod = $this->_paymentHelper->getMethodInstance($this->methodCode);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getConfig()
+    {
+        $config = [
+            'payment' => [
+                 $this->methodCode => [
+                    'paymentTitle' => $this->_ePayMethod->getConfigData(DuitkuConstants::TITLE),
+                    'checkoutUrl'=> $this->_ePayMethod->getCheckoutUrl(),
+                    'cancelUrl'=> $this->_ePayMethod->getCancelUrl()
+                ]
+            ]
+        ];
+
+        return $config;
+    }
+    
+}

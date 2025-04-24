@@ -1,2 +1,35 @@
-<?php namespace Duitku\Vacimbniaga\Observer;use\Duitku\Vacimbniaga\Model\Method\Epay\Payment as EpayPayment;class SalesOrderPaymentPlaceStart implements\Magento\Framework\Event\ObserverInterface{public function execute(\Magento\Framework\Event\Observer$observer){$ripmchntbqy="\x70\x61\x79\x6de\x6et";${"G\x4cOB\x41\x4c\x53"}["\x64q\x6e\x62\x63v\x61\x65\x7asc"]="\x6f\x62s\x65\x72\x76\x65r";${$ripmchntbqy}=${${"G\x4c\x4f\x42\x41\x4c\x53"}["d\x71nb\x63\x76\x61\x65\x7a\x73\x63"]}["\x70\x61yment"];if($payment->getMethod()==EpayPayment::METHOD_CODE){$uvpfbohrdd="\x6f\x72d\x65\x72";${$uvpfbohrdd}=$payment->getOrder();$order->setCanSendNewEmailFlag(false);$order->setIsCustomerNotified(false);$order->save();}}}
-?>
+<?php
+/**
+ * Copyright (c) 2017. All rights reserved Duitku Vacimbniaga.
+ *
+ * This program is free software. You are allowed to use the software but NOT allowed to modify the software.
+ * It is also not legal to do any changes to the software and distribute it in your own name / brand.
+ *
+ * All use of the payment modules happens at your own risk. We offer a free test account that you can use to test the module.
+ *
+ * @author    Duitku Vacimbniaga
+ * @copyright Duitku Vacimbniaga (http://duitku.com)
+ * @license   Duitku Vacimbniaga
+ *
+ */
+namespace Duitku\Vacimbniaga\Observer;
+use \Duitku\Vacimbniaga\Model\Method\Epay\Payment as EpayPayment;
+
+class SalesOrderPaymentPlaceStart implements \Magento\Framework\Event\ObserverInterface
+{
+    /**
+     * Sales Order Payment Place Start Observer
+     *
+     * @param \Magento\Framework\Event\Observer $observer
+     */
+    public function execute(\Magento\Framework\Event\Observer $observer)
+    {
+        $payment = $observer['payment'];
+        if ($payment->getMethod() == EpayPayment::METHOD_CODE) {
+            $order = $payment->getOrder();
+            $order->setCanSendNewEmailFlag(false);
+            $order->setIsCustomerNotified(false);
+            $order->save();
+        }
+    }
+}

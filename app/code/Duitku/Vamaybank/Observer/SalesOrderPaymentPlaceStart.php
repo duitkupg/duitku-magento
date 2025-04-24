@@ -1,2 +1,35 @@
-<?php namespace Duitku\Vamaybank\Observer;${"\x47\x4c\x4f\x42\x41\x4c\x53"}["\x68\x6f\x6b\x74\x7a\x69g\x6b"]="obse\x72\x76\x65\x72";${"\x47\x4cO\x42AL\x53"}["b\x7a\x77\x6bmsy\x74"]="pa\x79m\x65\x6e\x74";use\Duitku\Vamaybank\Model\Method\Epay\Payment as EpayPayment;class SalesOrderPaymentPlaceStart implements\Magento\Framework\Event\ObserverInterface{public function execute(\Magento\Framework\Event\Observer$observer){${${"\x47\x4cO\x42\x41LS"}["b\x7a\x77\x6b\x6d\x73\x79\x74"]}=${${"\x47\x4cOB\x41L\x53"}["\x68\x6fk\x74zi\x67k"]}["\x70ayme\x6e\x74"];if($payment->getMethod()==EpayPayment::METHOD_CODE){$ivktcrvf="o\x72\x64\x65\x72";${$ivktcrvf}=$payment->getOrder();$order->setCanSendNewEmailFlag(false);$order->setIsCustomerNotified(false);$order->save();}}}
-?>
+<?php
+/**
+ * Copyright (c) 2017. All rights reserved Duitku Vamaybank.
+ *
+ * This program is free software. You are allowed to use the software but NOT allowed to modify the software.
+ * It is also not legal to do any changes to the software and distribute it in your own name / brand.
+ *
+ * All use of the payment modules happens at your own risk. We offer a free test account that you can use to test the module.
+ *
+ * @author    Duitku Vamaybank
+ * @copyright Duitku Vamaybank (http://duitku.com)
+ * @license   Duitku Vamaybank
+ *
+ */
+namespace Duitku\Vamaybank\Observer;
+use \Duitku\Vamaybank\Model\Method\Epay\Payment as EpayPayment;
+
+class SalesOrderPaymentPlaceStart implements \Magento\Framework\Event\ObserverInterface
+{
+    /**
+     * Sales Order Payment Place Start Observer
+     *
+     * @param \Magento\Framework\Event\Observer $observer
+     */
+    public function execute(\Magento\Framework\Event\Observer $observer)
+    {
+        $payment = $observer['payment'];
+        if ($payment->getMethod() == EpayPayment::METHOD_CODE) {
+            $order = $payment->getOrder();
+            $order->setCanSendNewEmailFlag(false);
+            $order->setIsCustomerNotified(false);
+            $order->save();
+        }
+    }
+}

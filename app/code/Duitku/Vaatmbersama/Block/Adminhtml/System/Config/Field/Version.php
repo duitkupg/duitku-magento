@@ -1,2 +1,48 @@
-<?php namespace Duitku\Vaatmbersama\Block\Adminhtml\System\Config\Field;${"G\x4c\x4f\x42\x41\x4c\x53"}["oq\x71p\x71y"]="\x64\x75\x69\x74\x6buH\x65\x6cp\x65r";${"\x47\x4cO\x42\x41\x4c\x53"}["\x77\x75\x73\x6a\x65oj"]="\x64\x61\x74a";class Version extends\Magento\Config\Block\System\Config\Form\Field{protected$_duitkuHelper;public function __construct(\Duitku\Vaatmbersama\Helper\Data$duitkuHelper,\Magento\Backend\Block\Template\Context$context,array$data=[]){${"G\x4c\x4f\x42\x41\x4c\x53"}["\x6cl\x7axmh\x70\x6bw"]="\x63\x6f\x6e\x74\x65xt";parent::__construct(${${"\x47\x4c\x4fBA\x4c\x53"}["l\x6c\x7a\x78mhp\x6b\x77"]},${${"\x47LOB\x41LS"}["w\x75\x73\x6ae\x6f\x6a"]});$this->_duitkuHelper=${${"G\x4cOBALS"}["\x6f\x71q\x70q\x79"]};}protected function _getElementHtml(\Magento\Framework\Data\Form\Element\AbstractElement$element){return$this->_duitkuHelper->getModuleVersion();}}
-?>
+<?php
+/**
+ * Copyright (c) 2017. All rights reserved Duitku Vaatmbersama.
+ *
+ * This program is free software. You are allowed to use the software but NOT allowed to modify the software.
+ * It is also not legal to do any changes to the software and distribute it in your own name / brand.
+ *
+ * All use of the payment modules happens at your own risk. We offer a free test account that you can use to test the module.
+ *
+ * @author    Duitku Vaatmbersama
+ * @copyright Duitku Vaatmbersama (http://duitku.com)
+ * @license   Duitku Vaatmbersama
+ *
+ */
+namespace Duitku\Vaatmbersama\Block\Adminhtml\System\Config\Field;
+
+class Version extends \Magento\Config\Block\System\Config\Form\Field
+{
+    /**
+     * @var \Duitku\Vaatmbersama\Helper\Data
+     */
+    protected $_duitkuHelper;
+
+    /**
+     * Version constructor.
+     * @param \Duitku\Vaatmbersama\Helper\Data $duitkuHelper
+     * @param \Magento\Backend\Block\Template\Context $context
+     * @param array $data
+     */
+    public function __construct(
+        \Duitku\Vaatmbersama\Helper\Data $duitkuHelper,
+        \Magento\Backend\Block\Template\Context $context,
+        array $data = []
+    ) {
+        parent::__construct($context, $data);
+        $this->_duitkuHelper = $duitkuHelper;
+    }
+
+    /**
+     * Retrieve the setup version of the extension
+     * @param \Magento\Framework\Data\Form\Element\AbstractElement $element
+     * @return string
+     */
+    protected function _getElementHtml(\Magento\Framework\Data\Form\Element\AbstractElement $element)
+    {
+        return $this->_duitkuHelper->getModuleVersion();
+    }
+}

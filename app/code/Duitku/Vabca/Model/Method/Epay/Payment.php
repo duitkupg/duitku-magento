@@ -81,8 +81,8 @@ class Payment extends \Duitku\Vabca\Model\Method\AbstractPayment
     {
     $obj = \Magento\Framework\App\ObjectManager::getInstance();
    	$orderId = $order->getIncrementId();
-   	$merchantcode = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_vabcaepay/merchantnumber');
-  	 $apikey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_vabcaepay/api_key');
+   	$merchantcode = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_vabcaepay/merchantnumber',\Magento\Store\Model\ScopeInterface::SCOPE_STORE, $order->getStoreId());
+  	 $apikey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_vabcaepay/api_key',\Magento\Store\Model\ScopeInterface::SCOPE_STORE, $order->getStoreId());
     $amount = round($order->getBaseTotalDue());
     
     $objectManager = \Magento\Framework\App\ObjectManager::getInstance(); 

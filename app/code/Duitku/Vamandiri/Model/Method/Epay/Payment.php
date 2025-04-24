@@ -81,8 +81,8 @@ class Payment extends \Duitku\Vamandiri\Model\Method\AbstractPayment
     {
     $obj = \Magento\Framework\App\ObjectManager::getInstance();
    	$orderId = $order->getIncrementId();
-   	$merchantcode = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_vamandiriepay/merchantnumber');
-  	 $apikey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_vamandiriepay/api_key');
+   	$merchantcode = $this->_scopeConfig->getValue('payment/duitku_vamandiriepay/merchantnumber', \Magento\Store\Model\ScopeInterface::SCOPE_STORE, $order->getStoreId());
+  	 $apikey = $this->_scopeConfig->getValue('payment/duitku_vamandiriepay/api_key', \Magento\Store\Model\ScopeInterface::SCOPE_STORE, $order->getStoreId());
     $amount = round($order->getBaseTotalDue());
     
     $objectManager = \Magento\Framework\App\ObjectManager::getInstance(); 

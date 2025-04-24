@@ -81,9 +81,9 @@ class Payment extends \Duitku\Creditcardmg\Model\Method\AbstractPayment
     {
     $obj = \Magento\Framework\App\ObjectManager::getInstance();
    	$orderId = $order->getIncrementId();
-   	$merchantcode = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_creditcardmgepay/merchantnumber');
-  	 $apikey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_creditcardmgepay/api_key');
-    $credCode = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_creditcardmgepay/credcode');
+   	$merchantcode = $this->_scopeConfig->getValue('payment/duitku_creditcardmgepay/merchantnumber', \Magento\Store\Model\ScopeInterface::SCOPE_STORE, $order->getStoreId());
+  	 $apikey = $this->_scopeConfig->getValue('payment/duitku_creditcardmgepay/api_key', \Magento\Store\Model\ScopeInterface::SCOPE_STORE, $order->getStoreId());
+    $credCode = $this->_scopeConfig->getValue('payment/duitku_creditcardmgepay/credcode', \Magento\Store\Model\ScopeInterface::SCOPE_STORE, $order->getStoreId());
     $amount = round($order->getBaseTotalDue());
     $objectManager = \Magento\Framework\App\ObjectManager::getInstance(); 
     $FormKey = $objectManager->get('Magento\Framework\Data\Form\FormKey');

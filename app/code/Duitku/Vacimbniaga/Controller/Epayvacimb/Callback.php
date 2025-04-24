@@ -92,7 +92,7 @@ class Callback extends \Duitku\Vacimbniaga\Controller\AbstractActionController
 	     $merchantOrderId = isset($posted['merchantOrderId']) ? $posted['merchantOrderId'] : null;
          $signature = isset($posted['signature']) ? $posted['signature'] : null; 
 	     $obj = \Magento\Framework\App\ObjectManager::getInstance();
-  	     $apiKey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_vacimbepay/api_key');
+  	     $apiKey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_vacimbepay/api_key',\Magento\Store\Model\ScopeInterface::SCOPE_STORE, $order->getStoreId());
 	     $params = $merchantCode . $amount . $merchantOrderId . $apiKey;
 	     $resultCode = isset($posted['resultCode']) ? $posted['resultCode']:null;
 

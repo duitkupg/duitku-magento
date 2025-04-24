@@ -24,7 +24,7 @@ class Checkout extends \Duitku\Vamandiri\Controller\AbstractActionController
     {
     	 $obj = \Magento\Framework\App\ObjectManager::getInstance();
     	
-    	  $paymentmode = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_vamandiriepay/payment_mode');
+    	  $paymentmode = $this->_scopeConfig->getValue('payment/duitku_vamandiriepay/payment_mode', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
     	 if($paymentmode =='1')
     	 {
 		 	  $url = 'https://passport.duitku.com/webapi';

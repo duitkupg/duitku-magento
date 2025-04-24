@@ -79,6 +79,7 @@ abstract class AbstractActionController extends \Magento\Framework\App\Action\Ac
 		\Magento\Checkout\Model\Session $checkoutSession,
 		\Duitku\Vamandiri\Helper\Data $duitkuHelper,
 		\Magento\Framework\Controller\Result\JsonFactory $resultJsonFactory,
+		\Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
 		\Duitku\Vamandiri\Logger\DuitkuLogger $duitkuLogger,
 		\Magento\Payment\Helper\Data $paymentHelper,
 		\Magento\Sales\Model\Order\Email\Sender\OrderSender $orderSender,
@@ -89,6 +90,7 @@ abstract class AbstractActionController extends \Magento\Framework\App\Action\Ac
 		$this->_checkoutSession = $checkoutSession;
 		$this->_duitkuHelper = $duitkuHelper;
 		$this->_resultJsonFactory = $resultJsonFactory;
+		$this->_scopeConfig = $scopeConfig;
 		$this->_duitkuLogger = $duitkuLogger;
 		$this->_paymentHelper = $paymentHelper;
 		$this->_orderSender = $orderSender;

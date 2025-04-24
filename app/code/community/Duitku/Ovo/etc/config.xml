@@ -1,0 +1,47 @@
+<?xml version="1.1"?>
+<config>
+    <modules>
+        <Duitku_Ovo>
+            <version>2.2.0</version>
+        </Duitku_Ovo>
+    </modules>
+    <global>
+        <blocks>
+            <ovo>
+                <class>Duitku_Ovo_Block</class>
+            </ovo>
+        </blocks>
+        <models>
+            <ovo>
+                <class>Duitku_Ovo_Model</class>
+            </ovo>
+        </models>
+        <helpers>
+            <ovo>
+                <class>Duitku_Ovo_Helper</class>
+            </ovo>
+        </helpers>
+    </global>
+    <default>
+        <payment>
+            <ovo>
+                <active>0</active>
+                <title>Duitku OVO Payment</title>
+                <model>ovo/ovo</model> 
+                <allowspecific>0</allowspecific>
+                <apiurl>https://passport.duitku.com/webapi/</apiurl>
+            </ovo>
+        </payment>
+    </default>
+    <frontend>
+       <routers>
+          <ovo>
+              <use>standard</use>
+              <args>
+                 <module>Duitku_Ovo</module>
+                 <frontName>ovo</frontName>
+              </args>
+           </ovo>
+       </routers>
+    </frontend>
+</config>

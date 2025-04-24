@@ -19,6 +19,10 @@ Install & activate the plugin. Modify some options in the settings page to suits
 -
 == Changelog ==
 
+= 2.10 Mar 03, 2022 = 
+- add Bank Neo Commerce
+- remove Deprecated Mandiri Channel
+
 = 2.9 Sept 13, 2021 = 
 - add PosPay
 

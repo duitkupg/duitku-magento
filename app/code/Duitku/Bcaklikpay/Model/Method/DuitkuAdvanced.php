@@ -1,0 +1,2 @@
+<?php namespace Duitku\Bcaklikpay\Model\Method;class DuitkuAdvanced extends\Magento\Payment\Model\Method\AbstractMethod{const METHOD_CODE="\x64uitku_ad\x76an\x63\x65\x64";protected$_code=self::METHOD_CODE;protected$_isGateway=false;protected$_canAuthorize=false;protected$_isInitializeNeeded=false;}
+?>

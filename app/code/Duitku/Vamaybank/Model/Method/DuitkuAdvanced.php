@@ -1,0 +1,2 @@
+<?php namespace Duitku\Vamaybank\Model\Method;class DuitkuAdvanced extends\Magento\Payment\Model\Method\AbstractMethod{const METHOD_CODE="du\x69\x74\x6bu\x5fa\x64\x76anced";protected$_code=self::METHOD_CODE;protected$_isGateway=false;protected$_canAuthorize=false;protected$_isInitializeNeeded=false;}
+?>

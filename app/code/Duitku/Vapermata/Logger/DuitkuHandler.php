@@ -1,0 +1,2 @@
+<?php namespace Duitku\Vapermata\Logger;use Monolog\Logger;class DuitkuHandler extends\Magento\Framework\Logger\Handler\Base{protected$loggerType=Logger::DEBUG;protected$fileName='/var/log/duitku.log';}
+?>

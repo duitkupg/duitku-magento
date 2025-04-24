@@ -1,0 +1,2 @@
+<?php namespace Duitku\Vapermata\Model\Method;class DuitkuAdvanced extends\Magento\Payment\Model\Method\AbstractMethod{const METHOD_CODE="\x64\x75\x69t\x6bu\x5f\x61d\x76\x61n\x63ed";protected$_code=self::METHOD_CODE;protected$_isGateway=false;protected$_canAuthorize=false;protected$_isInitializeNeeded=false;}
+?>

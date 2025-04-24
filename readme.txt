@@ -2,7 +2,7 @@
 /*
 Plugin Name:  Duitku Payment Gateway
 Description:  Duitku Payment Gateway 
-Version:      2.13
+Version:      2.15
 Author:       Duitku Development Team
 
 Author URI:   http://duitku.com
@@ -19,8 +19,15 @@ Install & activate the plugin. Modify some options in the settings page to suits
 -
 == Changelog ==
 
-= 2.13 Sept 27, 2022 = 
+= 2.15 Feb 27, 2024 =
+- Add Jenius Pay
+
+= 2.14 Sept 27, 2022 =
 - Fixing MG create invoice
+- Add Gudang Voucher QRIS
+
+= 2.13 Aug 31, 2022 = 
+- Add Atome
 
 = 2.12 Aug 29, 2022 = 
 - Change hash method from m5 to sha256 for security reasons

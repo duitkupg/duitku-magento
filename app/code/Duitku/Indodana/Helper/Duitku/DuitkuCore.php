@@ -20,7 +20,7 @@ class Duitku_Indodana_Core {
         $url = $baseUrl . '/api/merchant/transactionStatus';                        
 
         //generate Signature
-        $signature = md5($merchantCode . $order_id . $apikey);
+        $signature = hash("sha256",$merchantCode . $order_id . $apikey);
 
         // Prepare Parameters
         $params = array(

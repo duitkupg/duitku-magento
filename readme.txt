@@ -2,7 +2,7 @@
 /*
 Plugin Name:  Duitku Payment Gateway
 Description:  Duitku Payment Gateway 
-Version:      2.11
+Version:      2.12
 Author:       Duitku Development Team
 
 Author URI:   http://duitku.com
@@ -18,6 +18,9 @@ Install & activate the plugin. Modify some options in the settings page to suits
 
 -
 == Changelog ==
+
+= 2.12 Aug 29, 2022 = 
+- Change hash method from m5 to sha256 for security reasons
 
 = 2.11 Mar 17, 2022 = 
 - Add BRI Virtual Account

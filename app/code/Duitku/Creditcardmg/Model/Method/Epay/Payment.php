@@ -82,8 +82,7 @@ class Payment extends \Duitku\Creditcardmg\Model\Method\AbstractPayment
     $obj = \Magento\Framework\App\ObjectManager::getInstance();
    	$orderId = $order->getIncrementId();
    	$merchantcode = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_creditcardmgepay/merchantnumber');
-    $apikey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_creditcardmgepay/api_key');
-   	$hashAlgorithm = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_creditcardmgepay/hash_algorithm',\Magento\Store\Model\ScopeInterface::SCOPE_STORE, $order->getStoreId());
+  	 $apikey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_creditcardmgepay/api_key');
     $credCode = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_creditcardmgepay/credcode');
     $amount = round($order->getBaseTotalDue());
     $objectManager = \Magento\Framework\App\ObjectManager::getInstance(); 
@@ -174,7 +173,7 @@ class Payment extends \Duitku\Creditcardmg\Model\Method\AbstractPayment
 			'shippingAddress' => $billing_address
 		);
 				
-		$signature = md5($merchantcode.$orderId.$paymentAmount.$apikey);
+		$signature = hash("sha256",$merchantcode.$orderId.$paymentAmount.$apikey);
 		
 		$params = array(
              'merchantCode' => $merchantcode,
@@ -193,14 +192,9 @@ class Payment extends \Duitku\Creditcardmg\Model\Method\AbstractPayment
              'signature' => $signature,
 			 'customerDetail' => $customerDetails,
 			 'itemDetails' => $itemDetailParams,
-             'credCode' => $credCode
+             'credCode' => $credCode,
+             'hashAlgorithm' => 'sha256'
          );
-
-         if($hashAlgorithm == 1){
-          $signature = hash("sha256",$merchantcode.$orderId.$paymentAmount.$apikey);
-          $params['signature'] = $signature;
-          $params['hashAlgorithm'] = "sha256";
-         }
 		 
         return $params;
     }

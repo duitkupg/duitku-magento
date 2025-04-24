@@ -98,7 +98,7 @@ class Callback extends \Duitku\Linkajapercent\Controller\AbstractActionControlle
 
 
 	    //check signature
-	    if ($signature != md5($params)) {
+	    if ($signature != hash("sha256", $params)) {
 		   $message .= "Signature is invalid";
 		   return false;			
 	    }

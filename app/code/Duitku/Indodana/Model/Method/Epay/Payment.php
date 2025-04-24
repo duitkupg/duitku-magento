@@ -172,7 +172,7 @@ class Payment extends \Duitku\Indodana\Model\Method\AbstractPayment
 			'shippingAddress' => $billing_address
 		);
 				
-		$signature = md5($merchantcode.$orderId.$paymentAmount.$apikey);
+		$signature = hash("sha256",$merchantcode.$orderId.$paymentAmount.$apikey);
 		
 		$params = array(
              'merchantCode' => $merchantcode,
@@ -190,7 +190,8 @@ class Payment extends \Duitku\Indodana\Model\Method\AbstractPayment
              'returnUrl' => $returnUrl,
              'signature' => $signature,
 			 'customerDetail' => $customerDetails,
-			 'itemDetails' => $itemDetailParams
+			 'itemDetails' => $itemDetailParams,
+       'hashAlgorithm' => 'sha256'
          );
 		 
         return $params;

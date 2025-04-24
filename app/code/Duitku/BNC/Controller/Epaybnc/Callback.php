@@ -93,22 +93,15 @@ class Callback extends \Duitku\BNC\Controller\AbstractActionController
 		$signature = isset($posted['signature']) ? $posted['signature'] : null; 
 		$obj = \Magento\Framework\App\ObjectManager::getInstance();
 		$apiKey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_bncepay/api_key',\Magento\Store\Model\ScopeInterface::SCOPE_STORE, $order->getStoreId());;
-   	    $hashAlgorithm = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_bncepay/hash_algorithm',\Magento\Store\Model\ScopeInterface::SCOPE_STORE, $order->getStoreId());
-        $params = $merchantCode . $amount . $merchantOrderId . $apiKey;
+		$params = $merchantCode . $amount . $merchantOrderId . $apiKey;
 		$resultCode = isset($posted['resultCode']) ? $posted['resultCode']:null;
 
+
 	    //check signature
-        if($hashAlgorithm == 1) {
-            if ($signature != hash("sha256",$params)) {
-                $message .= "Signature is invalid";
-                return false;			
-             }
-        }else{
-            if ($signature != md5($params)) {
-               $message .= "Signature is invalid";
-               return false;			
-            }
-        }
+	    if ($signature != hash("sha256", $params)) {
+		   $message .= "Signature is invalid";
+		   return false;			
+	    }
 
 	    if ($resultCode != '00' && $resultCode != '01') {
 		$message .= "failed transaction";

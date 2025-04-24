@@ -76,12 +76,6 @@
 			<config_path>payment/duitku_creditcardmgepay/credcode</config_path>
 			<comment>Credential Code from duitku</comment>
 		</field>
-		<field id="hash_algorithm" type="select" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
-			<label><![CDATA[<b>Hash Secure with SHA 256:</b>]]></label>
-			<comment><![CDATA[Set true if you want to use SHA256. The default is MD5.]]></comment>
-			<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-			<config_path>payment/duitku_creditcardmgepay/hash_algorithm</config_path>
-		</field> 
 	</group>
 	
 </include>

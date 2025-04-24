@@ -83,7 +83,6 @@ class Payment extends \Duitku\BRIVA\Model\Method\AbstractPayment
    	$orderId = $order->getIncrementId();
    	$merchantcode = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_brivaepay/merchantnumber',\Magento\Store\Model\ScopeInterface::SCOPE_STORE, $order->getStoreId());
    	$apikey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_brivaepay/api_key',\Magento\Store\Model\ScopeInterface::SCOPE_STORE, $order->getStoreId());
-   	$hashAlgorithm = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_brivaepay/hash_algorithm',\Magento\Store\Model\ScopeInterface::SCOPE_STORE, $order->getStoreId());
     $amount = round($order->getBaseTotalDue());
     
     $objectManager = \Magento\Framework\App\ObjectManager::getInstance(); 
@@ -174,7 +173,7 @@ class Payment extends \Duitku\BRIVA\Model\Method\AbstractPayment
 			'shippingAddress' => $billing_address
 		);
 				
-		$signature = md5($merchantcode.$orderId.$paymentAmount.$apikey);
+		$signature = hash("sha256",$merchantcode.$orderId.$paymentAmount.$apikey);
 		
 		$params = array(
              'merchantCode' => $merchantcode,
@@ -192,14 +191,9 @@ class Payment extends \Duitku\BRIVA\Model\Method\AbstractPayment
              'returnUrl' => $returnUrl,
              'signature' => $signature,
 			 'customerDetail' => $customerDetails,
-			 'itemDetails' => $itemDetailParams
+			 'itemDetails' => $itemDetailParams,
+       'hashAlgorithm' => 'sha256'
          );
-
-         if($hashAlgorithm == 1){
-          $signature = hash("sha256",$merchantcode.$orderId.$paymentAmount.$apikey);
-          $params['signature'] = $signature;
-          $params['hashAlgorithm'] = "sha256";
-         }
 		 
         return $params;
     }

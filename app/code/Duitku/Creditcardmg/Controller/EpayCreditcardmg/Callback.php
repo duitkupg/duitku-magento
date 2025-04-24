@@ -94,23 +94,15 @@ class Callback extends \Duitku\Creditcardmg\Controller\AbstractActionController
          $signature = isset($posted['signature']) ? $posted['signature'] : null; 
 	     $obj = \Magento\Framework\App\ObjectManager::getInstance();
   	     $apiKey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_creditcardmgepay/api_key');
-        $hashAlgorithm = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_creditcardmgepay/hash_algorithm',\Magento\Store\Model\ScopeInterface::SCOPE_STORE, $order->getStoreId());
-        $params = $merchantCode . $amount . $merchantOrderId . $apiKey;
+	     $params = $merchantCode . $amount . $merchantOrderId . $apiKey;
 	     $resultCode = isset($posted['resultCode']) ? $posted['resultCode']:null;
 
 
 	    //check signature
-        if($hashAlgorithm == 1) {
-            if ($signature != hash("sha256",$params)) {
-                $message .= "Signature is invalid";
-                return false;			
-             }
-        }else{
-            if ($signature != md5($params)) {
-               $message .= "Signature is invalid";
-               return false;			
-            }
-        }
+	    if ($signature != hash("sha256", $params)) {
+		   $message .= "Signature is invalid";
+		   return false;			
+	    }
 
 	    if ($resultCode != '00') {
 		$message .= "failed transaction";

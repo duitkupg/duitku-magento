@@ -98,7 +98,7 @@ class Callback extends \Duitku\Bcaklikpay\Controller\AbstractActionController
 
 
 	    //check signature
-	    if ($signature != md5($params)) {
+	    if ($signature != hash("sha256", $params)) {
 		   $message .= "Signature is invalid";
 		   return false;			
 	    }

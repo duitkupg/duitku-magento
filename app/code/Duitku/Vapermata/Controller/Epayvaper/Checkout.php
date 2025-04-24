@@ -22,15 +22,16 @@ class Checkout extends \Duitku\Vapermata\Controller\AbstractActionController
      */
     public function execute()
     {
-    	 $obj = \Magento\Framework\App\ObjectManager::getInstance();
+        $obj = \Magento\Framework\App\ObjectManager::getInstance();
     	
-    	  $paymentmode = $this->_scopeConfig->getValue('payment/duitku_vaperepay/payment_mode', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);f($paymentmode =='1')
-    	 {
-		 	  $url = 'https://passport.duitku.com/webapi';
-		 }else{
-		 	$url = 'https://sandbox.duitku.com/webapi';
-		 	
-		 }
+        $paymentmode = $this->_scopeConfig->getValue('payment/duitku_vaperepay/payment_mode', \Magento\Store\Model\ScopeInterface::SCOPE_STORE);
+
+        if($paymentmode == "1")
+        {
+            $url = 'https://passport.duitku.com/webapi';
+        }else{
+            $url = 'https://sandbox.duitku.com/webapi';
+        }
         $order = $this->_getOrder();
         $this->setOrderDetails($order);
         $result = $this->getEPayPaymentWindowRequest($order);

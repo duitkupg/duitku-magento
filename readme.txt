@@ -2,7 +2,7 @@
 /*
 Plugin Name:  Duitku Payment Gateway
 Description:  Duitku Payment Gateway 
-Version:      2.9
+Version:      2.11
 Author:       Duitku Development Team
 
 Author URI:   http://duitku.com
@@ -18,6 +18,14 @@ Install & activate the plugin. Modify some options in the settings page to suits
 
 -
 == Changelog ==
+
+= 2.11 Mar 17, 2022 = 
+- Add BRI Virtual Account
+- Add QRIS by Nobu
+
+= 2.10 = 
+- Remove deprecated Mandiri Virtual Accunt
+- Add Bank Neo Commerce
 
 = 2.9 Sept 13, 2021 = 
 - add PosPay

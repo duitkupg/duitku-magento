@@ -2,7 +2,7 @@
 /*
 Plugin Name:  Duitku Payment Gateway
 Description:  Duitku Payment Gateway 
-Version:      2.12
+Version:      2.13
 Author:       Duitku Development Team
 
 Author URI:   http://duitku.com
@@ -18,6 +18,9 @@ Install & activate the plugin. Modify some options in the settings page to suits
 
 -
 == Changelog ==
+
+= 2.13 Aug 31, 2022 = 
+- Add Atome
 
 = 2.12 Aug 29, 2022 = 
 - Change hash method from m5 to sha256 for security reasons

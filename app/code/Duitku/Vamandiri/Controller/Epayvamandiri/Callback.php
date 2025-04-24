@@ -21,6 +21,7 @@ use \Duitku\Vamandiri\Helper\DuitkuConstants;
 
 class Callback extends \Duitku\Vamandiri\Controller\AbstractActionController
 {
+
     /**
      * Callback Action
      */
@@ -60,7 +61,6 @@ class Callback extends \Duitku\Vamandiri\Controller\AbstractActionController
      */
     public function validateCallback($posted, &$order, &$message)
     {
- 
         //Validate response
         if (!isset($posted)) {
             $message .= "Response is null";
@@ -122,42 +122,36 @@ class Callback extends \Duitku\Vamandiri\Controller\AbstractActionController
     {
         $ePayTransactionId = $posted['reference'];
         $payment = $order->getPayment();
-
         try {
-            $pspReference = $payment->getAdditionalInformation(EpayPayment::METHOD_REFERENCE);
-            if ($posted['resultCode'] == '01') {
-                $order->setState(\Magento\Sales\Model\Order::STATE_CANCELED);
-                $order->setStatus(\Magento\Sales\Model\Order::STATE_CANCELED);
-                $payment->setAdditionalInformation(array(EpayPayment::METHOD_REFERENCE => ""));
-                $payment->save();
-                $order->save();
-
-                $message = "Callback Success - Order canceled";
-                $responseCode = Response::HTTP_OK;
-            }
-            else if (empty($pspReference)) {
-                /** @var \Duitku\Vamandiri\Model\Method\Epay\Payment */
-                $paymentMethod = $this->_getPaymentMethodInstance($order->getPayment()->getMethod());
-                 $this->_processCallbackData($order,
-                     $paymentMethod,
-                     $ePayTransactionId,
-                     EpayPayment::METHOD_REFERENCE,
-                     $this->_duitkuHelper->getDuitkuEpayConfigData(DuitkuConstants::ORDER_STATUS),
-                     $payment
-                 );
-
+            $pspReference = $payment->getAdditionalInformation(EpayPayment::METHOD_REFERENCE);      
+            if($order->getId() && ($order->getState() == \Magento\Sales\Model\Order::STATE_PENDING_PAYMENT || $order->getState() == \Magento\Sales\Model\Order::STATE_NEW))
+            {
+                if ($posted['resultCode'] == '01') {      /** check if result code is failed **/
+                    $comment =  __("Notification - order was canceled");
+                    $message = "Callback Success - Order canceled";
+                    $order->registerCancellation($comment)->save();
+                    $responseCode = Response::HTTP_OK;
+                } 
+                else if ($posted['resultCode'] == '00') {   /** check if result code is success **/
+                    $paymentMethod = $this->_getPaymentMethodInstance($order->getPayment()->getMethod());
+                    $this->_processCallbackData($order,
+                        $paymentMethod,
+                        $ePayTransactionId,
+                        EpayPayment::METHOD_REFERENCE,
+                        $this->_duitkuHelper->getDuitkuEpayConfigData(DuitkuConstants::ORDER_STATUS),
+                        $payment
+                    );
                 $message = "Callback Success - Order created";
-            } else {
+                }
+            }
+            else {
                 $message = "Callback Success - Order already created";
             }
             $responseCode = Response::HTTP_OK;
+        
         } catch (\Exception $ex) {
-            $order->setState(\Magento\Sales\Model\Order::STATE_PENDING_PAYMENT);
-            $order->setStatus(\Magento\Sales\Model\Order::STATE_PENDING_PAYMENT);
-            $payment->setAdditionalInformation(array(EpayPayment::METHOD_REFERENCE => ""));
-            $payment->save();
-            $order->save();
-
+            
+            $this->_duitkuLogger->addEpayError($order->getId(), $ex->getMessage());
             $message = "Callback Failed - " .$ex->getMessage();
             $responseCode = Exception::HTTP_INTERNAL_ERROR;
         }

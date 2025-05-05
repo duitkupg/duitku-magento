@@ -2,7 +2,7 @@
 /*
 Plugin Name:  Duitku Payment Gateway
 Description:  Duitku Payment Gateway 
-Version:      2.16
+Version:      2.17
 Author:       Duitku Development Team
 
 Author URI:   http://duitku.com
@@ -17,6 +17,10 @@ Install & activate the plugin. Modify some options in the settings page to suits
 == Screenshots ==
 
 -
+== Changelog ==
+= 2.17 May 05, 2025 =
+- Add Nusapay QRIS
+
 == Changelog ==
 = 2.16 Apr 22, 2024 =
 - Add Danamon Virtual Account

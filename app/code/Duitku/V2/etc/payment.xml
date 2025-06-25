@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright (c) 2017. All rights reserved Duitku .
+ *
+ * This program is free software. You are allowed to use the software but NOT allowed to modify the software.
+ * It is also not legal to do any changes to the software and distribute it in your own name / brand.
+ *
+ * All use of the payment modules happens at your own risk. We offer a free test account that you can use to test the module.
+ *
+ * @author    Duitku 
+ * @copyright Duitku  (http://duitku.com)
+ * @license   Duitku 
+ *
+ */
+-->
+<payment xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Payment:etc/payment.xsd">
+  <groups>
+    <group id="duitku">
+      <label>Duitku Payment Methods</label>
+    </group>
+  </groups>
+  <methods>
+    <method name="duitku_atome">
+      <allow_multiple_address>1</allow_multiple_address>
+    </method>
+    <method name="duitku_bcaklikpay">
+      <allow_multiple_address>1</allow_multiple_address>
+    </method>
+    <method name="duitku_bnc">
+      <allow_multiple_address>1</allow_multiple_address>
+    </method>
+    <method name="duitku_briva">
+      <allow_multiple_address>1</allow_multiple_address>
+    </method>
+    <method name="duitku_creditcard">
+      <allow_multiple_address>1</allow_multiple_address>
+    </method>
+    <method name="duitku_dana">
+      <allow_multiple_address>1</allow_multiple_address>
+    </method>
+    <method name="duitku_indodana">
+      <allow_multiple_address>1</allow_multiple_address>
+    </method>
+    <method name="duitku_indomaret">
+      <allow_multiple_address>1</allow_multiple_address>
+    </method>
+    <method name="duitku_jeniuspay">
+      <allow_multiple_address>1</allow_multiple_address>
+    </method>
+     <method name="duitku_linkajaapps">
+      <allow_multiple_address>1</allow_multiple_address>
+    </method>
+    <method name="duitku_linkajaappsfixed">
+      <allow_multiple_address>1</allow_multiple_address>
+    </method>
+    <method name="duitku_linkajaqris">
+      <allow_multiple_address>1</allow_multiple_address>
+    </method>
+    <method name="duitku_nobuqris">
+      <allow_multiple_address>1</allow_multiple_address>
+    </method>
+    <method name="duitku_ovo">
+      <allow_multiple_address>1</allow_multiple_address>
+    </method>
+    <method name="duitku_ritel">
+      <allow_multiple_address>1</allow_multiple_address>
+    </method>
+    <method name="duitku_pospay">
+      <allow_multiple_address>1</allow_multiple_address>
+    </method>
+    <method name="duitku_shopeepayapps">
+      <allow_multiple_address>1</allow_multiple_address>
+    </method>
+    <method name="duitku_vaatmbersama">
+      <allow_multiple_address>1</allow_multiple_address>
+    </method>
+    <method name="duitku_vabca">
+      <allow_multiple_address>1</allow_multiple_address>
+    </method>
+    <method name="duitku_vabni">
+      <allow_multiple_address>1</allow_multiple_address>
+    </method>
+    <method name="duitku_vabsi">
+      <allow_multiple_address>1</allow_multiple_address>
+    </method>
+    <method name="duitku_vacimbniaga">
+      <allow_multiple_address>1</allow_multiple_address>
+    </method>
+    <method name="duitku_vadanamon">
+      <allow_multiple_address>1</allow_multiple_address>
+    </method>
+    <method name="duitku_vamandiri">
+      <allow_multiple_address>1</allow_multiple_address>
+    </method>
+    <method name="duitku_vamaybank">
+      <allow_multiple_address>1</allow_multiple_address>
+    </method>
+    <method name="duitku_vapermata">
+      <allow_multiple_address>1</allow_multiple_address>
+    </method>
+    <method name="duitku_vasampoerna">
+      <allow_multiple_address>1</allow_multiple_address>
+    </method>
+    <method name="duitku_mg">
+      <allow_multiple_address>1</allow_multiple_address>
+    </method>
+    <method name="duitku_gudangvoucherqris">
+      <allow_multiple_address>1</allow_multiple_address>
+    </method>
+    <method name="duitku_danaqris">
+      <allow_multiple_address>1</allow_multiple_address>
+    </method>
+    <method name="duitku_shopeepayqris">
+      <allow_multiple_address>1</allow_multiple_address>
+    </method>
+    <method name="duitku_nusapayqris">
+      <allow_multiple_address>1</allow_multiple_address>
+    </method>
+  </methods>
+</payment>

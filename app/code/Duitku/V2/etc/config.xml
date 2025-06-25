@@ -1,0 +1,259 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright (c) 2017. All rights reserved Duitku.
+ *
+ * This program is free software. You are allowed to use the software but NOT allowed to modify the software.
+ * It is also not legal to do any changes to the software and distribute it in your own name / brand.
+ *
+ * All use of the payment modules happens at your own risk. We offer a free test account that you can use to test the module.
+ *
+ * @author    Duitku
+ * @copyright Duitku (http://duitku.com)
+ * @license   Duitku
+ *
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+  <default>
+    <payment>
+      <duitku_setting>
+        <instantinvoice>0</instantinvoice>
+        <instantinvoicemail>0</instantinvoicemail>
+        <paymentgroup>0</paymentgroup>
+        <remoteinterface>1</remoteinterface>
+        <enableinvoicedata>0</enableinvoicedata>
+        <sendmailorderconfirmation>1</sendmailorderconfirmation>
+        <sort_order>2</sort_order>
+        <windowstate>3</windowstate>
+        <timeout>60</timeout> 
+        <order_status>processing</order_status>
+        <group>duitku</group>
+      </duitku_setting>
+      <duitku_atome>
+        <active>0</active>
+        <model>Duitku\V2\Model\Method\Atome\Payment</model>
+        <title>Duitku Atome Payment Solutions</title>
+        <payment_method>AT</payment_method>
+        <group>duitku</group>
+      </duitku_atome>
+      <duitku_bcaklikpay>
+        <active>0</active>
+        <model>Duitku\V2\Model\Method\Bcaklikpay\Payment</model>
+        <title>Duitku BCA Klik Pay Payment Solutions</title>
+        <payment_method>BK</payment_method>
+        <group>duitku</group>
+      </duitku_bcaklikpay>
+      <duitku_bnc>
+        <active>0</active>
+        <model>Duitku\V2\Model\Method\Bnc\Payment</model>
+        <title>Duitku Bank Neo Commerce Virtual Account</title>
+        <payment_method>NC</payment_method>
+        <group>duitku</group>
+      </duitku_bnc>
+      <duitku_briva>
+        <active>0</active>
+        <model>Duitku\V2\Model\Method\Briva\Payment</model>
+        <title>Duitku BRI Virtual Account</title>
+        <payment_method>BR</payment_method>
+        <group>duitku</group>
+      </duitku_briva>
+      <duitku_creditcard>
+        <active>0</active>
+        <model>Duitku\V2\Model\Method\Creditcard\Payment</model>
+        <title>Duitku Credit Card Payment Solutions</title>
+        <payment_method>VC</payment_method>
+        <group>duitku</group>
+      </duitku_creditcard>
+      <duitku_dana>
+        <active>0</active>
+        <model>Duitku\V2\Model\Method\Dana\Payment</model>
+        <title>Duitku Dana Payment Solutions</title>
+        <payment_method>DA</payment_method>
+        <group>duitku</group>
+      </duitku_dana>
+      <duitku_indodana>
+        <active>0</active>
+        <model>Duitku\V2\Model\Method\Indodana\Payment</model>
+        <title>Duitku Indodana Payment Solutions</title>
+        <payment_method>DN</payment_method>
+        <group>duitku</group>
+      </duitku_indodana>
+      <duitku_indomaret>
+        <active>0</active>
+        <model>Duitku\V2\Model\Method\Indomaret\Payment</model>
+        <title>Duitku Indomaret Payment Solutions</title>
+        <payment_method>IR</payment_method>
+        <group>duitku</group>
+      </duitku_indomaret>
+      <duitku_jeniuspay>
+        <active>0</active>
+        <model>Duitku\V2\Model\Method\Jeniuspay\Payment</model>
+        <title>Duitku Jenius Pay Payment Solutions</title>
+        <payment_method>JP</payment_method>
+        <group>duitku</group>
+      </duitku_jeniuspay>
+      <duitku_linkajaapps>
+        <active>0</active>
+        <model>Duitku\V2\Model\Method\Linkajaapps\Payment</model>
+        <title>Duitku LinkAja Apps Payment Solutions</title>
+        <payment_method>LA</payment_method>
+        <group>duitku</group>
+      </duitku_linkajaapps>
+      <duitku_linkajaappsfixed>
+        <active>0</active>
+        <model>Duitku\V2\Model\Method\Linkajaappsfixed\Payment</model>
+        <title>Duitku LinkAja Apps Payment Solutions</title>
+        <payment_method>LF</payment_method>
+        <group>duitku</group>
+      </duitku_linkajaappsfixed>
+      <duitku_linkajaqris>
+        <active>0</active>
+        <model>Duitku\V2\Model\Method\Linkajaqris\Payment</model>
+        <title>QRIS by LinkAja QRIS</title>
+        <payment_method>LQ</payment_method>
+        <group>duitku</group>
+      </duitku_linkajaqris>
+      <duitku_nobuqris>
+        <active>0</active>
+        <model>Duitku\V2\Model\Method\Nobuqris\Payment</model>
+        <title>QRIS by Nobu QRIS</title>
+        <payment_method>NQ</payment_method>
+        <group>duitku</group>
+      </duitku_nobuqris>
+      <duitku_ovo>
+        <active>0</active>
+        <model>Duitku\V2\Model\Method\Ovo\Payment</model>
+        <title>Duitku OVO Payment Solutions</title>
+        <payment_method>OV</payment_method>
+        <group>duitku</group>
+      </duitku_ovo>
+      <duitku_ritel>
+        <active>0</active>
+        <model>Duitku\V2\Model\Method\Ritel\Payment</model>
+        <title>Duitku Ritel Payment Solutions</title>
+        <payment_method>FT</payment_method>
+        <group>duitku</group>
+      </duitku_ritel>
+      <duitku_pospay>
+        <active>0</active>
+        <model>Duitku\V2\Model\Method\Pospay\Payment</model>
+        <title>Duitku Pos Indonesia Payment Solutions</title>
+        <payment_method>A2</payment_method>
+        <group>duitku</group>
+      </duitku_pospay>
+      <duitku_shopeepayapps>
+        <active>0</active>
+        <model>Duitku\V2\Model\Method\Shopeepayapps\Payment</model>
+        <title>Duitku Shopeepay Apps Payment Solutions</title>
+        <payment_method>SA</payment_method>
+        <group>duitku</group>
+      </duitku_shopeepayapps>
+      <duitku_vaatmbersama>
+        <active>0</active>
+        <model>Duitku\V2\Model\Method\Vaatmbersama\Payment</model>
+        <title>Duitku ATM Bersama Virtual Account</title>
+        <payment_method>A1</payment_method>
+        <group>duitku</group>
+      </duitku_vaatmbersama>
+      <duitku_vabca>
+        <active>0</active>
+        <model>Duitku\V2\Model\Method\Vabca\Payment</model>
+        <title>Duitku BCA Virtual Account</title>
+        <payment_method>BC</payment_method>
+        <group>duitku</group>
+      </duitku_vabca>
+      <duitku_vabni>
+        <active>0</active>
+        <model>Duitku\V2\Model\Method\Vabni\Payment</model>
+        <title>Duitku BNI Virtual Account</title>
+        <payment_method>I1</payment_method>
+        <group>duitku</group>
+      </duitku_vabni>
+      <duitku_vabsi>
+        <active>0</active>
+        <model>Duitku\V2\Model\Method\Vabsi\Payment</model>
+        <title>Duitku BSI Virtual Account</title>
+        <payment_method>BV</payment_method>
+        <group>duitku</group>
+      </duitku_vabsi>
+      <duitku_vacimbniaga>
+        <active>0</active>
+        <model>Duitku\V2\Model\Method\Vacimbniaga\Payment</model>
+        <title>Duitku CIMB Niaga Virtual Account</title>
+        <payment_method>B1</payment_method>
+        <group>duitku</group>
+      </duitku_vacimbniaga>
+      <duitku_vadanamon>
+        <active>0</active>
+        <model>Duitku\V2\Model\Method\Vadanamon\Payment</model>
+        <title>Duitku Danamon Virtual Account</title>
+        <payment_method>DM</payment_method>
+        <group>duitku</group>
+      </duitku_vadanamon>
+      <duitku_vamandiri>
+        <active>0</active>
+        <model>Duitku\V2\Model\Method\Vamandiri\Payment</model>
+        <title>Duitku Mandiri Virtual Account</title>
+        <payment_method>M2</payment_method>
+        <group>duitku</group>
+      </duitku_vamandiri>
+      <duitku_vamaybank>
+        <active>0</active>
+        <model>Duitku\V2\Model\Method\Vamaybank\Payment</model>
+        <title>Duitku Maybank Virtual Account</title>
+        <payment_method>VA</payment_method>
+        <group>duitku</group>
+      </duitku_vamaybank>
+      <duitku_vapermata>
+        <active>0</active>
+        <model>Duitku\V2\Model\Method\Vapermata\Payment</model>
+        <title>Duitku Permata Virtual Account</title>
+        <payment_method>BT</payment_method>
+        <group>duitku</group>
+      </duitku_vapermata>
+      <duitku_vasampoerna>
+        <active>0</active>
+        <model>Duitku\V2\Model\Method\Vasampoerna\Payment</model>
+        <title>Duitku Sahabat Sampoerna Virtual Account</title>
+        <payment_method>S1</payment_method>
+        <group>duitku</group>
+      </duitku_vasampoerna>
+      <duitku_mg>
+        <active>0</active>
+        <model>Duitku\V2\Model\Method\Mg\Payment</model>
+        <title>Duitku Credit Card Facilitator</title>
+        <payment_method>MG</payment_method>
+        <group>duitku</group>
+      </duitku_mg>
+      <duitku_gudangvoucherqris>
+        <active>0</active>
+        <model>Duitku\V2\Model\Method\Gudangvoucherqris\Payment</model>
+        <title>QRIS by Gudang Voucher QRIS</title>
+        <payment_method>GQ</payment_method>
+        <group>duitku</group>
+      </duitku_gudangvoucherqris>
+      <duitku_danaqris>
+        <active>0</active>
+        <model>Duitku\V2\Model\Method\Danaqris\Payment</model>
+        <title>QRIS by Dana QRIS</title>
+        <payment_method>DQ</payment_method>
+        <group>duitku</group>
+      </duitku_danaqris>
+      <duitku_shopeepayqris>
+        <active>0</active>
+        <model>Duitku\V2\Model\Method\Shopeepayqris\Payment</model>
+        <title>QRIS by Shopeepay QRIS</title>
+        <payment_method>SP</payment_method>
+        <group>duitku</group>
+      </duitku_shopeepayqris>
+      <duitku_nusapayqris>
+        <active>0</active>
+        <model>Duitku\V2\Model\Method\Nusapayqris\Payment</model>
+        <title>QRIS by Nusapay QRIS</title>
+        <payment_method>SQ</payment_method>
+        <group>duitku</group>
+      </duitku_nusapayqris>
+    </payment>
+  </default>
+</config>

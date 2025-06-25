@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright (c) 2017. All rights reserved Duitku .
+ *
+ * This program is free software. You are allowed to use the software but NOT allowed to modify the software.
+ * It is also not legal to do any changes to the software and distribute it in your own name / brand.
+ *
+ * All use of the payment modules happens at your own risk. We offer a free test account that you can use to test the module.
+ *
+ * @author    Duitku 
+ * @copyright Duitku  (http://duitku.com)
+ * @license   Duitku 
+ *
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+  <type name="Magento\Checkout\Model\CompositeConfigProvider">
+    <arguments>
+      <argument name="configProviders" xsi:type="array">
+        <item name="duitku_atome_config_provider" xsi:type="object">Duitku\V2\Model\Method\Atome\ConfigProvider</item>
+        <item name="duitku_bcaklikpay_config_provider" xsi:type="object">Duitku\V2\Model\Method\Bcaklikpay\ConfigProvider</item>
+        <item name="duitku_bnc_config_provider" xsi:type="object">Duitku\V2\Model\Method\Bnc\ConfigProvider</item>
+        <item name="duitku_briva_config_provider" xsi:type="object">Duitku\V2\Model\Method\Briva\ConfigProvider</item>
+        <item name="duitku_creditcard_config_provider" xsi:type="object">Duitku\V2\Model\Method\Creditcard\ConfigProvider</item>
+        <item name="duitku_dana_config_provider" xsi:type="object">Duitku\V2\Model\Method\Dana\ConfigProvider</item>
+        <item name="duitku_indodana_config_provider" xsi:type="object">Duitku\V2\Model\Method\Indodana\ConfigProvider</item>
+        <item name="duitku_indomaret_config_provider" xsi:type="object">Duitku\V2\Model\Method\Indomaret\ConfigProvider</item>
+        <item name="duitku_jeniuspay_config_provider" xsi:type="object">Duitku\V2\Model\Method\Jeniuspay\ConfigProvider</item>
+        <item name="duitku_linkajaapps_config_provider" xsi:type="object">Duitku\V2\Model\Method\Linkajaapps\ConfigProvider</item>
+        <item name="duitku_linkajaappsfixed_config_provider" xsi:type="object">Duitku\V2\Model\Method\Linkajaappsfixed\ConfigProvider</item>
+        <item name="duitku_linkajaqris_config_provider" xsi:type="object">Duitku\V2\Model\Method\Linkajaqris\ConfigProvider</item>
+        <item name="duitku_nobuqris_config_provider" xsi:type="object">Duitku\V2\Model\Method\Nobuqris\ConfigProvider</item>
+        <item name="duitku_ovo_config_provider" xsi:type="object">Duitku\V2\Model\Method\Ovo\ConfigProvider</item>
+        <item name="duitku_ritel_config_provider" xsi:type="object">Duitku\V2\Model\Method\Ritel\ConfigProvider</item>
+        <item name="duitku_pospay_config_provider" xsi:type="object">Duitku\V2\Model\Method\Pospay\ConfigProvider</item>
+        <item name="duitku_shopeepayapps_config_provider" xsi:type="object">Duitku\V2\Model\Method\Shopeepayapps\ConfigProvider</item>
+        <item name="duitku_vaatmbersama_config_provider" xsi:type="object">Duitku\V2\Model\Method\Vaatmbersama\ConfigProvider</item>
+        <item name="duitku_vabca_config_provider" xsi:type="object">Duitku\V2\Model\Method\Vabca\ConfigProvider</item>
+        <item name="duitku_vabni_config_provider" xsi:type="object">Duitku\V2\Model\Method\Vabni\ConfigProvider</item>
+        <item name="duitku_vabsi_config_provider" xsi:type="object">Duitku\V2\Model\Method\Vabsi\ConfigProvider</item>
+        <item name="duitku_vacimbniaga_config_provider" xsi:type="object">Duitku\V2\Model\Method\Vacimbniaga\ConfigProvider</item>
+        <item name="duitku_vadanamon_config_provider" xsi:type="object">Duitku\V2\Model\Method\Vadanamon\ConfigProvider</item>
+        <item name="duitku_vamandiri_config_provider" xsi:type="object">Duitku\V2\Model\Method\Vamandiri\ConfigProvider</item>
+        <item name="duitku_vamaybank_config_provider" xsi:type="object">Duitku\V2\Model\Method\Vamaybank\ConfigProvider</item>
+        <item name="duitku_vapermata_config_provider" xsi:type="object">Duitku\V2\Model\Method\Vapermata\ConfigProvider</item>
+        <item name="duitku_vasampoerna_config_provider" xsi:type="object">Duitku\V2\Model\Method\Vasampoerna\ConfigProvider</item>
+        <item name="duitku_mg_config_provider" xsi:type="object">Duitku\V2\Model\Method\Mg\ConfigProvider</item>
+        <item name="duitku_gudangvoucherqris_config_provider" xsi:type="object">Duitku\V2\Model\Method\Gudangvoucherqris\ConfigProvider</item>
+        <item name="duitku_danaqris_config_provider" xsi:type="object">Duitku\V2\Model\Method\Danaqris\ConfigProvider</item>
+        <item name="duitku_shopeepayqris_config_provider" xsi:type="object">Duitku\V2\Model\Method\Shopeepayqris\ConfigProvider</item>
+        <item name="duitku_nusapayqris_config_provider" xsi:type="object">Duitku\V2\Model\Method\Nusapayqris\ConfigProvider</item>
+      </argument>
+    </arguments>
+  </type>
+</config>

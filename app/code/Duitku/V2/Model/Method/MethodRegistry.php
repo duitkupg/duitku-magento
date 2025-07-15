@@ -27,7 +27,7 @@ class MethodRegistry
     public const METHOD_CREDITCARD    = 'duitku_creditcard';
     public const METHOD_DANA          = 'duitku_dana';
     public const METHOD_INDODANA      = 'duitku_indodana';
-    public const METHOD_INDOMARET     = 'duitku_Indomaret';
+    public const METHOD_INDOMARET     = 'duitku_indomaret';
     public const METHOD_JENIUSPAY     = 'duitku_jeniuspay';
     public const METHOD_LINKAJAAPPS   = 'duitku_linkajaapps';
     public const METHOD_LINKAJAAPPSFIXED = 'duitku_linkajaappsfixed';

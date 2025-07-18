@@ -1,0 +1,303 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/layout_generic.xsd">
+  <head>
+    <css src="Duitku_V2::css/duitkufrontend.css" />
+  </head>
+  <body>
+    <referenceBlock name="checkout.root">
+      <arguments>
+        <argument name="jsLayout" xsi:type="array">
+          <item name="components" xsi:type="array">
+            <item name="checkout" xsi:type="array">
+              <item name="children" xsi:type="array">
+                <item name="steps" xsi:type="array">
+                  <item name="children" xsi:type="array">
+                    <item name="billing-step" xsi:type="array">
+                      <item name="component" xsi:type="string">uiComponent</item>
+                      <item name="children" xsi:type="array">
+                        <item name="payment" xsi:type="array">
+                          <item name="children" xsi:type="array">
+                            <item name="renders" xsi:type="array">
+                              <!-- merge payment method renders here -->
+                              <item name="children" xsi:type="array">
+                                <item name="duitku_atome" xsi:type="array">
+                                  <item name="component" xsi:type="string">Duitku_V2/js/view/payment/duitku-methods</item>
+                                  <item name="methods" xsi:type="array">
+                                    <item name="duitku_atome" xsi:type="array">
+                                      <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                    </item>
+                                  </item>
+                                </item>
+                                <item name="duitku_bcaklikpay" xsi:type="array">
+                                  <item name="component" xsi:type="string">Duitku_V2/js/view/payment/duitku-methods</item>
+                                  <item name="methods" xsi:type="array">
+                                    <item name="duitku_bcaklikpay" xsi:type="array">
+                                      <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                    </item>
+                                  </item>
+                                </item>
+                                <item name="duitku_bnc" xsi:type="array">
+                                  <item name="component" xsi:type="string">Duitku_V2/js/view/payment/duitku-methods</item>
+                                  <item name="methods" xsi:type="array">
+                                    <item name="duitku_bnc" xsi:type="array">
+                                      <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                    </item>
+                                  </item>
+                                </item>
+                                <item name="duitku_bniqris" xsi:type="array">
+                                  <item name="component" xsi:type="string">Duitku_V2/js/view/payment/duitku-methods</item>
+                                  <item name="methods" xsi:type="array">
+                                    <item name="duitku_bniqris" xsi:type="array">
+                                      <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                    </item>
+                                  </item>
+                                </item>
+                                <item name="duitku_briva" xsi:type="array">
+                                  <item name="component" xsi:type="string">Duitku_V2/js/view/payment/duitku-methods</item>
+                                  <item name="methods" xsi:type="array">
+                                    <item name="duitku_briva" xsi:type="array">
+                                      <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                    </item>
+                                  </item>
+                                </item>
+                                <item name="duitku_creditcard" xsi:type="array">
+                                  <item name="component" xsi:type="string">Duitku_V2/js/view/payment/duitku-methods</item>
+                                  <item name="methods" xsi:type="array">
+                                    <item name="duitku_creditcard" xsi:type="array">
+                                      <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                    </item>
+                                  </item>
+                                </item>
+                                <item name="duitku_dana" xsi:type="array">
+                                  <item name="component" xsi:type="string">Duitku_V2/js/view/payment/duitku-methods</item>
+                                  <item name="methods" xsi:type="array">
+                                    <item name="duitku_dana" xsi:type="array">
+                                      <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                    </item>
+                                  </item>
+                                </item>
+                                <item name="duitku_indodana" xsi:type="array">
+                                  <item name="component" xsi:type="string">Duitku_V2/js/view/payment/duitku-methods</item>
+                                  <item name="methods" xsi:type="array">
+                                    <item name="duitku_indodana" xsi:type="array">
+                                      <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                    </item>
+                                  </item>
+                                </item>
+                                <item name="duitku_indomaret" xsi:type="array">
+                                  <item name="component" xsi:type="string">Duitku_V2/js/view/payment/duitku-methods</item>
+                                  <item name="methods" xsi:type="array">
+                                    <item name="duitku_indomaret" xsi:type="array">
+                                      <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                    </item>
+                                  </item>
+                                </item>
+                                <item name="duitku_jeniuspay" xsi:type="array">
+                                  <item name="component" xsi:type="string">Duitku_V2/js/view/payment/duitku-methods</item>
+                                  <item name="methods" xsi:type="array">
+                                    <item name="duitku_jeniuspay" xsi:type="array">
+                                      <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                    </item>
+                                  </item>
+                                </item>
+                                <item name="duitku_linkajaapps" xsi:type="array">
+                                  <item name="component" xsi:type="string">Duitku_V2/js/view/payment/duitku-methods</item>
+                                  <item name="methods" xsi:type="array">
+                                    <item name="duitku_linkajaapps" xsi:type="array">
+                                      <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                    </item>
+                                  </item>
+                                </item>
+                                <item name="duitku_linkajaappsfixed" xsi:type="array">
+                                  <item name="component" xsi:type="string">Duitku_V2/js/view/payment/duitku-methods</item>
+                                  <item name="methods" xsi:type="array">
+                                    <item name="duitku_linkajaappsfixed" xsi:type="array">
+                                      <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                    </item>
+                                  </item>
+                                </item>
+                                <item name="duitku_linkajaqris" xsi:type="array">
+                                  <item name="component" xsi:type="string">Duitku_V2/js/view/payment/duitku-methods</item>
+                                  <item name="methods" xsi:type="array">
+                                    <item name="duitku_linkajaqris" xsi:type="array">
+                                      <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                    </item>
+                                  </item>
+                                </item>
+                                <item name="duitku_nobuqris" xsi:type="array">
+                                  <item name="component" xsi:type="string">Duitku_V2/js/view/payment/duitku-methods</item>
+                                  <item name="methods" xsi:type="array">
+                                    <item name="duitku_nobuqris" xsi:type="array">
+                                      <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                    </item>
+                                  </item>
+                                </item>
+                                <item name="duitku_ovo" xsi:type="array">
+                                  <item name="component" xsi:type="string">Duitku_V2/js/view/payment/duitku-methods</item>
+                                  <item name="methods" xsi:type="array">
+                                    <item name="duitku_ovo" xsi:type="array">
+                                      <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                    </item>
+                                  </item>
+                                </item>
+                                <item name="duitku_ritel" xsi:type="array">
+                                  <item name="component" xsi:type="string">Duitku_V2/js/view/payment/duitku-methods</item>
+                                  <item name="methods" xsi:type="array">
+                                    <item name="duitku_ritel" xsi:type="array">
+                                      <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                    </item>
+                                  </item>
+                                </item>
+                                <item name="duitku_pospay" xsi:type="array">
+                                  <item name="component" xsi:type="string">Duitku_V2/js/view/payment/duitku-methods</item>
+                                  <item name="methods" xsi:type="array">
+                                    <item name="duitku_pospay" xsi:type="array">
+                                      <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                    </item>
+                                  </item>
+                                </item>
+                                <item name="duitku_shopeepayapps" xsi:type="array">
+                                  <item name="component" xsi:type="string">Duitku_V2/js/view/payment/duitku-methods</item>
+                                  <item name="methods" xsi:type="array">
+                                    <item name="duitku_shopeepayapps" xsi:type="array">
+                                      <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                    </item>
+                                  </item>
+                                </item>
+                                <item name="duitku_vaatmbersama" xsi:type="array">
+                                  <item name="component" xsi:type="string">Duitku_V2/js/view/payment/duitku-methods</item>
+                                  <item name="methods" xsi:type="array">
+                                    <item name="duitku_vaatmbersama" xsi:type="array">
+                                      <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                    </item>
+                                  </item>
+                                </item>
+                                <item name="duitku_vabca" xsi:type="array">
+                                  <item name="component" xsi:type="string">Duitku_V2/js/view/payment/duitku-methods</item>
+                                  <item name="methods" xsi:type="array">
+                                    <item name="duitku_vabca" xsi:type="array">
+                                      <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                    </item>
+                                  </item>
+                                </item>
+                                <item name="duitku_vabni" xsi:type="array">
+                                  <item name="component" xsi:type="string">Duitku_V2/js/view/payment/duitku-methods</item>
+                                  <item name="methods" xsi:type="array">
+                                    <item name="duitku_vabni" xsi:type="array">
+                                      <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                    </item>
+                                  </item>
+                                </item>
+                                <item name="duitku_vabsi" xsi:type="array">
+                                  <item name="component" xsi:type="string">Duitku_V2/js/view/payment/duitku-methods</item>
+                                  <item name="methods" xsi:type="array">
+                                    <item name="duitku_vabsi" xsi:type="array">
+                                      <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                    </item>
+                                  </item>
+                                </item>
+                                <item name="duitku_vacimbniaga" xsi:type="array">
+                                  <item name="component" xsi:type="string">Duitku_V2/js/view/payment/duitku-methods</item>
+                                  <item name="methods" xsi:type="array">
+                                    <item name="duitku_vacimbniaga" xsi:type="array">
+                                      <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                    </item>
+                                  </item>
+                                </item>
+                                <item name="duitku_vadanamon" xsi:type="array">
+                                  <item name="component" xsi:type="string">Duitku_V2/js/view/payment/duitku-methods</item>
+                                  <item name="methods" xsi:type="array">
+                                    <item name="duitku_vadanamon" xsi:type="array">
+                                      <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                    </item>
+                                  </item>
+                                </item>
+                                <item name="duitku_vamandiri" xsi:type="array">
+                                  <item name="component" xsi:type="string">Duitku_V2/js/view/payment/duitku-methods</item>
+                                  <item name="methods" xsi:type="array">
+                                    <item name="duitku_vamandiri" xsi:type="array">
+                                      <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                    </item>
+                                  </item>
+                                </item>
+                                <item name="duitku_vamaybank" xsi:type="array">
+                                  <item name="component" xsi:type="string">Duitku_V2/js/view/payment/duitku-methods</item>
+                                  <item name="methods" xsi:type="array">
+                                    <item name="duitku_vamaybank" xsi:type="array">
+                                      <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                    </item>
+                                  </item>
+                                </item>
+                                <item name="duitku_vapermata" xsi:type="array">
+                                  <item name="component" xsi:type="string">Duitku_V2/js/view/payment/duitku-methods</item>
+                                  <item name="methods" xsi:type="array">
+                                    <item name="duitku_vapermata" xsi:type="array">
+                                      <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                    </item>
+                                  </item>
+                                </item>
+                                <item name="duitku_vasampoerna" xsi:type="array">
+                                  <item name="component" xsi:type="string">Duitku_V2/js/view/payment/duitku-methods</item>
+                                  <item name="methods" xsi:type="array">
+                                    <item name="duitku_vasampoerna" xsi:type="array">
+                                      <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                    </item>
+                                  </item>
+                                </item>
+                                <item name="duitku_mg" xsi:type="array">
+                                  <item name="component" xsi:type="string">Duitku_V2/js/view/payment/duitku-methods</item>
+                                  <item name="methods" xsi:type="array">
+                                    <item name="duitku_mg" xsi:type="array">
+                                      <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                    </item>
+                                  </item>
+                                </item>
+                                <item name="duitku_gudangvoucherqris" xsi:type="array">
+                                  <item name="component" xsi:type="string">Duitku_V2/js/view/payment/duitku-methods</item>
+                                  <item name="methods" xsi:type="array">
+                                    <item name="duitku_gudangvoucherqris" xsi:type="array">
+                                      <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                    </item>
+                                  </item>
+                                </item>
+                                <item name="duitku_danaqris" xsi:type="array">
+                                  <item name="component" xsi:type="string">Duitku_V2/js/view/payment/duitku-methods</item>
+                                  <item name="methods" xsi:type="array">
+                                    <item name="duitku_danaqris" xsi:type="array">
+                                      <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                    </item>
+                                  </item>
+                                </item>
+                                <item name="duitku_shopeepayqris" xsi:type="array">
+                                  <item name="component" xsi:type="string">Duitku_V2/js/view/payment/duitku-methods</item>
+                                  <item name="methods" xsi:type="array">
+                                    <item name="duitku_shopeepayqris" xsi:type="array">
+                                      <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                    </item>
+                                  </item>
+                                </item>
+                                <item name="duitku_nusapayqris" xsi:type="array">
+                                  <item name="component" xsi:type="string">Duitku_V2/js/view/payment/duitku-methods</item>
+                                  <item name="methods" xsi:type="array">
+                                    <item name="duitku_nusapayqris" xsi:type="array">
+                                      <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                    </item>
+                                  </item>
+                                </item>
+                              </item>
+                              <!--end merge payment-->
+                            </item>
+                          </item>
+                        </item>
+                      </item>
+                    </item>
+                  </item>
+                </item>
+              </item>
+            </item>
+          </item>
+        </argument>
+      </arguments>
+    </referenceBlock>
+  </body>
+</page>

@@ -118,5 +118,14 @@
     <method name="duitku_nusapayqris">
       <allow_multiple_address>1</allow_multiple_address>
     </method>
+    <method name="duitku_tokopediacardpayment">
+      <allow_multiple_address>1</allow_multiple_address>
+    </method>
+    <method name="duitku_tokopediaewallet">
+      <allow_multiple_address>1</allow_multiple_address>
+    </method>
+    <method name="duitku_tokopediaothers">
+      <allow_multiple_address>1</allow_multiple_address>
+    </method>
   </methods>
 </payment>

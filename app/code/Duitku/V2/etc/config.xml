@@ -254,6 +254,27 @@
         <payment_method>SQ</payment_method>
         <group>duitku</group>
       </duitku_nusapayqris>
+      <duitku_tokopediacardpayment>
+        <active>0</active>
+        <model>Duitku\V2\Model\Method\Tokopediacardpayment\Payment</model>
+        <title>Tokopedia Card Payment</title>
+        <payment_method>T1</payment_method>
+        <group>duitku</group>
+      </duitku_tokopediacardpayment>
+      <duitku_tokopediaewallet>
+        <active>0</active>
+        <model>Duitku\V2\Model\Method\Tokopediaewallet\Payment</model>
+        <title>Tokopedia E-Wallet</title>
+        <payment_method>T2</payment_method>
+        <group>duitku</group>
+      </duitku_tokopediaewallet>
+      <duitku_tokopediaothers>
+        <active>0</active>
+        <model>Duitku\V2\Model\Method\Tokopediaothers\Payment</model>
+        <title>Tokopedia Others</title>
+        <payment_method>T3</payment_method>
+        <group>duitku</group>
+      </duitku_tokopediaothers>
     </payment>
   </default>
 </config>

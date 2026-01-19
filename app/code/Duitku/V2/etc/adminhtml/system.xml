@@ -127,21 +127,14 @@
 			<include path="Duitku_V2::system/duitku_atome.xml"/>
 			<include path="Duitku_V2::system/duitku_indodana.xml"/>
 		</group>
-
-
-        
-
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		<group id="duitku_listecommerce" translate="label" type="text" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
+			<label><![CDATA[E-Commerce]]></label>
+			<frontend_model>\Magento\Config\Block\System\Config\Form\Fieldset</frontend_model>
+            <attribute type="expanded">0</attribute>
+			<include path="Duitku_V2::system/duitku_tokopediacardpayment.xml"/>
+			<include path="Duitku_V2::system/duitku_tokopediaewallet.xml"/>
+			<include path="Duitku_V2::system/duitku_tokopediaothers.xml"/>
+		</group>
       </group>
     </section>
   </system>

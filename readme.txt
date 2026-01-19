@@ -2,7 +2,7 @@
 /*
 Plugin Name:  Duitku Payment Gateway
 Description:  Duitku Payment Gateway 
-Version:      2.18
+Version:      2.19
 Author:       Duitku Development Team
 
 Author URI:   http://duitku.com
@@ -18,6 +18,12 @@ Install & activate the plugin. Modify some options in the settings page to suits
 
 -
 == Changelog ==
+
+= 2.19 Jan 19, 2026 =
+- Add Tokopedia Card Payment
+- Add Tokopedia E-Wallet
+- Add Tokopedia Others
+
 = 2.18 June 10, 2025 =
 - Reworked Duitku Magento Configuration
 - Change Return Text Callback to Log

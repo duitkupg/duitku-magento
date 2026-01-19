@@ -276,6 +276,30 @@
                                     </item>
                                   </item>
                                 </item>
+                                <item name="duitku_tokopediacardpayment" xsi:type="array">
+                                  <item name="component" xsi:type="string">Duitku_V2/js/view/payment/duitku-methods</item>
+                                  <item name="methods" xsi:type="array">
+                                    <item name="duitku_tokopediacardpayment" xsi:type="array">
+                                      <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                    </item>
+                                  </item>
+                                </item>
+                                <item name="duitku_tokopediaewallet" xsi:type="array">
+                                  <item name="component" xsi:type="string">Duitku_V2/js/view/payment/duitku-methods</item>
+                                  <item name="methods" xsi:type="array">
+                                    <item name="duitku_tokopediaewallet" xsi:type="array">
+                                      <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                    </item>
+                                  </item>
+                                </item>
+                                <item name="duitku_tokopediaothers" xsi:type="array">
+                                  <item name="component" xsi:type="string">Duitku_V2/js/view/payment/duitku-methods</item>
+                                  <item name="methods" xsi:type="array">
+                                    <item name="duitku_tokopediaothers" xsi:type="array">
+                                      <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                    </item>
+                                  </item>
+                                </item>
                               </item>
                               <!--end merge payment-->
                             </item>

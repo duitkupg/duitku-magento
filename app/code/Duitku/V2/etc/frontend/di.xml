@@ -50,6 +50,9 @@
         <item name="duitku_danaqris_config_provider" xsi:type="object">Duitku\V2\Model\Method\Danaqris\ConfigProvider</item>
         <item name="duitku_shopeepayqris_config_provider" xsi:type="object">Duitku\V2\Model\Method\Shopeepayqris\ConfigProvider</item>
         <item name="duitku_nusapayqris_config_provider" xsi:type="object">Duitku\V2\Model\Method\Nusapayqris\ConfigProvider</item>
+        <item name="duitku_tokopediacardpayment_config_provider" xsi:type="object">Duitku\V2\Model\Method\Tokopediacardpayment\ConfigProvider</item>
+        <item name="duitku_tokopediaewallet_config_provider" xsi:type="object">Duitku\V2\Model\Method\Tokopediaewallet\ConfigProvider</item>
+        <item name="duitku_tokopediaothers_config_provider" xsi:type="object">Duitku\V2\Model\Method\Tokopediaothers\ConfigProvider</item>
       </argument>
     </arguments>
   </type>

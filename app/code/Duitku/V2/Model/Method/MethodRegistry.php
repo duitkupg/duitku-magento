@@ -17,6 +17,9 @@ namespace Duitku\V2\Model\Method;
 class MethodRegistry
 {
     // Payment method codes
+    public const METHOD_TOKOPEDIACARDPAYMENT   = 'duitku_tokopediacardpayment';
+    public const METHOD_TOKOPEDIAEWALLET   = 'duitku_tokopediaewallet';
+    public const METHOD_TOKOPEDIAOTHERS   = 'duitku_tokopediaothers';
     public const METHOD_NUSAPAYQRIS   = 'duitku_nusapayqris';
     public const METHOD_SHOPEEPAYQRIS = 'duitku_shopeepayqris';
     public const METHOD_ATOME         = 'duitku_atome';
@@ -51,6 +54,9 @@ class MethodRegistry
     public const METHOD_DANAQRIS = 'duitku_danaqris';
 
     // Payment reference keys
+    public const REFERENCE_TOKOPEDIACARDPAYMENT   = 'duitkuTokopediacardpaymentReference';
+    public const REFERENCE_TOKOPEDIAEWALLET   = 'duitkuTokopediaewalletReference';
+    public const REFERENCE_TOKOPEDIAOTHERS   = 'duitkuTokopediaothersReference';
     public const REFERENCE_NUSAPAYQRIS   = 'duitkuNusapayqrisReference';
     public const REFERENCE_SHOPEEPAYQRIS = 'duitkuShopeePayqrisReference';
     public const REFERENCE_ATOME         = 'duitkuAtomeReference';
@@ -90,6 +96,9 @@ class MethodRegistry
     public static function getAllCodes(): array
     {
         return [
+            self::METHOD_TOKOPEDIACARDPAYMENT,
+            self::METHOD_TOKOPEDIAEWALLET,
+            self::METHOD_TOKOPEDIAOTHERS,
             self::METHOD_NUSAPAYQRIS,
             self::METHOD_SHOPEEPAYQRIS,
             self::METHOD_ATOME,
@@ -131,6 +140,9 @@ class MethodRegistry
     public static function getReferenceByMethod(string $method): ?string
     {
         $map = [
+            self::METHOD_TOKOPEDIACARDPAYMENT   => self::REFERENCE_TOKOPEDIACARDPAYMENT,
+            self::METHOD_TOKOPEDIAEWALLET   => self::REFERENCE_TOKOPEDIAEWALLET,
+            self::METHOD_TOKOPEDIAOTHERS   => self::REFERENCE_TOKOPEDIAOTHERS,
             self::METHOD_NUSAPAYQRIS   => self::REFERENCE_NUSAPAYQRIS,
             self::METHOD_SHOPEEPAYQRIS => self::REFERENCE_SHOPEEPAYQRIS,
             self::METHOD_ATOME         => self::REFERENCE_ATOME,

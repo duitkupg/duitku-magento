@@ -69,6 +69,18 @@ define(
                 component: 'Duitku_V2/js/view/payment/method-renderer/duitku-method'
             },
             {
+                type: 'duitku_tokopediacardpayment',
+                component: 'Duitku_V2/js/view/payment/method-renderer/duitku-method'
+            },
+            {
+                type: 'duitku_tokopediaewallet',
+                component: 'Duitku_V2/js/view/payment/method-renderer/duitku-method'
+            },
+            {
+                type: 'duitku_tokopediaothers',
+                component: 'Duitku_V2/js/view/payment/method-renderer/duitku-method'
+            },
+            {
                 type: 'duitku_ovo',
                 component: 'Duitku_V2/js/view/payment/method-renderer/duitku-method'
             },

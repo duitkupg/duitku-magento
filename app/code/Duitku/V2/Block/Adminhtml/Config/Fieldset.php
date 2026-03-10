@@ -118,9 +118,9 @@ class Fieldset extends \Magento\Config\Block\System\Config\Form\Fieldset
                 var doScroll = false;
                 Fieldset.toggleCollapse(id, url);
                 if ($(this).hasClassName(\"open\")) {
-                    $$(\".with-button button.button\").each(function(anotherButton) {
-                        if (anotherButton != this && $(anotherButton).hasClassName(\"open\")) {
-                            $(anotherButton).click();
+                    $$(\".with-button button.button\").each(function(configureButton) {
+                        if (configureButton != this && $(configureButton).hasClassName(\"open\")) {
+                            $(configureButton).click();
                             doScroll = true;
                         }
                     }.bind(this));

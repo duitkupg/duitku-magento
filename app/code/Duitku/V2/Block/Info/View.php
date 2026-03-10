@@ -39,15 +39,6 @@ class View extends \Magento\Payment\Block\Info
         $data = [];
 
         if ($this->getInfo()->getLastTransId()) {
-            $ccType = $this->getInfo()->getOrder()->getPayment()->getCcType();
-            if (!empty($ccType)) {
-                $data[(string)__("Payment type")] = $ccType;
-            }
-            $ccNumber = $this->getInfo()->getOrder()->getPayment()->getCcNumberEnc();
-            if (!empty($ccNumber)) {
-                $data[(string)__("Card number")] = $ccNumber;
-            }
-
             $txnId = "";
             $payment = $this->getInfo()->getOrder()->getPayment();
             

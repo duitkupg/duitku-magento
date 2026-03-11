@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!--
+/**
+* Copyright (c) 2017. All rights reserved Duitku.
+*
+* This program is free software. You are allowed to use the software but NOT allowed to modify the software.
+* It is also not legal to do any changes to the software and distribute it in your own name / brand.
+*
+* All use of the payment modules happens at your own risk. We offer a free test account that you can use to test the module.
+*
+* @author    Duitku
+* @copyright Duitku(http://duitku.com)
+* @license   Duitku
+*
+*/
+-->
+<include xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_include.xsd">
+	<group id="duitku_vasampoerna" translate="label" type="text" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
+		<label><![CDATA[Duitku Sampoerna Virtual Account]]></label>
+		<field id="active" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+			<label><![CDATA[<b>Enabled:</b>]]></label>
+			<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+			<comment><![CDATA[To enable and disable this payment method.]]></comment>
+			<config_path>payment/duitku_vasampoerna/active</config_path>
+		</field>
+		<field id="title" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+			<label><![CDATA[<b>Title:</b>]]></label>
+			<comment><![CDATA[The title of the payment method displayed to the customers.]]></comment>
+			<config_path>payment/duitku_vasampoerna/title</config_path>
+		</field>     
+		<field id="payment_method" type="text" sortOrder="4" showInDefault="0" showInWebsite="0" showInStore="0">
+			<label><![CDATA[<b>Payment Method</b>]]></label>
+			<config_path>payment/duitku_vasampoerna/payment_method</config_path>
+		</field>      
+	</group>
+	
+</include>

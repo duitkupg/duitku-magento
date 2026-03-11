@@ -2,7 +2,7 @@
 /*
 Plugin Name:  Duitku Payment Gateway
 Description:  Duitku Payment Gateway 
-Version:      2.17
+Version:      2.18
 Author:       Duitku Development Team
 
 Author URI:   http://duitku.com
@@ -18,6 +18,10 @@ Install & activate the plugin. Modify some options in the settings page to suits
 
 -
 == Changelog ==
+= 2.18 June 10, 2025 =
+- Reworked Duitku Magento Configuration
+- Change Return Text Callback to Log
+
 = 2.17 May 05, 2025 =
 - Add Nusapay QRIS
 

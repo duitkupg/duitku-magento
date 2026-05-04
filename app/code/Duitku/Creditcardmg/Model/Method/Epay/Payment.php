@@ -172,7 +172,7 @@ class Payment extends \Duitku\Creditcardmg\Model\Method\AbstractPayment
 			'shippingAddress' => $billing_address
 		);
 				
-		$signature = hash("sha256",$merchantcode.$orderId.$paymentAmount.$apikey);
+		$signature = hash_hmac("sha256",$merchantcode.$orderId.$paymentAmount,$apikey);
 		
 		$params = array(
              'merchantCode' => $merchantcode,
@@ -190,8 +190,7 @@ class Payment extends \Duitku\Creditcardmg\Model\Method\AbstractPayment
              'returnUrl' => $returnUrl,
              'signature' => $signature,
 			 'customerDetail' => $customerDetails,
-			 'itemDetails' => $itemDetailParams,
-             'hashAlgorithm' => 'sha256'
+			 'itemDetails' => $itemDetailParams
          );
 		 
         return $params;

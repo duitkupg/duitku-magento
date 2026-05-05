@@ -20,7 +20,7 @@ class Duitku_Linkajapercent_Core {
         $url = $baseUrl . '/api/merchant/transactionStatus';                        
 
         //generate Signature
-        $signature = hash("sha256",$merchantCode . $order_id . $apikey);
+        $signature = hash_hmac("sha256",$merchantCode . $order_id , $apikey);
 
         // Prepare Parameters
         $params = array(

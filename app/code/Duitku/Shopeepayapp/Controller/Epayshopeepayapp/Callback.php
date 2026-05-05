@@ -92,12 +92,12 @@ class Callback extends \Duitku\Shopeepayapp\Controller\AbstractActionController
 		$signature = isset($posted['signature']) ? $posted['signature'] : null; 
 		$obj = \Magento\Framework\App\ObjectManager::getInstance();
 		$apiKey = $obj->get('Magento\Framework\App\Config\ScopeConfigInterface')->getValue('payment/duitku_shopeepayapp/api_key');
-		$params = $merchantCode . $amount . $merchantOrderId . $apiKey;
+		$params = $merchantCode . $amount . $merchantOrderId;
 		$resultCode = isset($posted['resultCode']) ? $posted['resultCode']:null;
 
 
 	    //check signature
-	    if ($signature != hash("sha256", $params)) {
+	    if ($signature != hash_hmac("sha256", $params, $apiKey)) {
 		   $message .= "Signature is invalid";
 		   return false;			
 	    }
